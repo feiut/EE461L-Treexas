@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '$*yl6=tfu&4_3a$r*e#39_tl19elz2$$4vhwg&qy6kq$e_sw7e'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG =True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ip.ip.ip.ip', '.example.com', '127.0.0.1', '*']
 
 
 # Application definition
@@ -74,15 +74,28 @@ WSGI_APPLICATION = 'plants.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
+# [START dbconfig]
 DATABASES = {
     'default': {
+        # If you are using Cloud SQL for MySQL rather than PostgreSQL, set
+        # 'ENGINE': 'django.db.backends.mysql' instead of the following.
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'plant_data',
-	'USER': 'user1',
-	'PASSWORD': 'Blackalfredo1!'
-	
+        'NAME': 'plant_database',
+        'USER': 'user1',
+        'PASSWORD': 'Blackalfredo1!',
+        # For MySQL, set 'PORT': '3306' instead of the following. Any Cloud
+        # SQL Proxy instances running locally must also be set to tcp:3306.
+        'PORT': '3306',
     }
 }
+# In the flexible environment, you connect to CloudSQL using a unix socket.
+# Locally, you can use the CloudSQL proxy to proxy a localhost connection
+# to the instance
+DATABASES['default']['HOST'] = '/cloudsql/plantdatabase-51026:us-central1:mysql-plant-database'
+if os.getenv('GAE_INSTANCE'):
+    pass
+else:
+    DATABASES['default']['HOST'] = '127.0.0.1'
 
 
 # Password validation
@@ -121,5 +134,5 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'https://storage.googleapis.com/plantbucket2/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')

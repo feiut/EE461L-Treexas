@@ -1,0 +1,82 @@
+This is a file with some useful information, 
+to test run the current app, navigate to plant_app/plants/
+then run $python manage.py runserver
+This will run the app on 'localhost:8000' which you can type into
+any browser
+The app probably won't run unless you have mySQL installed with the
+following database/user info, because that's what Django is looking for
+
+Database Name - plant_data
+User - user1
+Password - Blackalfredo1!
+
+here are some links about using Django and setting up mySQL
+https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubu
+------------------------------------------------------------------------
+Commands:
+
+find processes running on ports
+$netstat -ntlp
+
+kill a process
+kill -9 <PID>
+
+-------------------------------------------------------------------------
+Django:
+
+create new project
+django-admin startproject <project_name>
+
+>create new app
+python manage.py startapp <app_name>
+then add appname to INSTALLED_APPS in settings.py
+then run
+python manage.py migrate
+
+run test server
+$python manage.py runserver <serverip>:8000
+	-<serverip>:8000 is optional, if not specified, app with run on localhost:8000
+
+Path function is passed four arguments 2 required - route and view
+2 optional kwargs and name
+route - string that contains a URL pattern
+view - when django finds a matching pattern, it calls the specified
+	view function with an HttpRequest object as the first 
+	argument and any captures values from the route as keyword args
+kwargs -other parguments as a dict
+name - naming your url lets you refer to it unambiguously from anywhere in Django,
+	lets you make global changes to the URL patterns while only touching a 
+	single file
+
+-------------------------------------------------------------------------
+MySQL
+
+install it and add security
+$sudo apt update
+$sudo apt install mysql-server
+$sudo mysql_secure_installation
+
+command line admin client
+$mysqladmin
+
+start sql from command line
+mysql -u root -p
+
+show current databases
+mysql> SHOW DATABASES;
+
+create database
+mysql> CREATE DATABASE <database_name>;
+
+create user and grant them all privileges
+mysql> CREATE USER 'sammy'@'localhost' IDENTIFIED BY 'password';
+mysql> GRANT ALL PRIVILEGES ON *.* TO 'sammy'@'localhost' WITH GRANT OPTION;
+
+we will use mysqlclient, which is a Python 3 database connector libraary compatible with Django
+
+start mysql.service again
+sudo systemctl start mysql
+
+restart mySQL
+$systemctl daemon-reload
+$systemctl restart mysql
