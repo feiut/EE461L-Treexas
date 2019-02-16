@@ -18,6 +18,13 @@ https://docs.djangoproject.com/en/2.1/intro/tutorial01/
 https://docs.djangoproject.com/en/2.1/topics/db/models/
 https://docs.djangoproject.com/en/2.1/intro/tutorial03/
 
+Here are some useful links about google appengine
+when in the plant_app/plants/ directory use the command
+$gcloud app deploy 
+to deploy the current app
+https://cloud.google.com/python/django/flexible-environment
+https://console.cloud.google.com/sql/instances?project=plantdatabase-51026&folder&organizationId
+https://console.cloud.google.com/iam-admin/iam?_ga=2.164996607.-1746248119.1550011468&project=plantdatabase-51026&folder=&organizationId=
 
 
 
