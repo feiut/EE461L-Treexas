@@ -18,9 +18,10 @@ for data in soup("div",{"class": {"product-details","text-center"}}):
         soupinner = BeautifulSoup(url_responseinner.content,"html.parser")
         save=soupinner.findAll("ul",{"class": {"list theme-colored"}})
         templist=[]
-        a = BeautifulSoup(save[0],"html.parser")
-        for item in a.li.next_siblings:
-            templist.append(item.string)
+        for i in save[0].contents:
+            if i != "\n":
+                #name = i.strong.string
+                templist.append(i.get_text())
         listdata.append(templist)
 
 
