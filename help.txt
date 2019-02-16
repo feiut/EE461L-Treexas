@@ -1,16 +1,5 @@
 This doc contains some useful info,
 
-to open up app you need to have python3.6, mySQL,
-and a virtual environment (which protects your machine from any 
-changes to environmental variables you might make, I included one with plantvenv)
--once you have mySQL installed, create a database called 'plant_data' with the
-user 'user1' who has password 'Blackalfredo1!', Django uses this info to interact
-with the database
--you must also edit /etc/mysql/my.cnf to add a new client with the previous info (lookup the proper syntax)
--activate the virtual environment with $source plantvenv/bin/activate (exit using $deactivate when you're done)
--run the app with $python plant_app/manage.py runserver
--navigate to localhost:8000 to use the website
-
 Here are some useful links about setting up Djanog and mySQL, installing
 mySQL will probably be different on different systems
 https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04
@@ -26,7 +15,19 @@ https://cloud.google.com/python/django/flexible-environment
 https://console.cloud.google.com/sql/instances?project=plantdatabase-51026&folder&organizationId
 https://console.cloud.google.com/iam-admin/iam?_ga=2.164996607.-1746248119.1550011468&project=plantdatabase-51026&folder=&organizationId=
 
+To run on a local machine you first need to 
+1) set up a cloud SQL local proxy
+	a )$./cloud_sql_proxy -instances="plantdatabase-51026:us-central1:mysql-plant-database"=tcp:3306
+2) run migrations
+	$python manage.py makemigrations
+	$python manage.py makemigrations plantsite
+	$python manage.py migrate
+3) $python manage.py runserver
 
+To deploy you'll need to
+1) Change STATIC_URL in settings.py to 'https....' (the rest is in a comment)
+2) $python manage.py collectstatic
+2) $gcloud app deploy
 
 Commands:
 
@@ -62,7 +63,7 @@ name - naming your url lets you refer to it unambiguously from anywhere in Djang
 	single file
 
 -------------------------------------------------------------------------
-MySQL
+MySQL (don't do this anymore because we're using cloud SQL)
 
 install it and add security
 $sudo apt update

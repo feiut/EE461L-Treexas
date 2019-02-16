@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<link rel="stylesheet" href="{% static "list_style.css" %}">
+</head>
+
+<body>
+	<h1>{{park_name}}</h1>
+	<p> 
+	{{park_description}}
+	</p>
+	<img src="{% static "{{img_name}}" %}">
+</body>
+</html>

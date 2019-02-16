@@ -13,31 +13,44 @@ even though they actually reside in plantsite/templates/plantsite/<template_name
 
 
 def page_1(request):
-    template = loader.get_template('plantsite/page_1.html')
+    template = loader.get_template('plantsite/html/page_1.html')
     return HttpResponse(template.render({}, request))
 
 
-def page_2(request):
-    template = loader.get_template('plantsite/page_2.html')
+def state_park_list(request):
+    template = loader.get_template('plantsite/html/park_list.html')
     return HttpResponse(template.render({}, request))
 
 
-def page_3(request):
-    template = loader.get_template('plantsite/page_3.html')
-    return HttpResponse(template.render({}, request))
+def pedernales_park(request):
+    template = loader.get_template('plantsite/html/park_entry.html')
+    park_name = "Pedernales State Park"
+    park_description = "Lorem Ipsum Dolor Sit Amut"
+    park_img = "sp_pedernales.jpg"
+
+    return HttpResponse(template.render({"park_name":park_name,
+                                         "park_description":park_description,
+                                         "img_name":park_img}, request))
 
 
-def page_4(request):
-    template = loader.get_template('plantsite/page_4.html')
-    return HttpResponse(template.render({}, request))
+def dinosaur_valley_park(request):
+    template = loader.get_template('plantsite/html/park_entry.html')
+    park_name = "Dinosaur Valley State Park"
+    park_description = "Lorem Ipsum Dolor Sit Amut"
+    park_img = "sp_dinosaur_valley.jpg"
+
+    return HttpResponse(template.render({"park_name":park_name,
+                                         "park_description":park_description,
+                                         "img_name":park_img}, request))
 
 
-def page_5(request):
-    template = loader.get_template('plantsite/page_5.html')
-    return HttpResponse(template.render({}, request))
+def daingerfield_park(request):
+    template = loader.get_template('plantsite/html/park_entry.html')
+    park_name = "Daingerfield State Park"
+    park_description = "Lorem Ipsum Dolor Sit Amut"
+    park_img = "sp_daingerfield.jpg"
 
-
-def page_6(request):
-    template = loader.get_template('plantsite/page_6.html')
-    return HttpResponse(template.render({}, request))
+    return HttpResponse(template.render({"park_name":park_name,
+                                         "park_description":park_description,
+                                         "img_name":park_img}, request))
 

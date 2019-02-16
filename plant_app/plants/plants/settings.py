@@ -71,16 +71,14 @@ TEMPLATES = [
 WSGI_APPLICATION = 'plants.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-
+# [END db_setup]
 # [START dbconfig]
 DATABASES = {
     'default': {
         # If you are using Cloud SQL for MySQL rather than PostgreSQL, set
         # 'ENGINE': 'django.db.backends.mysql' instead of the following.
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'plant_database',
+        'NAME': 'plants',
         'USER': 'user1',
         'PASSWORD': 'Blackalfredo1!',
         # For MySQL, set 'PORT': '3306' instead of the following. Any Cloud
@@ -130,9 +128,18 @@ USE_L10N = True
 
 USE_TZ = True
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.static'
+)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
-
-STATIC_URL = 'https://storage.googleapis.com/plantbucket2/static/'
+# Fill in your cloud bucket and switch which one of the following 2 lines
+# is commented to serve static content from GCS
+# STATIC_URL = 'https://storage.googleapis.com/plantbucket2/static/'
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [
+    os.path.join(os.path.dirname(__file__), 'assets'),
+    os.path.join(os.path.dirname(os.path.dirname(__file__)), 'plantsite/templates/plantsite/static')
+]
