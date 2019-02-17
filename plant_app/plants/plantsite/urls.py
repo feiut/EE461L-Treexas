@@ -9,5 +9,5 @@ urlpatterns = [
     path('park1/', views.pedernales_park, name='pedernales'),
     path('park2/', views.dinosaur_valley_park, name='dinosaur_valley'),
     path('park3/', views.daingerfield_park, name='daingerfield'),
-
+    path('park4/', views.acton_park, name='acton'),
 ]

@@ -4,9 +4,15 @@ from django.db import models
 class Plant(models.Model):
     common_name = models.CharField(max_length=50)
     scientific_name = models.CharField(max_length=50)
+    photo = models.ImageField(upload_to='plants')
 
 class StatePark(models.Model):
     name = models.CharField(max_length=50)
+    photo = models.ImageField(upload_to='stateparks')
+
 
 class EcoRegion(models.Model):
     name = models.CharField(max_length=50)
+    photo = models.ImageField(upload_to='ecoregions')
+
+

@@ -18,14 +18,17 @@ https://console.cloud.google.com/iam-admin/iam?_ga=2.164996607.-1746248119.15500
 To run on a local machine you first need to 
 1) set up a cloud SQL local proxy
 	a )$./cloud_sql_proxy -instances="plantdatabase-51026:us-central1:mysql-plant-database"=tcp:3306
+	b) if this doesn't work, mysqld is probably using port 3306 run $sudo /etc/init.d/mysql stop
+	c) try a) again
 2) run migrations
 	$python manage.py makemigrations
 	$python manage.py makemigrations plantsite
 	$python manage.py migrate
 3) $python manage.py runserver
+4) After you run step 3 successfully, you shouldn't have to run step 1) 2) until the next time you start editing
 
 To deploy you'll need to
-1) Change STATIC_URL in settings.py to 'https....' (the rest is in a comment)
+1) Change STATIC_URL in settings.py to 'https....' (the rest is in a comment above the current STATIC_URL)
 2) $python manage.py collectstatic
 2) $gcloud app deploy
 
@@ -34,6 +37,8 @@ Commands:
 find processes running on ports
 $netstat -ntlp
 
+kill them 
+sudo kill -p <PID>
 
 -------------------------------------------------------------------------
 Django:
