@@ -1,0 +1,82 @@
+
+
+body{
+  background-color: #ABF0D1
+
+}
+
+.BigTitle{
+    text-align: center;
+    font-family: "Times New Roman", cursive;
+    font-size: 100px;
+    font-style: italic;
+}
+
+.Search{
+  width: 400px;
+  height: 100px;
+  margin: 0 auto;
+  align-items: center;
+ }
+
+ #threemodels{
+   margin: 0 auto;
+ }
+
+ #plantlist{
+   position: relative;
+   bottom: 25px;
+   left: 40%;
+ }
+
+#stateparks{
+  position: relative;
+  bottom: 25px;
+  left: 40%;
+}
+
+#ecoregions{
+  position: relative;
+  bottom: 25px;
+  left: 40%;
+}
+
+
+#bluebonnet{
+    position: relative;
+    top: 10px;
+    right: 75px;
+    height: 500px;
+    width: auto;
+      /*
+      height:500px;
+      width: auto;
+      margin: 0 auto;
+      max-width: 500px;
+      max-height: 500px;
+      align-items: center;
+      */
+}
+
+
+
+#helpinfo{
+  margin: 0 auto;
+}
+
+#help{
+  position: absolute;
+  bottom: 50px ;
+  Left: 45%
+}
+
+#aboutus{
+  position: absolute;
+  bottom: 50px;
+  Left: 50%;
+}
+#more{
+  position: absolute;
+  bottom: 50px;
+  Left: 55%;
+}
