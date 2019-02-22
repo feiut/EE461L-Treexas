@@ -4,15 +4,15 @@ from django.db import models
 class Plant(models.Model):
     common_name = models.CharField(max_length=50)
     scientific_name = models.CharField(max_length=50)
-    photo = models.ImageField(upload_to='plants')
+    photo = models.ImageField(upload_to='plants', default ='stateparks')
 
 class StatePark(models.Model):
     name = models.CharField(max_length=50)
-    photo = models.ImageField(upload_to='stateparks')
+    photo = models.ImageField(upload_to='stateparks', default= 'stateparks')
 
 
 class EcoRegion(models.Model):
     name = models.CharField(max_length=50)
-    photo = models.ImageField(upload_to='ecoregions')
+    photo = models.ImageField(upload_to='ecoregions', default ='ecoregions' )
 
 

@@ -20,7 +20,7 @@ class Park(object):
         self.url= url
 
 def page_1(request):
-    template = loader.get_template('plantsite/html/page_1.html')
+    template = loader.get_template('plantsite/html/mainPage.html')
     return HttpResponse(template.render({}, request))
 
 
