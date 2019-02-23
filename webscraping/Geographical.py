@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import lxml
 import requests
+import pandas as pd
 url = "https://tpwd.texas.gov/huntwild/wild/wildlife_diversity/wildscapes/ecoregions/"
 url_response =requests.get(url)
 soup = BeautifulSoup(url_response.content,'html.parser')
@@ -31,4 +32,43 @@ for info in data[0].ul.findAll("li"):
             templist.append(templist1)
             templist1=[]
     listdata.append(templist)
+dictionary={
+    "Ecoregion":[],
+    "Paragraph":[],
+    "Trees":[],
+    "Shrubs":[],
+    "Succulents":[],
+    "Vines":[],
+    "Vine":[],
+    "Conifers":[],
+    "Grasses":[],
+    "Wildflowers":[]
+}
+listdata[0][0]="Ecoregion 1 – " + listdata[0][0]
+for lis in listdata:
+    lis[0]="Ecoregion:"+lis[0]
+    lis[1]="Paragraph:"+lis[1]
+    """lis[2]
+    lis[3]
+    lis[4]
+    lis[5]
+    lis[6]"""
+for lis in listdata:
+    for entry in lis:
+        if isinstance(entry,list):
+            key = entry[0]
+            entry.remove(entry[0])
+            value = entry;
+        else:
+            ls=entry.split(':')
+            key=ls[0]
+            value=ls[1]
+        dictionary[key].append(value)
+        size = len(dictionary['Ecoregion'])
+    for dic in dictionary:
+        if len(dictionary[dic])!=size:
+            dictionary[dic].append("")
+df = pd.DataFrame(dictionary)
+df.to_csv('./plant_csv_ecoregions.csv')
+
 print(listdata)
