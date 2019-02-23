@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
 from plantsite.models import Plant
-
+from plantsite.models import PlantCsv
 # Create your views here.
 '''
 Your project’s TEMPLATES setting describes how Django will load and render templates. The default settings file 
@@ -138,9 +138,17 @@ def postoaksavanah_eco(request):
     name = "Post Oak Savanah"
     description = "Lorem Ipsum Dolor Sit Amut"
     img = "eco_postoaksavanah.jpg"
-
     context_dict = {"name": name, "description": description, "img_name": img}
     return HttpResponse(template.render(context_dict, request))
 
+def plant_type_list(request):
+    template = loader.get_template('plantsite/html/plant_list.html')
+    names = PlantCsv.objects.all()
+    context_dict = {'plant_names': names}
+    return HttpResponse(template.render(context_dict,request))
+
+def plant_profile_view(request):
+    template = loader.get_template('plantsite/html/plant_profile.html')
+    return HttpResponse(template.render({},request))
 
 #<img src="{{ MEDIA_URL }}{{ image.image.url }}" />

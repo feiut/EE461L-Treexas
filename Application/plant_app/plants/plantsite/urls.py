@@ -13,5 +13,7 @@ urlpatterns = [
     path('eco_list/', views.ecoregion_list, name='ecoregion_list'),
     path('eco1/', views.piney_eco, name='piney'),
     path('eco2/', views.marshes_eco, name='marches'),
-    path('eco3/', views.postoaksavanah_eco, name='postoak')
+    path('eco3/', views.postoaksavanah_eco, name='postoak'),
+    path('plant_list/', views.plant_type_list, name='plant_type_list'),
+    path('plant_profile/', views.plant_profile_view, name = 'plant_profile_view')
 ]

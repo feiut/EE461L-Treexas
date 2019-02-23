@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+
+<body>
+	<div class="container">
+		<div class="Text">
+	{% for plant in plant_names %}	
+			<a href='/plant_profile?' id = {{forloop.counter}}> Botanical Name: {{plant.botanicalname}}</a>
+			<li> Common Name: {{plant.alsoknownas}}</li>
+			<br>
+	{% endfor %}
+		</div>
+	</div>
+</body>
+</html>
