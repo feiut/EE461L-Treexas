@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<link rel="stylesheet" href="{% static "entry_style.css" %}">
+</head>
+
+<body>
+	<h1>{{name}}</h1>
+	<p> 
+	{{description}}
+	</p>
+	<img src="{% static img_name %}">
+	<br>
+	<br>
+	<a href="/eco_list/"> Back to ecoregion list.</a>
+</body>
+</html>

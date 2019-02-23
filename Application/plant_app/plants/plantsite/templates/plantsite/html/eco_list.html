@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<link rel="stylesheet" href="{% static "list_style.css" %}">
+</head>
+
+<body>
+	{% for eco in ecoregion_list %}
+	<div class="container">
+		<div class="Img">
+			<img src="{% static eco.img %}">
+		</div>
+		<div class="Text">
+			<a href="{{eco.url}}">{{eco.name}}</a>
+		</div>
+
+	</div>
+	{% endfor %}
+</body>
+</html>

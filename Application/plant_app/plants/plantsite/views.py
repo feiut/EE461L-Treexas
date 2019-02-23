@@ -19,6 +19,21 @@ class Park(object):
         self.img = img
         self.url= url
 
+class Ecoregion(object):
+
+    def __init__(self, name, img, url):
+        self.name = name
+        self.img = img
+        self.url = url
+
+class Plant(object):
+
+    def __init__(self, name, img, url):
+        self.name = name
+        self.img = img
+        self.url = url
+
+
 def page_1(request):
     template = loader.get_template('plantsite/html/mainPage.html')
     return HttpResponse(template.render({}, request))
@@ -36,6 +51,16 @@ def state_park_list(request):
     context_dict = {"park_list":parklist}
     return HttpResponse(template.render(context_dict, request))
 
+def ecoregion_list(request):
+    template = loader.get_template('plantsite/html/eco_list.html')
+
+    eco1 = Ecoregion("Piney Woods", "eco_pineywoods.jpg", "/eco1/")
+    eco2 = Ecoregion("Gulf Prairies and Marches", "eco_marshes.jpg", "/eco2/")
+    eco3 = Ecoregion("Post Oak Savanah", "eco_postoaksavanah.jpg", "/eco3/")
+    eco_list = [eco1, eco2, eco3]
+
+    context_dict = {"ecoregion_list": eco_list}
+    return HttpResponse(template.render(context_dict, request))
 
 def pedernales_park(request):
     template = loader.get_template('plantsite/html/park_entry.html')
@@ -75,6 +100,7 @@ def daingerfield_park(request):
 
     return HttpResponse(template.render(context_dict, request))
 
+
 def acton_park(request):
     template = loader.get_template('plantsite/html/park_entry.html')
     park_name = "Acton State Park"
@@ -84,6 +110,37 @@ def acton_park(request):
     context_dict = {"park_name":park_name,
                                          "park_description":park_description,
                                          "img_name":park_img}
-
     return HttpResponse(template.render(context_dict, request))
+
+
+def piney_eco(request):
+    template = loader.get_template('plantsite/html/eco_entry.html')
+    name = "Piney Woods"
+    description = "Lorem Ipsum Dolor Sit Amut"
+    img = "eco_pineywoods.jpg"
+
+    context_dict = {"name": name, "description": description, "img_name": img}
+    return HttpResponse(template.render(context_dict, request))
+
+
+def marshes_eco(request):
+    template = loader.get_template('plantsite/html/eco_entry.html')
+    name = "Gulf Prairies and Marshes"
+    description = "Lorem Ipsum Dolor Sit Amut"
+    img = "eco_marshes.jpg"
+
+    context_dict = {"name": name, "description": description, "img_name": img}
+    return HttpResponse(template.render(context_dict, request))
+
+
+def postoaksavanah_eco(request):
+    template = loader.get_template('plantsite/html/eco_entry.html')
+    name = "Post Oak Savanah"
+    description = "Lorem Ipsum Dolor Sit Amut"
+    img = "eco_postoaksavanah.jpg"
+
+    context_dict = {"name": name, "description": description, "img_name": img}
+    return HttpResponse(template.render(context_dict, request))
+
+
 #<img src="{{ MEDIA_URL }}{{ image.image.url }}" />
