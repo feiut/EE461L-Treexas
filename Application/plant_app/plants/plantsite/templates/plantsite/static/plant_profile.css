@@ -1,5 +1,25 @@
 
 
-.sections{
-	font-weight: bold;	
+body{
+	background-color: #EEE8E8;
 }
+
+#profile_plant_title_name{
+	font-family: "Times New Roman", serif;
+	color: #D43704;
+}
+
+.sections{
+	font-weight: bold;
+	font-family: "Georgia",;	
+}
+
+
+
+#plant_fields{
+	margin: auto;
+	max-width: 1000px;
+	text-align: left;
+
+}
+

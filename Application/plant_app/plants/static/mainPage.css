@@ -20,30 +20,21 @@ body{
  }
 
  #threemodels{
-   margin: 0 auto;
+   margin:  auto;
+   text-align: center;
+   display: block;
  }
 
- #plantlist{
-   position: relative;
-   bottom: 25px;
-   left: 40%;
- }
-
-#stateparks{
-  position: relative;
-  bottom: 25px;
-  left: 40%;
-}
-
-#ecoregions{
-  position: relative;
-  bottom: 25px;
-  left: 40%;
-}
+ 
 
 
 #bluebonnet{
-    position: relative;
+margin: center;
+height: 500px;
+width: auto;
+
+
+  /*  position: relative;
     top: 10px;
     right: 75px;
     height: 500px;
@@ -59,6 +50,30 @@ body{
 }
 
 
+#plantlist{
+  position: relative;
+  bottom: 50px;
+ padding-right: 5px;
+ padding-left: 5px;
+ padding-bottom: 5px;
+ }
+
+#stateparks{
+   position: relative;
+  bottom: 50px;
+ padding-right: 5px;
+ padding-left: 5px;
+ padding-bottom: 5px;
+}
+
+#ecoregions{
+   position: relative;
+  bottom: 50px;
+  padding-right: 5px;
+ padding-left: 5px;
+ padding-bottom: 5px;
+}
+
 
 #helpinfo{
   margin: 0 auto;
@@ -67,16 +82,16 @@ body{
 #help{
   position: absolute;
   bottom: 50px ;
-  Left: 45%
+  left: 45%
 }
 
 #aboutus{
   position: absolute;
   bottom: 50px;
-  Left: 50%;
+  left: 50%;
 }
 #more{
   position: absolute;
   bottom: 50px;
-  Left: 55%;
+  left: 55%;
 }

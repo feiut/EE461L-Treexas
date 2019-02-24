@@ -1,16 +1,21 @@
 <!DOCTYPE html>
+{%load static%}
 <html>
 <head>
+	<link rel="stylesheet" href="{% static "plant_list.css" %}">
 </head>
-
 <body>
+	<div id="title">
+	<h1><font> List of Texas Plants</font></h1>
+	<h3><font> Where everythings bigger!</font></h3>
+	</div>
 	<div class="container">
 		<div class="Text">
 	{% for plant in plant_names %}	
-			<font>Botanical Name: </font>
+			<font class="name">Botanical Name: </font>
 			<a href="/plant_profile/?id={{plant.id}}"> {{plant.botanicalname}}</a>
 			<br>
-			<font>Common Name: </font>
+			<font class="name">Common Name: </font>
 			<font> {{plant.alsoknownas}}</font>
 			<br>
 			<br>
