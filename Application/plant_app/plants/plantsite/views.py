@@ -149,6 +149,9 @@ def plant_type_list(request):
 
 def plant_profile_view(request):
     template = loader.get_template('plantsite/html/plant_profile.html')
-    return HttpResponse(template.render({},request))
+    number = request.GET.get('id')
+    prof = PlantCsv.objects.get(id=number)
+    context_dict = {'profile': prof}
+    return HttpResponse(template.render(context_dict,request))
 
 #<img src="{{ MEDIA_URL }}{{ image.image.url }}" />

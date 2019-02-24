@@ -7,8 +7,12 @@
 	<div class="container">
 		<div class="Text">
 	{% for plant in plant_names %}	
-			<a href='/plant_profile?' id = {{forloop.counter}}> Botanical Name: {{plant.botanicalname}}</a>
-			<li> Common Name: {{plant.alsoknownas}}</li>
+			<font>Botanical Name: </font>
+			<a href="/plant_profile/?id={{plant.id}}"> {{plant.botanicalname}}</a>
+			<br>
+			<font>Common Name: </font>
+			<font> {{plant.alsoknownas}}</font>
+			<br>
 			<br>
 	{% endfor %}
 		</div>

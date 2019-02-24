@@ -1,9 +1,37 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
+<head>
+	
+	<link rel="stylesheet" href="{% static "plant_profile.css" %}">
+</head>
 <body>
-
- <p> hello world</p>
-
-
+  <font class="sections">Botanical Name:</font><font> {{profile.botanicalname}}</font>
+ <br>
+  <font class="sections">Common Name:</font><font> {{profile.alsoknownas}}</font>
+ <br>
+  <font class="sections">Plant Type:</font><font> {{profile.planttype}}</li>
+ <br>
+  <font class="sections">Light Requirement:</font><font> {{profile.lightrequirement}}</font>
+ <br>
+  <font class="sections">Water Demand:</font><font> {{profile.waterdemand}}</font>
+ <br>
+  <font class="sections">Land Scape Use:</font><font> {{profile.landscapeuse}}</font>
+ <br>
+  <font class="sections">Ornamental Value:</font><font> {{profile.ornamentalvalue}}</font>
+ <br>
+  <font class="sections">Native/Adapted:</font><font> {{profile.nativeadapted}}</font>
+ <br>
+  <font class="sections">Wild Life Value:</font><font> {{profile.wildlifevalue}}</font>
+ <br>
+ <font class="sections">Season:</font><font> {{profile.season}}</font> 
+ <br>
+  <font class="sections">Deciduous Evergreen:</font><font> {{profile.deciduousevergreen}}</font>
+ <br>
+  <font class="sections">PlantForm:</font><font> {{profile.plantform}}</font>
+ <br>
+  <font class="sections">Plant Spread:</font><font> {{profile.plantspread}}</font>
+ <br>
+  <font class="sections">Plant Height:</font><font> {{profile.plantheight}}</font>
 </body>
 </html>
