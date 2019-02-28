@@ -4,6 +4,9 @@ from django.http import HttpResponse
 from django.template import loader
 from plantsite.models import Plant
 from plantsite.models import PlantCsv
+from . import githubdynamic
+from .githubdynamic import get_issues_commits
+
 # Create your views here.
 '''
 Your project’s TEMPLATES setting describes how Django will load and render templates. The default settings file
@@ -45,8 +48,18 @@ def page_1(request):
             response = redirect('/plant_profile/?id=' + number)
             return response
     return HttpResponse(template.render({}, request))
-    return HttpResponse(template.render({}, request))
 
+def about_page(request):
+    template = loader.get_template('plantsite/html/about_page.html')
+
+    github_list = get_issues_commits()
+    c = [int(k[1]) for k in github_list]
+    i = [int(k[2]) for k in github_list]
+    context_dict = {"eric_commits": c[2], "eric_issues": i[2], "erick_commits":c[0], "erick_issues":i[0],
+                    "connor_commits":c[1], "connor_issues":i[1], "hao_commits":c[3], "hao_issues":i[3],
+                    "chaz_commits":c[5], "chaz_issues":c[5], "xiyu_commits":c[6], "xiyu_issues":i[6],
+                    "fei_commits":c[4], "fei_issues":i[4], "total_c":sum(c), "total_i":sum(i)}
+    return HttpResponse(template.render(context_dict, request))
 
 def state_park_list(request):
     template = loader.get_template('plantsite/html/park_list.html')
