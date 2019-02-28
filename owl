@@ -1,0 +1,4 @@
+#!/bin/bash
+
+
+	./Scripts/"$1" "$2"

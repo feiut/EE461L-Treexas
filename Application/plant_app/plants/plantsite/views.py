@@ -38,7 +38,7 @@ class Plant(object):
         self.url = url
 
 
-def page_1(request):
+def main_page(request):
     template = loader.get_template('plantsite/html/mainPage.html')
     number = request.GET.get('id')
     number = str(number)

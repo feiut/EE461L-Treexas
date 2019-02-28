@@ -1,0 +1,23 @@
+This file is to provide some guidance on using scripts.
+
+
+Under the Application folder there is a shell script called "owl"
+
+To use the script owl use ./owl    
+
+However, this won't do anything. The purpose of owl is to run a script within this directory.
+
+so owl takes in an argument to call a script within this directory.  
+
+It takes the format of ./owl "script" where script is the name of a script in this directory
+
+
+example: 
+
+	./owl proxy "password"
+
+
+	./owl migration 
+
+
+	./owl deploy 

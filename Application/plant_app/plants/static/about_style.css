@@ -1,0 +1,76 @@
+body{
+	background-color : #2F2F2F;
+	/*border-style: solid;
+	border-width: 0px 0px 0px 0px;
+	border-color: #66FF66;*/
+	margin: 0px;
+
+}
+
+h4{
+	color: #000000;
+	font-family: Arial;
+	font-size: 260%;
+	margin: 16px;
+}
+
+p{
+	color: #000000;
+	font-family: Arial;
+	font-size: 160%;
+	margin: 14px;
+}
+
+b{
+
+	color: #000000;
+	font-family: Arial;
+	font-size: 160%;
+	margin: 16px;
+}
+
+img{
+    object-fit: cover;
+    width: 300px;
+    height: 300px;
+    border-radius: 8px;
+    margin: 20px;
+
+}
+
+#title{
+	color: white;
+	text-align: center;
+	font-size: 300%;
+	/*font-family: "Times New Roman", serif;*/
+
+}
+
+#header{
+	background-color: #DFF4E1
+}
+
+#teammates{
+	margin: left;
+	padding-left: 2%;
+	text-align: left;
+	align-items: center;
+	max-width: 50%;
+	background-color: #AED9E2;
+}
+
+.photos{
+	margin: auto;
+	align-items: center;
+}
+
+#sources{
+	background-color: #E1B894;
+}
+
+#mainpage_link{
+	color: black;
+	margin-left: 50%;
+	font-size: 125%;
+	text-align: left;
+}
