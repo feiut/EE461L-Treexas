@@ -38,9 +38,13 @@ class Plant(object):
 def page_1(request):
     template = loader.get_template('plantsite/html/mainPage.html')
     number = request.GET.get('id')
-    if int(number) > -1:
-        response = redirect('/plant_profile/?id=' + number)
-        return response
+    number = str(number)
+    if number.isdigit():
+        num = int(number)
+        if num > -1:
+            response = redirect('/plant_profile/?id=' + number)
+            return response
+    return HttpResponse(template.render({}, request))
     return HttpResponse(template.render({}, request))
 
 
