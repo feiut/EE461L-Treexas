@@ -1,12 +1,13 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
 from django.http import HttpResponse
 from django.template import loader
 from plantsite.models import Plant
 from plantsite.models import PlantCsv
 # Create your views here.
 '''
-Your project’s TEMPLATES setting describes how Django will load and render templates. The default settings file 
-configures a DjangoTemplates backend whose APP_DIRS option is set to True. By convention DjangoTemplates looks 
+Your project’s TEMPLATES setting describes how Django will load and render templates. The default settings file
+configures a DjangoTemplates backend whose APP_DIRS option is set to True. By convention DjangoTemplates looks
 for a “templates” subdirectory in each of the INSTALLED_APPS.
 
 All templates can be referred to with plantsite/<template_name>.html
@@ -36,6 +37,10 @@ class Plant(object):
 
 def page_1(request):
     template = loader.get_template('plantsite/html/mainPage.html')
+    number = request.GET.get('id')
+    if int(number) > -1:
+        response = redirect('/plant_profile/?id=' + number)
+        return response
     return HttpResponse(template.render({}, request))
 
 
@@ -153,5 +158,8 @@ def plant_profile_view(request):
     prof = PlantCsv.objects.get(id=number)
     context_dict = {'profile': prof}
     return HttpResponse(template.render(context_dict,request))
+
+
+
 
 #<img src="{{ MEDIA_URL }}{{ image.image.url }}" />
