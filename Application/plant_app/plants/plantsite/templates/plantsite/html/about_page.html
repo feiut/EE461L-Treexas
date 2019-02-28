@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<link rel="stylesheet" href="{% static "about_style.css" %}">
+</head>
+
+<body>
+	<h3> Description </h3>
+	<p> This site contains information about the plants, ecoregions and stateparks of Texas. The purpose of this site is to provide reliable information about any and all plants that can be found in Texas. This site is meant for anyone looking to learn more about Texas plants and where to find them. This could include researchers, students, survivalists or foragers. </p>
+	<br>
+
+	<h3> Group Name </h3>
+	<p> Owl Team </p>
+	<h3> Group Members </h3>
+	<img src="{% static user1_img %}">
+	<p> Name: Eric Cen
+		Major: Electrical Engineering
+		Bio: BLANK
+		Responsibilities: Datascraping and Database Management
+		Number of Commits: {{user1_commits}}
+		Number of Issues: {{user1_issues}}
+		Number of Unit Tests: 0</p>
+	<br>
+	<img src="{% static user2_img %}">
+	<p> Name: Erick Machado
+		Major: Electrical Engineering
+		Bio:  Hello! My name is Erick. I enjoy working with software and enjoy my time at UT. I have two dogs that I love very much. I’m very friendly so approach me if you wanna chat! 
+		Responsibilities: Database Management and Static Webpage Design
+		Number of Commits: {{user2_commits}}
+		Number of Issues: {{user2_issues}}
+		Number of Unit Tests: 0</p>
+	<br>
+	<img src="{% static user3_img %}">
+	<p> Name: Connor Fritz
+		Major: Electrical Engineering
+		Bio: I'm a software track ECE major interested in plants and machine learning
+		Responsibilities: Static Webpage Design and Datascraping
+		Number of Commits: {{user3_commits}}
+		Number of Issues: {{user3_issues}}
+		Number of Unit Tests: 0</p>
+	<br>
+	<img src="{% static user4_img %}">
+	<p> Name: Hao Yao
+		Major: Civil Engineering
+		Bio: Hi I’m Xiyu! You can pronounce it as “Shiyu” if you find it confusing:D I’m a master student with only 2 years in UT so I really cherish the time I work and have fun with you!
+		Responsibilities: API Development
+		Number of Commits: {{user4_commits}}
+		Number of Issues: {{user4_issues}}
+		Number of Unit Tests: 0</p>
+	<br>
+	<img src="{% static user5_img %}">
+	<p> Name: Chengjing Li
+		Major: Electrical Engineering
+		Bio: BLANK
+		Responsibilities: Static Webpage Design
+		Number of Commits: {{user4_commits}}
+		Number of Issues: {{user4_issues}}
+		Number of Unit Tests: 0</p>
+	<br>
+	<img src="{% static user6_img %}">
+	<p> Name: Xiyu Wang
+		Major: Electrical Engineering
+		Bio: BLANK
+		Responsibilities: API Development
+		Number of Commits: {{user5_commits}}
+		Number of Issues: {{user5_issues}}
+		Number of Unit Tests: 0</p>
+	<br>
+	<img src="{% static user7_img %}">
+	<p> Name: Fei He
+		Major: Electrical Engineering
+		Bio: BLANK
+		Responsibilities: API Development
+		Number of Commits: {{user6_commits}}
+		Number of Issues: {{user6_issues}}
+		Number of Unit Tests: 0</p>
+	<br>
+
+	<h3>Statistics</h3>
+	<p>Total number of commits</p>
+	<p>Total number of issues</p>
+	<p>Total number of unit tests: 0</p>
+	<br>
+
+	<h3> Datasources </h3>
+	<a href='www.txsmartscape.com'> Texas Plant Source </a>
+	<p> This datasource was scraped using the HTMLParser and BeautifulSoup Python packages. Information about each plant, such as botanical name and growing conditions, were extracted from each plant</p>
+	<a href='www.tpwd.texas.gov'> Texas State Park and Ecoregion Datasource </a>
+	<p> This datasource was scraped using the HTMLParser and BeautifulSoup Python packages. Latitude and longitude information was scraped for the state parks. Descriptions and native plants were scraped for each of the texan ecoregions</p>
+	<br>
+
+	<h3>Tools</h3>
+	<p> We used the Django web framework, along with Python to build our app. We used HTML, CSS and some very simple Javascript to build templates for our web pages. We used Google Cloud Platform to deploy our app, and acquired our domain name from namecheap.com. We also used MySQL as our database, and stored our information on Cloud SQL, from Google Cloud Platform. Data scraping was performed using the beautifulsoup Python package, while RESTful APIs were used when they were available. We used Node.js to build our API, then used Postman to test it. We also used Selenium for UI testing. </p>
+	<br>
+
+	<h3> Github Repo Link </h3>
+	<a href='https://github.com/ec505/EE461L-sp19-owl-team'>Click Here!<a>
+
+
+
+
