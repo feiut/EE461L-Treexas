@@ -1,6 +1,6 @@
 <!doctype html>
 {% load static %}
-<head> 
+<head>
   <link rel="stylesheet" href="{% static "mainPage.css" %}">
 <head>
 <html>
@@ -13,8 +13,10 @@
 <div class="Search">
 <label> Search for Plants! </label>
 <br>
-<input type="search" aria-label="Search for Plants!">
-<button type="button"> Search! </button>
+<form>
+<input type="search" aria-label="Search for Plants!" name="id">
+<button type="submit"> Search! </button>
+</form>
 <br>
 <br>
 <br>

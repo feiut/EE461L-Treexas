@@ -1,0 +1,5 @@
+cd /Users/yaohao/Desktop/EE461L-sp19-owl-team/Application
+./proxy_script.sh 1995131wsyh
+
+cd /Users/yaohao/Desktop/EE461L-sp19-owl-team/Application/plant_app/plants
+python3 manage.py runserver
