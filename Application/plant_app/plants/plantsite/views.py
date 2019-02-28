@@ -41,7 +41,7 @@ def page_1(request):
     number = str(number)
     if number.isdigit():
         num = int(number)
-        if num > -1:
+        if -1 < num < 30:
             response = redirect('/plant_profile/?id=' + number)
             return response
     return HttpResponse(template.render({}, request))
