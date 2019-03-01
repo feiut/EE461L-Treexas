@@ -1,4 +1,5 @@
 #!/bin/bash
-
-
-	./Scripts/"$1" "$2"
+		
+	OWLPATH=$(find ~/ -type d -path '*/EE461L-sp19-owl-team')
+	cd $OWLPATH	
+      .	./Scripts/"$1" "$2"

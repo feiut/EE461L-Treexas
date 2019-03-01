@@ -1,0 +1,8 @@
+#!/bin/bash
+
+
+
+MYPATH=$(pwd)
+export PATH=$PATH:$MYPATH
+
+alias owl='. owl'

@@ -1,23 +1,47 @@
 This file is to provide some guidance on using scripts.
 
-
 Under the Application folder there is a shell script called "owl"
 
-To use the script owl use ./owl    
+To use the script owl use you must first do type this command:   ". ./owl setup"    (quotation marks not needed in actual command) you must do this for every new terminal
 
-However, this won't do anything. The purpose of owl is to run a script within this directory.
+Owl takes in an argument to call a script within this directory.  
 
-so owl takes in an argument to call a script within this directory.  
+It takes the format of owl "script" where script is the name of a script in this directory
 
-It takes the format of ./owl "script" where script is the name of a script in this directory
-
+*note: owl will most certainly change the directory you are in. I had to this so that it can work on anyones computer. I know it's annoying but this is the only way I could make some commands since i don't know how everyone has their directory set up. you do not have to use owl if you don't want to. I use made this 
 
 example: 
 
-	./owl proxy "password"
+	owl proxy "password"
+
+	owl migration 
+
+	owl deploy 
+
+	owl html
 
 
-	./owl migration 
 
 
-	./owl deploy 
+
+Script definitions and uses:
+
+*note you may need to chmod 700 some of the scripts. example: chmod 700 setup
+
+setup - this sets up owl to be used with other commands. You must do this everytime a new terminal is open
+
+proxy - this will set up a cloud proxy of the database
+
+migration - this will make the migrations necessary for the project (not exactly sure why we need migrations but it's a django thing i believe)
+
+deploy - this will deploy the app. When you run this script there is no need to change the setting.py file for the static url
+
+virtual - this sets up the virtual environemnet from the plantsvenv directory. To run this script correctly you must use the command . ./owl virtual    . I know it may be a hassle remembering to put the extra dot at the beginning to so feel free to bring up the virtual environment up how we use to do it. I.e.   source plantsvenv/bin/acitvation 
+
+runlocal - runs the local version of teh website
+
+html - brings you to the html folder quickly. 
+
+view - brings you to the view/url folder quickly
+
+home - Takes you to the projects home ( you really are already at the projects home so this is like a no-op)

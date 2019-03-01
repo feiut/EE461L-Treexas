@@ -1,0 +1,2 @@
+#!/bin/bash
+source plantsvenv/bin/activate
