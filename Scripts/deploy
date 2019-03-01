@@ -1,10 +1,10 @@
 #!/bin/bash
 
 #This combines the collection of static items,  Synchronizes them to our plant bucket, and deploy the apps.
-cd Application/plant_app/plants
-cp copyOfSettings/deploy/settings.py plants
+cd Application/plant_app/plants/plants
+sed -i "/STATIC_URL/c\STATIC_URL = 'https://storage.googleapis.com/plantbucket2/static/'" settings.py
 python3 manage.py collectstatic
 gsutil rsync -R static/ gs://plantbucket2/static
 gcloud app deploy
-cp copyOfSettings/local/settings.py plants
+sed -i "/STATIC_URL/c\STATIC_URL = '/static/'" settings.py
 
