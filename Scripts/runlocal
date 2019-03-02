@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd Application/plant_app/plants
+
+python3 manage.py runserver

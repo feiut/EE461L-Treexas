@@ -1,7 +1,5 @@
-from bs4 import BeautifulSoup
-import requests
-import pandas as pd
-
+from bs4 import BeautifulSoup;
+import requests;
 url = "http://www.txsmartscape.com/plant-search/get-plant-data.php"
 #http://www.txsmartscape.com/plant-search/plant-details.php?id=968
 #http://www.txsmartscape.com/plant-search/get-plant-data.php
@@ -26,45 +24,6 @@ for data in soup("div",{"class": {"product-details","text-center"}}):
                 templist.append(i.get_text())
         listdata.append(templist)
 
-dictionary = {
-              "Also Known As": [],
-              "Botanical Name": [],
-              "Plant Type": [],
-              "Light Requirement": [],
-              "Water Demand": [],
-              "Landscape Use": [],
-              "Ornamental Value": [],
-              "Native/Adapted": [],
-              "Wildlife Value": [],
-              "Season": [],
-              "Deciduous/Evergreen": [],
-              "Plant Form": [],
-              "Plant Spread": [],
-              "Plant Height": []
-            }
-
-for lis in listdata:
-    boo=False
-    for entry in lis:
-        ls = entry.split(':')
-        key = ls[0]
-        value = ls[1]
-        if(key == "Also Known As"):
-            boo = True
-        try:
-            dictionary[key].append(value)
-        except KeyError:
-            print(key)
-            print(value)
-            print('Didnt work')
-            print(dictionary)
-            print(lis)
-            print()
-    if(not boo):
-        dictionary["Also Known As"].append("NA")
-
-df = pd.DataFrame(dictionary)
-df.to_csv('./plant_csv.csv')
 
 print(listdata)
 
