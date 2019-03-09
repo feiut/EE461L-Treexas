@@ -1,13 +1,36 @@
 <!doctype html>
 {% load static %}
 <head>
-  <link rel="stylesheet" href="{% static "mainPage.css" %}">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 <head>
 <html>
 <body>
-<h1 class="BigTitle">
-  Welcome to Treexas
-</h1>
+	<nav class="navbar navbar-inverse">
+	  <div class="container-fluid">
+
+	    <div class="navbar-header">
+	      <a class="navbar-brand">Rebar</a>
+	    </div>
+
+	    <div style="display: inline-block;">
+	      <ul class="nav navbar-nav">
+	        <li><a href="#">Link</a>
+	        </li>
+	        <li><a href="#">Link</a>
+	        </li>
+	        <li><a href="#">Link</a>
+	        </li>
+	      </ul>
+	    </div>
+	  </div>
+	</nav>
+
+	<h1 class="BigTitle">
+	  Welcome to Treexas
+	</h1>
 
 
 <div class="Search">
@@ -37,6 +60,11 @@
 <div id="helpinfo">
 <a href="/about" id="aboutus"> about us </a>
 </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
 
 </body>
 </html>
