@@ -14,14 +14,14 @@ button= web.find_element_by_xpath("//*[@id=\"loadmorebtn\"]/a")
 clicks = 15
 while clicks>0:
     button.click()
-    time.sleep(.3)
+    time.sleep(1)
     clicks= clicks -1
 listdata=[]
 for data in web.find_elements_by_xpath("//*[@id=\"moreresults\"]/div"):
     templist = []
     productdiv = data.find_element_by_class_name("product")
     if len(productdiv.find_elements_by_css_selector("span"))>0:
-        if productdiv.find_element_by_css_selector("span").text==" Native!":
+        if productdiv.find_element_by_css_selector("span").text=="NATIVE!":
             templist.append("Native:Yes")
         else:
             templist.append("Native:No")
@@ -102,7 +102,10 @@ for lis in listdata:
     for entry in lis:
         ls = entry.split(':')
         key = ls[0]
-        value = ls[1]
+        if len(ls)==3:
+            value = ls[1]+":"+ls[2]
+        else:
+            value = ls[1]
         if(key == "Also Known As"):
             boo = True
         try:
