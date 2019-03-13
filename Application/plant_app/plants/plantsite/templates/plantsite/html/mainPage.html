@@ -1,14 +1,75 @@
-<!doctype html>
+<!DOCTYPE html>
 {% load static %}
+<html>
 <head>
-  <link rel="stylesheet" href="{% static "mainPage.css" %}">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  <style>
+	  	.navbar-nav {
+			color: #EFEFEF; 
+			font-size: 160%;
+		}
+
+	  	.navbar-brand {
+			color: #EFEFEF; 
+			font-size: 210%;
+		}
+
+		.navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+		    background-color: #A9A9a9;
+		    color: #EFEFEF;
+		}
+
+		a {
+			color: #EFEFEF;
+		}
+
+		.bg {
+		    background-size:cover;
+		    background-repeat: no-repeat;
+		    background-position: top;
+		    background-attachment: fixed;
+		}
+
+	</style>
 <head>
+<<<<<<< HEAD
 <html>
 <body>
 <h1 class="BigTitle">
   Welcome to Treexas
 </h1>
 <a href='/SubPage' > click here </a>
+=======
+
+<body class="bg" style="background-image: url('{% static "sp_pedernales.jpg"%}')";>
+	<div class="bg">
+
+	<nav class="navbar navbar-expand-lg navbar-fixed-top" style="background-color:#93C178;">
+	  <div class="container-fluid">
+
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="#">Treexas</a>
+	    </div>
+
+	    <div class="topnav-entry">
+	      <ul class="nav navbar-nav navbar-right">
+	        <li><a href="/plant_list">Plants</a>
+	        </li>
+	        <li><a href="/park_list">State Parks</a>
+	        </li>
+	        <li><a href="/eco_list">Ecoregions</a>
+	        </li>
+	      </ul>
+	    </div>
+	  </div>
+	</nav>
+
+<br>
+<br>
+>>>>>>> 291501200ee605a817ad067180b2c933b728b96e
 
 <div class="Search">
 <label> Search for Plants! </label>
@@ -20,8 +81,6 @@
 <br>
 <br>
 <br>
-<img id="bluebonnet" src="{%static "bluebonnet_painting.jpg" %}" alt="bluebonnet_main_page">
-</div>
 
 <div id="threemodels">
 <a href="/plant_list" id="plantlist"> plants </a>
@@ -38,5 +97,11 @@
 <a href="/about" id="aboutus"> about us </a>
 </div>
 
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+
+</div>
 </body>
 </html>
