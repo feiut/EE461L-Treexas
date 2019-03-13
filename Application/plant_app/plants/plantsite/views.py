@@ -176,6 +176,10 @@ def plant_profile_view(request):
     context_dict = {'profile': prof}
     return HttpResponse(template.render(context_dict,request))
 
+def sub_page(request):
+    template = loader.get_template('plantsite/html/SubPage.html')
+
+    return HttpResponse(template.render({},request))
 
 
 
