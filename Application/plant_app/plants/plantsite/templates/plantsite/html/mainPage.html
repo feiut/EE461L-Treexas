@@ -8,13 +8,13 @@
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
   <style>
 	  	.navbar-nav {
-			color: #EFEFEF; 
+			color: #EFEFEF;
 			font-size: 160%;
 		}
 
 	  	.navbar-brand {
-			color: #EFEFEF; 
-			font-size: 210%;
+			color: #EFEFEF;
+			font-size: 300%;
 		}
 
 		.navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
@@ -31,15 +31,117 @@
 		    background-repeat: no-repeat;
 		    background-position: top;
 		    background-attachment: fixed;
+        animation: bg 40s infinite;
 		}
 
+    @keyframes bg {
+      0%{
+        background-image: url('{% static "background_mp2.jpg"%}');
+      }
+      25%{
+        background-image: url('{% static "background_mp2.jpg"%}');
+      }
+      25.01%{
+        background-image: url('{% static "background_mp3.jpg"%}');
+      }
+      50%{
+        background-image: url('{% static "background_mp3.jpg"%}');
+      }
+      50.01%{
+        background-image: url('{% static "background_mp4.jpg"%}');
+      }
+      75%{
+        background-image: url('{% static "background_mp4.jpg"%}');
+      }
+      75.01%{
+        background-image: url('{% static "background_mp.jpg"%}');
+      }
+      100%{
+        background-image: url('{% static "background_mp.jpg"%}');
+      }
+    }
+
+
+
+
+    .container{
+      margin-top:200px;
+    }
+
+    .glyphicon-leaf{
+      font-size: 20px;
+    }
+
+    .input-group {
+        position: relative;
+    }
+
+    /* style icon */
+    .input-group .glyphicon-search {
+      position: absolute;
+      padding: 20px;
+      pointer-events: none;
+    }
+
+    /* align icon */
+    .input-group .glyphicon-search  {
+      left: 0px;
+      font-size: 15px;
+    }
+
+    /* add padding  */
+    .input-group input { padding-left: 50px; }
+
+    .btn-default{
+      width: 100px;
+      padding: 12.5px;
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    .form-control{
+      padding: 25px;
+      font-size: 25px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.7);
+    }
+    .footer{
+      position: fixed;
+      right:0;
+      bottom: 0;
+      left: 0;
+      padding: 1rem;
+      background-color: transparent;
+      text-align: center;
+    }
+
 	</style>
+  <!--script src="http://codeorigin.jquery.com/jquery-2.0.3.min.js"></script>
+  <script type="text/javascript">
+    window.onload = function () {
+     var imageFile = ["('{% static "background_mp.jpg"%}')", "('{% static "background_mp2.jpg"%}')",
+      "('{% static "background_mp3.jpg"%}')", "('{% static "background_mp4.jpg"%}')"];
+     var currentIndex = 0;
+      window.setInterval.fadeTo('slow', 0.3,function() {
+         if (currentIndex == imageFile.length) {
+             currentIndex = 0;
+         }
+         $('body').css('background-image', 'url' + imageFile[currentIndex++]);
+     }, 3000;).delay(1000).fadeTo('slow', 1);
+    };
+</script-->
 <head>
 
-<body class="bg" style="background-image: url('{% static "sp_pedernales.jpg"%}')";>
-	<div class="bg">
+<body class="bg"   style="background-image: url('{% static "background_mp.jpg"%}')">
 
-	<nav class="navbar navbar-expand-lg navbar-fixed-top" style="background-color:#93C178;">
+  <!--div id="bg">
+  style="background-image: url('{% static "background_mp2.jpg"%}')"
+    <img class="bg1" src= '{% static "background_mp2.jpg"%}'/>
+    <img class="bg2" src= '{% static "background_mp.jpg"%}'/>
+    <img class="bg3" src= '{% static "background_mp3.jpg"%}'/>
+    <img class="bg4" src= '{% static "background_mp4.jpg"%}'/>
+  </div-->
+
+	<nav class="navbar navbar-expand-lg navbar-fixed-top" style="background-color:rgba(147,193,120,0.5);">
 	  <div class="container-fluid">
 
 	    <div class="navbar-header">
@@ -61,37 +163,37 @@
 
 <br>
 <br>
-
-<div class="Search">
-<label> Search for Plants! </label>
-<br>
-<form>
-<input type="search" aria-label="Search for Plants!" name="id">
-<button type="submit"> Search! </button>
-</form>
-<br>
 <br>
 <br>
 
-<div id="threemodels">
-<a href="/plant_list" id="plantlist"> plants </a>
-<hl>
-<a href="/eco_list" id="ecoregions"> eco-regions </a>
-<hl>
-<a href="/park_list" id="stateparks"> state parks </a>
-<hl>
-</div>
 
+<div class="container">
+  <!--label> Search for Plants! </label-->
+  <br>
+  <form>
+      <!--div class="d-flex justify-content-center h-100"-->
+      <div class="input-group">
+        <i class="glyphicon glyphicon-search"></i>
+        <input class="form-control" type="text" name="search" placeholder="Plant name" autofocus/>
+        <div class="input-group-btn">
+          <button class="btn btn-default" type="submit">
+          <i class="glyphicon glyphicon-leaf"></i></button>
+        </div>
+      </div>
+  </form>
 
+  <br>
+  <br>
+  <br>
 
-<div id="helpinfo">
-<a href="/about" id="aboutus"> about us </a>
-</div>
+  <div class="footer">
+    <a href="/about" id="aboutus"> about us </a>
+  </div>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="../../assets/js/vendor/popper.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+      <script src="../../assets/js/vendor/popper.min.js"></script>
+      <script src="../../dist/js/bootstrap.min.js"></script>
 
 </div>
 </body>
