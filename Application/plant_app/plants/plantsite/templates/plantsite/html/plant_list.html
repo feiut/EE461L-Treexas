@@ -2,15 +2,36 @@
 {%load static%}
 <html>
 <head>
-	<link rel="stylesheet" href="{% static "plant_list.css" %}">
 	 <!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 	<!-- jQuery library -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="{% static 'list_page_list.css' %}">
 </head>
 <body>
+	<nav class="navbar navbar-expand-lg navbar-fixed-top" style="background-color:rgba(0,0,0,0.35);">
+	  <div class="container-fluid">
+
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="#">Treexas</a>
+	    </div>
+
+	    <div class="topnav-entry">
+	      <ul class="nav navbar-nav navbar-right">
+	        <li><a href="/plant_list">Plants</a>
+	        </li>
+	        <li><a href="/park_list">State Parks</a>
+	        </li>
+	        <li><a href="/eco_list">Ecoregions</a>
+	        </li>
+	      </ul>
+	    </div>
+	  </div>
+	</nav>
+
 	<div id="title">
 	<h1><font> List of Texas Plants</font></h1>
 	<h3><font> Where everythings bigger!</font></h3>
