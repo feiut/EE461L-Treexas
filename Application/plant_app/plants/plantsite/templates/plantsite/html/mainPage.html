@@ -7,123 +7,35 @@
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
   <link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{% static 'main_page_style.css' %}">
   <style>
-	  	.navbar-nav {
-			color: #EFEFEF;
-			font: 160% 'Merienda One', Helvetica, sans-serif;
-		}
-
-	  	.navbar-brand {
-			color: #EFEFEF;
-      padding-top: 0;
-      padding-left: 10px;
-      font: 250% 'Merienda One', Helvetica, sans-serif;
-		}
-
-		.navbar-nav > li > a:hover, .navbar-brand:hover, .navbar-default .navbar-nav > li > a:focus {
-		    background-color: #A9A9a9;
-		    color: #EFEFEF;
-		}
-
-		a {
-			color: #EFEFEF;
-		}
-
-    .title1{
-      font: 60px/1.2 'Merienda One', Helvetica, sans-serif;
-      color: rgba(255,255,255,1);
-      text-shadow: 3px 3px 3px #000000;
-      position:fixed;
-      top:20%;
-      left:28%;
-      }
-
-
-		.bg {
-		    background-size:cover;
-		    background-repeat: no-repeat;
-		    background-position: top;
-		    background-attachment: fixed;
-        animation: bg 40s infinite;
-		}
-
-    @keyframes bg {
-      0%{
-        background-image: url('{% static "background_mp.jpg"%}');
-      }
-      25%{
-        background-image: url('{% static "background_mp.jpg"%}');
-      }
-      25.01%{
-        background-image: url('{% static "background_mp2.jpg"%}');
-      }
-      50%{
-        background-image: url('{% static "background_mp2.jpg"%}');
-      }
-      50.01%{
-        background-image: url('{% static "background_mp3.jpg"%}');
-      }
-      75%{
-        background-image: url('{% static "background_mp3.jpg"%}');
-      }
-      75.01%{
-        background-image: url('{% static "background_mp6.jpg"%}');
-      }
-      100%{
-        background-image: url('{% static "background_mp6.jpg"%}');
-      }
-    }
-
-    .container{
-      margin-top:200px;
-    }
-
-    .glyphicon-leaf{
-      font-size: 28px;
-    }
-
-    .input-group {
-      position: fixed;
-        width: 800px;
-        left:50%;
-        margin-left: -400px;
-    }
-
-    /* style icon */
-    .input-group .glyphicon-search {
-      position: absolute;
-      padding: 20px;
-      pointer-events: none;
-      left: 0px;
-      font-size: 15px;
-    }
-
-    /* add padding  */
-    .input-group input { padding-left: 50px;}
-
-    .btn-default{
-      width: 100px;
-      padding: 8.5px;
-      background: rgba(255, 255, 255, 0.7);
-    }
-
-    .form-control{
-      padding: 25px;
-      font-size: 20px;
-      background: rgba(255, 255, 255, 0.7);
-    }
-    .footer{
-      position: fixed;
-      right:0;
-      bottom: 0;
-      left: 0;
-      padding: 1rem;
-      background-color: transparent;
-      text-align: center;
-    }
-
-	</style>
-
+  @keyframes bg {
+	0%{
+	background-image: url('{% static "background_mp.jpg"%}');
+	}
+	25%{
+	background-image: url('{% static "background_mp.jpg"%}');
+	}
+	25.01%{
+	background-image: url('{% static "background_mp2.jpg"%}');
+	}
+	50%{
+	background-image: url('{% static "background_mp2.jpg"%}');
+	}
+	50.01%{
+	background-image: url('{% static "background_mp3.jpg"%}');
+	}
+	75%{
+	background-image: url('{% static "background_mp3.jpg"%}');
+	}
+	75.01%{
+	background-image: url('{% static "background_mp6.jpg"%}');
+	}
+	100%{
+	background-image: url('{% static "background_mp6.jpg"%}');
+	}
+	}
+  </style>
   <!--script src="http://codeorigin.jquery.com/jquery-2.0.3.min.js"></script>
   <script type="text/javascript">
     window.onload = function () {
