@@ -4,13 +4,13 @@ import time
 from selenium.webdriver.common.keys import Keys
 
 class Plants:
-
     def __init__(self,Sciname):
         self.SciName = Sciname
         self.Lat = 0
         self.Long = 0
         self.Econregion = ""
         self.Statepark = ""
+
 
     def geteco(self):
         web = webdriver.Chrome(executable_path=r"C:\Users\eric\Documents\chromedriver.exe")
