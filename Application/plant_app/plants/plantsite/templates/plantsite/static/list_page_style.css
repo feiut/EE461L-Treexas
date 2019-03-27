@@ -23,17 +23,29 @@ p {
   font: 60px/1.2 'Merienda One', Helvetica, sans-serif;
   color: rgba(255,255,255,1);
   text-shadow: 3px 3px 3px #000000;
-}
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  }
 
 a {
 	color: #EFEFEF;
+}
+
+.img-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
+  width: 250px;
+  height: 250px;
 }
 
 body{
 	background-color : #FFFFFF;
 	margin: 0px;
 }
-
 
 
 h1{
