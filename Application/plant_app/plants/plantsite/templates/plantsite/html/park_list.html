@@ -33,16 +33,24 @@
 	  </div>
 	</nav>
 
-	{% for park in park_list %}
-	<div class="container-fluid">
-		<div class="imgentry">
-			<img src="{% static park.img %}">
-		</div>
-		<div class="Text">
-			<a href="{{park.url}}">{{park.name}}</a>
-		</div>
+	<br>
+	<br>
+	<br>
 
+	<div class="container-">
+			{% for park in parks %}
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="text-center">
+						<img src="" class="imgentry">
+					</div>
+				</div>
+				<div class="col-m-4 align-self-center">
+					<a class="text-center align-middle" href="/park_profile/?id={{park.dbid}}">{{park.name}}<h1>
+				</div>
+
+			</div>
+			{% endfor %}
 	</div>
-	{% endfor %}
 </body>
 </html>

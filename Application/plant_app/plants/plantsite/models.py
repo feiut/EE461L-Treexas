@@ -57,7 +57,7 @@ class PlantCsv(models.Model):
         managed = False
         db_table = 'plant_csv'
 
-class Stateparks(models.Model):
+class Stateparks(models.Model): #THIS MODEL NEEDS TO BE CHANGED IT SEEMS TO BE EMPTY
     dbid = models.IntegerField(blank=True, primary_key=True)
     name = models.TextField(db_column='Name', blank=True, null=True)  # Field name made lowercase.
     latitude = models.FloatField(db_column='Latitude', blank=True, null=True)  # Field name made lowercase.
