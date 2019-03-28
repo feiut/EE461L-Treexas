@@ -4,11 +4,10 @@ from django.http import HttpResponse
 from django.template import loader
 from plantsite.models import Plant
 from plantsite.models import PlantCsv
-from plantsite.models import PlantEcoregions
+from plantsite.models import PlantCsvEcoregions
 from plantsite.models import Stateparks
 from . import githubdynamic
 from .githubdynamic import get_issues_commits
-from django.db import models
 
 # Create your views here.
 '''
@@ -50,17 +49,6 @@ def main_page(request):
         if -1 < num < 30:
             response = redirect('/plant_profile/?id=' + number)
             return response
-    return HttpResponse(template.render({}, request))
-
-def sub_page(request):
-    template = loader.get_template('plantsite/html/SubPage.html')
-    #number = request.GET.get('id')
-    #number = str(number)
-    ###if number.isdigit():
-    ###    num = int(number)
-    ###    if -1 < num < 30:
-    ###        response = redirect('/plant_profile/?id=' + number)
-    ###        return response
     return HttpResponse(template.render({}, request))
 
 def about_page(request):
@@ -194,17 +182,14 @@ def plant_profile_view(request):
 def eco_profile_view(request):
     template = loader.get_template('plantsite/html/eco_profile.html')
     dbid = request.GET.get('id')
-    prof = PlantEcoregions.objects.get(dbid=str(dbid))
-    ParkName = "Atlanta State Park"
-    parks = Stateparks.objects.filter(name=str(ParkName))
-    context_dict = {'profile': prof, 'parks': parks}
-
+    prof = PlantCsvEcoregions.objects.get(dbid=str(dbid))
+    prof.image = prof.image.strip() #remove leading whitespace ERICK
+    context_dict = {'profile': prof}
     return HttpResponse(template.render(context_dict, request))
 
 def park_list_view(request):
     template = loader.get_template('plantsite/html/park_list.html')
     parks = Stateparks.objects.all()
-    print(parks)
     context_dict = {'parks': parks}
     return HttpResponse(template.render(context_dict, request))
 
@@ -215,12 +200,4 @@ def park_profile_view(request):
     context_dict = {'profile': prof}
     return HttpResponse(template.render(context_dict, request))
 
-"""
-def sub_page_view(request):
-    template = loader.get_template('plantsite/html/SubPage.html')
-    dbid = request.GET.get('id')
-    prof = Stateparks.objects.get(dbid=str(dbid))
-    context_dict = {'profile': prof}
-    return HttpResponse(template.render(context_dict, request))
-"""
 #<img src="{{ MEDIA_URL }}{{ image.image.url }}" />

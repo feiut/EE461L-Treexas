@@ -43,7 +43,9 @@
 			<div class="col">
 				<h1 class="text-center">{{profile.ecoregion}}</h1>
 				<div class="text-center">
-					<img class="img imgstyle" src="">
+					{% with ''|add:profile.image|add:'' as img_static %}
+						<img class="img imgstyle" src="{% static img_static %}">
+					{% endwith %}
 				</div>
 				<p class="text-center">{{profile.paragraph}}</p>
 			</div>

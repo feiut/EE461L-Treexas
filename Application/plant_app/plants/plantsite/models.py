@@ -15,8 +15,8 @@ class EcoRegion(models.Model):
     name = models.CharField(max_length=50)
     photo = models.ImageField(upload_to='ecoregions', default ='ecoregions' )
 
-class PlantEcoregions(models.Model):
-    dbid = models.IntegerField(blank=True, primary_key=True)
+class PlantCsvEcoregions(models.Model):
+    dbid = models.IntegerField(blank=True, null=False, primary_key=True)
     ecoregion = models.TextField(db_column='Ecoregion', blank=True, null=True)  # Field name made lowercase.
     paragraph = models.TextField(db_column='Paragraph', blank=True, null=True)  # Field name made lowercase.
     trees = models.TextField(db_column='Trees', blank=True, null=True)  # Field name made lowercase.
@@ -27,10 +27,12 @@ class PlantEcoregions(models.Model):
     conifers = models.TextField(db_column='Conifers', blank=True, null=True)  # Field name made lowercase.
     grasses = models.TextField(db_column='Grasses', blank=True, null=True)  # Field name made lowercase.
     wildflowers = models.TextField(db_column='Wildflowers', blank=True, null=True)  # Field name made lowercase.
+    image = models.TextField(db_column='Image', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
         managed = False
-        db_table = 'plant_ecoregions'
+        db_table = 'plant_csv_ecoregions'
+
 
 #Hold the data and fields for plants.
 class PlantCsv(models.Model):

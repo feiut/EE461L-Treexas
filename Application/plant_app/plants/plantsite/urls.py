@@ -10,6 +10,5 @@ urlpatterns = [
     path('eco_profile/', views.eco_profile_view, name='eco_profile_view'),
     path('plant_list/', views.plant_type_list, name='plant_type_list'),
     path('plant_profile/', views.plant_profile_view, name = 'plant_profile_view'),
-    path('about/', views.about_page, name='about_page'),
-	path('SubPage/',views.sub_page,name='sub_page')
+    path('about/', views.about_page, name='about_page')
 ]
