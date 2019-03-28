@@ -28,8 +28,26 @@ def search_plants_with_string(p):
     return leftover
 
 
-# def filter_plants_with_string(p):
-
+def filter_plants_with_parameters(value_1, value_2, value_3):
+    if not value_1:
+        names = PlantCsv.objects.all()
+    elif str(value_1) == "AllType":
+        names = PlantCsv.objects.all()
+    else:
+        names = PlantCsv.objects.filter(planttype=str(value_1))
+    if not value_2:
+        names = names.all()
+    elif str(value_2) == "AllType":
+        names = names.all()
+    else:
+        names = names.filter(waterdemand=str(value_2))
+    if not value_3:
+        names = names.all()
+    elif str(value_3) == "AllType":
+        names = names.all()
+    else:
+        names = names.filter(plantform=str(value_3))
+    return names
 
 def get_all_plants():
     results =  PlantCsv.objects.all()
@@ -214,12 +232,9 @@ def plant_type_list(request):
 		if not textfield:
                     template = loader.get_template('plantsite/html/plant_list.html')
                     planttype_field =request.GET.get('planttype')
-                    if not planttype_field:
-                        names = PlantCsv.objects.all()
-                    elif str(planttype_field) == "AllType":
-                        names = PlantCsv.objects.all()
-                    else:
-                        names = PlantCsv.objects.filter(planttype=str(planttype_field))
+                    water_demand_field =request.GET.get('waterdemand')
+                    plant_form_field =request.GET.get('plantform')
+                    names = filter_plants_with_parameters(planttype_field, water_demand_field, plant_form_field)
                     context_dict = {'plant_names' : names}
                     return HttpResponse(template.render(context_dict,request))
 
