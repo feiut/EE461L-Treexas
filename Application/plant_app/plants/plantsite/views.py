@@ -52,6 +52,17 @@ def main_page(request):
             return response
     return HttpResponse(template.render({}, request))
 
+def sub_page(request):
+    template = loader.get_template('plantsite/html/SubPage.html')
+    #number = request.GET.get('id')
+    #number = str(number)
+    ###if number.isdigit():
+    ###    num = int(number)
+    ###    if -1 < num < 30:
+    ###        response = redirect('/plant_profile/?id=' + number)
+    ###        return response
+    return HttpResponse(template.render({}, request))
+
 def about_page(request):
     template = loader.get_template('plantsite/html/about_page.html')
 
@@ -204,4 +215,12 @@ def park_profile_view(request):
     context_dict = {'profile': prof}
     return HttpResponse(template.render(context_dict, request))
 
+"""
+def sub_page_view(request):
+    template = loader.get_template('plantsite/html/SubPage.html')
+    dbid = request.GET.get('id')
+    prof = Stateparks.objects.get(dbid=str(dbid))
+    context_dict = {'profile': prof}
+    return HttpResponse(template.render(context_dict, request))
+"""
 #<img src="{{ MEDIA_URL }}{{ image.image.url }}" />
