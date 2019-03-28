@@ -4,6 +4,8 @@ from django.http import HttpResponse
 from django.template import loader
 from plantsite.models import Plant
 from plantsite.models import PlantCsv
+from plantsite.models import PlantEcoregions
+from plantsite.models import Stateparks
 from . import githubdynamic
 from .githubdynamic import get_issues_commits
 
@@ -176,12 +178,26 @@ def plant_profile_view(request):
     context_dict = {'profile': prof}
     return HttpResponse(template.render(context_dict,request))
 
-def sub_page(request):
-    template = loader.get_template('plantsite/html/SubPage.html')
+#============================================
+def eco_profile_view(request):
+    template = loader.get_template('plantsite/html/eco_profile.html')
+    dbid = request.GET.get('id')
+    prof = PlantEcoregions.objects.get(dbid=str(dbid))
+    context_dict = {'profile': prof}
+    return HttpResponse(template.render(context_dict, request))
 
-    return HttpResponse(template.render({},request))
+def park_list_view(request):
+    template = loader.get_template('plantsite/html/park_list.html')
+    parks = Stateparks.objects.all()
+    print(parks)
+    context_dict = {'parks': parks}
+    return HttpResponse(template.render(context_dict, request))
 
-#def SearchPlantDatabase(pstring):
-    #author.Object.filter(name_unaccent_icontains='Helen')
+def park_profile_view(request):
+    template = loader.get_template('plantsite/html/park_profile.html')
+    dbid = request.GET.get('id')
+    prof = Stateparks.objects.get(dbid=str(dbid))
+    context_dict = {'profile': prof}
+    return HttpResponse(template.render(context_dict, request))
 
 #<img src="{{ MEDIA_URL }}{{ image.image.url }}" />

@@ -29,11 +29,18 @@ a {
   font: 60px/1.2 'Merienda One', Helvetica, sans-serif;
   color: rgba(255,255,255,1);
   text-shadow: 3px 3px 3px #000000;
-  position:fixed;
-  top:20%;
-  left:32%;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -20%);
   }
 
+.inner{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 .bg {
     background-size:cover;

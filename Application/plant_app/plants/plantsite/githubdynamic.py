@@ -37,7 +37,7 @@ def get_issues_commits():
             list1[5] = ["Chengjing Li", dict["total"]];
         elif name == "dldbb":
             list1[6] = ["Xiyu Wang", dict["total"]];
-    print(list1)
+
     github="https://api.github.com/repos/ec505/EE461L-sp19-owl-team/issues"
     with urllib.request.urlopen(github) as url:
         data = json.loads(url.read().decode())
@@ -66,7 +66,6 @@ def get_issues_commits():
         elif name == "dldbb":
             issue7=issue7+1
             listissue[6] = ["Xiyu Wang", issue7];
-    print(listissue)
 
     names = [f[0] for f in list1]
     commits = [f[1] for f in list1]
@@ -74,3 +73,7 @@ def get_issues_commits():
 
     return list(zip(names, commits, issues))
 
+if __name__ == "__main__":
+    print("Github Dynamic Running")
+    ls = get_issues_commits()
+    print(ls)

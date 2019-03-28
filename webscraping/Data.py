@@ -3,6 +3,7 @@ import requests
 import time
 import pandas as pd
 from selenium import webdriver
+from Datascraping import Plants
 from selenium.webdriver.common.keys import Keys
 
 url = "http://www.txsmartscape.com/plant-search/get-plant-data.php"
@@ -119,6 +120,10 @@ for lis in listdata:
             print()
     if(not boo):
         dictionary["Also Known As"].append("NA")
+for j in dictionary["Botanical Name"]:
+    x = Plants.Plants(x,j)
+    x.geteco(x)
+    print(x)
 
 df = pd.DataFrame(dictionary)
 df.to_csv('./plant_csv.csv')
