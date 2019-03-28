@@ -205,10 +205,27 @@ def postoaksavanah_eco(request):
     return HttpResponse(template.render(context_dict, request))
 
 def plant_type_list(request):
-    template = loader.get_template('plantsite/html/plant_list.html')
-    names = PlantCsv.objects.all()
-    context_dict = {'plant_names': names}
-    return HttpResponse(template.render(context_dict,request))
+	if request.method == 'GET':
+		textfield =request.GET.get('search')
+		if not textfield:
+			template = loader.get_template('plantsite/html/plant_list.html')
+			names = PlantCsv.objects.all()
+			context_dict = {'plant_names' : names}
+			return HttpResponse(template.render(context_dict,request))
+			
+		results = search_plants_with_string(textfield)
+		if not results:
+			template = loader.get_template('plantsite/html/plant_list.html')
+			return HttpResponse(template.render({},request))
+		else:
+			template = loader.get_template('plantsite/html/plant_list.html')
+			context_dict = {"plant_names":results}
+			return HttpResponse(template.render(context_dict,request))
+	else:
+		template = loader.get_template('plantsite/html/plant_list.html')
+		names = PlantCsv.objects.all()
+		context_dict = {'plant_names': names}
+		return HttpResponse(template.render(context_dict,request))
 
 def plant_profile_view(request):
     template = loader.get_template('plantsite/html/plant_profile.html')
