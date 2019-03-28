@@ -3,6 +3,7 @@ import requests;
 import pandas as pd
 from selenium import webdriver
 import time
+import pickle
 from selenium.webdriver.common.keys import Keys
 url ="https://tpwd.texas.gov/spdest/parkinfo/maps/park_maps/"
 url_response = requests.get(url)
@@ -15,11 +16,16 @@ for info in data[0].findAll("ul"):
         templist=[]
         templist.append(website.a.get_text())
         urlinner = "https://tpwd.texas.gov"+website.a['href']
+        urlinner = urlinner[:-4]
         urlinnerresponse=requests.get(urlinner)
         soupinner = BeautifulSoup(urlinnerresponse.content,"html.parser")
+        data2= soupinner.find("address")
+        templist.append("Address:"+data2.text)
         data1 = soupinner.find("div",{"class": {"latlong"}})
         for direction in data1.findAll("p"):
             templist.append(direction.get_text())
+        data3=soupinner.find("div",{"class":{"ddGM-stage"}})
+        templist.append("Image:"+data3.img['src'])
         listdata.append(templist)
 web = webdriver.Chrome(executable_path=r"C:\Users\eric\Documents\chromedriver.exe")
 web.get("http://hicksenvplantdatabase.com/select_geocode.asp")
