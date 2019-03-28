@@ -181,6 +181,7 @@ def sub_page(request):
 
     return HttpResponse(template.render({},request))
 
-
+#def SearchPlantDatabase(pstring):
+    #author.Object.filter(name_unaccent_icontains='Helen')
 
 #<img src="{{ MEDIA_URL }}{{ image.image.url }}" />
