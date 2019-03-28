@@ -8,6 +8,7 @@ from plantsite.models import PlantEcoregions
 from plantsite.models import Stateparks
 from . import githubdynamic
 from .githubdynamic import get_issues_commits
+from django.db import models
 
 # Create your views here.
 '''
@@ -183,7 +184,10 @@ def eco_profile_view(request):
     template = loader.get_template('plantsite/html/eco_profile.html')
     dbid = request.GET.get('id')
     prof = PlantEcoregions.objects.get(dbid=str(dbid))
-    context_dict = {'profile': prof}
+    ParkName = "Atlanta State Park"
+    parks = Stateparks.objects.filter(name=str(ParkName))
+    context_dict = {'profile': prof, 'parks': parks}
+
     return HttpResponse(template.render(context_dict, request))
 
 def park_list_view(request):

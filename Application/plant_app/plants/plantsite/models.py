@@ -62,9 +62,7 @@ class Stateparks(models.Model): #THIS MODEL NEEDS TO BE CHANGED IT SEEMS TO BE E
     name = models.TextField(db_column='Name', blank=True, null=True)  # Field name made lowercase.
     latitude = models.FloatField(db_column='Latitude', blank=True, null=True)  # Field name made lowercase.
     longitude = models.FloatField(db_column='Longitude', blank=True, null=True)  # Field name made lowercase.
-
+    #region = models.FloatField(db_column='Region', blank=True, null=True)  # Field name made lowercase.
     class Meta:
         managed = False
         db_table = 'stateparks'
-
-
