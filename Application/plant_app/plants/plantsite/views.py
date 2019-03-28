@@ -18,6 +18,29 @@ for a “templates” subdirectory in each of the INSTALLED_APPS.
 All templates can be referred to with plantsite/<template_name>.html
 even though they actually reside in plantsite/templates/plantsite/<template_name>.html'''
 
+''' Some important functions that are useful '''
+def search_plants_with_string(p):
+    results = PlantCsv.objects.all()
+    leftover = set()
+    for plants in results:
+        if (p.lower() in plants.alsoknownas.lower()) or (p.lower() in plants.botanicalname.lower()) or (p.lower() in plants.name.lower()):
+        	leftover.add(plants)
+    return leftover
+
+def get_all_plants():
+    results =  PlantCsv.objects.all()
+    return results
+
+def search_park_with_string(p):
+	qset = Stateparks.objects.all()
+	leftover = set()
+	for parks in qset:
+		if(p.lower() in parks.name.lower()):
+			leftover.add(parks)
+	return leftover
+
+''' regular functions '''
+
 class Park(object):
 
     def __init__(self, name, img, url):
@@ -31,6 +54,31 @@ class Ecoregion(object):
         self.name = name
         self.img = img
         self.url = url
+def main_page(request):
+    if request.method == 'GET':
+        textfield =request.GET.get('search')
+        if not textfield:
+        	template = loader.get_template('plantsite/html/mainPage.html')
+        	return HttpResponse(template.render({},request))
+        results = search_plants_with_string(textfield)
+        if not results:
+            template = loader.get_template('plantsite/html/plant_list.html')
+            return HttpResponse(template.render({},request))
+        else:
+            template = loader.get_template('plantsite/html/plant_list.html')
+            context_dict = {"plant_names":results}
+            return HttpResponse(template.render(context_dict,request))       
+    else:    
+        template = loader.get_template('plantsite/html/mainPage.html')
+        number = request.GET.get('id')
+        number = str(number)
+        if number.isdigit():
+            num = int(number)
+            if -1 < num < 30:
+                response = redirect('/plant_profile/?id=' + number)
+                return response
+        return HttpResponse(template.render({}, request)) 
+
 
 class Plant(object):
 
@@ -40,16 +88,7 @@ class Plant(object):
         self.url = url
 
 
-def main_page(request):
-    template = loader.get_template('plantsite/html/mainPage.html')
-    number = request.GET.get('id')
-    number = str(number)
-    if number.isdigit():
-        num = int(number)
-        if -1 < num < 30:
-            response = redirect('/plant_profile/?id=' + number)
-            return response
-    return HttpResponse(template.render({}, request))
+
 
 def about_page(request):
     template = loader.get_template('plantsite/html/about_page.html')
@@ -188,10 +227,27 @@ def eco_profile_view(request):
     return HttpResponse(template.render(context_dict, request))
 
 def park_list_view(request):
-    template = loader.get_template('plantsite/html/park_list.html')
-    parks = Stateparks.objects.all()
-    context_dict = {'parks': parks}
-    return HttpResponse(template.render(context_dict, request))
+	if request.method == 'GET':
+		textfield = request.GET.get('search')
+		if not textfield:
+			template = loader.get_template('plantsite/html/park_list.html')
+			parks = Stateparks.objects.all()
+			context_dict = {'parks': parks}
+			return HttpResponse(template.render(context_dict, request))
+		else:
+			results = search_park_with_string(textfield)
+			if not results:
+				template = loader.get_template('plantsite/html/park_list.html')
+				return HttpResponse(template.render({},request))
+			else:
+				template = loader.get_template('plantsite/html/park_list.html')
+				context_dict = {'parks':results}
+				return HttpResponse(template.render(context_dict,request))
+	else:
+		template = loader.get_template('plantsite/html/park_list.html')
+		parks = Stateparks.objects.all()
+		context_dict = {'parks': parks}
+		return HttpResponse(template.render(context_dict, request))
 
 def park_profile_view(request):
     template = loader.get_template('plantsite/html/park_profile.html')
