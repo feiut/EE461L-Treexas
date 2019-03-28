@@ -213,15 +213,16 @@ def plant_type_list(request):
 		textfield =request.GET.get('search')
 		if not textfield:
                     template = loader.get_template('plantsite/html/plant_list.html')
-                    planttype_field =request.GET.get('planttype')
-                    if not planttype_field:
-                        names = PlantCsv.objects.all()
-                    elif str(planttype_field) == "AllType":
-                        names = PlantCsv.objects.all()
-                    else:
-                        names = PlantCsv.objects.filter(planttype=str(planttype_field))
+                    # planttype_field =request.GET.get('planttype')
+                    # if not lanttype_field:
+                    #     names = PlantCsv.objects.all()
+                    # else if str(planttype_field) == "AllType":
+                    #     names = PlantCsv.objects.all()
+                    # else:
+                    #     names = PlantCsv.objects.filter(planttype=str(planttype_field))
+                    names = PlantCsv.objects.all()
                     context_dict = {'plant_names' : names}
-                    return HttpResponse(template.render(context_dict,request))
+		    return HttpResponse(template.render(context_dict,request))
 
 		results = search_plants_with_string(textfield)
 		if not results:
