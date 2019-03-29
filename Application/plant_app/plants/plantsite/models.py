@@ -18,7 +18,7 @@ class EcoRegion(models.Model):
 
 
 class PlantCsvEcoregions(models.Model):
-    dbid = models.IntegerField(blank=True, null=True)
+    #dbid = models.IntegerField(blank=True, null=True)
     ecoregion = models.TextField(db_column='Ecoregion', blank=True, null=True)  # Field name made lowercase.
     paragraph = models.TextField(db_column='Paragraph', blank=True, null=True)  # Field name made lowercase.
     trees = models.TextField(db_column='Trees', blank=True, null=True)  # Field name made lowercase.
@@ -39,7 +39,7 @@ class PlantCsvEcoregions(models.Model):
 
 #Hold the data and fields for plants.
 class PlantCsv(models.Model):
-    dbid = models.IntegerField(blank=True, null=True)
+   # dbid = models.IntegerField(blank=True, null=True)
     nativeadapted = models.TextField(blank=True, null=True)
     image = models.TextField(blank=True, null=True)
     name = models.TextField(blank=True, null=True)
@@ -85,7 +85,7 @@ class Stateparks(models.Model): #THIS MODEL NEEDS TO BE CHANGED IT SEEMS TO BE E
 
 
 class PlantCsvStateparks(models.Model):
-    id = models.IntegerField(blank=True, null=True)
+    #dbid = models.IntegerField(blank=True, null=True)
     name = models.TextField(db_column='Name', blank=True, null=True)  # Field name made lowercase.
     latitude = models.FloatField(db_column='Latitude', blank=True, null=True)  # Field name made lowercase.
     longitude = models.FloatField(db_column='Longitude', blank=True, null=True)  # Field name made lowercase.
