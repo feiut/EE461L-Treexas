@@ -42,7 +42,8 @@ dictionary={
     "Vine":[],
     "Conifers":[],
     "Grasses":[],
-    "Wildflowers":[]
+    "Wildflowers":[],
+    "Image":[]
 }
 listdata[0][0]="Ecoregion 1 – " + listdata[0][0]
 for lis in listdata:
@@ -53,6 +54,16 @@ for lis in listdata:
     lis[4]
     lis[5]
     lis[6]"""
+listdata[0].append("Image: eco_pineywoods.png")
+listdata[1].append("Image: eco_marshes.png")
+listdata[2].append("Image: eco_postoaksavanah.jpg")
+listdata[3].append("Image: eco_blacklandprairie.jpg")
+listdata[4].append("Image: eco_crosstimbers.png")
+listdata[5].append("Image: eco_southplains.png")
+listdata[6].append("Image:eco_edwards.png")
+listdata[7].append("Image:eco_rollingplains.jpg")
+listdata[8].append("Image:eco_highplains.png")
+listdata[9].append("Image:eco_transpecos.jpg")
 for lis in listdata:
     for entry in lis:
         if isinstance(entry,list):

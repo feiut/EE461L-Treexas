@@ -1,0 +1,57 @@
+p {
+	color: #AFBEFF !important;
+}
+
+.navbar-nav {
+	color: #EFEFEF;
+	font: 160% 'Merienda One', Helvetica, sans-serif;
+}
+
+.navbar-brand {
+  color: #EFEFEF;
+  padding-top: 0;
+  padding-left: 10px;
+  font: 250% 'Merienda One', Helvetica, sans-serif;
+}
+
+.navbar-nav > li > a:hover, .navbar-brand:hover, .navbar-default .navbar-nav > li > a:focus {
+    background-color: #A9A9a9;
+    color: #EFEFEF;
+}
+
+a {
+	color: #EFEFEF;
+}
+
+body{
+	background-color : #FFFFFF;
+	margin: 0px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+
+h1{
+	color: #000000;
+	font-family: Arial;
+	font-size: 260%;
+	margin: 20px;
+}
+
+p{
+	color: #000000;
+	font-family: Arial;
+	font-size: 160%;
+	margin: 20px;
+}
+
+img{
+	object-fit: cover;
+	width: 100px;
+	height: 100px;
+	border-radius: 8px;
+	margin: 20px;
+}

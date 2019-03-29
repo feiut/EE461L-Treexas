@@ -19,8 +19,34 @@ p {
     color: #EFEFEF;
 }
 
+.title1{
+  font: 60px/1.2 'Merienda One', Helvetica, sans-serif;
+  color: rgba(255,255,255,1);
+  text-shadow: 3px 3px 3px #000000;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  }
+
 a {
 	color: #EFEFEF;
+}
+
+.thumbnail-settings{
+	margin-top:25px;
+	margin-bottom:25px;
+}
+
+.img-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
+  width: 300px;
+  height: 300px;
+	object-fit: cover;
+	border-radius: 8px;
 }
 
 body{
@@ -28,12 +54,16 @@ body{
 	margin: 0px;
 }
 
-.container {
-  display: flex;
-  align-items: center;
-}
-
-
+.title1{
+  font: 60px/1.2 'Merienda One', Helvetica, sans-serif;
+  color: rgba(255,255,255,1);
+  text-shadow: 3px 3px 3px #000000;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  }
+  
 h1{
 	color: #000000;
 	font-family: Arial;
@@ -48,10 +78,51 @@ p{
 	margin: 20px;
 }
 
-img{
+.horizontal-align{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.imgentry{
 	object-fit: cover;
 	width: 100px;
 	height: 100px;
 	border-radius: 8px;
 	margin: 20px;
+}
+
+.glyphicon-leaf{
+font-size: 28px;
+}
+
+.input-group {
+width: 800px;
+left:50%;
+margin-left: -400px;
+}
+
+/* style icon */
+.input-group .glyphicon-search {
+position: absolute;
+padding: 20px;
+pointer-events: none;
+left: 0px;
+font-size: 15px;
+}
+
+/* add padding  */
+.input-group input { padding-left: 50px;}
+
+.btn-default{
+width: 100px;
+padding: 8.5px;
+background: rgba(255, 255, 255, 0.7);
+}
+
+.form-control{
+padding: 25px;
+font-size: 20px;
+background: rgba(255, 255, 255, 0.7);
 }

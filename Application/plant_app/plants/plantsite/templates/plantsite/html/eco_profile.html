@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<link rel="stylesheet" href="{% static "entry_style.css" %}">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+			<nav class="navbar navbar-expand-lg navbar-fixed-top" style="background-color:rgba(0,0,0,0.35);">
+			  <div class="container-fluid">
+
+			    <div class="navbar-header">
+			      <a class="navbar-brand" href="/">Treexas</a>
+			    </div>
+
+			    <div class="topnav-entry">
+			      <ul class="nav navbar-nav navbar-right">
+			        <li><a href="/plant_list">Plants</a>
+			        </li>
+			        <li><a href="/park_list">State Parks</a>
+			        </li>
+			        <li><a href="/eco_list">Ecoregions</a>
+			        </li>
+			      </ul>
+			    </div>
+			  </div>
+			</nav>
+			</div>
+		</div>
+
+		<br>
+		<br>
+		<br>
+
+		<div class="row">
+			<div class="col">
+				<h1 class="text-center">{{profile.ecoregion}}</h1>
+				<div class="text-center">
+					{% with ''|add:profile.image|add:'' as img_static %}
+						<img class="img imgstyle" src="{% static img_static %}">
+					{% endwith %}
+				</div>
+				<p class="text-center">{{profile.paragraph}}</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-">
+			{% for park in parks %}
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="text-center">
+						<img src="" class="imgentry">
+					</div>
+				</div>
+				<div class="col-m-4 align-self-center">
+					<a class="text-center align-middle" href="/park_profile/?id={{park.dbid}}">{{park.name}}<h1>
+				</div>
+
+			</div>
+			{% endfor %}
+	</div>
+
+	  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+	  <script src="../../assets/js/vendor/popper.min.js"></script>
+	  <script src="../../dist/js/bootstrap.min.js"></script>
+</body>
+</html>

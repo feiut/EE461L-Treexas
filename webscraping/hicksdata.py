@@ -5,7 +5,7 @@ from selenium.webdriver.common.keys import Keys
 web = webdriver.Chrome(executable_path=r"C:\Users\eric\Documents\chromedriver.exe")
 web.get("http://hicksenvplantdatabase.com/species_code.asp")
 listdata=[]
-for i in range(1,336):
+for i in range(1,337):
     templist=[]
     button = web.find_element_by_xpath("//*[@id=\"maincontent\"]/div[2]/div[2]/div/form/select")
     button.send_keys(str(i))
@@ -14,7 +14,7 @@ for i in range(1,336):
     valid = False
     for plantinfo in web.find_elements_by_xpath("//*[@id=\"maincontent\"]/span"):
         a=plantinfo.text
-        if valid or a=="Scientific Name:" or a=="Common Name:" or a=="Ecological Distribution:"or a== "Light Tolerance:"or a=="Physical Form:"or a=="Habit:"or a=="Life Cycle:"or a=="Soil pH:" or a=="Reproduction:"or a=="Notes:":
+        if valid or a=="Scientific Name:" or a=="Common Name:" or a=="Ecological Distribution:"or a== "Light Tolerance:"or a=="Physical Form:"or a=="Habit:"or a=="Life Cycle:"or a=="Soil pH:"or a=="Food for Wildlife/Livestock:" or a=="Reproduction:"or a=="Notes:":
             if i == 0:
                 word += plantinfo.text
                 i = 1
