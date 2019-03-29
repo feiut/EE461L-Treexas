@@ -67,8 +67,8 @@ def main_page(request):
         else:
             template = loader.get_template('plantsite/html/plant_list.html')
             context_dict = {"plant_names":results}
-            return HttpResponse(template.render(context_dict,request))       
-    else:    
+            return HttpResponse(template.render(context_dict,request))
+    else:
         template = loader.get_template('plantsite/html/mainPage.html')
         number = request.GET.get('id')
         number = str(number)
@@ -77,7 +77,7 @@ def main_page(request):
             if -1 < num < 30:
                 response = redirect('/plant_profile/?id=' + number)
                 return response
-        return HttpResponse(template.render({}, request)) 
+        return HttpResponse(template.render({}, request))
 
 
 class Plant(object):
@@ -88,7 +88,22 @@ class Plant(object):
         self.url = url
 
 
+def plants_each(request):
+    template = loader.get_template('plantsite/html/plants_each.html')
+    """
+    park1 = Park("Pedernales State Park", "sp_pedernales.jpg", "/park1/")
+    park2 = Park("Dinosaur Valley State Park", "sp_dinosaur_valley.jpg", "/park2/")
+    park3 = Park("Daingerfield State Park", "sp_daingerfield.jpg", "/park3/")
+    park4 = Park("Acton State Park", "sp_acton.jpg", "/park4/")
+    parklist = [park1, park2, park3, park4]
 
+    context_dict = {"park_list":parklist}
+    """
+    number = request.GET.get('id')
+    prof = PlantCsv.objects.get(id=number)
+    context_dict = {'profile': prof}
+    #return HttpResponse(template.render(context_dict, request))
+    return HttpResponse(template.render(context_dict, request))
 
 def about_page(request):
     template = loader.get_template('plantsite/html/about_page.html')
@@ -212,7 +227,7 @@ def plant_type_list(request):
 			names = PlantCsv.objects.all()
 			context_dict = {'plant_names' : names}
 			return HttpResponse(template.render(context_dict,request))
-			
+
 		results = search_plants_with_string(textfield)
 		if not results:
 			template = loader.get_template('plantsite/html/plant_list.html')
