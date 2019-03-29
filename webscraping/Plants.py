@@ -156,7 +156,7 @@ class Parks():
                     parklat=abs(float(parklist[j].lat))
                     if abs(plantlong-parklong)<.5 and abs(plantlat-parklat)<.5:
                         parklist[j].parkplantlist.append(i)
-                        plantlist[i].statepark.append(j)
+                        #plantlist[i].statepark.append(j)
 
 def stateParks():
     url = "https://tpwd.texas.gov/spdest/parkinfo/maps/park_maps/"
@@ -235,16 +235,17 @@ def stateParks():
         p.name=dictionary['Name'][i];
         p.image=dictionary['Image'][i]
         p.description=dictionary['Description'][i]
-        if p.name[1]=="Bentsen-Rio Grande Valley State Park":
-            p.ecoregion="Region:SOUTH TEXAS PLAINS"
+        if p.name=="Bentsen-Rio Grande Valley State Park":
+            p.ecoregion="SOUTH TEXAS PLAINS"
         elif p.name=="Falcon State Park":
-            p.ecoregion="Region:SOUTH TEXAS PLAINS"
+            p.ecoregion="SOUTH TEXAS PLAINS"
         elif p.name == "Galveston Island State Park":
-            p.ecoregion = "Region:GULF PRAIRIES AND MARSHES"
+            p.ecoregion = "GULF PRAIRIES AND MARSHES"
         elif p.name == "Goose Island State Park":
-            p.ecoregion = "Region:GULF PRAIRIES AND MARSHES"
+            p.ecoregion = "GULF PRAIRIES AND MARSHES"
         else:
             p.ecoregion=dictionary['Region'][i]
+        p.address=dictionary['Address'][i]
         p.lat=dictionary['Latitude'][i]
         p.long=dictionary['Longitude'][i]
         p.url=dictionary['Url'][i]
@@ -472,20 +473,20 @@ def plantcsv():
 
 #with open('plantlist.txt', 'rb') as fp:
 #    plantlist=pickle.load(fp)
-#stateParks()
-#with open('parklist.txt', 'wb') as fp:
-#    pickle.dump(parklist, fp)
+stateParks()
+with open('parklist.txt', 'wb') as fp:
+    pickle.dump(parklist, fp)
 with open('parklist.txt','rb') as fp:
     parklist=pickle.load(fp)
 with open('plantlist.txt','rb') as fp:
     plantlist=pickle.load(fp)
 Parks.createPlants()
 with open('parklist.txt', 'wb') as fp:
-    pickle.dump(parklist, fp)
-with open('plantlist.txt', 'wb') as fp:
-   pickle.dump(plantlist,fp)
+   pickle.dump(parklist, fp)
+#with open('plantlist.txt', 'wb') as fp:
+#   pickle.dump(plantlist,fp)
 Parks.createcsv()
-plantcsv();
+#plantcsv();
 #generateplantlist()
 #for data in plantlist:
 """for data in plantlist:
