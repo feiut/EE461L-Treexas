@@ -2,18 +2,32 @@
 var expect = chai.expect;
 var assert = chai.assert;
 
-/**
-describe('add function', function() {
-  it('1 +1= 2', function() {
-    expect(add(1, 1)).to.be.equal(2);
+describe('icon change when mouse over and out', function() {
+  it('mouse over, img focused', function() {
+    img_over(item);
+
+    var bordercolor = document.getElementById("item").style.borderColor;
+    var borderwidth = document.getElementById("item").style.borderWidth;
+
+document.getElementById("info1").innerHTML= bordercolor.toString();
+
+document.getElementById("info2").innerHTML= borderwidth.toString();
+
+    assert(bordercolor == 'rgb(175, 190, 255)', 'border color set to purple');
+    assert(borderwidth == '10px', 'border width set to 10px');
   });
 
-  it('x+0=x', function() {
-    expect(add(1, 0)).to.be.equal(1);
-    expect(add(0, 0)).to.be.equal(0);
+  it('mouse out, img restored', function() {
+    img_out(item);
+
+    var bordercolor = document.getElementById("item").style.borderColor;
+    var borderwidth = document.getElementById("item").style.borderWidth;
+
+    assert(bordercolor == 'rgb(255, 255, 255)', 'border color set to white');
+    assert(borderwidth == '0px', 'border width set to 0px');
   });
 });
-**/
+
 
 describe('show images', function(){
   var loc = 'file:///home/fei/Documents/github/EE461L-sp19-owl-team/Application/plant_app/plants/test/images/';
