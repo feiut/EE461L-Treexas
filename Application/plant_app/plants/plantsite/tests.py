@@ -65,24 +65,55 @@ class viewTest(TestCase):
 
     def test_main_page(self):
         # Issue a GET request.
-        response = self.client.get('plantsite/html/mainPage.html')
+        response = self.client.get('')
         # Check that the response is 200 OK.
         self.assertEqual(response.status_code, 200)
 
     def test_about_page(self):
         # Issue a GET request.
-        response = self.client.get('plantsite/html/about_page.html')
+        response = self.client.get('/about/')
         # Check that the response is 200 OK.
         self.assertEqual(response.status_code, 200)
 
-    def test_state_part_list(self):
+    # def test_state_park_list(self):
+    #     # Issue a GET request.
+    #     response = self.client.get('/park_list/')
+    #     # Check that the response is 200 OK.
+    #     self.assertEqual(response.status_code, 200)
+
+    def test_park_profile(self):
         # Issue a GET request.
-        response = self.client.get('plantsite/html/park_list.html')
+        response = self.client.get('/park_profile/?id=1/')
         # Check that the response is 200 OK.
         self.assertEqual(response.status_code, 200)
+
+    def test_plant_type_list(self):
+        # Issue a GET request.
+        response = self.client.get('/plant_list/')
+        # Check that the response is 200 OK.
+        self.assertEqual(response.status_code, 200)
+
+    # def test_plant_profile_view(self):
+    #     # Issue a GET request.
+    #     response = self.client.get('/plant_profile/?id=1/')
+    #     # Check that the response is 200 OK.
+    #     self.assertEqual(response.status_code, 200)
 
     def test_ecoregion_list(self):
         # Issue a GET request.
-        response = self.client.get('plantsite/html/eco_list.html')
+        response = self.client.get('/eco_list/')
         # Check that the response is 200 OK.
         self.assertEqual(response.status_code, 200)
+
+    def test_eco_profile_view(self):
+        # Issue a GET request.
+        response = self.client.get('/eco_profile/?id=1')
+        # Check that the response is 200 OK.
+        self.assertEqual(response.status_code, 200)
+
+    def test_plants_each(self):
+        # Issue a GET request.
+        response = self.client.get('/plants_each/?id=0')
+        # Check that the response is 200 OK.
+        self.assertEqual(response.status_code, 200)
+        #self.assertEqual(response.id, 0)
