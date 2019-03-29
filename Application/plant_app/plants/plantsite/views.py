@@ -246,10 +246,12 @@ def plant_type_list(request):
 		textfield =request.GET.get('search')
 		if not textfield:
 <<<<<<< HEAD
+            '''
 			template = loader.get_template('plantsite/html/plant_list.html')
 			names = PlantCsv.objects.all()
 			context_dict = {'plant_names' : names}
 			return HttpResponse(template.render(context_dict,request))
+            '''
 =======
                     template = loader.get_template('plantsite/html/plant_list.html')
                     planttype_field =request.GET.get('planttype')
