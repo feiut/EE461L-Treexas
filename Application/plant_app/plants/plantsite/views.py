@@ -298,8 +298,13 @@ def eco_profile_view(request):
     dbid = request.GET.get('id')
     prof = PlantCsvEcoregions.objects.get(dbid=str(dbid))
     prof.image = prof.image.strip() #remove leading whitespace ERICK
-    eco_name = str(prof.ecoregion)
-    eco_name = eco_name[14:]
+    keys = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    values = ['PINEYWOODS', 'GULF PRAIRIES AND MARSHES', 'POST OAK SAVANNAH', 'BLACKLAND PRAIRIES', 'CROSS TIMBERS AND PRAIRIES', 'SOUTH TEXAS PLAINS', 'EDWARDS PLATEAU', 'ROLLING PLAINS', 'HIGH PLAINS', 'TRANS-PECOS']
+    dictionary = dict(zip(keys, values))
+
+    # eco_name = str(prof.ecoregion)
+    # eco_name = eco_name[22:]
+    eco_name = dictionary[str(dbid)]
     pla = PlantCsv.objects.filter(econregion=eco_name)
     context_dict = {'profile': prof, 'plants': pla}
     return HttpResponse(template.render(context_dict, request))
