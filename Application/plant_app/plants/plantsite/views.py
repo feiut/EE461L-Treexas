@@ -267,7 +267,7 @@ def eco_profile_view(request):
     prof.image = prof.image.strip() #remove leading whitespace ERICK
     eco_name = str(prof.ecoregion)
     eco_name = eco_name[14:]
-    pla = PlantCsv.objects.filter(ecoregion=eco_name)
+    pla = PlantCsv.objects.filter(econregion=eco_name)
     context_dict = {'profile': prof, 'plants': pla}
     return HttpResponse(template.render(context_dict, request))
 
