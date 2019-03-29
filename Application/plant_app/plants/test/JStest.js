@@ -1,6 +1,7 @@
 var expect = chai.expect;
 var assert = chai.assert;
 
+
 describe('icon changes for mouse over and out', function() {
   it('mouse over, img focused', function() {
     img_over(item);
@@ -29,94 +30,80 @@ describe('icon changes for mouse over and out', function() {
 
 
 describe('show images', function(){
+
+  //remember to change var "loc" to the location of eco_images on your own computer when you try the test!
+  //you can view the image location by running the following commented code
   var loc = 'file:///home/fei/Documents/github/EE461L-sp19-owl-team/Application/plant_app/plants/test/images/';
+
   it('show Trans Pecos img', function() {
 
-   transpecosfunc();
+    transpecosfunc();
 
-      const image = document.querySelector("img");
+    // use this code to view full location path of "eco_transpecos.jpg" in your computer:
+
+    // var transpecosloc = document.getElementById("eco_pic").src;
+    // document.getElementById("locinfo").innerHTML="the path of the images:";
+    // document.getElementById("imgloc").innerHTML=transpecosloc.toString();
+
       var imgsrc = document.getElementById("eco_pic").src;
-
-//document.getElementById("eco_text").innerHTML=imgsrc.toString();
       assert(imgsrc == loc+'eco_transpecos.jpg','eco_pic is transpecos!');
-    //  assert(imgsrc.toString() !== loc+'eco_transpecos.jpg','eco_pic is not transpecos!');
   })
   it('show Edwards Plateau img', function() {
 
       edwardsfunc();
-      const image = document.querySelector("img");
       var imgsrc = document.getElementById("eco_pic").src;
-  //document.getElementById("eco_text").innerHTML=imgsrc.toString();
       assert(imgsrc == loc+'eco_edwards.png','eco_pic is edwards!');
   })
   it('show Cross Timbers img', function() {
       crosstimbersfunc();
-      const image = document.querySelector("img");
       var imgsrc = document.getElementById("eco_pic").src;
-  //document.getElementById("eco_text").innerHTML=imgsrc.toString();
       assert(imgsrc == loc+'eco_crosstimbers.png','eco_pic is crosstimbers!');
   })
 
   it('show South Plains img', function() {
       southplainsfunc();
-      const image = document.querySelector("img");
       var imgsrc = document.getElementById("eco_pic").src;
-  //document.getElementById("eco_text").innerHTML=imgsrc.toString();
       assert(imgsrc == loc+'eco_southplains.png','eco_pic is southplains!');
   })
 
   it('show Post Oak img', function() {
       postoakfunc();
-      const image = document.querySelector("img");
       var imgsrc = document.getElementById("eco_pic").src;
-  //document.getElementById("eco_text").innerHTML=imgsrc.toString();
       assert(imgsrc == loc+'eco_postoaksavanah.jpg','eco_pic is postoaksavanah!');
   })
 
   it('show Piney Woods img', function() {
       pineywoodsfunc();
-      const image = document.querySelector("img");
       var imgsrc = document.getElementById("eco_pic").src;
-  //document.getElementById("eco_text").innerHTML=imgsrc.toString();
       assert(imgsrc == loc+'eco_pineywoods.png','eco_pic is pineywoods!');
   })
 
   it('show Blackland Prairie img', function() {
       blacklandprairiefunc();
-      const image = document.querySelector("img");
       var imgsrc = document.getElementById("eco_pic").src;
-  //document.getElementById("eco_text").innerHTML=imgsrc.toString();
       assert(imgsrc == loc+'eco_blacklandprairie.jpg','eco_pic is blacklandprairie!');
   })
 
   it('show Gulf Coast Prairies img', function() {
       coastfunc();
-      const image = document.querySelector("img");
       var imgsrc = document.getElementById("eco_pic").src;
-  //document.getElementById("eco_text").innerHTML=imgsrc.toString();
       assert(imgsrc == loc+'eco_marshes.png','eco_pic is marshes!');
   })
 
   it('show High Plains img', function() {
       highplainsfunc();
-      const image = document.querySelector("img");
       var imgsrc = document.getElementById("eco_pic").src;
-  //document.getElementById("eco_text").innerHTML=imgsrc.toString();
       assert(imgsrc == loc+'eco_highplains.png','eco_pic is highplains!');
   })
   it('show Rolling Plains img', function() {
       rollingplainsfunc();
-      const image = document.querySelector("img");
       var imgsrc = document.getElementById("eco_pic").src;
-  //document.getElementById("eco_text").innerHTML=imgsrc.toString();
       assert(imgsrc == loc+'eco_rollingplains.jpg','eco_pic is rollingplains!');
   })
 
   it('img hidden', function() {
       leave();
-      const image = document.querySelector("img");
       var imgvb = document.getElementById("eco_pic").visibility;
-  //document.getElementById("eco_text").innerHTML=imgsrc.toString();
       assert(imgvb =='hidden','eco_pic is hidden!');
   })
 
