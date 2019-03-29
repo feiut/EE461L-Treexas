@@ -23,7 +23,7 @@ def search_plants_with_string(p):
     results = PlantCsv.objects.all()
     leftover = set()
     for plants in results:
-        if (p.lower() in plants.alsoknownas.lower()) or (p.lower() in plants.botanicalname.lower()) or (p.lower() in plants.name.lower()):
+        if (p.lower() in plants.nickname.lower()) or (p.lower() in plants.name.lower()):
         	leftover.add(plants)
     return leftover
 
