@@ -1,12 +1,14 @@
 from django.test import TestCase
 from django.test.client import Client
-from models import PlantCsv
-from views import Plant
-from views import Park
-from views import Ecoregion
-from views import search_plants_with_string
-from views import get_all_plants
-from views import search_park_with_string
+from plantsite.models import PlantCsv
+#from plantsite.models import Plant
+#from plantsite.models import StatePark
+#from plantsite.models import EcoRegion
+from plantsite.models import PlantCsvEcoregions
+from plantsite.models import Stateparks
+from plantsite.views import search_plants_with_string
+from plantsite.views import get_all_plants
+from plantsite.views import search_park_with_string
 
 
 # Create your tests here.
