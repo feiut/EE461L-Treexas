@@ -54,6 +54,7 @@ class PlantCsv(models.Model):
     plantform = models.TextField(db_column='PlantForm', blank=True, null=True)  # Field name made lowercase.
     plantspread = models.TextField(db_column='PlantSpread', blank=True, null=True)  # Field name made lowercase.
     plantheight = models.TextField(db_column='PlantHeight', blank=True, null=True)  # Field name made lowercase.
+    ecoregion = models.TextField(db_column='econregion', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
         managed = False
