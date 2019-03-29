@@ -23,7 +23,7 @@ def search_plants_with_string(p):
     results = PlantCsv.objects.all()
     leftover = set()
     for plants in results:
-        if (p.lower() in plants.alsoknownas.lower()) or (p.lower() in plants.botanicalname.lower()) or (p.lower() in plants.name.lower()):
+        if (p.lower() in plants.nickname.lower()) or (p.lower() in plants.name.lower()):
         	leftover.add(plants)
     return leftover
 
@@ -110,7 +110,22 @@ class Plant(object):
         self.url = url
 
 
+def plants_each(request):
+    template = loader.get_template('plantsite/html/plants_each.html')
+    """
+    park1 = Park("Pedernales State Park", "sp_pedernales.jpg", "/park1/")
+    park2 = Park("Dinosaur Valley State Park", "sp_dinosaur_valley.jpg", "/park2/")
+    park3 = Park("Daingerfield State Park", "sp_daingerfield.jpg", "/park3/")
+    park4 = Park("Acton State Park", "sp_acton.jpg", "/park4/")
+    parklist = [park1, park2, park3, park4]
 
+    context_dict = {"park_list":parklist}
+    """
+    number = request.GET.get('id')
+    prof = PlantCsv.objects.get(id=number)
+    context_dict = {'profile': prof}
+    #return HttpResponse(template.render(context_dict, request))
+    return HttpResponse(template.render(context_dict, request))
 
 def about_page(request):
     template = loader.get_template('plantsite/html/about_page.html')
@@ -230,6 +245,22 @@ def plant_type_list(request):
 	if request.method == 'GET':
 		textfield =request.GET.get('search')
 		if not textfield:
+			template = loader.get_template('plantsite/html/plant_list.html')
+			planttype_field =request.GET.get('planttype')
+			water_demand_field =request.GET.get('waterdemand')
+			plant_form_field =request.GET.get('plantform')
+			names = filter_plants_with_parameters(planttype_field, water_demand_field, plant_form_field)
+			context_dict = {'plant_names' : names}
+			return HttpResponse(template.render(context_dict,request))
+		results = search_plants_with_string(textfield)
+		"""
+<<<<<<<HEAD
+            template = loader.get_template('plantsite/html/plant_list.html')
+            names = PlantCsv.objects.all()
+            context_dict = {'plant_names' : names}
+            return HttpResponse(template.render(context_dict,request))
+
+=======
                     template = loader.get_template('plantsite/html/plant_list.html')
                     planttype_field =request.GET.get('planttype')
                     water_demand_field =request.GET.get('waterdemand')
@@ -238,7 +269,9 @@ def plant_type_list(request):
                     context_dict = {'plant_names' : names}
                     return HttpResponse(template.render(context_dict,request))
 
-		results = search_plants_with_string(textfield)
+>>>>>>> 5f1d96b2890f497971feae9ef8eaa4fbc7e73a7c
+		"""
+
 		if not results:
 			template = loader.get_template('plantsite/html/plant_list.html')
 			return HttpResponse(template.render({},request))
@@ -265,7 +298,10 @@ def eco_profile_view(request):
     dbid = request.GET.get('id')
     prof = PlantCsvEcoregions.objects.get(dbid=str(dbid))
     prof.image = prof.image.strip() #remove leading whitespace ERICK
-    context_dict = {'profile': prof}
+    eco_name = str(prof.ecoregion)
+    eco_name = eco_name[14:]
+    pla = PlantCsv.objects.filter(econregion=eco_name)
+    context_dict = {'profile': prof, 'plants': pla}
     return HttpResponse(template.render(context_dict, request))
 
 def park_list_view(request):

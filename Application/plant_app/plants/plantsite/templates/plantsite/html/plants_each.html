@@ -1,0 +1,134 @@
+<html>
+	<head>
+    <style type="text/css">
+        .tab{
+			<!--position:absolute;left:0px;top:0px;-->
+			position:absolute;left:0px;top:800px;
+            width:150px;
+            heigh:30px;
+            border:1px solid #aaa;
+            border-bottom:none;
+            float:left;
+            text-align:center;
+            line-height:60px;
+            cursor:pointer;
+        }
+        #tab1, #page1 {
+			<!--position:absolute;left:0px;top:550px;-->
+			position:absolute;left:0px;top:550px;
+            background: #ABF0D1;
+        }
+        #tab2, #page2 {
+			<!--position:absolute;left:100px;top:550px;-->
+			position:absolute;left:0px;top:550px;
+            background: #00FFFF;
+        }
+        #tab3, #page3 {
+			<!--position:absolute;left:200px;top:550px;-->
+			position:absolute;left:0px;top:550px;
+            background: #ABF0D1;
+        }
+		.tabContainer {
+			<!--position:reative;-->
+            position:absolute;left:0px;top:550px;
+            clear: both;
+        }
+		.page {
+            position:absolute;left:0px;top:550px;
+            width: 450px;
+            height: 200px;
+            border: 1px solid #aaa;
+        }
+        .topPage {
+            z-index: 1;
+        }
+    </style>
+	</head>
+
+    <script type="text/javascript">
+        function showPage(num) {
+            var container = document.getElementsByClassName('tabContainer')[0];
+            var divlist = container.getElementsByTagName('div');
+            for (var i = 0; i < divlist.length; i++) {
+                var classNode = document.createAttribute('class');
+                classNode.value = 'page';
+                divlist[i].setAttributeNode(classNode);
+            }
+            var pageDiv = document.getElementById('page' + num);
+            var classNode = document.createAttribute('class');
+            classNode.value = 'page topPage';
+            pageDiv.setAttributeNode(classNode);
+        }
+    </script>
+
+    <link rel = "stylesheet" href="SubPage.css">
+	<body bgcolor=#ABF0D1 id="plant_fields">
+	<div style="position:absolute;left:0px; top:0px; float:left;clear:both; maring:10px 0px 10px 0px;">
+	<img border="5" src="001_Malva Blanca.jpg" alt="Malva Blanca (Fuertesimalva limensis)" width="300" height="350"> </div>
+
+    <div style="position:absolute;left:450px;top:20px; float:left;clear:both;maring:100px 100px 10px 0px;">
+	<table border="0" cellpadding="3" cellspacing="10">
+		<tr>
+			<td><font size=4>Common Name:</font></td>
+			<td><font size=4>{{profile.alsoknownas}}</font></td>
+		</tr>
+		<tr>
+			<td><font size=4>Botanical Name:</font></td>
+			<td><font size=4>{{profile.botanicalname}}</font></td>
+		</tr>
+		<tr>
+			<td><font size=4>Plant Type:</font></td>
+			<td><font size=4>{{profile.planttype}}</font></td>
+		</tr>
+		<tr>
+			<td><font size=4>Light Requirement:</font></td>
+			<td><font size=4>{{profile.lightrequirement}}</font></td>
+		</tr>
+		<tr>
+			<td><font size=4>Water Demand:</font></td>
+			<td><font size=4>{{profile.waterdemand}}</font></td>
+		</tr>
+		<tr>
+			<td><font size=4>Land Scape Use</font></td>
+			<td><font size=4>{{profile.landscapeuse}}</font></td>
+		</tr>
+		<tr>
+			<td><font size=4>Ornamental Value:</font></td>
+			<td><font size=4>{{profile.ornamentalvalue}}</font></td>
+		</tr>
+		<tr>
+			<td><font size=4>Native/Adapted:</font></td>
+			<td><font size=4>{{profile.nativeadapted}}</font></td>
+		</tr>
+		<tr>
+			<td><font size=4>Season:</font></td>
+			<td><font size=4>{{profile.season}}</font></td>
+		</tr>
+		<tr>
+			<td><font size=4>deciduous Evergreen:</font></td>
+			<td><font size=4>{{profile.deciduousevergreen}}</font></td>
+		</tr>
+		<tr>
+			<td><font size=4>Plant Form:</front></td>
+			<td><font size=4>{{profile.plantform}}</front></td>
+		</tr>
+		<tr>
+			<td><font size=4>Plant Spread:</font></td>
+			<td><font size=4>{{profile.plantspread}}</font></td>
+		</tr>
+		<tr>
+			<td><font size=4>Plant Height:</font></td>
+			<td><font size=4>{{profile.plantheight}}</font></td>
+		</tr>
+        </div>
+			<div style="position:absolute;left:0px;top:550px; id="tab1" class="tab" onclick="showPage(1)">Region</div>
+			<div style="position:absolute;left:150px;top:550px; id="tab2" class="tab" onclick="showPage(2)">Facts</div>
+			<div style="position:absolute;left:300px;top:550px; id="tab3" class="tab" onclick="showPage(3)">Growing Conditions</div>
+
+		<div class="tabContainer">
+			<div id="page1" class="page topPage">Central of Texas</div>
+			<div id="page2" class="page">A very famous flower in Texas</div>
+			<div id="page3" class="page">Living in moisture condition</div>
+		</div>
+	</body>
+</html>

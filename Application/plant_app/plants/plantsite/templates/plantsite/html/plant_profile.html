@@ -6,14 +6,14 @@
 	<link rel="stylesheet" href="{% static "plant_profile.css" %}">
 </head>
 <body id="plant_fields">
-	<h1> <font id="profile_plant_title_name">{{profile.botanicalname}}</font></h1>
+	<h1> <font id="profile_plant_title_name">{{profile.name}}</font></h1>
 	<div>
-  <font class="sections">Botanical Name:</font><font> {{profile.botanicalname}}</font>
+  <font class="sections">Name:</font><font> {{profile.name}}</font>
  <br>
  <br>
-  <font class="sections">Common Name:</font><font> {{profile.alsoknownas}}</font>
+  <font class="sections">Common Name:</font><font> {{profile.nickname}}</font>
  <br>
- <rbr>
+ <br>
   <font class="sections">Plant Type:</font><font> {{profile.planttype}}</li>
  <br>
  <br>
