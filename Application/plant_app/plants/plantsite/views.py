@@ -265,6 +265,7 @@ def eco_profile_view(request):
     dbid = request.GET.get('id')
     prof = PlantCsvEcoregions.objects.get(dbid=str(dbid))
     prof.image = prof.image.strip() #remove leading whitespace ERICK
+    # eco_name = prof.
     context_dict = {'profile': prof}
     return HttpResponse(template.render(context_dict, request))
 
