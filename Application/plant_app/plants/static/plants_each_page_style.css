@@ -1,0 +1,123 @@
+
+
+body{
+	background-color : #FFFFFF;
+	border-style: solid;
+	border-width: 100px 0px 0px 0px;
+	border-color: #66FF66;
+}
+
+h1{
+/*color: #D43704;*/
+  color : #FFFFFF;
+	font-family: Arial;
+	font-size: 260%;
+	margin: 20px;
+}
+
+p{
+	color: #000000;
+	font-family: Arial;
+	font-size: 160%;
+	margin: 20px;
+}
+
+.navbar-nav {
+	color: #EFEFEF;
+	font: 160% 'Merienda One', Helvetica, sans-serif;
+}
+
+.navbar-brand {
+  color: #EFEFEF;
+  padding-top: 0;
+  padding-left: 10px;
+  font: 250% 'Merienda One', Helvetica, sans-serif;
+}
+
+.navbar-nav > li > a:hover, .navbar-brand:hover, .navbar-default .navbar-nav > li > a:focus {
+    background-color: #A9A9a9;
+    color: #EFEFEF;
+}
+
+.image-plant-each {
+		object-fit: cover;
+		width: 300px;
+		height: 300px;
+		margin: 20px
+}
+
+
+#text-plant-each table{
+		color: #000000;
+		font-family: Arial;
+		font-size: 160%;
+		text-align: center;
+}
+#text-plant-each tr{
+	text-align: center;
+	color: #000000;
+	font-family: Arial;
+	font-size: 160%;
+	margin: 20px;
+}
+*/
+
+/*
+position:relative
+left:250px
+top:20px
+width:300
+height:350
+*/
+/*
+float:left
+clear:both*/
+/*
+maring:0px 0px 0px 0px;
+border-width: 0px
+padding:3px
+spacing:10px
+}
+*/
+/*style="position:relative;left:250px;top:20px; float:left; maring:0px 0px 0px 0px;"*/
+
+
+
+
+
+
+/* style icon */
+/*
+.input-group .glyphicon-search {
+position: absolute;
+padding: 20px;
+pointer-events: none;
+left: 0px;
+font-size: 15px;
+}
+*/
+/* add padding  */
+/*
+.input-group input { padding-left: 50px;}
+
+.btn-default{
+width: 100px;
+padding: 8.5px;
+background: rgba(255, 255, 255, 0.7);
+}
+
+.form-control{
+padding: 25px;
+font-size: 20px;
+background: rgba(255, 255, 255, 0.7);
+}
+.footer{
+position: fixed;
+right:0;
+bottom: 0;
+left: 0;
+padding: 1rem;
+background-color: transparent;
+text-align: center;
+}
+*/

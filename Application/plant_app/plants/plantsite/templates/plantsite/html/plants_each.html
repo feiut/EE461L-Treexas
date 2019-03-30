@@ -1,80 +1,64 @@
+<!DOCTYPE html>
+{% load static %}
 <html>
 	<head>
-    <style type="text/css">
-        .tab{
-			<!--position:absolute;left:0px;top:0px;-->
-			position:absolute;left:0px;top:800px;
-            width:150px;
-            heigh:30px;
-            border:1px solid #aaa;
-            border-bottom:none;
-            float:left;
-            text-align:center;
-            line-height:60px;
-            cursor:pointer;
-        }
-        #tab1, #page1 {
-			<!--position:absolute;left:0px;top:550px;-->
-			position:absolute;left:0px;top:550px;
-            background: #ABF0D1;
-        }
-        #tab2, #page2 {
-			<!--position:absolute;left:100px;top:550px;-->
-			position:absolute;left:0px;top:550px;
-            background: #00FFFF;
-        }
-        #tab3, #page3 {
-			<!--position:absolute;left:200px;top:550px;-->
-			position:absolute;left:0px;top:550px;
-            background: #ABF0D1;
-        }
-		.tabContainer {
-			<!--position:reative;-->
-            position:absolute;left:0px;top:550px;
-            clear: both;
-        }
-		.page {
-            position:absolute;left:0px;top:550px;
-            width: 450px;
-            height: 200px;
-            border: 1px solid #aaa;
-        }
-        .topPage {
-            z-index: 1;
-        }
-    </style>
+		<!--<link rel="stylesheet" href="{% static "entry_style.css" %}">-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+			<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+			<link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
+			<link rel="stylesheet" href="{% static 'plants_each_page_style.css' %}">
 	</head>
 
-    <script type="text/javascript">
-        function showPage(num) {
-            var container = document.getElementsByClassName('tabContainer')[0];
-            var divlist = container.getElementsByTagName('div');
-            for (var i = 0; i < divlist.length; i++) {
-                var classNode = document.createAttribute('class');
-                classNode.value = 'page';
-                divlist[i].setAttributeNode(classNode);
-            }
-            var pageDiv = document.getElementById('page' + num);
-            var classNode = document.createAttribute('class');
-            classNode.value = 'page topPage';
-            pageDiv.setAttributeNode(classNode);
-        }
-    </script>
-
-    <link rel = "stylesheet" href="SubPage.css">
+<!--<link rel = "stylesheet" href="SubPage.css">-->
 	<body bgcolor=#ABF0D1 id="plant_fields">
-	<div style="position:absolute;left:0px; top:0px; float:left;clear:both; maring:10px 0px 10px 0px;">
-	<img border="5" src="001_Malva Blanca.jpg" alt="Malva Blanca (Fuertesimalva limensis)" width="300" height="350"> </div>
 
-    <div style="position:absolute;left:450px;top:20px; float:left;clear:both;maring:100px 100px 10px 0px;">
-	<table border="0" cellpadding="3" cellspacing="10">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+				<nav class="navbar navbar-expand-lg navbar-fixed-top" style="background-color:rgba(0,0,0,0.35);">
+					<div class="container-fluid">
+
+						<div class="navbar-header">
+							<a class="navbar-brand" href="/">Treexas</a>
+						</div>
+
+						<div class="topnav-entry">
+							<ul class="nav navbar-nav navbar-right">
+								<li><a href="/plant_list">Plants</a>
+								</li>
+								<li><a href="/park_list">State Parks</a>
+								</li>
+								<li><a href="/eco_list">Ecoregions</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+				</div>
+			</div>
+
+			<br>
+			<br>
+			<br>
+			<h1 class="text-center">{{profile.name}}</h1>
+
+
+	<div class="text-center">
+			<img border="3" class="image-plant-each" class="thumbnail img-center" src="{{profile.image}}" alt="{{profile.name}}">
+	</div>
+</br>
+<div class="text-plant-each">
+	<table style="margin:auto">
 		<tr>
+			<div>
 			<td><font size=4>Common Name:</font></td>
-			<td><font size=4>{{profile.alsoknownas}}</font></td>
+			<td><font size=4>{{profile.nickname}}</font></td>
+		  </div>
 		</tr>
 		<tr>
 			<td><font size=4>Botanical Name:</font></td>
-			<td><font size=4>{{profile.botanicalname}}</font></td>
+			<td><font size=4>{{profile.name}}</font></td>
 		</tr>
 		<tr>
 			<td><font size=4>Plant Type:</font></td>
@@ -120,15 +104,12 @@
 			<td><font size=4>Plant Height:</font></td>
 			<td><font size=4>{{profile.plantheight}}</font></td>
 		</tr>
-        </div>
-			<div style="position:absolute;left:0px;top:550px; id="tab1" class="tab" onclick="showPage(1)">Region</div>
-			<div style="position:absolute;left:150px;top:550px; id="tab2" class="tab" onclick="showPage(2)">Facts</div>
-			<div style="position:absolute;left:300px;top:550px; id="tab3" class="tab" onclick="showPage(3)">Growing Conditions</div>
+	</table>
+  </div>
 
-		<div class="tabContainer">
-			<div id="page1" class="page topPage">Central of Texas</div>
-			<div id="page2" class="page">A very famous flower in Texas</div>
-			<div id="page3" class="page">Living in moisture condition</div>
-		</div>
+		  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+		  <script src="../../assets/js/vendor/popper.min.js"></script>
+		  <script src="../../dist/js/bootstrap.min.js"></script>
 	</body>
 </html>
