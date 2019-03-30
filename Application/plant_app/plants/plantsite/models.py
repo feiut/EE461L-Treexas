@@ -34,7 +34,6 @@ class PlantCsvEcoregions(models.Model):
     plants = models.TextField(db_column='Plants', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = True
         db_table = 'plant_csv_ecoregions'
 
 
@@ -70,7 +69,6 @@ class PlantCsv(models.Model):
     lifecycle = models.TextField(blank=True, null=True)
 
     class Meta:
-        managed = True
         db_table = 'plant_csv'
 
 
@@ -101,6 +99,5 @@ class Stateparks(models.Model):
     address = models.TextField(db_column='Address', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = True
         db_table = 'plant_csv_stateparks'
 
