@@ -37,7 +37,7 @@ To deploy you'll need to
 1) Change STATIC_URL in settings.py to 'https....' (the rest is in a comment above the current STATIC_URL)
 2) $python manage.py collectstatic
 3) $gsutil rsync -R static/ gs://plantbucket2/static        (this Synchronizes our local static files with our cloud bucket static files)
-4) $gcloud app deploy
+4) $gcloud app deploy app.yaml				//run this in the plant_app/plants/ dir
 
 Commands:
 
