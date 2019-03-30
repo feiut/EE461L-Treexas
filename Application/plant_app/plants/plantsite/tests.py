@@ -8,6 +8,8 @@ from plantsite.models import PlantCsvEcoregions
 from plantsite.models import Stateparks
 from plantsite.views import search_plants_with_string
 from plantsite.views import get_all_plants
+from plantsite.views import get_park_with_dbid
+from plantsite.views import get_all_parks
 from plantsite.views import search_park_with_string
 
 
@@ -21,7 +23,7 @@ class viewTest(TestCase):
         
         PlantCsv.objects.create(name="Plant1")
         
-        PlantCsvEcoregions.objects.create(dbid=0, ecoregion="Eco3", paragraph="Null", trees="", shrubs="",
+        PlantCsvEcoregions.objects.create(dbid=0, ecoregion="Eco1", paragraph="Null", trees="", shrubs="",
                                           succulents="", vines="", vine="", conifers="", grasses="", wildflowers="", image="https/test_img.png")
                                           
         Stateparks.objects.create(dbid=0, name="Park1", latitude="32.24", longitude="-99.87")
@@ -112,4 +114,29 @@ class viewTest(TestCase):
         response = self.client.get('/eco_profile/?id=0')
         # Check that the response is 200 OK.
         self.assertEqual(response.status_code, 200)
-    
+
+
+    def test_get_all_plants(self):
+        result = get_all_plants()
+        self.assertEqual(len(result), PlantCsv.objects.count())
+
+    # def test_get_plant_with_id(self):
+    #     result = get_plant_with_id(0)
+    #     self.assertEqual(result.id, 0)
+
+    def test_search_plants_with_string(self):
+        leftover = search_plants_with_string("1")
+        self.assertEqual(leftover.name, "Plant1")
+
+    def test_search_park_with_string(self):
+        leftover = search_park_with_string("1")
+        self.assertEqual(leftover.name, "Park1")
+
+    def test_get_park_with_dbid(self):
+        result = get_park_with_dbid(0)
+        self.assertEqual(result.name, "Park1")
+
+    def test_get_all_parks(self):
+        result = get_all_parks()
+        self.assertEqual(len(result), Stateparks.objects.count())
+
