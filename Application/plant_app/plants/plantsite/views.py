@@ -72,7 +72,7 @@ def search_park_with_string(p):
 
 def get_park_with_dbid(dbid):
 	results = Stateparks.objects.get(dbid=str(dbid))
-	results.image = re.sub('https','https:',results.image)
+	results.image = re.sub('https','https:',str(results.image))
 	return results
 
 

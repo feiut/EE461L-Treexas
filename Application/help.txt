@@ -1,5 +1,11 @@
 This doc contains some useful info,
 
+before you run python tests
+1) navigate to /migrations
+2) $rm 0*
+3) $python manage.py makemigrations
+4) $python manage.py migrate
+
 Here are some useful links about setting up Djanog and mySQL, installing
 mySQL will probably be different on different systems
 https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04

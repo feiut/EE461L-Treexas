@@ -21,10 +21,10 @@ class viewTest(TestCase):
         
         PlantCsv.objects.create(name="Plant1")
         
-        PlantCsvEcoregions.objects.create(dbid=1, ecoregion="Eco3", paragraph="Null", trees="", shrubs="",
-                                          succulents="", vines="", vine="", conifers="", grasses="", wildflowers="")
+        PlantCsvEcoregions.objects.create(dbid=0, ecoregion="Eco3", paragraph="Null", trees="", shrubs="",
+                                          succulents="", vines="", vine="", conifers="", grasses="", wildflowers="", image="https/test_img.png")
                                           
-        Stateparks.objects.create(dbid=1, name="Park1", latitude="32.24", longitude="-99.87")
+        Stateparks.objects.create(dbid=0, name="Park1", latitude="32.24", longitude="-99.87")
         
         # Park.objects.create("Park2", "sp_dinosaur_valley.jpg", "/park2/")
         # Park.objects.create("Park3", "sp_daingerfield.jpg", "/park3/")
@@ -83,7 +83,7 @@ class viewTest(TestCase):
 
     def test_park_list_view(self):
         # Issue a GET request.
-        response = self.client.get('/park_list/')
+        response = self.client.post('/park_list/', {})
         # Check that the response is 200 OK.
         self.assertEqual(response.status_code, 200)
 
@@ -113,8 +113,3 @@ class viewTest(TestCase):
         # Check that the response is 200 OK.
         self.assertEqual(response.status_code, 200)
     
-    def test_plants_each(self):
-        # Issue a GET request.
-        response = self.client.get('/plants_each/?id=0')
-        # Check that the response is 200 OK.
-        self.assertEqual(response.status_code, 200)
