@@ -17,7 +17,19 @@ class viewTest(TestCase):
     def setUp(self):
         # Every test needs a client.
         self.client = Client()
-        # Park.objects.create("Park1", "sp_pedernales.jpg", "/park1/")
+
+        PlantCsv.objects.create(name="Plant1")
+        PlantCsv.objects.create(name="Plant2")
+        PlantCsv.objects.create(name="Plant3")
+        PlantCsvEcoregions.objects.create(dbid=1, ecoregion="Eco3", Paragraph="Null", Trees="", Shrubs="",
+                                          Succulents="", Vines="", Vine="", Conifers="", Grasses="", Wildflowers="")
+        PlantCsvEcoregions.objects.create(dbid=2, ecoregion="Eco3", Paragraph="Null", Trees="", Shrubs="",
+                                          Succulents="", Vines="", Vine="", Conifers="", Grasses="", Wildflowers="")
+        PlantCsvEcoregions.objects.create(dbid=3, ecoregion="Eco3", Paragraph="Null", Trees="", Shrubs="",
+                                          Succulents="", Vines="", Vine="", Conifers="", Grasses="", Wildflowers="")
+        Stateparks.objects.create(dbid=1, name="Park1", Latitude="32.24", Longitude="-99.87")
+        Stateparks.objects.create(dbid=2, name="Park2", Latitude="32.24", Longitude="-99.87")
+        Stateparks.objects.create(dbid=3, name="Park3", Latitude="32.24", Longitude="-99.87")
         # Park.objects.create("Park2", "sp_dinosaur_valley.jpg", "/park2/")
         # Park.objects.create("Park3", "sp_daingerfield.jpg", "/park3/")
         # Park.objects.create("Park4", "sp_acton.jpg", "/park4/")
@@ -27,8 +39,6 @@ class viewTest(TestCase):
         # Plant.objects.create("Plant1", "eco_pineywoods.jpg", "/plant1/")
         # Plant.objects.create("Plant2", "eco_pineywoods.jpg", "/plant2/")
         # Plant.objects.create("Plant3", "eco_pineywoods.jpg", "/plant3/")
-
-
 
     # def test_search_plants_with_string(self):
     #     leftover = search_plants_with_string("1")
@@ -63,43 +73,37 @@ class viewTest(TestCase):
     #             leftover.add(parks)
     #     return leftover
 
-    def test_main_page(self):
+    def test_main_page(self): #Passed
         # Issue a GET request.
         response = self.client.get('')
         # Check that the response is 200 OK.
         self.assertEqual(response.status_code, 200)
 
-    def test_about_page(self):
+    def test_about_page(self): #Passed
         # Issue a GET request.
         response = self.client.get('/about/')
         # Check that the response is 200 OK.
         self.assertEqual(response.status_code, 200)
 
-    # def test_state_park_list(self):
-    #     # Issue a GET request.
-    #     response = self.client.get('/park_list/')
-    #     # Check that the response is 200 OK.
-    #     self.assertEqual(response.status_code, 200)
-
-    def test_park_profile(self):
+    def test_park_list_view(self):
         # Issue a GET request.
-        response = self.client.get('/park_profile/?id=1/')
+        response = self.client.get('/park_list/')
         # Check that the response is 200 OK.
         self.assertEqual(response.status_code, 200)
 
-    def test_plant_type_list(self):
+    def test_park_profile(self):
+        # Issue a GET request.
+        response = self.client.get('/park_profile/?id=1')
+        # Check that the response is 200 OK.
+        self.assertEqual(response.status_code, 200)
+
+    def test_plant_type_list(self): #Passed
         # Issue a GET request.
         response = self.client.get('/plant_list/')
         # Check that the response is 200 OK.
         self.assertEqual(response.status_code, 200)
 
-    # def test_plant_profile_view(self):
-    #     # Issue a GET request.
-    #     response = self.client.get('/plant_profile/?id=1/')
-    #     # Check that the response is 200 OK.
-    #     self.assertEqual(response.status_code, 200)
-
-    def test_ecoregion_list(self):
+    def test_ecoregion_list(self): #Passed
         # Issue a GET request.
         response = self.client.get('/eco_list/')
         # Check that the response is 200 OK.
@@ -107,13 +111,12 @@ class viewTest(TestCase):
 
     def test_eco_profile_view(self):
         # Issue a GET request.
-        response = self.client.get('/eco_profile/?id=1')
+        response = self.client.get('/eco_profile/?id=2')
         # Check that the response is 200 OK.
         self.assertEqual(response.status_code, 200)
 
     def test_plants_each(self):
         # Issue a GET request.
-        response = self.client.get('/plants_each/?id=0')
+        response = self.client.get('/plants_each/?id=3')
         # Check that the response is 200 OK.
         self.assertEqual(response.status_code, 200)
-        #self.assertEqual(response.id, 0)
