@@ -3,10 +3,26 @@
 <html>
 <head>
 	<link rel="stylesheet" href="{% static "entry_style.css" %}">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
+	 <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
+
+  	<link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="{% static 'list_page_style.css' %}">
+	<script type="text/javascript">
+		function img_over(item){
+			item.style.borderColor = "#AFBEFF";
+			item.style.borderWidth = "10px";
+		}
+		function img_out(item){
+			item.style.borderColor="#FFFFFF";
+			item.style.borderWidth="0px";
+		}
+
+	</script>
 </head>
 
 <body>
@@ -53,6 +69,41 @@
 	</div>
 
 	<div class="row">
+		<div class="col-xs-12">
+
+		    <div id="myCarousel" class="carousel slide" data-ride="carousel">  
+		        <!-- Wrapper for carousel items -->
+		        <div class="carousel-inner">
+		        	<div class="item active carouselImg">	
+		                <img src="{% static "background-succulent.jpeg" %}" class="img-center">
+		               	<div class="carousel-caption">
+		        			<h3 class="text-center">Plants for This Ecoregion</h3>
+		        		</div>
+		            </div>
+		        	{% for plant in plants %}
+		        	<div class="item carouselImg">
+		        		<a href="/plant_profile/?id={{plant.id}}">	
+		        			<img class="img-center" src="{{plant.image}}">
+		        		</a>
+		        		<div class="carousel-caption">
+		        			<h3 class="text-center">{{plant.name}}</h3>
+		        		</div>
+		        	</div>
+		        	{% endfor %}
+		        </div>
+		        <!-- Carousel controls -->
+		        <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+		            <span class="glyphicon glyphicon-chevron-left"></span>
+		        </a>
+		        <a class="carousel-control right" href="#myCarousel" data-slide="next">
+		            <span class="glyphicon glyphicon-chevron-right"></span>
+		        </a>
+		    </div>
+		 </div>
+	</div>
+	<!---
+    <div class="row">
+
 				{% for plant in plants %}
 				<div class="col-xs-4 col-m-3 col-l-3 thumbnail-settings">
 					<a href="/plant_profile/?id={{plant.id}}">
@@ -63,8 +114,8 @@
 					</div>
 				</div>
 				{% endfor %}
-			</div>
-
+	</div>
+`	-->
 	  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
 	  <script src="../../assets/js/vendor/popper.min.js"></script>
