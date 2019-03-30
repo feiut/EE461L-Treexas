@@ -253,25 +253,6 @@ def plant_type_list(request):
 			context_dict = {'plant_names' : names}
 			return HttpResponse(template.render(context_dict,request))
 		results = search_plants_with_string(textfield)
-		"""
-<<<<<<<HEAD
-            template = loader.get_template('plantsite/html/plant_list.html')
-            names = PlantCsv.objects.all()
-            context_dict = {'plant_names' : names}
-            return HttpResponse(template.render(context_dict,request))
-
-=======
-                    template = loader.get_template('plantsite/html/plant_list.html')
-                    planttype_field =request.GET.get('planttype')
-                    water_demand_field =request.GET.get('waterdemand')
-                    plant_form_field =request.GET.get('plantform')
-                    names = filter_plants_with_parameters(planttype_field, water_demand_field, plant_form_field)
-                    context_dict = {'plant_names' : names}
-                    return HttpResponse(template.render(context_dict,request))
-
->>>>>>> 5f1d96b2890f497971feae9ef8eaa4fbc7e73a7c
-		"""
-
 		if not results:
 			template = loader.get_template('plantsite/html/plant_list.html')
 			return HttpResponse(template.render({},request))
