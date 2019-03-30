@@ -1,572 +1,5 @@
-"dbid"	"Ecoregion"	"Paragraph"	"Trees"	"Shrubs"	"Succulents"	"Vines"	"Vine"	"Conifers"	"Grasses"	"Wildflowers"	"Image"
-0	"Ecoregion 1 ��� East Texas Pineywoods"	"The Pineywoods is graced
-  by 35 to 60 inches of rain
-  per year supporting not
-  only the pines ��� loblolly,
-  shortleaf and longleaf mainly ��� but
-  also a myriad of woodland
-  specialties like sphagnum
-  mosses, ferns, pitcher plants,
-  sundews, pipeworts, and
-  orchids. Streamside stands
-  of beech, oaks, elm, and
-  magnolia also benefit from
-  the heavy rainfall.East Texas boasts a rich
-  diversity of wildlife. Fifteen
-  species of Texas breeding
-  birds, including the Pine
-  Warbler, Brown-headed Nuthatch
-  and Red-cockaded Woodpecker
-  nest in this region. Bachman��s
-  Sparrow nests in the longleaf
-  pine uplands, while wintering
-  Bald Eagles roost in undisturbed
-  uplands near rivers and
-  lakes. Mammals in the region
-  include River Otter, Gray
-  Squirrel, Flying Squirrel
-  and even the Louisiana Black
-  Bear."	"[' Drummond red maple', ' River birch', ' American beech', ' Southern red oak', ' Willow oak', ' Shumard red oak', ' American elm', ' Southern sugar\r\n        maple', ' Eastern redbud', ' Flowering dogwood', ' Southern magnolia', ' Eastern red cedar', ' Short-leaf pine', ' Long-leaf pine', ' Loblolly pine']"	"[' American beautyberry', ' Buttonbush', ' Lantana', ' Wax myrtle']"		"[' Cross-vine', ' Pipevine', ' Trumpet creeper', ' Carolina Jessamine', ' Coral honeysuckle', ' Virginia creeper', ' May-pop']"			"[' Big blue stem', ' Bushy bluestem', ' Broomsedge', ' Inland sea-oats', ' Canada wildrye']"	"[' Winecup', ' Coralbean', ' Halbert-leaf rose-mallow']"	" eco_pineywoods.png"
-1	"Ecoregion 2 ��� Gulf
-  Coast Prairies and Marshes "	"A narrow band about 60
-  miles wide along the Texas
-  coast from the Louisiana
-  border to Brownsville roughly
-  outlines the Gulf Coast
-  Prairies and Marshes. This
-  area is characterized by
-  long and continual confrontations
-  with the sea, wind and rain.
-  These confrontations shape
-  this place creating a tapestry
-  of shallow bays, estuaries,
-  salt marshes, dunes and
-  tidal flats. Because of
-  this proximity to the Gulf
-  of Mexico, the plants of
-  this region must be highly
-  salt tolerant or halophytic. Coastal areas are rich
-  in wildlife. Coastal marshes
-  harbor hundreds of thousands
-  of wintering geese and ducks
-  and provide critical landfall
-  in the spring for neotropical
-  migratory birds. Several
-  important wildlife sanctuaries
-  and refuges are located
-  in this region including
-  refuges for the endangered
-  Attwater��s Prairie-chicken
-  and the Whooping Crane.
-  Coastal dunes may serve
-  as sentry roosts for north
-  bound Peregrine Falcons
-  in the fall. Coastal waters
-  are often graced by willets,
-  sanderlings, gulls, terns
-  and Black Skimmers. "	"[' Sugarberry', ' Water oak', ' Willow oak', ' Shumard red oak', ' Southern live oak', ' American elm', ' Yaupon', ' Red mulberry', ' Wax myrtle', ' Flameleaf sumac', ' Red buckeye', ' Eastern red cedar', ' Short-leaf pine', ' Loblolly pine', 'Shrubs\r\n          American beautyberry\r\n          Buttonbush\r\n          Lantana\r\n        Dwarf Palmetto      ']"		"[' Prickly-pear cactus', ' Spanish dagger']"	"[' Pipevine', ' Cross-vine', ' Trumpet creeper', ' Carolina Jessamine', ' Coral honeysuckle', ' May-pop', ' Muscadine grape']"			"[' Big blue stem', ' Bushy bluestem', ' Inland sea-oats', ' Sugarcane plumegrass', ' Gulf cordgrass', ' Eastern gammagrass']"	"[' Lance-leaf coreopsis', ' Coralbean', ' Spider lily', ' Cardinal flower', ' Turk��s cap', ' Gulf Coast penstemon', ' Scarlet sage', ' Indian paintbrush', ' Beach evening primrose', ' Showy evening primrose', ' Meadow pink']"	" eco_marshes.png"
-2	"Ecoregion 3 ��� Post
-  Oak Savannah "	"Immediately west of the
-  East Texas Piney Woods we
-  find the Post Oak Savannah
-  emerging almost imperceptibly
-  with its subtle changes
-  in soil and vegetation.
-  This approximately 8,500,000
-  acres of gently rolling
-  to hilly land receives an
-  annual rainfall of 35 to
-  45 inches per year. While
-  much of this area is somewhat
-  arid due to the clay pan
-  soils, a notable exception
-  occurs in Bastrop County,
-  the home of the Lost Pines.
-  The Carrizo sands here harbor
-  a unique community of loblolly
-  pine, post oak, and blackjack
-  oak. The Post Oak Savannah is
-  punctuated by scattered
-  oaks ��� mainly post
-  oaks and blackjack oaks.
-  Black hickory may also be
-  locally abundant. Cedar
-  elm, sugarberry, eastern
-  red cedar and common persimmon
-  are also widespread. Historically,
-  wide vistas of tall-grass ��� little
-  bluestem, Indiangrass, switchgrass
-  and a myriad of wildflowers
-  were broken only by the
-  occasional motte of trees
-  giving the landscape a park
-  like atmosphere. Peat bogs
-  mingled amongst stands of
-  flowering dogwood, sassafras,
-  brumelia and yaupon are
-  also found here.This transitional area
-  between woodlands and prairies
-  was especially attractive
-  to the early European settlers.
-  Today the region is mostly
-  improved pasture with vast
-  acreages seeded to Bahia
-  Grass and Bermuda Grass.The distinctive sandy inclusion
-  of the Lost Pines area harbors
-  one of the last refuges
-  for the endangered Houston
-  Toad."	"[' Wooly birch', ' Pecan', ' Black hickory', ' Sugarberry', ' Black walnut', ' Southern red oak', ' Bur oak', ' Blackjack oak', ' Chinkapin oak', ' Post oak', ' American elm', ' Cedar elm', ' Texas persimmon', ' Wax myrtle', ' Honey mesquite', ' Drumond red maple', ' Eastern redbud', ' Flowering dogwood', ' Mexican plum', ' Ashe juniper', ' Loblolly pine']"	"[' American beautyberry', ' Buttonbush', ' Black dalea', ' Lantana', ' Texas honeysuckle', ' Autumn sage', ' Sassafras', ' Coral-berry']"	"[' Prickly-pear cactus', ' Narrow-leaf yucca', ' Thread-leaf yucca']"	"[' Wooly pipevine', ' Cross-vine', ' Trumpet-creeper', ' Old man��s\r\n        beard', ' Coral honeysuckle', ' Virginia creeper', ' May-pop', ' Yellow passionvine', ' Prairie rose', ' Mustang grape']"			"[' Big blue stem', ' Broomsedge', ' Sideoats grama', ' Cane bluestem', ' Buffalograss', ' Inland sea-oats', ' Hooded windmillgrass', ' Canada wildrye', ' Big muhly', ' Little bluestem', ' Indiangrass']"	"[' Butterfly-weed', ' Winecup', ' Prairie larkspur', ' Coralbean', ' Late boneset', ' Maximillian sunflower', ' Cardinal flower', ' Turk��s cap', ' Scarlet sage', ' Indian paintbrush', ' Texas bluebells', ' Texas bluebonnet']"	" eco_postoaksavanah.jpg"
-3	"Ecoregion 4 ��� The
-  Blackland Prairies "	"The fertile dark clay soils
-  of the Blackland Prairies
-  are some of the richest
-  soils in the world. They
-  are found in gently rolling
-  to nearly level regions
-  just west of and, in some
-  cases, surrounded by the
-  Post Oak Savannah of ecoregion
-  3. Pecan, cedar elm, various
-  oaks and hackberry dot the
-  landscape with some mesquite
-  invading the southern reaches.
-  The dominant grass of this
-  true tall grass prairie
-  is little bluestem, but
-  big blue stem, Indiangrass,
-  eastern gammagrass, switchgrass
-  and side oats grama can
-  also be found. Annual rainfalls
-  of 30 to 40 inches and temperatures
-  of 66 to 70 degrees are
-  average for this region. Today, this region is almost
-  entirely under the plow,
-  with only 5000 of the original
-  12 million acres remaining
-  in true prairie condition.
-  This region truly represents
-  some of the rarest landscapes
-  in Texas!Like many prairie communities
-  comprising the Great Plains
-  of North America, the Blackland
-  Prairies harbor few rare
-  plants or animals, though
-  the prairie itself is significantly
-  in decline. The special
-  and unique feature of this
-  ecosystem today are the
-  grasslands communities themselves.People are often surprised
-  to learn that trees comprised
-  a part of the prairie ecosystems,
-  but several tree species,
-  including some of significant
-  sizes, will show in this
-  list."	"[' Pecan', ' Black Walnut', ' Sycamore', ' Eastern Cottonwood', ' Burr Oak', ' Shumard Red Oak', ' American Elm', ' Cedar Elm', ' Common Persimmon', ' Deciduous Holly', ' Red Mulberry', ' Carolina Buckthorn', ' Huisache', ' Red Buckeye', ' Eastern Redbud', ' Mexican Plum', ' American Elderberry', ' Eastern Red Cedar']"	"[' American Beauty-berry', ' Buttonbush', ' Fragrant Sumac', ' Autumn Sage']"	"[' Pale-leaf Yucca']"	"[' Cross-vine', ' Trumpet Creeper', ' Coral Honeysuckle', ' Virginia Creeper', ' May Pop', ' Prairie Rose      ']"			"[' Big Bluestem', ' Sideoats grama', ' Canada Wildrye', ' Big Muhly', ' Indiangrass', ' Little Bluestem']"	"[' Columbine', ' Purple Coneflower', ' Coralbean', ' Cardinal Flower', ' Turk��s Cap', ' Scarlet Sage', ' Indian Paintbrush', ' Texas Bluebonnet', ' Brown-eyed Susan      ']"	" eco_blacklandprairie.jpg"
-4	"Ecoregion 5 ��� The
-  Cross Timbers and Prairies "	"About 17 million acres
-  are represented by this
-  region of alternating bands
-  of wooded habitat scattered
-  throughout a mostly prairie
-  region. Rainfall is highly
-  variable in this region,
-  averaging about 25 inches
-  in the western reaches to
-  35 inches in the east. Temperatures
-  average about 67 degrees.
-  Grassland species such as
-  little bluestem, Indiangrass
-  and big bluestem are common.
-  Texas mulberry, American
-  elm and Osage orange are
-  more common here than they
-  were to the east. In the
-  west, live oak becomes more
-  important, replacing the
-  post oak of the east. Decreasing
-  moisture discourages clusters
-  of trees, and trees form
-  isolated stands. Flameleaf
-  sumac, redbud, Mexican plum
-  and Eastern red cedar become
-  more prevalent. Wildlife
-  is a mixture of eastern
-  forest and prairie species."	"[' Pecan', ' Black Walnut', ' Sycamore', ' Eastern Cottonwood', ' Plateau Liveoak', ' Bur Oak', ' Blackjack Oak', ' American Elm', ' Texas Persimmon', ' Little Walnut', ' Honey Mesquite', ' Lance-leaf Sumac', ' Mexican Plum', ' Ashe Juniper', ' Eastern Red Cedar']"	"[' American Beauty-berry', ' Buttonbush', ' Lantana', ' Fragrant Sumac', ' Autumn Sage', 'Succulent', ' Red Yucca', ' Threadleaf Yucca']"			"[' Trumpet-creeper', ' Coral Honeysuckle', ' Snapdragon Vine', ' Virginia Creeper', ' Yellow Passionvine']"		"[' Big Bluestem', ' Sideoats Grama', ' Buffalograss', ' Big Muhly', ' Little Bluestem', ' Eastern Gammagrass']"	"[' Coralbean', ' Engelmann Daisy', ' Late Boneset']"	" eco_crosstimbers.png"
-5	"Ecoregion 6 ��� South
-  Texas Brush Country "	"East of the Rio Grande
-  River and south of the Balcones
-  Escarpment lies a relatively
-  unpopulated region known
-  as the South Texas Brush
-  Country. An average annual
-  temperature of 73 degrees
-  and rainfall ranging from
-  16 inches in the west to
-  30 inches in the east characterize
-  the region. This warm region
-  is a land of recurring drought,
-  a factor that distinctly
-  marks the landscape. Sporadic
-  rains can cause wildflower
-  blooms almost anytime of
-  the year.This region owes its diversity
-  to converging elements of
-  the Chihuahuan Desert to
-  the west, the Tamaulipan
-  thornscrub and subtropical
-  woodlands along the Rio
-  Grande and the coastal grasslands
-  to the east. The region
-  is cut by arroyos and streams
-  and is blanketed with low-growing
-  mostly thorny vegetation.
-  Where conditions allow,
-  a dense understory of small
-  trees and shrubs will develop.
-  The distinctive woody vegetation
-  gives rise to the name ���brush
-  country��.The only subtropical area
-  in Texas is the distinctive
-  Rio Grande Valley Region
-  of the South Texas Plains.
-  Comprising Cameron, Willacy,
-  Hidalgo and Starr counties,
-  it once supported majestic
-  groves of Texas Palmetto,
-  Montezuma cypress and ebony-anaqua
-  woodlands. Today, most of
-  the region has been bulldozed,
-  plowed or otherwise fallen
-  victim to urbanization.
-  The once extensive groves
-  of Sabal palm that once
-  flourished here are now
-  reduced to a few stands
-  in or near Brownsville. The extensive history of
-  land use in the Rio Grande
-  Plain has not prevented
-  the area from harboring
-  many rare species of both
-  animal and plant. It is
-  here that we can find a
-  few remaining wild tropical
-  cats like ocelots and jaguarundis.
-  Ferruginous Pygmy-owl, Green
-  jay, Elf Owl, Texas totoise,
-  Indigo snake and Mexican
-  burrowing toad are also
-  found in this region. Rare
-  plants, especially in the
-  cactus family like Albert��s
-  black lace cactus, star
-  cactus and Runyons cory
-  cactus are among a surprising
-  number of plants that occur
-  in the region."	"[' Pecan', ' Sugarberry', ' Brasil', ' Anaqua', ' Great Leadtree', ' Texas ebony', ' Plateau liveoak', ' Sabal palm', ' Black willow', ' Coma', ' Texas persimmon', ' Texas kidneywood', ' Honey mesquite', ' Lotebush', ' Huisache', ' Desert willow', ' Texas wild olive']"	"[' Fiddlewood', ' Desert yaupon', ' Rio Grande abutilon', ' Bee bush', ' Agarita', ' American Beauty-berry', ' Chile pequin', ' Lantana', ' Cenizo', ' Barbados cherry', ' Turk��s cap', ' Rose pavonia', ' Autumn sage']"	"[' Agave', ' Huaco', ' Yucca']"	"[' Marsh��s pipevine', ' Old man��s\r\n        beard', ' Coral honeysuckle']"		"[' Ashe juniper', ' Montezuma bald\r\n        cypress']"	"[' Sideoats grama', ' Slender grama', ' Buffalograss', ' Inland sea-oats', ' Plains lovegrass', ' Little bluestem ']"	"[' Lila de los llanos', ' Englemann daisy', ' Heartleaf hibiscus', ' Scarlet sage', ' Red prickly poppy', ' Red gaillardia', ' Purple phacelia']"	" eco_southplains.png"
-6	"Ecoregion 7 ��� Edwards
-  Plateau "	"Nearly 24 million acres
-  dominated by Ashe juniper,
-  oaks and honey mesquite
-  comprise the beautifully
-  rugged, semi arid region
-  of the Edwards Plateau in
-  central Texas. Much of the
-  region overlays the immense
-  underground reservoir of
-  the Edwards Aquifer which
-  feeds many crystal clear
-  streams. Avearge annual
-  rainfall ranges from a meager
-  15 inches in the west to
-  more than 33 inches in the
-  east. Droughts can be frequent,
-  prolonged and unpredictable
-  though. More than 100 of Texas
-  400 endemic plants, including
-  Texas snowbells, Bracted
-  twist-flower, Texabama croton
-  and Texas wildrice occur
-  within the Edwards Plateau
-  ecoregion. In protected
-  valleys one might find disjunct
-  populations of Texas madrone,
-  Texas smoke tree, witch
-  hazel and big-tooth maples.
-  The moist river corridors
-  are lined with bald cypress,
-  pecan, hackberry and sycamores.
-  This region is also host
-  to some of the most spectacular
-  wildflower displays featuring
-  bluebonnets, Indian paintbrush,
-  gaillardia and golden-wave
-  among others.Among the terrestrial vertebrates,
-  the white-tailed deer shares
-  his domain with such varied
-  fauna as armadillo, black-tailed
-  jackrabbit, opossum and
-  the Texas earless lizard.
-  The waters host an array
-  of wildlife including Clear
-  Creek gambusia, San Marcos
-  gambusia, fountain darter
-  and San Marcos salamander.
-  Guadalupe bass and Cagle��s
-  Map Turtle are at home in
-  the rivers and the thousands
-  of caves harbor shrimp,
-  blind salamanders and bats. This region is a meeting
-  ground for birds typical
-  of eastern and western North
-  America. Green Kingfisher,
-  Cave Swallow, Black-capped
-  Vireo and Golden-cheeked
-  Warbler are among the many
-  nesting birds of the region. "	"[' Pecan', ' Sugarberry', ' Black walnut', ' Plateau black cherry', ' Chinkapin oak', ' Texas red oak', ' Texas persimmon', ' Yaupon', ' Red mulberry', ' Texas pistache', ' Carolina buckthorn', ' Big-toothed maple', ' Texas redbud', ' Mexican plum']"	"[' American beauty-berry', ' Elbowbush', ' Lantana', ' Spicebush', ' Fragrant sumac', ' Autumn sage']"	"[' Red yucca', ' Twist-leaf yucca']"	"[' Trumpet-creeper', ' Coral honeysuckle', ' Virginia creeper', ' Yellow passionvine', ' Mountain grape']"		"[' Ashe juniper', ' Remote pinyon pine', ' Bald cypress']"	"[' Silver bluestem', ' Canada wildye', ' Big muhly', ' Little bluestem', ' Indian grass']"	"[' Columbine', ' Butterfly weed', ' Englemann daisy', ' Shrubby boneset', ' Turk��s cap', ' Cedar sage', ' Standing cypress', ' Brown-eyed susan', ' Greenthread']"	"eco_edwards.png"
-7	"Ecoregion 8 ��� Rolling
-  Plains "	"At the south end of the
-  Great Plains of the central
-  United States, this region
-  characterizes the ���last
-  gasp�� or the great
-  continental prairie ecosystem.
-  Annual rainfall in the region
-  averages 22 to 30 inches,
-  with the greater numbers
-  being in the east. Average
-  temperatures are 60 to 64
-  degrees. East of the Cap
-  Rock, the native prairies
-  consist of midgrass to tallgrass
-  communities. Pristine pockets
-  of prairie are a rare treat
-  today though. Much of the
-  great expanse of sideoats
-  grama, little bluestem and
-  blue grama is now tilled
-  for cotton. Overgrazing
-  has allowed honey mesquite
-  and shinnery oak to invade
-  the prairie ��� along
-  with snakeweed and prickly
-  pear. Many are surprised
-  to learn that some trees
-  were a natural part of this
-  landscape ��� especially
-  along the waterways. Plains
-  cottonwood, Mohr oak, netleaf
-  hackberry, one-seed juniper
-  and Rocky Mountain juniper
-  are among these species.The gently rolling hills
-  and broad flats of the Rolling
-  Plains harbor the headwaters
-  of the great rivers of Texas,
-  including the Canadian,
-  the Colorado, the Concho
-  and the Red Rivers which
-  originate in the brakes
-  of the Cap Rock Escarpment.
-  These rivers and their tributaries
-  are inhabited by some of
-  the rare and unique fauna
-  of Texas such as the Concho
-  Water Snake and the Brazos
-  Water Snake. Sand bars on
-  the upper reaches of these
-  rivers provide nesting habitat
-  for the Interior Least Tern
-  and the Snowy Plover. The
-  Palo Duro Mouse, a close
-  relative of the Pinyon Mouse
-  of the Rocky Mountains,
-  can be found in the juniper
-  woodlands on the steep breaks
-  of the canyons there. Burrowing
-  at the base of mesquite
-  trees on certain clay loam
-  soils of the Rolling Plains
-  may be the Texas Kangaroo
-  Rat ��� a unique desert
-  adapted rodent that still
-  has scientist guessing as
-  to its origins."	"[' Pecan', ' Sugarberry', ' Net-leaf Hackberry', ' Eastern cottonwood', ' Post oak', ' Black willow', ' Silver leaf mountain\r\n          mahogany', ' Texas persimmon', ' Little walnut', ' Mohr oak', ' Scaly-bark\r\n          oak', ' Lance-leaf\r\n          sumac', ' Desert willow']"	"[' Chickasaw plum', ' Oklahoma plum', ' Common chokecherry', ' Lead-plant amorpha', ' False indigo', ' Sand sage', ' Agarita', ' Cenizo', ' Autumn sage ']"	"[' Red yucca', ' Teddy-bear cholla', ' Prickly-pear', ' Narrow-leaf yucca ']"	"[' Trumpet-creeper', ' Old man��s\r\n        beard', ' Coral honeysuckle', ' Panhandle grape']"		"[' Ashe juniper', ' One-seed juniper', ' Pinchot juniper', ' Eastern red cedar ']"	"[' Western wheatgrass', ' Big bluestem', ' Sand big bluestem', ' Sideoats grama', ' Blue grama', ' Hairy grama', ' Buffalograss', ' Canada wildrye', ' Curly mesquite', ' Texas bluegrass', ' Burrograss', ' Indiangrass ']"	"[' Winecup', ' Square-bud evening-primrose', ' Englemann daisy', ' Blackfoot daisy', ' Missouri evening-primrose', ' Pink plains penstemon', ' Mexican hat', ' Mealy sage', ' Copper-mallow', ' Huisache-daisy', ' Indian blanket', ' Yellow plainsman', ' Blue flax', ' Tahoka daisy', ' Prairie verbena']"	"eco_rollingplains.jpg"
-8	"Ecoregion 9 ��� High
-  Plains "	"Extending from the Panhandle
-  south to the Pecos River,
-  the High Plains have been
-  described as a sea of waving
-  grasslands. The 20 million
-  acres of this region fills
-  most of the ���handle
-  portion�� of the state.
-  It is a relatively high
-  and level plateau of sandy
-  to heavy, dark calcareous
-  clay soils over an impervious
-  layer of caliche. The winters
-  here are the coldest in
-  Texas, with the average
-  annual temperature being
-  only 59 degrees. Rainfall
-  ranges from 21 inches in
-  the east to about 12 inches
-  in the west. Sun and wind
-  rob the soil of even the
-  meager water it receives
-  from these rainfalls. Today,
-  most of the High Plains
-  is irrigated by the vast
-  Ogallala formation.Classified as mixed plain
-  and short-grass prairie,
-  vegetation in the High Plains
-  varies ��� highly dependent
-  on location. Hardlands or
-  mixed lands, sandy lands
-  or caliche lakes, all give
-  rise to a very different
-  plant community. Honey mesquite
-  and yucca have invaded some
-  areas that were characteristically
-  free of trees and brush.
-  Sand sage and shinnery oak
-  have spread through most
-  of the sandy lands. Playa lakes play an essential
-  role in this region, and
-  they are the prime waterfowl
-  wintering grounds for the
-  North American Central Flyway. The regions other name, ���Llano
-  Estacado�� or ���Staked
-  Plains�� is believed
-  to refer to the first European
-  settlers who drove stakes
-  into the ground to help
-  guide them across this featureless
-  region. These early pioneers
-  found a vast carpet of short
-  grasses that were home to
-  enormous herds of buffalo
-  and pronghorn antelope.
-  This was also the home of
-  the Comanches. The original character
-  of the High Plains has been
-  forever changed by the plow,
-  however unique areas still
-  remain including some scattered
-  sand dunes cloaked with
-  Harvard shin-oak, sandsage,
-  and little bluestem. Tallgrass
-  meadows can still be found
-  waving in the breezes along
-  the Canadian and Red Rivers.
-  While few rivers actually
-  cross the High Plains, these
-  meager water sources along
-  the Canadian and Red Rivers
-  one sustained luxuriant
-  growths of tall willows
-  and cottonwoods. Russian
-  olive and tamarisk, two
-  introduced species from
-  the Old World, now replace
-  these native trees along
-  the rivers, altering the
-  natural habitat of kingbirds
-  and phoebes. Grasses still
-  provide cover and nesting
-  habitats for myriads of
-  other birds, and belts of
-  trees planted in the 1930s
-  provide shelter to an amazing
-  diversity of wildlife. While
-  the Gray Wolf and elk no
-  longer occur on the High
-  Plains, mountain lions,
-  coyote, Red-tailed Hawk
-  and swift fox now crown
-  the food chain. While greatly
-  reduced, scattered populations
-  of Lesser Prairie-chicken
-  still boom to announce the
-  coming of spring across
-  the region while flocks
-  of Lark Buntings and Horned
-  Larks ply the skies over
-  this restless sea of grass."	"[' Plains cottonwood', ' Honey mesquite', ' Bur oak', ' Western soapberry', ' Net-leaf hackberry', ' Silver-leaf mountain\r\n          mahogany', ' Mohr oak', ' Lance-leaf\r\n          sumac', ' Texas redbud', ' Prairie crabapple']"	"[' Oklahoma plum', ' Common choke-cherry', ' Sand sage', ' Fourwing saltbush', ' Silver agarita', ' Feather dalea', ' Winter fat', ' Harvard shin-oak', ' Little-leaf sumac']"	"[' Teddy-bear cholla', ' Narrow-leaf yucca', ' Plains yucca']"	"[' Old man��s\r\n        beard', ' Snapdragon vine', ' Vine milkweed', ' Canyon grape']"		"[' Rocky mountain\r\n        juniper', ' Eastern red cedar', ' Colorado pinyon\r\n        pine']"	"[' Western wheatgrass', ' Cane bluestem', ' Sideoats grama', ' Blue grama', ' Buffalograss', ' Ear muhly', ' New Mexico little\r\n        bluestem']"	"[' Winecup', ' Purple coneflower', ' Englemann daisy', ' Blackfoot daisy', ' Missouri evening\r\n        primrose', ' Pink plains penstemon', ' Mealy sage', ' Copper-mallow', ' Indian blanket', ' Texas bluebonnet', ' Tahoka daisy', ' Prairie verbena']"	"eco_highplains.png"
-9	"Ecoregion 10 ��� The
-  Trans-Pecos "	"Perhaps the most spectacular
-  ecoregion in Texas is the
-  Trans-Pecos, offering both
-  breathtaking landscapes
-  and incredibly biodiversity.
-  West of the Pecos River
-  this 19 million acres of
-  impressive desert grassland,
-  desert scrub, salt basins,
-  sand hills, and rugged plateaus
-  to wooded mountain slopes
-  support an amazing variety
-  of plant and animal life
-  that is highlighted by the
-  amazing diversity within
-  the coniferous and mixed
-  hardwood forests at the
-  mountain peaks. More rare
-  and endemic species can
-  be found in this region
-  than in any other part of
-  Texas. Parts of this region are
-  the hottest and driest of
-  the state, with some areas
-  receiving less than 8 inches
-  of annual rainfall. Precipitation
-  tends to rise with elevation,
-  so the more moisture loving
-  plant communities are likely
-  to be in the mountains.
-  Heat is a significant feature
-  of the area, and the average
-  temperature of 64 degrees
-  fails to reflect either
-  extreme.The south rim of a mountain
-  system here might include
-  juniper, Texas madrone and
-  pine species, while the
-  desert immediately surrounding
-  it might feature creosote
-  bush and ocotillo. Creosote-tarbush
-  desert-scrub grasslands
-  are the dominant features
-  interspersed with montane
-  forests of pinyon pine,
-  ponderosa pine and oak. Fifty four species of bird
-  are primarily confined to
-  this region within the state
-  including the prized Montezuma��s
-  Quail. This is the region
-  where the Lucifer Hummingbird
-  is most reliably seen. Berylline
-  Hummingbird has only been
-  reported from the Trans-Pecos.
-  Reptiles abound including
-  eastern collared lizard
-  and Trans-Pecos rat snake.
-  Mexican long-tongued bat,
-  Texas antelope squirrel
-  kit fox and bighorn sheep
-  are some of the unusual
-  mammals found in this area.
-  Black bears and mountain
-  lions are both making significant
-  returns in this area. With an area this unique,
-  it is not surprising that
-  there is a long list of
-  plants available to the
-  gardener wanting to Wildscape
-  his property. These are
-  just a few possibilities."	"[' Texas madrone', ' Net-leaf Hackberry', ' Fragrant ash', ' Gregg ash', ' Meseta cottonwood', ' Quaking aspen', ' Emory oak', ' Chisos red oak', ' Peach-leaf willow', ' Western soapberry', ' Mexican buckeye', ' Alligator juniper', ' Rocky Mountain\r\n        juniper', ' Mexican pinyon\r\n        pine']"	"[' White-thorn acacia', ' Flame acanthus', ' Sand sage', ' Fourwing saltbush', ' Butterfly bush', ' Buttonbush']"	"[' Agave', ' Brown spine prickly-pear\r\n          cactus', ' Soaptree yucca', ' Faxon yucca', ' Teddy-bear cholla']"		"[' Old man��s\r\n        beard', ' Climbing milkweed\r\n        vine', ' Canyon grape']"		"[' Cane bluestem', ' Sideoats grama', ' Hairy grama', ' Buffalograss', ' California cottontop', ' Hairy tridens', ' Tanglehead', ' Burrogras', ' Alkali acaton']"	"[' Yellow columbine', ' Desert marigold', ' Slender-stem bitterweed', ' Purple groundcherry', ' Cedar sage', ' Scarlet standing-cypress', ' Big-bend lupine', ' Paperflower']"	"eco_transpecos.jpg"
-10											
-11	"Ecoregion"	"Paragraph"	"Trees"	"Shrubs"	"Succulents"	"Vines"	"Vine"	"Conifers"	"Grasses"	"Wildflowers"	"Image"
-12	"Ecoregion 1 – East Texas Pineywoods"	"The Pineywoods is graced
+'dbid'	'Ecoregion'	'Paragraph'	'Trees'	'Shrubs'	'Succulents'	'Vines'	'Vine'	'Conifers'	'Grasses'	'Wildflowers'	'Image'	'StateParks'	'Plants'
+0	'Ecoregion 1 – East Texas Pineywoods'	'The Pineywoods is graced
   by 35 to 60 inches of rain
   per year supporting not
   only the pines – loblolly,
@@ -593,9 +26,9 @@
   include River Otter, Gray
   Squirrel, Flying Squirrel
   and even the Louisiana Black
-  Bear."	"[' Drummond red maple', ' River birch', ' American beech', ' Southern red oak', ' Willow oak', ' Shumard red oak', ' American elm', ' Southern sugar\r\n        maple', ' Eastern redbud', ' Flowering dogwood', ' Southern magnolia', ' Eastern red cedar', ' Short-leaf pine', ' Long-leaf pine', ' Loblolly pine']"	"[' American beautyberry', ' Buttonbush', ' Lantana', ' Wax myrtle']"		"[' Cross-vine', ' Pipevine', ' Trumpet creeper', ' Carolina Jessamine', ' Coral honeysuckle', ' Virginia creeper', ' May-pop']"			"[' Big blue stem', ' Bushy bluestem', ' Broomsedge', ' Inland sea-oats', ' Canada wildrye']"	"[' Winecup', ' Coralbean', ' Halbert-leaf rose-mallow']"	" eco_pineywoods.png"
-13	"Ecoregion 2 – Gulf
-  Coast Prairies and Marshes "	"A narrow band about 60
+  Bear.'	'['' Drummond red maple'', '' River birch'', '' American beech'', '' Southern red oak'', '' Willow oak'', '' Shumard red oak'', '' American elm'', '' Southern sugar\r\n        maple'', '' Eastern redbud'', '' Flowering dogwood'', '' Southern magnolia'', '' Eastern red cedar'', '' Short-leaf pine'', '' Long-leaf pine'', '' Loblolly pine'']'	'['' American beautyberry'', '' Buttonbush'', '' Lantana'', '' Wax myrtle'']'		'['' Cross-vine'', '' Pipevine'', '' Trumpet creeper'', '' Carolina Jessamine'', '' Coral honeysuckle'', '' Virginia creeper'', '' May-pop'']'			'['' Big blue stem'', '' Bushy bluestem'', '' Broomsedge'', '' Inland sea-oats'', '' Canada wildrye'']'	'['' Winecup'', '' Coralbean'', '' Halbert-leaf rose-mallow'']'	' eco_pineywoods.png'	'[1, 11, 19, 40, 50, 59, 60, 63, 83]'	'[80, 136, 470, 471, 472, 473, 474, 476, 478, 480, 481, 482, 485, 487, 488, 489, 490, 491, 492, 493, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, 511, 512, 513, 515, 517, 518, 519, 520, 521, 522, 523, 524, 525, 526, 527, 530, 531, 532, 533, 537, 540, 541, 542, 543, 544, 545, 546, 547, 548, 552, 553, 555, 556, 558, 559, 560, 561, 563, 564, 565, 566, 567, 568, 569, 570, 571, 572, 574, 575, 576, 577, 578, 579, 580, 581, 582, 583, 584, 586, 589, 590, 592, 594, 595, 596, 600, 601, 602, 605, 606, 608, 609, 610, 611, 612, 613, 614, 615, 617, 622, 624, 625, 628, 629, 630, 631, 632, 633, 635, 636, 637, 638, 641, 642, 643, 644, 645, 646, 647, 648, 651, 652, 653, 654, 655, 656, 657, 658, 660, 661, 664, 665, 667, 669, 670, 671, 672, 673, 675, 679, 680, 682, 683, 688, 690, 691, 692, 693, 694, 695, 696, 700, 701, 703, 704, 705, 709, 710, 713, 715, 716, 717, 718, 720, 723, 727, 731, 735, 747, 754, 757, 758, 759, 761, 762, 763, 764, 765, 766, 767, 769, 770, 772, 773, 774, 776, 778, 780, 781, 782, 785, 786, 790, 792, 793, 795, 796, 797, 798, 800, 802, 803, 804, 805]'
+1	'Ecoregion 2 – Gulf
+  Coast Prairies and Marshes '	'A narrow band about 60
   miles wide along the Texas
   coast from the Louisiana
   border to Brownsville roughly
@@ -631,9 +64,9 @@
   in the fall. Coastal waters
   are often graced by willets,
   sanderlings, gulls, terns
-  and Black Skimmers. "	"[' Sugarberry', ' Water oak', ' Willow oak', ' Shumard red oak', ' Southern live oak', ' American elm', ' Yaupon', ' Red mulberry', ' Wax myrtle', ' Flameleaf sumac', ' Red buckeye', ' Eastern red cedar', ' Short-leaf pine', ' Loblolly pine', 'Shrubs\r\n          American beautyberry\r\n          Buttonbush\r\n          Lantana\r\n        Dwarf Palmetto      ']"		"[' Prickly-pear cactus', ' Spanish dagger']"	"[' Pipevine', ' Cross-vine', ' Trumpet creeper', ' Carolina Jessamine', ' Coral honeysuckle', ' May-pop', ' Muscadine grape']"			"[' Big blue stem', ' Bushy bluestem', ' Inland sea-oats', ' Sugarcane plumegrass', ' Gulf cordgrass', ' Eastern gammagrass']"	"[' Lance-leaf coreopsis', ' Coralbean', ' Spider lily', ' Cardinal flower', ' Turk’s cap', ' Gulf Coast penstemon', ' Scarlet sage', ' Indian paintbrush', ' Beach evening primrose', ' Showy evening primrose', ' Meadow pink']"	" eco_marshes.png"
-14	"Ecoregion 3 – Post
-  Oak Savannah "	"Immediately west of the
+  and Black Skimmers. '	'['' Sugarberry'', '' Water oak'', '' Willow oak'', '' Shumard red oak'', '' Southern live oak'', '' American elm'', '' Yaupon'', '' Red mulberry'', '' Wax myrtle'', '' Flameleaf sumac'', '' Red buckeye'', '' Eastern red cedar'', '' Short-leaf pine'', '' Loblolly pine'', ''Shrubs\r\n          American beautyberry\r\n          Buttonbush\r\n          Lantana\r\n        Dwarf Palmetto      '']'		'['' Prickly-pear cactus'', '' Spanish dagger'']'	'['' Pipevine'', '' Cross-vine'', '' Trumpet creeper'', '' Carolina Jessamine'', '' Coral honeysuckle'', '' May-pop'', '' Muscadine grape'']'			'['' Big blue stem'', '' Bushy bluestem'', '' Inland sea-oats'', '' Sugarcane plumegrass'', '' Gulf cordgrass'', '' Eastern gammagrass'']'	'['' Lance-leaf coreopsis'', '' Coralbean'', '' Spider lily'', '' Cardinal flower'', '' Turk’s cap'', '' Gulf Coast penstemon'', '' Scarlet sage'', '' Indian paintbrush'', '' Beach evening primrose'', '' Showy evening primrose'', '' Meadow pink'']'	' eco_marshes.png'	'[9, 32, 35, 49, 67, 76, 77, 79, 81]'	'[170, 197, 216, 218, 275, 471, 472, 473, 474, 478, 479, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 513, 515, 517, 518, 519, 520, 521, 522, 524, 525, 526, 527, 528, 530, 531, 532, 533, 534, 536, 537, 540, 541, 542, 543, 544, 545, 547, 548, 549, 550, 551, 552, 553, 555, 556, 558, 560, 561, 563, 564, 565, 566, 567, 568, 569, 570, 571, 574, 575, 576, 577, 579, 581, 583, 586, 589, 592, 593, 595, 597, 600, 601, 602, 603, 605, 606, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 624, 625, 626, 628, 629, 630, 631, 632, 633, 635, 636, 637, 638, 639, 641, 643, 644, 645, 646, 647, 648, 651, 652, 653, 654, 655, 656, 657, 658, 659, 661, 662, 663, 664, 666, 667, 669, 670, 671, 673, 675, 679, 680, 682, 683, 685, 686, 687, 688, 689, 690, 691, 692, 693, 694, 695, 697, 699, 701, 702, 703, 707, 709, 710, 711, 712, 713, 715, 716, 719, 720, 721, 722, 723, 727, 729, 730, 731, 735, 739, 740, 741, 743, 744, 745, 747, 754, 757, 758, 759, 760, 761, 762, 763, 765, 766, 767, 769, 770, 772, 773, 774, 775, 776, 778, 779, 780, 781, 782, 783, 785, 787, 789, 790, 792, 793, 794, 795, 796, 797, 798, 800, 802, 803, 805]'
+2	'Ecoregion 3 – Post
+  Oak Savannah '	'Immediately west of the
   East Texas Piney Woods we
   find the Post Oak Savannah
   emerging almost imperceptibly
@@ -682,9 +115,9 @@
   of the Lost Pines area harbors
   one of the last refuges
   for the endangered Houston
-  Toad."	"[' Wooly birch', ' Pecan', ' Black hickory', ' Sugarberry', ' Black walnut', ' Southern red oak', ' Bur oak', ' Blackjack oak', ' Chinkapin oak', ' Post oak', ' American elm', ' Cedar elm', ' Texas persimmon', ' Wax myrtle', ' Honey mesquite', ' Drumond red maple', ' Eastern redbud', ' Flowering dogwood', ' Mexican plum', ' Ashe juniper', ' Loblolly pine']"	"[' American beautyberry', ' Buttonbush', ' Black dalea', ' Lantana', ' Texas honeysuckle', ' Autumn sage', ' Sassafras', ' Coral-berry']"	"[' Prickly-pear cactus', ' Narrow-leaf yucca', ' Thread-leaf yucca']"	"[' Wooly pipevine', ' Cross-vine', ' Trumpet-creeper', ' Old man’s\r\n        beard', ' Coral honeysuckle', ' Virginia creeper', ' May-pop', ' Yellow passionvine', ' Prairie rose', ' Mustang grape']"			"[' Big blue stem', ' Broomsedge', ' Sideoats grama', ' Cane bluestem', ' Buffalograss', ' Inland sea-oats', ' Hooded windmillgrass', ' Canada wildrye', ' Big muhly', ' Little bluestem', ' Indiangrass']"	"[' Butterfly-weed', ' Winecup', ' Prairie larkspur', ' Coralbean', ' Late boneset', ' Maximillian sunflower', ' Cardinal flower', ' Turk’s cap', ' Scarlet sage', ' Indian paintbrush', ' Texas bluebells', ' Texas bluebonnet']"	" eco_postoaksavanah.jpg"
-15	"Ecoregion 4 – The
-  Blackland Prairies "	"The fertile dark clay soils
+  Toad.'	'['' Wooly birch'', '' Pecan'', '' Black hickory'', '' Sugarberry'', '' Black walnut'', '' Southern red oak'', '' Bur oak'', '' Blackjack oak'', '' Chinkapin oak'', '' Post oak'', '' American elm'', '' Cedar elm'', '' Texas persimmon'', '' Wax myrtle'', '' Honey mesquite'', '' Drumond red maple'', '' Eastern redbud'', '' Flowering dogwood'', '' Mexican plum'', '' Ashe juniper'', '' Loblolly pine'']'	'['' American beautyberry'', '' Buttonbush'', '' Black dalea'', '' Lantana'', '' Texas honeysuckle'', '' Autumn sage'', '' Sassafras'', '' Coral-berry'']'	'['' Prickly-pear cactus'', '' Narrow-leaf yucca'', '' Thread-leaf yucca'']'	'['' Wooly pipevine'', '' Cross-vine'', '' Trumpet-creeper'', '' Old man’s\r\n        beard'', '' Coral honeysuckle'', '' Virginia creeper'', '' May-pop'', '' Yellow passionvine'', '' Prairie rose'', '' Mustang grape'']'			'['' Big blue stem'', '' Broomsedge'', '' Sideoats grama'', '' Cane bluestem'', '' Buffalograss'', '' Inland sea-oats'', '' Hooded windmillgrass'', '' Canada wildrye'', '' Big muhly'', '' Little bluestem'', '' Indiangrass'']'	'['' Butterfly-weed'', '' Winecup'', '' Prairie larkspur'', '' Coralbean'', '' Late boneset'', '' Maximillian sunflower'', '' Cardinal flower'', '' Turk’s cap'', '' Scarlet sage'', '' Indian paintbrush'', '' Texas bluebells'', '' Texas bluebonnet'']'	' eco_postoaksavanah.jpg'	'[3, 10, 26, 28, 45, 52, 65, 68, 82]'	'[172, 304, 326, 341, 383, 423, 424, 470, 471, 472, 473, 474, 475, 476, 478, 479, 480, 481, 482, 484, 485, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 515, 517, 518, 519, 520, 521, 522, 524, 525, 526, 527, 528, 530, 531, 532, 533, 535, 536, 537, 540, 541, 542, 543, 544, 545, 546, 547, 550, 552, 553, 555, 556, 558, 559, 560, 561, 563, 564, 565, 566, 567, 568, 569, 571, 574, 575, 576, 577, 578, 579, 580, 582, 586, 589, 592, 593, 594, 595, 596, 597, 600, 601, 602, 604, 605, 606, 607, 608, 610, 611, 612, 613, 614, 615, 616, 617, 621, 622, 624, 625, 628, 629, 631, 632, 636, 637, 640, 644, 645, 646, 647, 648, 651, 652, 653, 655, 656, 657, 658, 659, 660, 661, 663, 664, 665, 666, 669, 670, 671, 672, 673, 675, 680, 681, 682, 686, 688, 690, 691, 692, 693, 694, 695, 702, 703, 709, 710, 712, 713, 715, 716, 717, 719, 720, 721, 722, 723, 726, 727, 731, 735, 747, 754, 757, 758, 759, 761, 762, 763, 764, 765, 766, 767, 769, 770, 772, 773, 774, 776, 778, 780, 782, 785, 786, 787, 790, 791, 792, 793, 795, 796, 797, 798, 800, 801, 802, 803, 804]'
+3	'Ecoregion 4 – The
+  Blackland Prairies '	'The fertile dark clay soils
   of the Blackland Prairies
   are some of the richest
   soils in the world. They
@@ -728,9 +161,9 @@
   but several tree species,
   including some of significant
   sizes, will show in this
-  list."	"[' Pecan', ' Black Walnut', ' Sycamore', ' Eastern Cottonwood', ' Burr Oak', ' Shumard Red Oak', ' American Elm', ' Cedar Elm', ' Common Persimmon', ' Deciduous Holly', ' Red Mulberry', ' Carolina Buckthorn', ' Huisache', ' Red Buckeye', ' Eastern Redbud', ' Mexican Plum', ' American Elderberry', ' Eastern Red Cedar']"	"[' American Beauty-berry', ' Buttonbush', ' Fragrant Sumac', ' Autumn Sage']"	"[' Pale-leaf Yucca']"	"[' Cross-vine', ' Trumpet Creeper', ' Coral Honeysuckle', ' Virginia Creeper', ' May Pop', ' Prairie Rose      ']"			"[' Big Bluestem', ' Sideoats grama', ' Canada Wildrye', ' Big Muhly', ' Indiangrass', ' Little Bluestem']"	"[' Columbine', ' Purple Coneflower', ' Coralbean', ' Cardinal Flower', ' Turk’s Cap', ' Scarlet Sage', ' Indian Paintbrush', ' Texas Bluebonnet', ' Brown-eyed Susan      ']"	" eco_blacklandprairie.jpg"
-16	"Ecoregion 5 – The
-  Cross Timbers and Prairies "	"About 17 million acres
+  list.'	'['' Pecan'', '' Black Walnut'', '' Sycamore'', '' Eastern Cottonwood'', '' Burr Oak'', '' Shumard Red Oak'', '' American Elm'', '' Cedar Elm'', '' Common Persimmon'', '' Deciduous Holly'', '' Red Mulberry'', '' Carolina Buckthorn'', '' Huisache'', '' Red Buckeye'', '' Eastern Redbud'', '' Mexican Plum'', '' American Elderberry'', '' Eastern Red Cedar'']'	'['' American Beauty-berry'', '' Buttonbush'', '' Fragrant Sumac'', '' Autumn Sage'']'	'['' Pale-leaf Yucca'']'	'['' Cross-vine'', '' Trumpet Creeper'', '' Coral Honeysuckle'', '' Virginia Creeper'', '' May Pop'', '' Prairie Rose      '']'			'['' Big Bluestem'', '' Sideoats grama'', '' Canada Wildrye'', '' Big Muhly'', '' Indiangrass'', '' Little Bluestem'']'	'['' Columbine'', '' Purple Coneflower'', '' Coralbean'', '' Cardinal Flower'', '' Turk’s Cap'', '' Scarlet Sage'', '' Indian Paintbrush'', '' Texas Bluebonnet'', '' Brown-eyed Susan      '']'	' eco_blacklandprairie.jpg'	'[8, 13, 17, 29, 53, 55, 61, 72, 84]'	'[20, 39, 57, 60, 86, 93, 130, 205, 209, 230, 245, 269, 279, 324, 325, 327, 330, 401, 427, 433, 435, 452, 464, 465, 471, 472, 473, 474, 475, 478, 481, 482, 484, 487, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 500, 501, 502, 504, 505, 507, 508, 513, 515, 517, 518, 519, 520, 521, 524, 525, 526, 527, 528, 530, 531, 532, 533, 534, 535, 536, 537, 538, 540, 541, 542, 543, 544, 545, 548, 549, 550, 551, 552, 553, 554, 555, 556, 558, 559, 560, 561, 563, 564, 565, 566, 568, 569, 570, 571, 575, 576, 577, 578, 579, 581, 582, 587, 589, 591, 592, 593, 594, 595, 597, 601, 602, 604, 607, 608, 609, 610, 614, 616, 621, 622, 624, 625, 631, 632, 636, 637, 640, 644, 645, 646, 648, 649, 651, 652, 655, 656, 657, 658, 659, 660, 661, 663, 666, 668, 670, 673, 675, 679, 680, 681, 682, 686, 690, 691, 694, 695, 699, 702, 703, 709, 710, 712, 713, 716, 719, 721, 722, 723, 726, 727, 730, 731, 735, 741, 745, 747, 754, 758, 759, 761, 762, 763, 764, 765, 766, 767, 769, 770, 771, 772, 773, 774, 778, 780, 785, 786, 787, 788, 790, 792, 793, 795, 796, 797, 798, 799, 800, 801, 802, 803, 804]'
+4	'Ecoregion 5 – The
+  Cross Timbers and Prairies '	'About 17 million acres
   are represented by this
   region of alternating bands
   of wooded habitat scattered
@@ -758,9 +191,9 @@
   and Eastern red cedar become
   more prevalent. Wildlife
   is a mixture of eastern
-  forest and prairie species."	"[' Pecan', ' Black Walnut', ' Sycamore', ' Eastern Cottonwood', ' Plateau Liveoak', ' Bur Oak', ' Blackjack Oak', ' American Elm', ' Texas Persimmon', ' Little Walnut', ' Honey Mesquite', ' Lance-leaf Sumac', ' Mexican Plum', ' Ashe Juniper', ' Eastern Red Cedar']"	"[' American Beauty-berry', ' Buttonbush', ' Lantana', ' Fragrant Sumac', ' Autumn Sage', 'Succulent', ' Red Yucca', ' Threadleaf Yucca']"			"[' Trumpet-creeper', ' Coral Honeysuckle', ' Snapdragon Vine', ' Virginia Creeper', ' Yellow Passionvine']"		"[' Big Bluestem', ' Sideoats Grama', ' Buffalograss', ' Big Muhly', ' Little Bluestem', ' Eastern Gammagrass']"	"[' Coralbean', ' Engelmann Daisy', ' Late Boneset']"	" eco_crosstimbers.png"
-17	"Ecoregion 6 – South
-  Texas Brush Country "	"East of the Rio Grande
+  forest and prairie species.'	'['' Pecan'', '' Black Walnut'', '' Sycamore'', '' Eastern Cottonwood'', '' Plateau Liveoak'', '' Bur Oak'', '' Blackjack Oak'', '' American Elm'', '' Texas Persimmon'', '' Little Walnut'', '' Honey Mesquite'', '' Lance-leaf Sumac'', '' Mexican Plum'', '' Ashe Juniper'', '' Eastern Red Cedar'']'	'['' American Beauty-berry'', '' Buttonbush'', '' Lantana'', '' Fragrant Sumac'', '' Autumn Sage'', ''Succulent'', '' Red Yucca'', '' Threadleaf Yucca'']'			'['' Trumpet-creeper'', '' Coral Honeysuckle'', '' Snapdragon Vine'', '' Virginia Creeper'', '' Yellow Passionvine'']'		'['' Big Bluestem'', '' Sideoats Grama'', '' Buffalograss'', '' Big Muhly'', '' Little Bluestem'', '' Eastern Gammagrass'']'	'['' Coralbean'', '' Engelmann Daisy'', '' Late Boneset'']'	' eco_crosstimbers.png'	'[15, 16, 22, 23, 30, 44, 46, 51, 54, 62, 66, 71, 73]'	'[27, 28, 35, 67, 68, 71, 78, 82, 114, 134, 145, 233, 250, 259, 260, 285, 286, 290, 292, 305, 309, 310, 322, 329, 342, 365, 404, 432, 443, 444, 446, 453, 455, 456, 458, 463, 467, 471, 472, 473, 474, 475, 479, 481, 482, 487, 489, 491, 492, 493, 494, 495, 496, 497, 498, 502, 513, 515, 517, 518, 520, 521, 524, 525, 526, 527, 528, 529, 530, 531, 532, 533, 534, 535, 536, 537, 538, 541, 542, 543, 544, 548, 549, 550, 552, 553, 554, 556, 561, 563, 564, 565, 566, 569, 571, 575, 576, 577, 578, 579, 581, 582, 583, 587, 589, 592, 593, 594, 595, 596, 597, 599, 601, 602, 607, 609, 610, 613, 614, 616, 619, 622, 624, 625, 626, 631, 632, 640, 644, 646, 648, 649, 651, 652, 656, 658, 659, 660, 663, 668, 670, 673, 675, 676, 677, 678, 680, 681, 682, 684, 686, 690, 691, 694, 695, 697, 699, 700, 702, 703, 706, 708, 709, 710, 712, 713, 715, 716, 719, 721, 722, 723, 726, 727, 730, 731, 735, 739, 741, 743, 744, 745, 747, 748, 751, 754, 758, 759, 761, 763, 764, 765, 766, 768, 769, 771, 773, 774, 777, 783, 784, 785, 787, 788, 791, 792, 793, 794, 796, 797, 798, 799, 800, 801, 802, 803, 804]'
+5	'Ecoregion 6 – South
+  Texas Brush Country '	'East of the Rio Grande
   River and south of the Balcones
   Escarpment lies a relatively
   unpopulated region known
@@ -829,9 +262,9 @@
   cactus and Runyons cory
   cactus are among a surprising
   number of plants that occur
-  in the region."	"[' Pecan', ' Sugarberry', ' Brasil', ' Anaqua', ' Great Leadtree', ' Texas ebony', ' Plateau liveoak', ' Sabal palm', ' Black willow', ' Coma', ' Texas persimmon', ' Texas kidneywood', ' Honey mesquite', ' Lotebush', ' Huisache', ' Desert willow', ' Texas wild olive']"	"[' Fiddlewood', ' Desert yaupon', ' Rio Grande abutilon', ' Bee bush', ' Agarita', ' American Beauty-berry', ' Chile pequin', ' Lantana', ' Cenizo', ' Barbados cherry', ' Turk’s cap', ' Rose pavonia', ' Autumn sage']"	"[' Agave', ' Huaco', ' Yucca']"	"[' Marsh’s pipevine', ' Old man’s\r\n        beard', ' Coral honeysuckle']"		"[' Ashe juniper', ' Montezuma bald\r\n        cypress']"	"[' Sideoats grama', ' Slender grama', ' Buffalograss', ' Inland sea-oats', ' Plains lovegrass', ' Little bluestem ']"	"[' Lila de los llanos', ' Englemann daisy', ' Heartleaf hibiscus', ' Scarlet sage', ' Red prickly poppy', ' Red gaillardia', ' Purple phacelia']"	" eco_southplains.png"
-18	"Ecoregion 7 – Edwards
-  Plateau "	"Nearly 24 million acres
+  in the region.'	'['' Pecan'', '' Sugarberry'', '' Brasil'', '' Anaqua'', '' Great Leadtree'', '' Texas ebony'', '' Plateau liveoak'', '' Sabal palm'', '' Black willow'', '' Coma'', '' Texas persimmon'', '' Texas kidneywood'', '' Honey mesquite'', '' Lotebush'', '' Huisache'', '' Desert willow'', '' Texas wild olive'']'	'['' Fiddlewood'', '' Desert yaupon'', '' Rio Grande abutilon'', '' Bee bush'', '' Agarita'', '' American Beauty-berry'', '' Chile pequin'', '' Lantana'', '' Cenizo'', '' Barbados cherry'', '' Turk’s cap'', '' Rose pavonia'', '' Autumn sage'']'	'['' Agave'', '' Huaco'', '' Yucca'']'	'['' Marsh’s pipevine'', '' Old man’s\r\n        beard'', '' Coral honeysuckle'']'		'['' Ashe juniper'', '' Montezuma bald\r\n        cypress'']'	'['' Sideoats grama'', '' Slender grama'', '' Buffalograss'', '' Inland sea-oats'', '' Plains lovegrass'', '' Little bluestem '']'	'['' Lila de los llanos'', '' Englemann daisy'', '' Heartleaf hibiscus'', '' Scarlet sage'', '' Red prickly poppy'', '' Red gaillardia'', '' Purple phacelia'']'	' eco_southplains.png'	'[4, 14, 25, 27, 34, 47, 74]'	'[41, 165, 178, 190, 348, 469, 471, 472, 473, 479, 481, 482, 483, 484, 486, 487, 489, 491, 492, 494, 498, 500, 502, 509, 511, 513, 514, 515, 519, 520, 525, 526, 528, 530, 531, 532, 533, 534, 536, 537, 539, 540, 542, 544, 545, 548, 549, 550, 551, 553, 556, 563, 564, 566, 575, 577, 578, 579, 585, 589, 592, 595, 597, 602, 603, 610, 614, 616, 618, 619, 620, 621, 624, 625, 626, 627, 632, 634, 639, 640, 646, 648, 650, 651, 656, 659, 660, 662, 663, 666, 668, 670, 675, 677, 682, 685, 686, 687, 689, 690, 691, 695, 697, 698, 699, 702, 707, 710, 711, 712, 713, 715, 716, 721, 722, 723, 724, 726, 727, 729, 730, 731, 735, 739, 741, 743, 744, 745, 747, 748, 751, 754, 758, 759, 761, 762, 763, 765, 766, 767, 773, 780, 785, 787, 791, 792, 793, 794, 796, 798, 800, 802, 803]'
+6	'Ecoregion 7 – Edwards
+  Plateau '	'Nearly 24 million acres
   dominated by Ashe juniper,
   oaks and honey mesquite
   comprise the beautifully
@@ -889,9 +322,9 @@
   Cave Swallow, Black-capped
   Vireo and Golden-cheeked
   Warbler are among the many
-  nesting birds of the region. "	"[' Pecan', ' Sugarberry', ' Black walnut', ' Plateau black cherry', ' Chinkapin oak', ' Texas red oak', ' Texas persimmon', ' Yaupon', ' Red mulberry', ' Texas pistache', ' Carolina buckthorn', ' Big-toothed maple', ' Texas redbud', ' Mexican plum']"	"[' American beauty-berry', ' Elbowbush', ' Lantana', ' Spicebush', ' Fragrant sumac', ' Autumn sage']"	"[' Red yucca', ' Twist-leaf yucca']"	"[' Trumpet-creeper', ' Coral honeysuckle', ' Virginia creeper', ' Yellow passionvine', ' Mountain grape']"		"[' Ashe juniper', ' Remote pinyon pine', ' Bald cypress']"	"[' Silver bluestem', ' Canada wildye', ' Big muhly', ' Little bluestem', ' Indian grass']"	"[' Columbine', ' Butterfly weed', ' Englemann daisy', ' Shrubby boneset', ' Turk’s cap', ' Cedar sage', ' Standing cypress', ' Brown-eyed susan', ' Greenthread']"	"eco_edwards.png"
-19	"Ecoregion 8 – Rolling
-  Plains "	"At the south end of the
+  nesting birds of the region. '	'['' Pecan'', '' Sugarberry'', '' Black walnut'', '' Plateau black cherry'', '' Chinkapin oak'', '' Texas red oak'', '' Texas persimmon'', '' Yaupon'', '' Red mulberry'', '' Texas pistache'', '' Carolina buckthorn'', '' Big-toothed maple'', '' Texas redbud'', '' Mexican plum'']'	'['' American beauty-berry'', '' Elbowbush'', '' Lantana'', '' Spicebush'', '' Fragrant sumac'', '' Autumn sage'']'	'['' Red yucca'', '' Twist-leaf yucca'']'	'['' Trumpet-creeper'', '' Coral honeysuckle'', '' Virginia creeper'', '' Yellow passionvine'', '' Mountain grape'']'		'['' Ashe juniper'', '' Remote pinyon pine'', '' Bald cypress'']'	'['' Silver bluestem'', '' Canada wildye'', '' Big muhly'', '' Little bluestem'', '' Indian grass'']'	'['' Columbine'', '' Butterfly weed'', '' Englemann daisy'', '' Shrubby boneset'', '' Turk’s cap'', '' Cedar sage'', '' Standing cypress'', '' Brown-eyed susan'', '' Greenthread'']'	'eco_edwards.png'	'[0, 7, 21, 24, 33, 36, 37, 38, 42, 43, 56, 57, 58, 70, 78, 80]'	'[10, 30, 31, 32, 33, 49, 56, 62, 99, 163, 164, 221, 222, 223, 224, 247, 262, 276, 278, 323, 376, 398, 400, 403, 412, 461, 468, 471, 472, 473, 474, 475, 477, 479, 481, 482, 483, 484, 486, 487, 489, 491, 492, 493, 494, 495, 496, 497, 498, 500, 502, 504, 505, 507, 508, 511, 513, 514, 515, 516, 517, 518, 519, 520, 521, 524, 525, 526, 527, 528, 529, 530, 531, 532, 533, 534, 535, 536, 537, 538, 539, 540, 541, 542, 544, 545, 548, 549, 550, 551, 552, 553, 554, 555, 556, 557, 563, 564, 566, 569, 571, 573, 574, 575, 576, 577, 578, 579, 582, 585, 588, 589, 592, 593, 594, 595, 596, 597, 598, 599, 601, 602, 604, 607, 609, 610, 613, 614, 615, 616, 618, 619, 620, 621, 622, 624, 625, 626, 631, 632, 636, 637, 639, 640, 642, 644, 645, 646, 648, 649, 650, 651, 652, 656, 657, 658, 659, 660, 662, 663, 664, 666, 668, 670, 673, 674, 675, 676, 677, 678, 679, 680, 681, 682, 683, 684, 686, 689, 690, 691, 693, 694, 695, 697, 699, 702, 703, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 719, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 734, 735, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 748, 749, 750, 752, 753, 754, 756, 758, 759, 761, 763, 764, 765, 766, 767, 768, 769, 773, 774, 777, 780, 783, 784, 785, 786, 787, 788, 791, 792, 793, 794, 795, 796, 797, 798, 800, 801, 802, 803, 804]'
+7	'Ecoregion 8 – Rolling
+  Plains '	'At the south end of the
   Great Plains of the central
   United States, this region
   characterizes the “last
@@ -956,9 +389,9 @@
   Rat – a unique desert
   adapted rodent that still
   has scientist guessing as
-  to its origins."	"[' Pecan', ' Sugarberry', ' Net-leaf Hackberry', ' Eastern cottonwood', ' Post oak', ' Black willow', ' Silver leaf mountain\r\n          mahogany', ' Texas persimmon', ' Little walnut', ' Mohr oak', ' Scaly-bark\r\n          oak', ' Lance-leaf\r\n          sumac', ' Desert willow']"	"[' Chickasaw plum', ' Oklahoma plum', ' Common chokecherry', ' Lead-plant amorpha', ' False indigo', ' Sand sage', ' Agarita', ' Cenizo', ' Autumn sage ']"	"[' Red yucca', ' Teddy-bear cholla', ' Prickly-pear', ' Narrow-leaf yucca ']"	"[' Trumpet-creeper', ' Old man’s\r\n        beard', ' Coral honeysuckle', ' Panhandle grape']"		"[' Ashe juniper', ' One-seed juniper', ' Pinchot juniper', ' Eastern red cedar ']"	"[' Western wheatgrass', ' Big bluestem', ' Sand big bluestem', ' Sideoats grama', ' Blue grama', ' Hairy grama', ' Buffalograss', ' Canada wildrye', ' Curly mesquite', ' Texas bluegrass', ' Burrograss', ' Indiangrass ']"	"[' Winecup', ' Square-bud evening-primrose', ' Englemann daisy', ' Blackfoot daisy', ' Missouri evening-primrose', ' Pink plains penstemon', ' Mexican hat', ' Mealy sage', ' Copper-mallow', ' Huisache-daisy', ' Indian blanket', ' Yellow plainsman', ' Blue flax', ' Tahoka daisy', ' Prairie verbena']"	"eco_rollingplains.jpg"
-20	"Ecoregion 9 – High
-  Plains "	"Extending from the Panhandle
+  to its origins.'	'['' Pecan'', '' Sugarberry'', '' Net-leaf Hackberry'', '' Eastern cottonwood'', '' Post oak'', '' Black willow'', '' Silver leaf mountain\r\n          mahogany'', '' Texas persimmon'', '' Little walnut'', '' Mohr oak'', '' Scaly-bark\r\n          oak'', '' Lance-leaf\r\n          sumac'', '' Desert willow'']'	'['' Chickasaw plum'', '' Oklahoma plum'', '' Common chokecherry'', '' Lead-plant amorpha'', '' False indigo'', '' Sand sage'', '' Agarita'', '' Cenizo'', '' Autumn sage '']'	'['' Red yucca'', '' Teddy-bear cholla'', '' Prickly-pear'', '' Narrow-leaf yucca '']'	'['' Trumpet-creeper'', '' Old man’s\r\n        beard'', '' Coral honeysuckle'', '' Panhandle grape'']'		'['' Ashe juniper'', '' One-seed juniper'', '' Pinchot juniper'', '' Eastern red cedar '']'	'['' Western wheatgrass'', '' Big bluestem'', '' Sand big bluestem'', '' Sideoats grama'', '' Blue grama'', '' Hairy grama'', '' Buffalograss'', '' Canada wildrye'', '' Curly mesquite'', '' Texas bluegrass'', '' Burrograss'', '' Indiangrass '']'	'['' Winecup'', '' Square-bud evening-primrose'', '' Englemann daisy'', '' Blackfoot daisy'', '' Missouri evening-primrose'', '' Pink plains penstemon'', '' Mexican hat'', '' Mealy sage'', '' Copper-mallow'', '' Huisache-daisy'', '' Indian blanket'', '' Yellow plainsman'', '' Blue flax'', '' Tahoka daisy'', '' Prairie verbena'']'	'eco_rollingplains.jpg'	'[6, 12, 18, 48, 69, 75]'	'[143, 471, 472, 473, 474, 475, 476, 477, 479, 481, 489, 491, 493, 494, 495, 496, 497, 498, 502, 504, 505, 513, 514, 515, 516, 518, 520, 524, 525, 528, 529, 530, 531, 532, 533, 534, 535, 536, 537, 538, 541, 542, 544, 545, 546, 549, 550, 552, 553, 556, 557, 561, 562, 563, 564, 569, 575, 576, 577, 582, 585, 587, 589, 591, 593, 594, 595, 596, 597, 598, 599, 601, 602, 604, 607, 614, 615, 616, 619, 622, 623, 625, 626, 632, 640, 648, 649, 651, 657, 658, 659, 660, 662, 663, 668, 670, 673, 675, 676, 678, 680, 681, 682, 683, 684, 686, 690, 691, 699, 700, 702, 706, 707, 708, 709, 710, 712, 713, 714, 715, 716, 721, 722, 726, 727, 730, 735, 739, 743, 745, 746, 747, 748, 754, 758, 759, 761, 763, 766, 767, 768, 771, 773, 774, 777, 783, 784, 785, 787, 791, 792, 794, 796, 799, 801, 802, 803]'
+8	'Ecoregion 9 – High
+  Plains '	'Extending from the Panhandle
   south to the Pecos River,
   the High Plains have been
   described as a sea of waving
@@ -1058,9 +491,9 @@
   the region while flocks
   of Lark Buntings and Horned
   Larks ply the skies over
-  this restless sea of grass."	"[' Plains cottonwood', ' Honey mesquite', ' Bur oak', ' Western soapberry', ' Net-leaf hackberry', ' Silver-leaf mountain\r\n          mahogany', ' Mohr oak', ' Lance-leaf\r\n          sumac', ' Texas redbud', ' Prairie crabapple']"	"[' Oklahoma plum', ' Common choke-cherry', ' Sand sage', ' Fourwing saltbush', ' Silver agarita', ' Feather dalea', ' Winter fat', ' Harvard shin-oak', ' Little-leaf sumac']"	"[' Teddy-bear cholla', ' Narrow-leaf yucca', ' Plains yucca']"	"[' Old man’s\r\n        beard', ' Snapdragon vine', ' Vine milkweed', ' Canyon grape']"		"[' Rocky mountain\r\n        juniper', ' Eastern red cedar', ' Colorado pinyon\r\n        pine']"	"[' Western wheatgrass', ' Cane bluestem', ' Sideoats grama', ' Blue grama', ' Buffalograss', ' Ear muhly', ' New Mexico little\r\n        bluestem']"	"[' Winecup', ' Purple coneflower', ' Englemann daisy', ' Blackfoot daisy', ' Missouri evening\r\n        primrose', ' Pink plains penstemon', ' Mealy sage', ' Copper-mallow', ' Indian blanket', ' Texas bluebonnet', ' Tahoka daisy', ' Prairie verbena']"	"eco_highplains.png"
-21	"Ecoregion 10 – The
-  Trans-Pecos "	"Perhaps the most spectacular
+  this restless sea of grass.'	'['' Plains cottonwood'', '' Honey mesquite'', '' Bur oak'', '' Western soapberry'', '' Net-leaf hackberry'', '' Silver-leaf mountain\r\n          mahogany'', '' Mohr oak'', '' Lance-leaf\r\n          sumac'', '' Texas redbud'', '' Prairie crabapple'']'	'['' Oklahoma plum'', '' Common choke-cherry'', '' Sand sage'', '' Fourwing saltbush'', '' Silver agarita'', '' Feather dalea'', '' Winter fat'', '' Harvard shin-oak'', '' Little-leaf sumac'']'	'['' Teddy-bear cholla'', '' Narrow-leaf yucca'', '' Plains yucca'']'	'['' Old man’s\r\n        beard'', '' Snapdragon vine'', '' Vine milkweed'', '' Canyon grape'']'		'['' Rocky mountain\r\n        juniper'', '' Eastern red cedar'', '' Colorado pinyon\r\n        pine'']'	'['' Western wheatgrass'', '' Cane bluestem'', '' Sideoats grama'', '' Blue grama'', '' Buffalograss'', '' Ear muhly'', '' New Mexico little\r\n        bluestem'']'	'['' Winecup'', '' Purple coneflower'', '' Englemann daisy'', '' Blackfoot daisy'', '' Missouri evening\r\n        primrose'', '' Pink plains penstemon'', '' Mealy sage'', '' Copper-mallow'', '' Indian blanket'', '' Texas bluebonnet'', '' Tahoka daisy'', '' Prairie verbena'']'	'eco_highplains.png'	'[]'	'[371, 471, 472, 473, 475, 476, 477, 481, 491, 493, 494, 502, 513, 514, 515, 518, 520, 525, 528, 529, 530, 531, 534, 535, 536, 537, 538, 546, 549, 550, 556, 557, 562, 569, 576, 589, 593, 595, 596, 597, 598, 599, 601, 607, 614, 622, 623, 637, 640, 648, 657, 658, 659, 660, 663, 668, 673, 675, 678, 680, 682, 683, 684, 686, 690, 691, 699, 702, 708, 709, 710, 713, 714, 715, 719, 721, 722, 726, 730, 735, 743, 746, 747, 754, 758, 759, 763, 766, 767, 768, 773, 783, 784, 787, 791, 792, 794, 796, 801, 802, 803]'
+9	'Ecoregion 10 – The
+  Trans-Pecos '	'Perhaps the most spectacular
   ecoregion in Texas is the
   Trans-Pecos, offering both
   breathtaking landscapes
@@ -1130,5 +563,4 @@
   plants available to the
   gardener wanting to Wildscape
   his property. These are
-  just a few possibilities."	"[' Texas madrone', ' Net-leaf Hackberry', ' Fragrant ash', ' Gregg ash', ' Meseta cottonwood', ' Quaking aspen', ' Emory oak', ' Chisos red oak', ' Peach-leaf willow', ' Western soapberry', ' Mexican buckeye', ' Alligator juniper', ' Rocky Mountain\r\n        juniper', ' Mexican pinyon\r\n        pine']"	"[' White-thorn acacia', ' Flame acanthus', ' Sand sage', ' Fourwing saltbush', ' Butterfly bush', ' Buttonbush']"	"[' Agave', ' Brown spine prickly-pear\r\n          cactus', ' Soaptree yucca', ' Faxon yucca', ' Teddy-bear cholla']"		"[' Old man’s\r\n        beard', ' Climbing milkweed\r\n        vine', ' Canyon grape']"		"[' Cane bluestem', ' Sideoats grama', ' Hairy grama', ' Buffalograss', ' California cottontop', ' Hairy tridens', ' Tanglehead', ' Burrogras', ' Alkali acaton']"	"[' Yellow columbine', ' Desert marigold', ' Slender-stem bitterweed', ' Purple groundcherry', ' Cedar sage', ' Scarlet standing-cypress', ' Big-bend lupine', ' Paperflower']"	"eco_transpecos.jpg"
-">>>>>>> 61215d36d86046e08b460fe1c71814d516c1b849"											
+  just a few possibilities.'	'['' Texas madrone'', '' Net-leaf Hackberry'', '' Fragrant ash'', '' Gregg ash'', '' Meseta cottonwood'', '' Quaking aspen'', '' Emory oak'', '' Chisos red oak'', '' Peach-leaf willow'', '' Western soapberry'', '' Mexican buckeye'', '' Alligator juniper'', '' Rocky Mountain\r\n        juniper'', '' Mexican pinyon\r\n        pine'']'	'['' White-thorn acacia'', '' Flame acanthus'', '' Sand sage'', '' Fourwing saltbush'', '' Butterfly bush'', '' Buttonbush'']'	'['' Agave'', '' Brown spine prickly-pear\r\n          cactus'', '' Soaptree yucca'', '' Faxon yucca'', '' Teddy-bear cholla'']'		'['' Old man’s\r\n        beard'', '' Climbing milkweed\r\n        vine'', '' Canyon grape'']'		'['' Cane bluestem'', '' Sideoats grama'', '' Hairy grama'', '' Buffalograss'', '' California cottontop'', '' Hairy tridens'', '' Tanglehead'', '' Burrogras'', '' Alkali acaton'']'	'['' Yellow columbine'', '' Desert marigold'', '' Slender-stem bitterweed'', '' Purple groundcherry'', '' Cedar sage'', '' Scarlet standing-cypress'', '' Big-bend lupine'', '' Paperflower'']'	'eco_transpecos.jpg'	'[2, 5, 20, 31, 39, 41, 64, 85]'	'[11, 236, 284, 471, 472, 473, 476, 477, 479, 486, 489, 491, 493, 494, 497, 500, 502, 513, 514, 515, 516, 518, 525, 527, 528, 529, 530, 531, 534, 536, 537, 539, 546, 549, 551, 553, 554, 556, 557, 564, 576, 577, 585, 587, 588, 593, 595, 597, 598, 599, 604, 607, 609, 614, 616, 618, 619, 620, 623, 625, 626, 631, 632, 639, 648, 649, 650, 651, 656, 657, 658, 659, 660, 662, 663, 666, 668, 673, 675, 676, 677, 678, 682, 683, 684, 686, 689, 690, 691, 697, 699, 702, 706, 707, 708, 710, 713, 714, 716, 719, 721, 722, 724, 725, 726, 727, 728, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 748, 749, 750, 751, 752, 753, 754, 755, 756, 758, 759, 761, 767, 768, 777, 783, 784, 787, 791, 792, 794, 796, 800, 801, 802, 803, 804]'
