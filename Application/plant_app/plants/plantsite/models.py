@@ -18,22 +18,25 @@ class EcoRegion(models.Model):
 
 
 class PlantCsvEcoregions(models.Model):
-        dbid = models.IntegerField(blank=True, primary_key=True)
-        ecoregion = models.TextField(db_column='Ecoregion', blank=True, null=True)  # Field name made lowercase.
-        paragraph = models.TextField(db_column='Paragraph', blank=True, null=True)  # Field name made lowercase.
-        trees = models.TextField(db_column='Trees', blank=True, null=True)  # Field name made lowercase.
-        shrubs = models.TextField(db_column='Shrubs', blank=True, null=True)  # Field name made lowercase.
-        succulents = models.TextField(db_column='Succulents', blank=True, null=True)  # Field name made lowercase.
-        vines = models.TextField(db_column='Vines', blank=True, null=True)  # Field name made lowercase.
-        vine = models.TextField(db_column='Vine', blank=True, null=True)  # Field name made lowercase.
-        conifers = models.TextField(db_column='Conifers', blank=True, null=True)  # Field name made lowercase.
-        grasses = models.TextField(db_column='Grasses', blank=True, null=True)  # Field name made lowercase.
-        wildflowers = models.TextField(db_column='Wildflowers', blank=True, null=True)  # Field name made lowercase.
-        image = models.TextField(db_column='Image', blank=True, null=True)  # Field name made lowercase.
+    dbid = models.IntegerField(blank=True, primary_key=True)
+    ecoregion = models.TextField(db_column='Ecoregion', blank=True, null=True)  # Field name made lowercase.
+    paragraph = models.TextField(db_column='Paragraph', blank=True, null=True)  # Field name made lowercase.
+    trees = models.TextField(db_column='Trees', blank=True, null=True)  # Field name made lowercase.
+    shrubs = models.TextField(db_column='Shrubs', blank=True, null=True)  # Field name made lowercase.
+    succulents = models.TextField(db_column='Succulents', blank=True, null=True)  # Field name made lowercase.
+    vines = models.TextField(db_column='Vines', blank=True, null=True)  # Field name made lowercase.
+    vine = models.TextField(db_column='Vine', blank=True, null=True)  # Field name made lowercase.
+    conifers = models.TextField(db_column='Conifers', blank=True, null=True)  # Field name made lowercase.
+    grasses = models.TextField(db_column='Grasses', blank=True, null=True)  # Field name made lowercase.
+    wildflowers = models.TextField(db_column='Wildflowers', blank=True, null=True)  # Field name made lowercase.
+    image = models.TextField(db_column='Image', blank=True, null=True)  # Field name made lowercase.
+    stateparks = models.TextField(db_column='StateParks', blank=True, null=True)  # Field name made lowercase.
+    plants = models.TextField(db_column='Plants', blank=True, null=True)  # Field name made lowercase.
 
-        class Meta:
-            managed = False
-            db_table = 'plant_csv_ecoregions'
+    class Meta:
+        managed = True
+        db_table = 'plant_csv_ecoregions'
+
 
 
 
@@ -67,7 +70,7 @@ class PlantCsv(models.Model):
     lifecycle = models.TextField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'plant_csv'
 
 
@@ -86,17 +89,18 @@ class Stateparks(models.Model): #THIS MODEL NEEDS TO BE CHANGED IT SEEMS TO BE E
 '''
 
 class Stateparks(models.Model):
-            dbid = models.IntegerField(blank=True,primary_key=True)
-            name = models.TextField(db_column='Name', blank=True, null=True)  # Field name made lowercase.
-            latitude = models.FloatField(db_column='Latitude', blank=True, null=True)  # Field name made lowercase.
-            longitude = models.FloatField(db_column='Longitude', blank=True, null=True)  # Field name made lowercase.
-            region = models.TextField(db_column='Region', blank=True, null=True)  # Field name made lowercase.
-            image = models.TextField(db_column='Image', blank=True, null=True)  # Field name made lowercase.
-            url = models.TextField(db_column='Url', blank=True, null=True)  # Field name made lowercase.
-            description = models.TextField(db_column='Description', blank=True, null=True)  # Field name made lowercase.
-            plantlist = models.TextField(db_column='PlantList', blank=True, null=True)  # Field name made lowercase.
-            address = models.TextField(db_column='Address', blank=True, null=True)  # Field name made lowercase.
+    dbid = models.IntegerField(blank=True, primary_key=True)
+    name = models.TextField(db_column='Name', blank=True, null=True)  # Field name made lowercase.
+    latitude = models.FloatField(db_column='Latitude', blank=True, null=True)  # Field name made lowercase.
+    longitude = models.FloatField(db_column='Longitude', blank=True, null=True)  # Field name made lowercase.
+    region = models.TextField(db_column='Region', blank=True, null=True)  # Field name made lowercase.
+    image = models.TextField(db_column='Image', blank=True, null=True)  # Field name made lowercase.
+    url = models.TextField(db_column='Url', blank=True, null=True)  # Field name made lowercase.
+    description = models.TextField(db_column='Description', blank=True, null=True)  # Field name made lowercase.
+    plantlist = models.TextField(db_column='PlantList', blank=True, null=True)  # Field name made lowercase.
+    address = models.TextField(db_column='Address', blank=True, null=True)  # Field name made lowercase.
 
-            class Meta:
-                managed = False
-                db_table = 'plant_csv_stateparks'
+    class Meta:
+        managed = True
+        db_table = 'plant_csv_stateparks'
+
