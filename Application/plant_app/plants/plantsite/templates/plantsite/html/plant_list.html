@@ -21,9 +21,13 @@
 			item.style.borderWidth="0px";
 		}
 
+
 	</script>
+
+
 </head>
 <body>
+
 	<nav class="navbar navbar-expand-lg navbar-fixed-top" style="background-color:rgba(0,0,0,0.35);">
 	  <div class="container-fluid">
 
@@ -75,7 +79,7 @@
 					      </div>
 								<div class="input-group">
 									<p>Filter by plant type</p>
-								<select name="planttype">
+								<select name="planttype" id="1" onchange="SaveType()">
 									<option value ="AllType">All Type</option>
 									<option value =" Shrub">Shrub</option>
 									<option value =" Shade Tree"> Shade Tree</option>
@@ -183,5 +187,58 @@
 		</div>
 	</div>
 -->
+
+
 </body>
 </html>
+
+
+<script type="text/javascript">
+
+var optionList = document.getElementById("1").getElementsByTagName("option");
+var optionLength = optionList.length;
+
+window.onload = function () {
+
+var value = getCookie("type");
+value = value == undefined ? "AllType" : value;
+for (var i = 0; i < optionLength; i++) {
+
+if (optionList[i].value == value) {
+optionList[i].selected = "selected";
+}
+}
+}
+
+
+function SaveType() {
+
+for (var i = 0; i < optionLength; i++) {
+if (optionList[i].selected || optionList[i].selected == "selected") {
+setCookie("type", optionList[i].value);
+break;
+}
+}
+}
+
+function setCookie(c_name, value, expiredays) {
+var exdate = new Date();
+exdate.setTime(exdate.getTime() + expiredays * 3600 * 1000);
+document.cookie = c_name + "=" + escape(value) + ((expiredays == null) ? "" : ";expires=" + exdate.toGMTString()) + ";path=/";
+}
+
+
+function getCookie(c_name) {
+if (document.cookie.length > 0) {
+var c_start = document.cookie.indexOf(c_name + "=");
+if (c_start != -1) {
+c_start = c_start + c_name.length + 1;
+c_end = document.cookie.indexOf(";", c_start);
+if (c_end == -1) {
+c_end = document.cookie.length;
+}
+return unescape(document.cookie.substring(c_start, c_end));
+}
+}
+}
+</script>
