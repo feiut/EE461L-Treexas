@@ -21,10 +21,10 @@ class viewTest(TestCase):
         self.client = Client()
 
         
-        PlantCsv.objects.create(name="Plant1")
+        PlantCsv.objects.create(name="Plant1", lat="32.24", longi="-99.87", image="test", nickname="test")
         
-        PlantCsvEcoregions.objects.create(dbid=0, ecoregion="Eco1", paragraph="Null", trees="", shrubs="",
-                                          succulents="", vines="", vine="", conifers="", grasses="", wildflowers="", image="https/test_img.png")
+        PlantCsvEcoregions.objects.create(dbid=0, ecoregion="Eco1", paragraph="Null", trees="Null", shrubs="Null",
+                                          succulents="Null", vines="Null", vine="Null", conifers="Null", grasses="Null", wildflowers="Null", image="https/test_img.png")
                                           
         Stateparks.objects.create(dbid=0, name="Park1", latitude="32.24", longitude="-99.87")
         
@@ -89,12 +89,6 @@ class viewTest(TestCase):
         # Check that the response is 200 OK.
         self.assertEqual(response.status_code, 200)
 
-    def test_park_profile(self):
-        # Issue a GET request.
-        response = self.client.get('/park_profile/?id=0')
-        # Check that the response is 200 OK.
-        self.assertEqual(response.status_code, 200)
-
     def test_plant_type_list(self): #Passed
         # Issue a GET request.
         response = self.client.get('/plant_list/')
@@ -105,13 +99,6 @@ class viewTest(TestCase):
     def test_ecoregion_list(self): #Passed
         # Issue a GET request.
         response = self.client.get('/eco_list/')
-        # Check that the response is 200 OK.
-        self.assertEqual(response.status_code, 200)
-    
-    
-    def test_eco_profile_view(self):
-        # Issue a GET request.
-        response = self.client.get('/eco_profile/?id=0')
         # Check that the response is 200 OK.
         self.assertEqual(response.status_code, 200)
 
@@ -126,11 +113,11 @@ class viewTest(TestCase):
 
     def test_search_plants_with_string(self):
         leftover = search_plants_with_string("1")
-        self.assertEqual(leftover.name, "Plant1")
+        self.assertEqual(list(leftover)[0].name, "Plant1")
 
     def test_search_park_with_string(self):
         leftover = search_park_with_string("1")
-        self.assertEqual(leftover.name, "Park1")
+        self.assertEqual(list(leftover)[0].name, "Park1")
 
     def test_get_park_with_dbid(self):
         result = get_park_with_dbid(0)

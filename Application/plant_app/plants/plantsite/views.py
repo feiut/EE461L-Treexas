@@ -83,14 +83,14 @@ def search_park_with_string(p):
 
 def get_park_with_dbid(dbid):
 	results = Stateparks.objects.get(dbid=str(dbid))
-	results.image = re.sub('https','https:',results.image)
+	results.image = re.sub('https','https:',str(results.image))
 	return results
 
 
 def get_all_parks():
 	results = Stateparks.objects.all()
 	for park in results:
-		park.image = re.sub('https','https:',park.image)
+		park.image = re.sub('https','https:',str(park.image))
 	return results
 
 ''' regular functions '''
@@ -316,14 +316,14 @@ def eco_profile_view(request):
     #values = ['PINEYWOODS', 'GULF PRAIRIES AND MARSHES', 'POST OAK SAVANNAH', 'BLACKLAND PRAIRIES', 'CROSS TIMBERS AND PRAIRIES', 'SOUTH TEXAS PLAINS', 'EDWARDS PLATEAU', 'ROLLING PLAINS', 'HIGH PLAINS', 'TRANS-PECOS']
     #dictionary = dict(zip(keys, values))
     plants_in_eco = prof.plants
-    plants_in_eco = re.sub(" ",'',plants_in_eco)
-    plants_in_eco = re.sub("\[",'',plants_in_eco) #gets rid of brackets
-    plants_in_eco = re.sub("\]",'',plants_in_eco)
+    plants_in_eco = re.sub(" ",'',str(plants_in_eco))
+    plants_in_eco = re.sub("\[",'',str(plants_in_eco)) #gets rid of brackets
+    plants_in_eco = re.sub("\]",'',str(plants_in_eco))
     plant_list = plants_in_eco.split(',') #uses comma as delimiter to split string and make a list
     plants = set() #set will be used to store database objects (a query set)
     for p in plant_list:
         if not p == '':
-            plants.add(get_plant_with_id(p.strip()))
+            plants.add(get_plant_with_id(str(p).strip()))
     # eco_name = str(prof.ecoregion)
     # eco_name = eco_name[22:]
     #eco_name = dictionary[str(dbid)]
@@ -359,13 +359,13 @@ def park_profile_view(request):
     dbid = request.GET.get('id')
     prof = get_park_with_dbid(str(dbid))
     plants_in_park = prof.plantlist
-    plants_in_park = re.sub("\[",'',plants_in_park) #gets rid of brackets
-    plants_in_park = re.sub("\]",'',plants_in_park)
+    plants_in_park = re.sub("\[",'',str(plants_in_park)) #gets rid of brackets
+    plants_in_park = re.sub("\]",'',str(plants_in_park))
     plant_list = plants_in_park.split(',') #uses comma as delimiter to split string and make a list
     plants = set() #set will be used to store database objects (a query set)
     for p in plant_list:
     	if not p == '':
-    		plants.add(get_plant_with_id(p))
+    		plants.add(get_plant_with_id(str(p)))
     context_dict = {'profile': prof, 'plants':plants}
     return HttpResponse(template.render(context_dict, request))
 
