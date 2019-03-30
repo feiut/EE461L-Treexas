@@ -8,7 +8,7 @@ from plantsite.models import PlantCsvEcoregions
 from plantsite.models import Stateparks
 from . import githubdynamic
 from .githubdynamic import get_issues_commits
-
+import re
 # Create your views here.
 '''
 Your project’s TEMPLATES setting describes how Django will load and render templates. The default settings file
@@ -51,7 +51,16 @@ def filter_plants_with_parameters(value_1, value_2, value_3):
 
 def get_all_plants():
     results =  PlantCsv.objects.all()
+    for plant in results:
+    	if plant.image == 'None':
+    		plant.image = 'https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.createwebquest.com%2Fsites%2Fdefault%2Ffiles%2Fimages%2Fplant-care-thumb.png&imgrefurl=https%3A%2F%2Fwww.createwebquest.com%2Fwebquest%2Fplant-parts-0&docid=G3ZWCETF-brxAM&tbnid=_Rumo4S_TgyQCM%3A&vet=10ahUKEwjdpsbXk6jhAhUDG6wKHbu-Dm8QMwiZASgjMCM..i&w=600&h=600&bih=838&biw=1853&q=plant%20image&ved=0ahUKEwjdpsbXk6jhAhUDG6wKHbu-Dm8QMwiZASgjMCM&iact=mrc&uact=8'
     return results
+
+def get_plant_with_id(id):
+	results = PlantCsv.objects.get(id=id)
+	if ('none' in results.image.lower()) or ("n/a" in results.image.lower()):
+		results.image ='data:image/jpeg;base64,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'
+	return results
 
 def search_park_with_string(p):
 	qset = Stateparks.objects.all()
@@ -60,6 +69,18 @@ def search_park_with_string(p):
 		if(p.lower() in parks.name.lower()):
 			leftover.add(parks)
 	return leftover
+
+def get_park_with_dbid(dbid):
+	results = Stateparks.objects.get(dbid=str(dbid))
+	results.image = re.sub('https','https:',results.image)
+	return results
+
+
+def get_all_parks():
+	results = Stateparks.objects.all()
+	for park in results:
+		park.image = re.sub('https','https:',park.image)
+	return results
 
 ''' regular functions '''
 
@@ -253,25 +274,6 @@ def plant_type_list(request):
 			context_dict = {'plant_names' : names}
 			return HttpResponse(template.render(context_dict,request))
 		results = search_plants_with_string(textfield)
-		"""
-<<<<<<<HEAD
-            template = loader.get_template('plantsite/html/plant_list.html')
-            names = PlantCsv.objects.all()
-            context_dict = {'plant_names' : names}
-            return HttpResponse(template.render(context_dict,request))
-
-=======
-                    template = loader.get_template('plantsite/html/plant_list.html')
-                    planttype_field =request.GET.get('planttype')
-                    water_demand_field =request.GET.get('waterdemand')
-                    plant_form_field =request.GET.get('plantform')
-                    names = filter_plants_with_parameters(planttype_field, water_demand_field, plant_form_field)
-                    context_dict = {'plant_names' : names}
-                    return HttpResponse(template.render(context_dict,request))
-
->>>>>>> 5f1d96b2890f497971feae9ef8eaa4fbc7e73a7c
-		"""
-
 		if not results:
 			template = loader.get_template('plantsite/html/plant_list.html')
 			return HttpResponse(template.render({},request))
@@ -288,7 +290,7 @@ def plant_type_list(request):
 def plant_profile_view(request):
     template = loader.get_template('plantsite/html/plant_profile.html')
     number = request.GET.get('id')
-    prof = PlantCsv.objects.get(id=number)
+    prof = get_plant_with_id(number)
     context_dict = {'profile': prof}
     return HttpResponse(template.render(context_dict,request))
 
@@ -298,15 +300,23 @@ def eco_profile_view(request):
     dbid = request.GET.get('id')
     prof = PlantCsvEcoregions.objects.get(dbid=str(dbid))
     prof.image = prof.image.strip() #remove leading whitespace ERICK
-    keys = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
-    values = ['PINEYWOODS', 'GULF PRAIRIES AND MARSHES', 'POST OAK SAVANNAH', 'BLACKLAND PRAIRIES', 'CROSS TIMBERS AND PRAIRIES', 'SOUTH TEXAS PLAINS', 'EDWARDS PLATEAU', 'ROLLING PLAINS', 'HIGH PLAINS', 'TRANS-PECOS']
-    dictionary = dict(zip(keys, values))
-
+   # keys = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    #values = ['PINEYWOODS', 'GULF PRAIRIES AND MARSHES', 'POST OAK SAVANNAH', 'BLACKLAND PRAIRIES', 'CROSS TIMBERS AND PRAIRIES', 'SOUTH TEXAS PLAINS', 'EDWARDS PLATEAU', 'ROLLING PLAINS', 'HIGH PLAINS', 'TRANS-PECOS']
+    #dictionary = dict(zip(keys, values))
+    plants_in_eco = prof.plants
+    plants_in_eco = re.sub(" ",'',plants_in_eco)
+    plants_in_eco = re.sub("\[",'',plants_in_eco) #gets rid of brackets
+    plants_in_eco = re.sub("\]",'',plants_in_eco)
+    plant_list = plants_in_eco.split(',') #uses comma as delimiter to split string and make a list
+    plants = set() #set will be used to store database objects (a query set)
+    for p in plant_list:
+        if not p == '':
+            plants.add(get_plant_with_id(p.strip()))
     # eco_name = str(prof.ecoregion)
     # eco_name = eco_name[22:]
-    eco_name = dictionary[str(dbid)]
-    pla = PlantCsv.objects.filter(econregion=eco_name)
-    context_dict = {'profile': prof, 'plants': pla}
+    #eco_name = dictionary[str(dbid)]
+    #pla = PlantCsv.objects.filter(econregion=eco_name)
+    context_dict = {'profile': prof, 'plants': plants}
     return HttpResponse(template.render(context_dict, request))
 
 def park_list_view(request):
@@ -314,7 +324,7 @@ def park_list_view(request):
 		textfield = request.GET.get('search')
 		if not textfield:
 			template = loader.get_template('plantsite/html/park_list.html')
-			parks = Stateparks.objects.all()
+			parks = get_all_parks()
 			context_dict = {'parks': parks}
 			return HttpResponse(template.render(context_dict, request))
 		else:
@@ -328,15 +338,23 @@ def park_list_view(request):
 				return HttpResponse(template.render(context_dict,request))
 	else:
 		template = loader.get_template('plantsite/html/park_list.html')
-		parks = Stateparks.objects.all()
+		parks = get_all_parks()
 		context_dict = {'parks': parks}
 		return HttpResponse(template.render(context_dict, request))
 
 def park_profile_view(request):
     template = loader.get_template('plantsite/html/park_profile.html')
     dbid = request.GET.get('id')
-    prof = Stateparks.objects.get(dbid=str(dbid))
-    context_dict = {'profile': prof}
+    prof = get_park_with_dbid(str(dbid))
+    plants_in_park = prof.plantlist
+    plants_in_park = re.sub("\[",'',plants_in_park) #gets rid of brackets
+    plants_in_park = re.sub("\]",'',plants_in_park)
+    plant_list = plants_in_park.split(',') #uses comma as delimiter to split string and make a list
+    plants = set() #set will be used to store database objects (a query set)
+    for p in plant_list:
+    	if not p == '':
+    		plants.add(get_plant_with_id(p))
+    context_dict = {'profile': prof, 'plants':plants}
     return HttpResponse(template.render(context_dict, request))
 
 #<img src="{{ MEDIA_URL }}{{ image.image.url }}" />
