@@ -1,9 +1,6 @@
 from django.test import TestCase
 from django.test.client import Client
 from plantsite.models import PlantCsv
-#from plantsite.models import Plant
-#from plantsite.models import StatePark
-#from plantsite.models import EcoRegion
 from plantsite.models import PlantCsvEcoregions
 from plantsite.models import Stateparks
 from plantsite.views import search_plants_with_string
@@ -20,7 +17,7 @@ class viewTest(TestCase):
         # Every test needs a client.
         self.client = Client()
 
-        
+        # Tests must use fake dataset to do the works
         PlantCsv.objects.create(name="Plant1", lat="32.24", longi="-99.87", image="test", nickname="test")
         
         PlantCsvEcoregions.objects.create(dbid=0, ecoregion="Eco1", paragraph="Null", trees="Null", shrubs="Null",
@@ -31,46 +28,16 @@ class viewTest(TestCase):
         # Park.objects.create("Park2", "sp_dinosaur_valley.jpg", "/park2/")
         # Park.objects.create("Park3", "sp_daingerfield.jpg", "/park3/")
         # Park.objects.create("Park4", "sp_acton.jpg", "/park4/")
+
         # Ecoregion.objects.create("Eco1", "eco_pineywoods.jpg", "/eco1/")
         # Ecoregion.objects.create("Eco2", "eco_marshes.jpg", "/eco2/")
         # Ecoregion.objects.create("Eco3", "eco_postoaksavanah.jpg", "/eco3/")
+
         # Plant.objects.create("Plant1", "eco_pineywoods.jpg", "/plant1/")
         # Plant.objects.create("Plant2", "eco_pineywoods.jpg", "/plant2/")
         # Plant.objects.create("Plant3", "eco_pineywoods.jpg", "/plant3/")
 
-    # def test_search_plants_with_string(self):
-    #     leftover = search_plants_with_string("1")
-    #     self.assertEqual(leftover.name, "Plant1")
-
-    # def search_plants_with_string(p):
-    #     results = PlantCsv.objects.all()
-    #     leftover = set()
-    #     for plants in results:
-    #         if (p.lower() in plants.alsoknownas.lower()) or (p.lower() in plants.botanicalname.lower()) or (
-    #                 p.lower() in plants.name.lower()):
-    #             leftover.add(plants)
-    #     return leftover
-
-    # def test_get_all_plants(self):
-    #     results = get_all_plants()
-    #     self.assertEqual(len(PlantCsv.objects.all()), len(results))
-
-    # def get_all_plants():
-    #     results = PlantCsv.objects.all()
-    #     return results
-
-    # def test_search_park_with_string(self):
-    #     leftover = search_park_with_string("k3")
-    #     self.assertEqual(leftover.name, "Park3")
-
-    # def search_park_with_string(p):
-    #     qset = Stateparks.objects.all()
-    #     leftover = set()
-    #     for parks in qset:
-    #         if (p.lower() in parks.name.lower()):
-    #             leftover.add(parks)
-    #     return leftover
-
+    '''Test the urls and the webpage framework'''
     def test_main_page(self): #Passed
         # Issue a GET request.
         response = self.client.get('')
@@ -83,7 +50,7 @@ class viewTest(TestCase):
         # Check that the response is 200 OK.
         self.assertEqual(response.status_code, 200)
 
-    def test_park_list_view(self):
+    def test_park_list_view(self): #Passed finally
         # Issue a GET request.
         response = self.client.post('/park_list/', {})
         # Check that the response is 200 OK.
@@ -102,6 +69,8 @@ class viewTest(TestCase):
         # Check that the response is 200 OK.
         self.assertEqual(response.status_code, 200)
 
+
+    '''Test the inner functions corresponding to searching in views.py'''
 
     def test_get_all_plants(self):
         result = get_all_plants()
