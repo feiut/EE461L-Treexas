@@ -21,9 +21,13 @@
 			item.style.borderWidth="0px";
 		}
 
+
 	</script>
+
+
 </head>
 <body>
+
 	<nav class="navbar navbar-expand-lg navbar-fixed-top" style="background-color:rgba(0,0,0,0.35);">
 	  <div class="container-fluid">
 
@@ -75,7 +79,7 @@
 					      </div>
 								<div class="input-group">
 									<p>Filter by plant type</p>
-								<select name="planttype">
+								<select name="planttype" id="1" onchange="SaveType()">
 									<option value ="AllType">All Type</option>
 									<option value =" Shrub">Shrub</option>
 									<option value =" Shade Tree"> Shade Tree</option>
@@ -110,7 +114,7 @@
 					  </form>
 				</div>
 			</div>
-<!--<<<<<<< HEAD -->
+
 			<div class="row">
 				{% for plant in plant_names %}
 				<div class="col-xs-4 col-m-3 col-l-3 thumbnail-settings">
@@ -124,31 +128,7 @@
 				{% endfor %}
 			</div>
 	</div>
-<!--
-=======
 
-			<!-- <div class="row">
-				<div class="col-xs-12">
-						<form method="GET">
-					      <div class="input-group">
-
-										<select name="planttype">
-											<option value ="AllType">All Type</option>
-										  <option value ="Shrub">Shrub</option>
-										  <option value =" Shade Tree"> Shade Tree</option>
-										  <option value=" Groundcover"> Groundcover</option>
-										  <option value=" Ornamental Grass">Ornamental Grass</option>
-										</select>
-										<button class="btn btn-default" type="submit">
-										<i class="glyphicon glyphicon-leaf"></i></button>
-					            <br>
-					          </div>
-					      </div>
-					  </form>
-				</div>
-			</div> -->
-
->>>>>>> 5f1d96b2890f497971feae9ef8eaa4fbc7e73a7c
 			<div class="row">
 				{% for plant in plant_names %}
 				<div class="col-xs-4 col-m-3 col-l-3 thumbnail-settings">
@@ -162,26 +142,61 @@
 				{% endfor %}
 			</div>
 	</div>
--->
 
-	<!--
-	<div id="title">
-	<h1><font> List of Texas Plants</font></h1>
-	<h3><font> Where everythings bigger!</font></h3>
-	</div>
-	<div class="container">
-		<div class="Text">
-	{% for plant in plant_names %}
-			<font class="name">Botanical Name: </font>
-			<a href="/plant_profile/?id={{plant.id}}"> {{plant.botanicalname}}</a>
-			<br>
-			<font class="name">Common Name: </font>
-			<font> {{plant.alsoknownas}}</font>
-			<br>
-			<br>
-	{% endfor %}
-		</div>
-	</div>
--->
+
+
 </body>
 </html>
+
+
+<script type="text/javascript">
+
+var optionList = document.getElementById("1").getElementsByTagName("option");
+var optionLength = optionList.length;
+
+
+
+window.onload = function () {
+
+var value = getCookie("type");
+value = value == undefined ? "AllType" : value;
+for (var i = 0; i < optionLength; i++) {
+
+if (optionList[i].value == value) {
+optionList[i].selected = "selected";
+}
+}
+}
+
+
+function SaveType() {
+
+for (var i = 0; i < optionLength; i++) {
+if (optionList[i].selected || optionList[i].selected == "selected") {
+setCookie("type", optionList[i].value);
+break;
+}
+}
+}
+
+function setCookie(c_name, value, expiredays) {
+var exdate = new Date();
+exdate.setTime(exdate.getTime() + expiredays * 3600 * 1000);
+document.cookie = c_name + "=" + escape(value) + ((expiredays == null) ? "" : ";expires=" + exdate.toGMTString()) + ";path=/";
+}
+
+
+function getCookie(c_name) {
+if (document.cookie.length > 0) {
+var c_start = document.cookie.indexOf(c_name + "=");
+if (c_start != -1) {
+c_start = c_start + c_name.length + 1;
+c_end = document.cookie.indexOf(";", c_start);
+if (c_end == -1) {
+c_end = document.cookie.length;
+}
+return unescape(document.cookie.substring(c_start, c_end));
+}
+}
+}
+</script>
