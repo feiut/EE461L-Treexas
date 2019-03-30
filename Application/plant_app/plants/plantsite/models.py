@@ -60,11 +60,6 @@ class PlantCsv(models.Model):
     deciduousevergreen = models.TextField(blank=True, null=True)
     soil = models.TextField(blank=True, null=True)
     reproduction = models.TextField(blank=True, null=True)
-<<<<<<< HEAD
-    #note = models.TextField(blank=True, null=True)
-=======
-   # note = models.TextField(blank=True, null=True)
->>>>>>> 93b1020e72dc49bc0f03be2639bdcfa2736587f2
     sciname = models.TextField(blank=True, null=True)
     lat = models.FloatField(blank=True, null=True)
     longi = models.FloatField(blank=True, null=True)
