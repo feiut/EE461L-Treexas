@@ -116,20 +116,7 @@
 				</div>
 			</div>
 
-			<div class="pagination">
-			  {% if plant_names.has_previous %}
-			    <!-- 如果当前页还有上一页，显示一个上一页的按钮 -->
-			    <a href="?page={{ plant_names.previous_page_number }}">上一页</a>
-			  {% endif %}
-			  <span class="current">
-			    <!-- 显示当前页面信息 -->
-			    第 {{ plant_names.number }} 页 / 共 {{ plant_names.paginator.num_pages }} 页
-			  </span>
-			  {% if plant_names.has_next %}
-			    <!-- 如果当前页还有上下页，显示一个下一页的按钮 -->
-			    <a href="?page={{ plant_names.next_page_number }}">下一页</a>
-			  {% endif %}
-			</div>
+
 
 			<div class="row">
 				{% for plant in plant_names %}
@@ -142,6 +129,21 @@
 					</div>
 				</div>
 				{% endfor %}
+			</div>
+
+			<div class="pagination">
+			  {% if plant_names.has_previous %}
+
+			    <a href="?page={{ plant_names.previous_page_number }}">previous page</a>
+			  {% endif %}
+			  <span class="current">
+			    <!-- current page -->
+			    current {{ plant_names.number }} page / total {{ plant_names.paginator.num_pages }} pages
+			  </span>
+			  {% if plant_names.has_next %}
+			    <!-- if there is next page, show this -->
+			    <a href="?page={{ plant_names.next_page_number }}">next page</a>
+			  {% endif %}
 			</div>
 	</div>
 

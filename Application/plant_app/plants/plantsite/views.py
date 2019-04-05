@@ -284,7 +284,18 @@ def plant_type_list(request):
             water_demand_field =request.GET.get('waterdemand')
             plant_form_field =request.GET.get('plantform')
             names = filter_plants_with_parameters(planttype_field, water_demand_field, plant_form_field)
-            names = fix_plant_defualt(names)
+            names_list = fix_plant_defualt(names)
+    # adding pagination
+            paginator = Paginator(names_list, 10)
+            page = request.GET.get('page')
+
+            try:
+                names = paginator.page(page)
+            except PageNotAnInteger:
+                names = paginator.page(1)
+            except EmptyPage:
+                names = paginator.page(paginator.num_pages)
+    # added pagination finished
             context_dict = {'plant_names' : names}
             return HttpResponse(template.render(context_dict,request))
         else:
@@ -309,7 +320,7 @@ def plant_type_list(request):
             names = paginator.page(1)
         except EmptyPage:
             names = paginator.page(paginator.num_pages)
-# added pagination
+# added pagination finished
             context_dict = {'plant_names': names}
         return HttpResponse(template.render(context_dict,request))
 
