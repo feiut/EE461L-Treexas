@@ -286,7 +286,7 @@ def plant_type_list(request):
             names = filter_plants_with_parameters(planttype_field, water_demand_field, plant_form_field)
             names_list = fix_plant_defualt(names)
     # adding pagination
-            paginator = Paginator(names_list, 10)
+            paginator = Paginator(names_list, 15)
             page = request.GET.get('page')
 
             try:
@@ -311,7 +311,7 @@ def plant_type_list(request):
         template = loader.get_template('plantsite/html/plant_list.html')
         names_list = get_all_plants()
 # adding pagination
-        paginator = Paginator(names_list, 10)
+        paginator = Paginator(names_list, 15)
         page = request.GET.get('page')
 
         try:

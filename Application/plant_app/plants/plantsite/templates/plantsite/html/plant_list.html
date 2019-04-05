@@ -134,15 +134,15 @@
 			<div class="pagination">
 			  {% if plant_names.has_previous %}
 
-			    <a href="?page={{ plant_names.previous_page_number }}">previous page</a>
+			    <a class="prevpage" href="?page={{ plant_names.previous_page_number }}">previous page</a>
 			  {% endif %}
 			  <span class="current">
 			    <!-- current page -->
-			    current {{ plant_names.number }} page / total {{ plant_names.paginator.num_pages }} pages
+			    page {{ plant_names.number }} / total {{ plant_names.paginator.num_pages }} pages
 			  </span>
 			  {% if plant_names.has_next %}
 			    <!-- if there is next page, show this -->
-			    <a href="?page={{ plant_names.next_page_number }}">next page</a>
+			    <a class="nextpage" href="?page={{ plant_names.next_page_number }}">next page</a>
 			  {% endif %}
 			</div>
 	</div>
