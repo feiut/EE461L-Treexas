@@ -2,13 +2,14 @@
 {% load static %}
 <html>
 <head>
+	<link rel="shortcut icon" type="image/png" href="{% static 'browser_icon.png' %}">
 	<link rel="stylesheet" href="{% static "entry_style.css" %}">
 	 <!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 	<!-- jQuery library -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<!-- Latest compiled JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
   	<link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
 	<script type="text/javascript">
@@ -72,10 +73,10 @@
 		</div>
 		<div class="col-xs-8 align-self-center">
 
-		    <div id="myCarousel" class="carousel slide" data-ride="carousel">  
+		    <div id="myCarousel" class="carousel slide" data-ride="carousel">
 		        <!-- Wrapper for carousel items -->
 		        <div class="carousel-inner">
-		        	<div class="item active carouselImg">	
+		        	<div class="item active carouselImg">
 		                <img src="{% static "background-succulent.jpeg" %}" class="img-center">
 		               	<div class="carousel-caption">
 		        			<h3 class="text-center">Plants for This Ecoregion</h3>
@@ -83,7 +84,7 @@
 		            </div>
 		        	{% for plant in plants %}
 		        	<div class="item carouselImg">
-		        		<a href="/plant_profile/?id={{plant.id}}">	
+		        		<a href="/plant_profile/?id={{plant.id}}">
 		        			<img class="img-center" src="{{plant.image}}">
 		        		</a>
 		        		<div class="carousel-caption">
