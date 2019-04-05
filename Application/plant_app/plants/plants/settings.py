@@ -137,7 +137,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 # Fill in your cloud bucket and switch which one of the following 2 lines
 # is commented to serve static content from GCS
-STATIC_URL = 'https://storage.googleapis.com/plantbucket2/static/'
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
     os.path.join(os.path.dirname(__file__), 'assets'),
