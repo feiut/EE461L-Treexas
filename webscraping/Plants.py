@@ -430,7 +430,7 @@ def plantcsv():
         "deciduousevergreen": [],
         "soil": [],
         "reproduction": [],
-        "note": [],
+        #"note": [],
         "sciname": [],
         "lat": [],
         "long": [],
@@ -456,7 +456,7 @@ def plantcsv():
         dictionary['plantheight'].append(plant.plantheight)
         dictionary['deciduousevergreen'].append(plant.deciduousevergreen)
         dictionary['soil'].append(plant.soil)
-        dictionary['note'].append(plant.note)
+        #dictionary['note'].append(plant.note)
         dictionary['sciname'].append(plant.sciname)
         dictionary['lat'].append(plant.lat)
         dictionary['long'].append(plant.long)
@@ -473,20 +473,20 @@ def plantcsv():
 
 #with open('plantlist.txt', 'rb') as fp:
 #    plantlist=pickle.load(fp)
-stateParks()
-with open('parklist.txt', 'wb') as fp:
-    pickle.dump(parklist, fp)
+#stateParks()
+#with open('parklist.txt', 'wb') as fp:
+#    pickle.dump(parklist, fp)
 with open('parklist.txt','rb') as fp:
     parklist=pickle.load(fp)
 with open('plantlist.txt','rb') as fp:
     plantlist=pickle.load(fp)
-Parks.createPlants()
-with open('parklist.txt', 'wb') as fp:
-   pickle.dump(parklist, fp)
+#Parks.createPlants()
+#with open('parklist.txt', 'wb') as fp:
+#   pickle.dump(parklist, fp)
 #with open('plantlist.txt', 'wb') as fp:
 #   pickle.dump(plantlist,fp)
-Parks.createcsv()
-#plantcsv();
+#Parks.createcsv()
+plantcsv();
 #generateplantlist()
 #for data in plantlist:
 """for data in plantlist:
