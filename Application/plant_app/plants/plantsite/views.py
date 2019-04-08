@@ -313,7 +313,6 @@ def plant_type_list(request):
 # adding pagination
         paginator = Paginator(names_list, 15)
         page = request.GET.get('page')
-
         try:
             names = paginator.page(page)
         except PageNotAnInteger:
@@ -321,7 +320,7 @@ def plant_type_list(request):
         except EmptyPage:
             names = paginator.page(paginator.num_pages)
 # added pagination finished
-            context_dict = {'plant_names': names}
+        context_dict = {'plant_names': names}
         return HttpResponse(template.render(context_dict,request))
 
 def plant_profile_view(request):
@@ -363,7 +362,23 @@ def park_list_view(request):
 		textfield = request.GET.get('search')
 		if not textfield:
 			template = loader.get_template('plantsite/html/park_list.html')
-			parks = get_all_parks()
+			park_list = get_all_parks()
+            # paginator = Paginator(names_list, 15)
+            # page = request.GET.get('page')
+            # try:
+            #     names = paginator.page(page)
+            # except PageNotAnInteger:
+            #     names = paginator.page(1)
+            # except EmptyPage:
+            #     names = paginator.page(paginator.num_pages)
+			paginator = Paginator(park_list, 15)
+			page = request.GET.get('page')
+			try:
+				parks = paginator.page(page)
+			except PageNotAnInteger:
+				parks = paginator.page(1)
+			except EmptyPage:
+				parks = paginator.page(paginator.num_pages)
 			context_dict = {'parks': parks}
 			return HttpResponse(template.render(context_dict, request))
 		else:
@@ -377,7 +392,15 @@ def park_list_view(request):
 				return HttpResponse(template.render(context_dict,request))
 	else:
 		template = loader.get_template('plantsite/html/park_list.html')
-		parks = get_all_parks()
+		park_list = get_all_parks()
+		paginator = Paginator(park_list, 15)
+		page = request.GET.get('page')
+		try:
+			parks = paginator.page(page)
+		except PageNotAnInteger:
+			parks = paginator.page(1)
+		except EmptyPage:
+			parks = paginator.page(paginator.num_pages)
 		context_dict = {'parks': parks}
 		return HttpResponse(template.render(context_dict, request))
 

@@ -92,6 +92,21 @@
 				</div>
 				{% endfor %}
 			</div>
+
+			<div class="pagination">
+			  {% if parks.has_previous %}
+
+			    <a class="prevpage" href="?page={{ parks.previous_page_number }}">previous page</a>
+			  {% endif %}
+			  <span class="current">
+			    <!-- current page -->
+			    page {{ parks.number }} / {{ parks.paginator.num_pages }} pages
+			  </span>
+			  {% if parks.has_next %}
+			    <!-- if there is next page, show this -->
+			    <a class="nextpage" href="?page={{ parks.next_page_number }}">next page</a>
+			  {% endif %}
+			</div>
 	</div>
 </body>
 </html>
