@@ -80,8 +80,8 @@
 					      </div>
 								<div class="input-group">
 									<p>Filter by plant type</p>
-								<select name="planttype" id="1" onchange="SaveType()">
-									<option value ="AllType">All Type</option>
+								<select name="planttype" multiple="multiple" id="1" onchange="SaveType()">
+									<option value ="AllType" checked>All Type</option>
 									<option value =" Shrub">Shrub</option>
 									<option value =" Shade Tree"> Shade Tree</option>
 									<option value=" Groundcover"> Groundcover</option>
@@ -89,7 +89,7 @@
 								</select>
 								<br>
 								<p>Filter by water demand</p>
-							<select name="waterdemand">
+							<select name="waterdemand" multiple="multiple">
 								<option value ="AllType">All Type</option>
 								<option value =" Medium">Medium</option>
 								<option value =" Low">Low</option>
@@ -100,7 +100,7 @@
 							<br>
 							<br>
 							<p>Filter by water plantform</p>
-						<select name="plantform">
+						<select name="plantform" multiple="multiple">
 							<option value ="AllType">All Type</option>
 							<option value =" Upright, Rounded"> Upright, Rounded</option>
 							<option value =" Spreading"> Spreading</option>
