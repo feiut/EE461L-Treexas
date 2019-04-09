@@ -108,6 +108,45 @@
 	</table>
   </div>
 
+
+	<div class="row">
+		<div class="col-xs-2">
+		</div>
+		<div class="col-xs-8 align-self-center">
+
+				<div id="myCarousel" class="carousel slide" data-ride="carousel">
+						<!-- Wrapper for carousel items -->
+						<div class="carousel-inner">
+							<div class="item active carouselImg">
+										<img src="{% static "background-succulent.jpeg" %}" class="img-center">
+										<div class="carousel-caption">
+									<h3 class="text-center">Ecoregion for This Plants</h3>
+								</div>
+								</div>
+							{% for plant in plants %}
+							<div class="item carouselImg">
+								<a href="/eco_profile/?id={{dbid}}">
+									<img class="img-center" src="{{plant.image}}">
+								</a>
+								<div class="carousel-caption">
+									<h3 class="text-center">{{plant.name}}</h3>
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+						<!-- Carousel controls -->
+						<a class="carousel-control left" href="#myCarousel" data-slide="prev">
+								<span class="glyphicon glyphicon-chevron-left"></span>
+						</a>
+						<a class="carousel-control right" href="#myCarousel" data-slide="next">
+								<span class="glyphicon glyphicon-chevron-right"></span>
+						</a>
+				</div>
+		 </div>
+		 <div class="col-xs-2">
+		 </div>
+	</div>
+
 		  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 		  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
 		  <script src="../../assets/js/vendor/popper.min.js"></script>

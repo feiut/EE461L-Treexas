@@ -324,9 +324,10 @@ def plant_type_list(request):
         return HttpResponse(template.render(context_dict,request))
 
 def plant_profile_view(request):
-    template = loader.get_template('plantsite/html/plant_profile.html')
+    template = loader.get_template('plantsite/html/plants_each.html')
     number = request.GET.get('id')
     prof = get_plant_with_id(number)
+
     context_dict = {'profile': prof}
     return HttpResponse(template.render(context_dict,request))
 
