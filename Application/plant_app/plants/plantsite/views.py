@@ -276,52 +276,47 @@ def postoaksavanah_eco(request):
     return HttpResponse(template.render(context_dict, request))
 
 def plant_type_list(request):
-    if request.method == 'GET':
-        textfield = request.GET.get('search')
-        if not textfield:
-            template = loader.get_template('plantsite/html/plant_list.html')
-            planttype_field =request.GET.get('planttype')
-            water_demand_field =request.GET.get('waterdemand')
-            plant_form_field =request.GET.get('plantform')
-            names = filter_plants_with_parameters(planttype_field, water_demand_field, plant_form_field)
-            names_list = fix_plant_defualt(names)
-    # adding pagination
-            paginator = Paginator(names_list, 15)
-            page = request.GET.get('page')
+    template = loader.get_template('plantsite/html/plant_list.html')
 
-            try:
-                names = paginator.page(page)
-            except PageNotAnInteger:
-                names = paginator.page(1)
-            except EmptyPage:
-                names = paginator.page(paginator.num_pages)
-    # added pagination finished
-            context_dict = {'plant_names' : names}
-            return HttpResponse(template.render(context_dict,request))
-        else:
-            results = search_plants_with_string(textfield)
-            if not results:
-                template = loader.get_template('plantsite/html/plant_list.html')
-                return HttpResponse(template.render({},request))
-            else:
-                template = loader.get_template('plantsite/html/plant_list.html')
-                context_dict = {"plant_names":results}
-                return HttpResponse(template.render(context_dict,request))
-    else:
-        template = loader.get_template('plantsite/html/plant_list.html')
-        names_list = get_all_plants()
-# adding pagination
-        paginator = Paginator(names_list, 15)
-        page = request.GET.get('page')
+    if not request.method == 'GET':
+        names = get_all_plants()
+        names = fix_plant_defualt(names)
+        paginator = Paginator(names, 15)
+        page = request.GET.get(1)
         try:
             names = paginator.page(page)
         except PageNotAnInteger:
             names = paginator.page(1)
         except EmptyPage:
             names = paginator.page(paginator.num_pages)
-# added pagination finished
-        context_dict = {'plant_names': names}
+        context_dict = {'plant_names' : names}
         return HttpResponse(template.render(context_dict,request))
+
+    textfield = request.GET.get('search')
+    if textfield:
+        results = search_plants_with_string(textfield)
+        if not results:
+            return HttpResponse(template.render({},request))
+        else:
+            results = fix_plant_defualt(results)
+            context_dict = {"plant_names":results}
+            return HttpResponse(template.render(context_dict,request))
+
+    planttype_field =request.GET.get('planttype')
+    water_demand_field =request.GET.get('waterdemand')
+    plant_form_field =request.GET.get('plantform')
+    names = filter_plants_with_parameters(planttype_field, water_demand_field, plant_form_field)
+    names = fix_plant_defualt(names)
+    paginator = Paginator(names, 15)
+    page = request.GET.get('page')
+    try:
+        names = paginator.page(page)
+    except PageNotAnInteger:
+        names = paginator.page(1)
+    except EmptyPage:
+        names = paginator.page(paginator.num_pages)
+    context_dict = {'plant_names': names}
+    return HttpResponse(template.render(context_dict,request))
 
 def plant_profile_view(request):
     template = loader.get_template('plantsite/html/plants_each.html')
