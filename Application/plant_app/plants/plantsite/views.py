@@ -326,14 +326,14 @@ def plant_type_list(request):
     return HttpResponse(template.render(context_dict,request))
 
 def paginator_processing(names, page):
-    paginator = Paginator(names, 15)
+    pages = Paginator(names, 15)
     try:
-        names = paginator.page(page)
+        names = pages.page(page)
     except PageNotAnInteger:
-        names = paginator.page(1)
+        names = pages.page(1)
     except EmptyPage:
-        names = paginator.page(paginator.num_pages)
-    context_dict = {'plant_names': names}
+        names = pages.page(paginator.num_pages)
+    context_dict = {'plant_names': names, 'pages': pages}
     return context_dict
 
 
