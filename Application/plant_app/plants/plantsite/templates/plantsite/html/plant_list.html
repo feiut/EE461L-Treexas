@@ -149,7 +149,8 @@
 				{% endfor %}
 			</div>
 
-			<div>
+<!-- paginatior -->
+			<div id="page_footer">
 			    <ul class="pagination">
 
 			        <li>
@@ -163,9 +164,12 @@
 			                <span aria-hidden="true">&laquo;</span>
 			            </a>
 			        </li>
-
-			        {% for page in pages.page_range %}
+							{% for page in pages.page_range_ex %}
+								{% if page == '...' %}
+									<li><span>...</span></li>
+								{% else %}
 			            <li><a href="?page={{page}}">{{page}}</a></li>
+								{% endif %}
 			        {% endfor %}
 
 			        <li>
@@ -180,11 +184,34 @@
 			            </a>
 			        </li>
 			    </ul>
+					<ul class="pagination">
+						<li id="page_goto">
+							<span>
+								Page
+								<input type="text" value="{{pages.page_goto}}"/>
+							</span>
+						</li>
+						<li><a href = "javascript:void(0);" onClick="page_goto();">Go</li>
+					</ul>
 
-					<span class="pagination_foot" >
-							{{pages.count}}plants, {{blogs.number}}page/{{pages.num_pages}}pages
-					</span>
+					<!--span class="pagination_foot" >
+							{{page_all}}plants, {{blogs.number}}page/{{pages.num_pages}}pages
+					</span-->
+					<br>
+					<br>]
+<script type="text/javascript">
+$(".pagination li a").each(function(){
+	if($(this).text()=="{{plant_names.number}}"){
+			$(this).parent().addClass("active");
+	}
+	});
 
+	function page_goto(){
+	var page = $("#page_goto input")[0].value;
+	window.location.href = '?page=' + page;
+	return false;
+	}
+</script>
 
 	</div>
 

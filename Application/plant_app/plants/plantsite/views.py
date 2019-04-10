@@ -327,12 +327,39 @@ def plant_type_list(request):
 
 def paginator_processing(names, page):
     pages = Paginator(names, 15)
+    page_range = []
+    mid_pages = 3
+    page_goto = 1
+    current = int(page)
+    page_all = pages.num_pages
     try:
         names = pages.page(page)
     except PageNotAnInteger:
         names = pages.page(1)
     except EmptyPage:
         names = pages.page(paginator.num_pages)
+    if page_all <= 2 + mid_pages:
+        page_range = pages.page_range
+    else:
+        page_range += [1, page_all]
+        page_range += [current-1, current, current+1]
+        if current == 1 or current == page_all:
+            page_range += [current+2, current-2]
+        page_range = filter(lambda x: x>=1 and x<=page_all, page_range)
+        page_range = sorted(list(set(page_range)))
+        t = 1
+        for i in range(len(page_range)-1):
+            step = page_range[t]-page_range[t-1]
+            if step>=2:
+                if step==2:
+                    page_range.insert(t,page_range[t]-1)
+                else:
+                    page_goto = page_range[t-1] + 1
+                    page_range.insert(t,'...')
+                t+=1
+            t+=1
+    pages.page_range_ex = page_range
+    pages.page_goto = page_goto
     context_dict = {'plant_names': names, 'pages': pages}
     return context_dict
 

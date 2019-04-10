@@ -126,10 +126,19 @@ padding: 25px;
 font-size: 20px;
 background: rgba(255, 255, 255, 0.7);
 }
-.pagination{
+#page_footer{
 	position: absolute;
 	width:50%;
-	left:25%;
+	left:35%;
+}
+#page_goto span{
+		padding: 6px 6px;
+}
+#page_goto input{
+		border: none;
+		padding: 0;
+		width: 2em;
+		text-align: center;
 }
 .pagination_foot{
 	position: absolute;
