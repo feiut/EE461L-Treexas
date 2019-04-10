@@ -299,15 +299,8 @@ def plant_type_list(request):
     if not request.method == 'GET':
         names = get_all_plants()
         names = fix_plant_defualt(names)
-        paginator = Paginator(names, 15)
         page = request.GET.get(1)
-        try:
-            names = paginator.page(page)
-        except PageNotAnInteger:
-            names = paginator.page(1)
-        except EmptyPage:
-            names = paginator.page(paginator.num_pages)
-        context_dict = {'plant_names' : names}
+        context_dict = paginator_processing(names, page)
         return HttpResponse(template.render(context_dict,request))
 
     textfield = request.GET.get('search')
@@ -317,7 +310,7 @@ def plant_type_list(request):
             return HttpResponse(template.render({},request))
         else:
             results = fix_plant_defualt(results)
-            context_dict = {"plant_names":results}
+            context_dict = {'plant_names': results}
             return HttpResponse(template.render(context_dict,request))
 
     planttype_field =request.GET.get('planttype')
@@ -328,8 +321,12 @@ def plant_type_list(request):
     lightreq_field = request.GET.get('lightreq')
     names = filter_plants_with_parameters(planttype_field, water_demand_field, plant_form_field, season_field, native_field, lightreq_field)
     names = fix_plant_defualt(names)
-    paginator = Paginator(names, 15)
     page = request.GET.get('page')
+    context_dict = paginator_processing(names, page)
+    return HttpResponse(template.render(context_dict,request))
+
+def paginator_processing(names, page):
+    paginator = Paginator(names, 15)
     try:
         names = paginator.page(page)
     except PageNotAnInteger:
@@ -337,7 +334,8 @@ def plant_type_list(request):
     except EmptyPage:
         names = paginator.page(paginator.num_pages)
     context_dict = {'plant_names': names}
-    return HttpResponse(template.render(context_dict,request))
+    return context_dict
+
 
 def plant_profile_view(request):
     template = loader.get_template('plantsite/html/plants_each.html')
