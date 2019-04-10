@@ -37,37 +37,37 @@ def filter_plants_with_parameters(value_1, value_2, value_3, value_4, value_5, v
     elif str(value_1) == "AllType":
         names = PlantCsv.objects.all()
     else:
-        names = PlantCsv.objects.filter(planttype=str(value_1))
+        names = PlantCsv.objects.filter(planttype__contains=str(value_1))
     if not value_2:
         names = names.all()
     elif str(value_2) == "AllType":
         names = names.all()
     else:
-        names = names.filter(waterdemand=str(value_2))
+        names = names.filter(waterdemand__contains=str(value_2))
     if not value_3:
         names = names.all()
     elif str(value_3) == "AllType":
         names = names.all()
     else:
-        names = names.filter(plantform=str(value_3))
+        names = names.filter(plantform__contains=str(value_3))
     if not value_4:
         names = names.all()
     elif str(value_4) == "AllType":
         names = names.all()
     else:
-        names = names.filter(season=str(value_4))
+        names = names.filter(season__contains=str(value_4))
     if not value_5:
         names = names.all()
     elif str(value_5) == "AllType":
         names = names.all()
     else:
-        names = names.filter(nativeadapted=str(value_5))
+        names = names.filter(nativeadapted__contains=str(value_5))
     if not value_6:
         names = names.all()
     elif str(value_6) == "AllType":
         names = names.all()
     else:
-        names = names.filter(lightreq=str(value_6))
+        names = names.filter(lightreq__contains=str(value_6))
     return names
 
 
