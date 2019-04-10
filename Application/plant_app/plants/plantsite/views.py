@@ -31,7 +31,7 @@ def search_plants_with_string(p):
     return leftover
 
 
-def filter_plants_with_parameters(value_1, value_2, value_3, value_4):
+def filter_plants_with_parameters(value_1, value_2, value_3, value_4, value_5):
     if not value_1:
         names = PlantCsv.objects.all()
     elif str(value_1) == "AllType":
@@ -56,6 +56,12 @@ def filter_plants_with_parameters(value_1, value_2, value_3, value_4):
         names = names.all()
     else:
         names = names.filter(season=str(value_4))
+    if not value_5:
+        names = names.all()
+    elif str(value_5) == "AllType":
+        names = names.all()
+    else:
+        names = names.filter(nativeadapted=str(value_5))
     return names
 
 
@@ -312,7 +318,8 @@ def plant_type_list(request):
     water_demand_field =request.GET.get('waterdemand')
     plant_form_field =request.GET.get('plantform')
     season_field = request.GET.get('season')
-    names = filter_plants_with_parameters(planttype_field, water_demand_field, plant_form_field, season_field)
+    native_field = request.GET.get('native')
+    names = filter_plants_with_parameters(planttype_field, water_demand_field, plant_form_field, season_field, native_field)
     names = fix_plant_defualt(names)
     paginator = Paginator(names, 15)
     page = request.GET.get('page')
