@@ -322,7 +322,10 @@ def plant_type_list(request):
     names = filter_plants_with_parameters(planttype_field, water_demand_field, plant_form_field, season_field, native_field, lightreq_field)
     names = fix_plant_defualt(names)
     page = request.GET.get('page')
-    context_dict = paginator_processing(names, page)
+    if not page:
+        context_dict = paginator_processing(names, 1)
+    else:
+        context_dict = paginator_processing(names, page)
     return HttpResponse(template.render(context_dict,request))
 
 def paginator_processing(names, page):
