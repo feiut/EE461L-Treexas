@@ -96,7 +96,7 @@
 									</div>
 							</div>
 							<div class="input-group">
-								<p>Filter by Plant Type</p>
+								<p>Filter by plant type</p>
 							<select name="planttype" multiple="multiple">
 								<option value ="AllType" selected>All Type</option>
 								<option value =" Shrub">Shrub</option>
@@ -105,7 +105,7 @@
 								<option value=" Ornamental Grass">Ornamental Grass</option>
 							</select>
 							<br>
-							<p>Filter by Water Demand</p>
+							<p>Filter by water demand</p>
 						<select name="waterdemand" multiple="multiple">
 							<option value ="AllType" selected>All Type</option>
 							<option value =" Medium">Medium</option>
@@ -115,7 +115,7 @@
 							<option value=" Medium, High"> Medium, High</option>
 						</select>
 						<br>
-						<p>Filter by Plant Form</p>
+						<p>Filter by plantform</p>
 					<select name="plantform" multiple="multiple">
 						<option value ="AllType" selected>All Type</option>
 						<option value =" Upright, Rounded"> Upright, Rounded</option>
@@ -123,30 +123,6 @@
 						<option value=" Rounded"> Rounded</option>
 						<option value=" Upright"> Upright</option>
 						<option value=" Pyramidal"> Pyramidal</option>
-					</select>
-					<br>
-						<p>Filter by Season</p>
-					<select name="season" multiple="multiple">
-						<option value ="AllType" selected>All Type</option>
-						<option value =" Spring"> Spring</option>
-						<option value =" Summer"> Summer</option>
-						<option value=" Fall"> Fall</option>
-						<option value=" Winter"> Winter</option>
-					</select>
-					<br>
-						<p>Filter by Native/Adapted</p>
-					<select name="native" multiple="multiple">
-						<option value ="AllType" selected>All Type</option>
-						<option value =" Native"> Native</option>
-						<option value =" Adapted"> Adapted</option>
-					</select>
-					<br>
-						<p>Filter by Light Requirement</p>
-					<select name="lightreq" multiple="multiple">
-						<option value ="AllType" selected>All Type</option>
-						<option value =" Full Sun"> Full Sun</option>
-						<option value =" Partial Shade"> Partial Shade</option>
-						<option value=" Full Shade"> Full Shade</option>
 					</select>
 					<br>
 					<br>
@@ -161,7 +137,7 @@
 
 
 			<div class="row">
-				{% for plant in plant_names %}
+				{% for plant in names %}
 				<div class="col-xs-4 col-m-3 col-l-3 thumbnail-settings">
 					<a href="/plant_profile/?id={{plant.id}}">
 						<img class="thumbnail img-center" onmouseover="img_over(this)" onmouseout="img_out(this)" src="{{plant.image}}">
@@ -175,14 +151,14 @@
 
 <!-- paginatior -->
 			<div id="page_footer">
-			    <ul class="pagination">
+			    <ul class="pagination justify-content-center pagination-lg">
 
 			        <li>
 			            <a href="?page=
-			                {% if plant_names.has_previous %}
-			                    {{plant_names.previous_page_number}}
+			                {% if names.has_previous %}
+			                    {{names.previous_page_number}}
 			                {% else %}
-			                    {{plant_names.number}}
+			                    {{names.number}}
 			                {% endif %}
 			            " aria-label="Previous">
 			                <span aria-hidden="true">&laquo;</span>
@@ -198,17 +174,17 @@
 
 			        <li>
 			            <a href="?page=
-			                {% if plant_names.has_next %}
-			                    {{plant_names.next_page_number}}
+			                {% if names.has_next %}
+			                    {{names.next_page_number}}
 			                {% else %}
-			                    {{plant_names.number}}
+			                    {{names.number}}
 			                {% endif %}
 			            " aria-label="Next">
 			                <span aria-hidden="true">&raquo;</span>
 			            </a>
 			        </li>
 			    </ul>
-					<ul class="pagination">
+					<ul class="pagination justify-content-center pagination-lg">
 						<li id="page_goto">
 							<span>
 								Page
@@ -225,7 +201,7 @@
 					<br>]
 <script type="text/javascript">
 $(".pagination li a").each(function(){
-	if($(this).text()=="{{plant_names.number}}"){
+	if($(this).text()=="{{names.number}}"){
 			$(this).parent().addClass("active");
 	}
 	});
