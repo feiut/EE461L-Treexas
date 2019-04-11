@@ -81,7 +81,7 @@
 			</div>
 
 			<div class="row">
-				{% for park in parks %}
+				{% for park in names %}
 				<div class="col-xs-4 col-m-3 col-l-3 thumbnail-settings">
 					<a href="/park_profile/?id={{park.dbid}}">
 						<img class="thumbnail img-center" onmouseover="img_over(this)" onmouseout="img_out(this)" src="{{park.image}}">
@@ -93,20 +93,67 @@
 				{% endfor %}
 			</div>
 
-			<div class="pagination">
-			  {% if parks.has_previous %}
+			<!-- paginatior -->
+			<div id="page_footer">
+			    <ul class="pagination justify-content-center pagination-lg">
 
-			    <a class="prevpage" href="?page={{ parks.previous_page_number }}">previous page</a>
-			  {% endif %}
-			  <span class="current">
-			    <!-- current page -->
-			    page {{ parks.number }} / {{ parks.paginator.num_pages }} pages
-			  </span>
-			  {% if parks.has_next %}
-			    <!-- if there is next page, show this -->
-			    <a class="nextpage" href="?page={{ parks.next_page_number }}">next page</a>
-			  {% endif %}
-			</div>
+			        <li>
+			            <a href="?page=
+			                {% if names.has_previous %}
+			                    {{names.previous_page_number}}
+			                {% else %}
+			                    {{names.number}}
+			                {% endif %}
+			            " aria-label="Previous">
+			                <span aria-hidden="true">&laquo;</span>
+			            </a>
+			        </li>
+							{% for page in pages.page_range_ex %}
+								{% if page == '...' %}
+									<li><span>...</span></li>
+								{% else %}
+			            <li><a href="?page={{page}}">{{page}}</a></li>
+								{% endif %}
+			        {% endfor %}
+
+			        <li>
+			            <a href="?page=
+			                {% if names.has_next %}
+			                    {{names.next_page_number}}
+			                {% else %}
+			                    {{names.number}}
+			                {% endif %}
+			            " aria-label="Next">
+			                <span aria-hidden="true">&raquo;</span>
+			            </a>
+			        </li>
+			    </ul>
+					<ul class="pagination justify-content-center pagination-lg">
+						<li id="page_goto">
+							<span>
+								Page
+								<input type="text" value="{{pages.page_goto}}"/>
+							</span>
+						</li>
+						<li><a href = "javascript:void(0);" onClick="page_goto();">Go</li>
+					</ul>
+					<br>
+					<br>]
+<script type="text/javascript">
+$(".pagination li a").each(function(){
+	if($(this).text()=="{{names.number}}"){
+			$(this).parent().addClass("active");
+	}
+	});
+
+	function page_goto(){
+	var page = $("#page_goto input")[0].value;
+	window.location.href = '?page=' + page;
+	return false;
+	}
+</script>
+
+	</div>
 	</div>
 </body>
 </html>

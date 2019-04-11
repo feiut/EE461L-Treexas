@@ -299,8 +299,11 @@ def plant_type_list(request):
     if not request.method == 'GET':
         names = get_all_plants()
         names = fix_plant_defualt(names)
-        page = request.GET.get(1)
-        context_dict = paginator_processing(names, page)
+        page = request.GET.get('page')
+        if not page:
+            context_dict = paginator_processing(names, 1)
+        else:
+            context_dict = paginator_processing(names, page)
         return HttpResponse(template.render(context_dict,request))
 
     textfield = request.GET.get('search')
@@ -363,7 +366,7 @@ def paginator_processing(names, page):
             t+=1
     pages.page_range_ex = page_range
     pages.page_goto = page_goto
-    context_dict = {'plant_names': names, 'pages': pages}
+    context_dict = {'names': names, 'pages': pages}
     return context_dict
 
 
@@ -408,23 +411,11 @@ def park_list_view(request):
 		if not textfield:
 			template = loader.get_template('plantsite/html/park_list.html')
 			park_list = get_all_parks()
-            # paginator = Paginator(names_list, 15)
-            # page = request.GET.get('page')
-            # try:
-            #     names = paginator.page(page)
-            # except PageNotAnInteger:
-            #     names = paginator.page(1)
-            # except EmptyPage:
-            #     names = paginator.page(paginator.num_pages)
-			paginator = Paginator(park_list, 15)
 			page = request.GET.get('page')
-			try:
-				parks = paginator.page(page)
-			except PageNotAnInteger:
-				parks = paginator.page(1)
-			except EmptyPage:
-				parks = paginator.page(paginator.num_pages)
-			context_dict = {'parks': parks}
+			if not page:
+				context_dict = paginator_processing(park_list, 1)
+			else:
+				context_dict = paginator_processing(park_list, page)
 			return HttpResponse(template.render(context_dict, request))
 		else:
 			results = search_park_with_string(textfield)
@@ -438,15 +429,11 @@ def park_list_view(request):
 	else:
 		template = loader.get_template('plantsite/html/park_list.html')
 		park_list = get_all_parks()
-		paginator = Paginator(park_list, 15)
 		page = request.GET.get('page')
-		try:
-			parks = paginator.page(page)
-		except PageNotAnInteger:
-			parks = paginator.page(1)
-		except EmptyPage:
-			parks = paginator.page(paginator.num_pages)
-		context_dict = {'parks': parks}
+		if not page:
+			context_dict = paginator_processing(park_list, 1)
+		else:
+			context_dict = paginator_processing(park_list, page)
 		return HttpResponse(template.render(context_dict, request))
 
 def park_profile_view(request):
