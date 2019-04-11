@@ -202,7 +202,8 @@ def state_park_list(request):
     parklist = [park1, park2, park3, park4]
 
     context_dict = {"park_list":parklist}
-    return HttpResponse(template.render(context_dict, request))
+    response = HttpResponse(template.render(context_dict, request))
+    return response
 
 def ecoregion_list(request):
     template = loader.get_template('plantsite/html/eco_list.html')
@@ -423,7 +424,10 @@ def eco_profile_view(request):
     #eco_name = dictionary[str(dbid)]
     #pla = PlantCsv.objects.filter(econregion=eco_name)
     context_dict = {'profile': prof, 'plants': plants}
-    return HttpResponse(template.render(context_dict, request))
+    response = HttpResponse(template.render(context_dict, request))
+    for i in range(6):
+        response.delete_cookie('i')
+    return response
 
 def park_list_view(request):
 	if request.method == 'GET':
