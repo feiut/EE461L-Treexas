@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
+from django.http import request,HttpResponseRedirect
 from django.http import HttpResponse
 from django.template import loader
 from plantsite.models import Plant
@@ -322,6 +323,16 @@ def plant_type_list(request):
     season_field = request.GET.get('season')
     native_field = request.GET.get('native')
     lightreq_field = request.GET.get('lightreq')
+
+    if not planttype_field:
+        if '1' in request.COOKIES:
+            planttype_field = request.COOKIES['1']
+            water_demand_field = request.COOKIES['2']
+            plant_form_field = request.COOKIES['3']
+            season_field = request.COOKIES['4']
+            native_field = request.COOKIES['5']
+            lightreq_field = request.COOKIES['6']
+
     names = filter_plants_with_parameters(planttype_field, water_demand_field, plant_form_field, season_field, native_field, lightreq_field)
     names = fix_plant_defualt(names)
     page = request.GET.get('page')
@@ -329,7 +340,16 @@ def plant_type_list(request):
         context_dict = paginator_processing(names, 1)
     else:
         context_dict = paginator_processing(names, page)
-    return HttpResponse(template.render(context_dict,request))
+
+    response = HttpResponse(template.render(context_dict,request))
+    if planttype_field:
+        response.set_cookie('1', str(planttype_field))
+        response.set_cookie('2', str(water_demand_field))
+        response.set_cookie('3', str(plant_form_field))
+        response.set_cookie('4', str(season_field))
+        response.set_cookie('5', str(native_field))
+        response.set_cookie('6', str(lightreq_field))
+    return response
 
 def paginator_processing(names, page):
     pages = Paginator(names, 15)
