@@ -132,7 +132,7 @@ background: rgba(255, 255, 255, 0.7);
 	left:35%;
 }
 #page_goto span{
-		padding: 6px 6px;
+		padding: 10px 6px 10px 15px;
 }
 #page_goto input{
 		border: none;
