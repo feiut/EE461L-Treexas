@@ -196,18 +196,18 @@ def about_page(request):
     response = HttpResponse(template.render(context_dict, request))
     return deleteCOOKIE(response, 6)
 
-def state_park_list(request):
-    template = loader.get_template('plantsite/html/park_list.html')
-
-    park1 = Park("Pedernales State Park", "sp_pedernales.jpg", "/park1/")
-    park2 = Park("Dinosaur Valley State Park", "sp_dinosaur_valley.jpg", "/park2/")
-    park3 = Park("Daingerfield State Park", "sp_daingerfield.jpg", "/park3/")
-    park4 = Park("Acton State Park", "sp_acton.jpg", "/park4/")
-    parklist = [park1, park2, park3, park4]
-
-    context_dict = {"park_list":parklist}
-    response = HttpResponse(template.render(context_dict, request))
-    return response
+# def state_park_list(request):
+#     template = loader.get_template('plantsite/html/park_list.html')
+#
+#     park1 = Park("Pedernales State Park", "sp_pedernales.jpg", "/park1/")
+#     park2 = Park("Dinosaur Valley State Park", "sp_dinosaur_valley.jpg", "/park2/")
+#     park3 = Park("Daingerfield State Park", "sp_daingerfield.jpg", "/park3/")
+#     park4 = Park("Acton State Park", "sp_acton.jpg", "/park4/")
+#     parklist = [park1, park2, park3, park4]
+#
+#     context_dict = {"park_list":parklist}
+#     response = HttpResponse(template.render(context_dict, request))
+#     return response
 
 def ecoregion_list(request):
     template = loader.get_template('plantsite/html/eco_list.html')
@@ -320,7 +320,7 @@ def plant_type_list(request):
             return HttpResponse(template.render({},request))
         else:
             results = fix_plant_defualt(results)
-            context_dict = {'plant_names': results}
+            context_dict = {'names': results}
             return HttpResponse(template.render(context_dict,request))
 
     planttype_field =request.GET.get('planttype')
@@ -457,7 +457,7 @@ def park_list_view(request):
 				return deleteCOOKIE(response, 6)
 			else:
 				template = loader.get_template('plantsite/html/park_list.html')
-				context_dict = {'parks':results}
+				context_dict = {'names':results}
 				response = HttpResponse(template.render(context_dict,request))
 				return deleteCOOKIE(response, 6)
 	else:
