@@ -148,13 +148,6 @@ def main_page(request):
             return deleteCOOKIE(response, 6)
     else:
         template = loader.get_template('plantsite/html/mainPage.html')
-        number = request.GET.get('id')
-        number = str(number)
-        if number.isdigit():
-            num = int(number)
-            if -1 < num < 30:
-                response = redirect('/plant_profile/?id=' + number)
-                return response
         return HttpResponse(template.render({}, request))
 
 
@@ -406,7 +399,7 @@ def plant_profile_view(request):
     prof = get_plant_with_id(number)
 
     ''' gets parks'''
-    parks_for_plant = prof.statepark 
+    parks_for_plant = prof.statepark
     parks_for_plant = re.sub("\[",'',str(parks_for_plant)) #gets rid of brackets
     parks_for_plant = re.sub("\]",'',str(parks_for_plant))
     park_list = parks_for_plant.split(',') #uses comma as delimiter to split string and make a list
