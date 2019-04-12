@@ -405,7 +405,29 @@ def plant_profile_view(request):
     number = request.GET.get('id')
     prof = get_plant_with_id(number)
 
-    context_dict = {'profile': prof}
+    ''' gets parks'''
+    parks_for_plant = prof.statepark 
+    parks_for_plant = re.sub("\[",'',str(parks_for_plant)) #gets rid of brackets
+    parks_for_plant = re.sub("\]",'',str(parks_for_plant))
+    park_list = parks_for_plant.split(',') #uses comma as delimiter to split string and make a list
+    park_ids = set() #set will be used to store database objects (a query set)
+    for p in park_list:
+        if not p == '':
+            park_ids.add(p)
+    park_list = Stateparks.objects.filter(dbid__in=park_ids)
+
+    ''' gets eco regions'''
+    eco_for_plant = prof.econregion
+    eco_for_plant = re.sub("\[",'',str(eco_for_plant)) #gets rid of brackets
+    eco_for_plant = re.sub("\]",'',str(eco_for_plant))
+    eco_list =eco_for_plant.split(',') #uses comma as delimiter to split string and make a list
+    eco_ids = set() #set will be used to store database objects (a query set)
+    for e in eco_list:
+        if not e == '':
+            eco_ids.add(p)
+    eco_list = PlantCsvEcoregions.objects.filter(dbid__in=park_ids)
+
+    context_dict = {'profile': prof,'park_list':park_list,'eco_list':eco_list}
     return HttpResponse(template.render(context_dict,request))
 
 #============================================
