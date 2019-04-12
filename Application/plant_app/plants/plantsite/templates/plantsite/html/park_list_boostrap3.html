@@ -3,16 +3,12 @@
 <html>
 <head>
 	<link rel="shortcut icon" type="image/png" href="{% static 'browser_icon.png' %}">
-
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
 	 <!-- Latest compiled and minified CSS -->
-	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
   	<link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="{% static 'list_page_style.css' %}">
@@ -28,7 +24,7 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-lg navbar-dark navbar-fixed-top" style="background-color:rgba(0,0,0,0.35);">
+	<nav class="navbar navbar-expand-lg navbar-fixed-top" style="background-color:rgba(0,0,0,0.35);">
 	  <div class="container-fluid">
 
 	    <div class="navbar-header">
@@ -36,14 +32,14 @@
 	    </div>
 
 	    <div class="topnav-entry">
-	      <ul class="navbar-nav mr-auto">
-	        <li class="nav-item active"><a class = "nav-link" href="/plant_list">Plants</a>
+	      <ul class="nav navbar-nav navbar-right">
+	        <li><a href="/plant_list">Plants</a>
 	        </li>
-	        <li class="nav-item active"><a class = "nav-link" href="/park_list">State Parks</a>
+	        <li><a href="/park_list">State Parks</a>
 	        </li>
-	        <li class="nav-item active"><a class = "nav-link" href="/eco_list">Ecoregions</a>
+	        <li><a href="/eco_list">Ecoregions</a>
 	        </li>
-	        <li class="nav-item active"><a class = "nav-link" href="/about">About Us</a>
+	        <li><a href="/about">About Us</a>
 	        </li>
 	      </ul>
 	    </div>
@@ -57,8 +53,8 @@
 	<br>
 
 	<div class="container-fluid">
-			<div class="d-flex flex-row mx-auto">
-				<div class="flex-column justify-content-center">
+			<div class="row">
+				<div class="col-xs-12">
   	 				<p class="title1 text-center">State Parks of Texas</p>
 				</div>
 			</div>
@@ -66,37 +62,38 @@
 			<br>
 			<br>
 			<br>
-			<div class="d-flex flex-row justify-content-center mx-auto">
-				<div class="flex-column justify-content-center">
+			<br>
+			<div class="row">
+				<div class="col-xs-12">
 						<form method="GET">
 					      <div class="input-group">
-					          <input class="form-control" type="text" name="search" placeholder="State Park Name">
-					          	<div class="input-group-append">
-					            <button class="btn btn-outline-secondary" type="submit">Search!</button>
+
+					          <i class="glyphicon glyphicon-search"></i>
+					          <input class="form-control" type="text" name="search" placeholder="Search" autofocus/>
+					          	<div class="input-group-btn">
+					            <button class="btn btn-default" type="submit">
+					            <i class="glyphicon glyphicon-leaf"></i></button>
+					            <br>
 					          </div>
 					      </div>
 					  </form>
 				</div>
 			</div>
-			<br>
-			<br>
-			<br>
-			<div class="row flex-wrap">
+
+			<div class="row">
 				{% for park in names %}
-				<div class="card col-sm-3 py-4 card-style" onmouseover="img_over(this)" onmouseout="img_out(this)">
+				<div class="col-xs-4 col-m-3 col-l-3 thumbnail-settings">
 					<a href="/park_profile/?id={{park.dbid}}">
-						<img class="card-img img-center" src="{{park.image}}">
+						<img class="thumbnail img-center" onmouseover="img_over(this)" onmouseout="img_out(this)" src="{{park.image}}">
 					</a>
-					<div class="card-body">
-						<h3 class="card-text text-center" >{{park.name}}</h3>
+					<div class="caption">
+						<h3 class="text-center" >{{park.name}}</h3>
 					</div>
 				</div>
 				{% endfor %}
 			</div>
 
 			<!-- paginatior -->
-			<div class="d-flex flex-row justify-content-center">
-			<div class="flex-column justify-content-center">
 			<div id="page_footer">
 			    <ul class="pagination justify-content-center pagination-lg">
 
@@ -142,22 +139,20 @@
 					</ul>
 					<br>
 					<br>]
-		<script type="text/javascript">
-		$(".pagination li a").each(function(){
-			if($(this).text()=="{{names.number}}"){
-					$(this).parent().addClass("active");
-			}
-			});
+<script type="text/javascript">
+$(".pagination li a").each(function(){
+	if($(this).text()=="{{names.number}}"){
+			$(this).parent().addClass("active");
+	}
+	});
 
-			function page_goto(){
-			var page = $("#page_goto input")[0].value;
-			window.location.href = '?page=' + page;
-			return false;
-			}
-		</script>
+	function page_goto(){
+	var page = $("#page_goto input")[0].value;
+	window.location.href = '?page=' + page;
+	return false;
+	}
+</script>
 
-	</div>
-	</div>
 	</div>
 	</div>
 </body>
