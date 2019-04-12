@@ -79,7 +79,13 @@ p{
 	margin: 20px;
 	width: 80%;
 }
-
+.pfilter{
+	color: #FFFFFF;
+	font-family: "Times New Roman", Times, serif;;
+	font-size: 100%;
+	margin: 20px;
+	width: 80%;
+}
 .horizontal-align{
   position: absolute;
   top: 50%;
@@ -97,10 +103,6 @@ p{
 
 .glyphicon-leaf{
 font-size: 28px;
-}
-
-.input-group {
-width: 800px;
 }
 
 /* style icon */
