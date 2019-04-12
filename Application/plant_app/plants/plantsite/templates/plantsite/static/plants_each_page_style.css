@@ -1,4 +1,5 @@
 
+
 body{
 	background-color : #FFFFFF;
 }
@@ -33,20 +34,67 @@ p{
     background-color: #A9A9a9;
     color: #EFEFEF;
 }
+
+#image-and-info{
+	padding: 5px;
+	width: 70%;
+	margin: auto;
+	overflow: auto;
+	
+
+}
+/*
+#image-div{
+	display: inline-block;
+	height: 400px;
+	width: 400px;
+	border: solid;
+	border-color: black;
+	vertical-align: top;
+}
+*/
+
+#image-wrapper{
+	
+}
+
 .image-plant-each {
-margin: auto;
-width: 400px;
-height: 300px;
-border-radius: 8px;
+	display: inline-block;
+	height: 400px;
+	width: 400px;
+	float: left;
+	margin:0 auto;
+	vertical-align: top;
+	padding-right: 50px;
+	
 }
-#text-plant-each table{
-margin: auto;
-}
+
+
+
 .text-plant-each {
-  text-align: left;
+	height: 400px;
+	width: 800px;
+	display: inline-block;
+	padding-left: 10px;
+	padding-right:10px;
+  	text-align: left;
 	color: #000000;
 	font-family: Arial;
 	font-size: 160%;
+	border: solid;
+	border-color: #77C9D4;
+	border-width: medium;
+	overflow: scroll;
+	vertical-align: top;
+
+}
+
+
+#two-carousel-container{
+	margin: 0 auto;
+	max-width: 70%;
+	padding: 5px;
+
 }
 
 .carouselImg img {
@@ -64,75 +112,20 @@ margin: auto;
   object-fit: cover;
   width: 300px;
   height: 300px;
-	object-fit: cover;
-	border-radius: 8px;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
-/*
-#text-plant-each td{
-	text-align: left;
-	color: #000000;
-	font-family: Arial;
-	font-size: 160%;
-	margin: 20px;
-}
-*/
-
-/*
-position:relative
-
-width:300
-height:350
-*/
-/*
-float:left
-clear:both*/
-/*
-maring:0px 0px 0px 0px;
-border-width: 0px
-padding:3px
-spacing:10px
-}
-*/
-/*style="position:relative;left:250px;top:20px; float:left; maring:0px 0px 0px 0px;"*/
-
-
-
-
-
-
-/* style icon */
-/*
-.input-group .glyphicon-search {
-position: absolute;
-padding: 20px;
-pointer-events: none;
-left: 0px;
-font-size: 15px;
-}
-*/
-/* add padding  */
-/*
-.input-group input { padding-left: 50px;}
-
-.btn-default{
-width: 100px;
-padding: 8.5px;
-background: rgba(255, 255, 255, 0.7);
+.carousel-inner{
+	
 }
 
-.form-control{
-padding: 25px;
-font-size: 20px;
-background: rgba(255, 255, 255, 0.7);
+.item-active-carouselImg{
+
 }
-.footer{
-position: fixed;
-right:0;
-bottom: 0;
-left: 0;
-padding: 1rem;
-background-color: transparent;
-text-align: center;
+
+.Carousel-Container{
+	float: left;
+	width: 50%;
 }
-*/
+
