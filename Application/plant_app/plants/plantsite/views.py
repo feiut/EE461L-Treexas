@@ -369,7 +369,7 @@ def paginator_processing(names, page):
     except PageNotAnInteger:
         names = pages.page(1)
     except EmptyPage:
-        names = pages.page(paginator.num_pages)
+        names = pages.page(1)
     if page_all <= 2 + mid_pages:
         page_range = pages.page_range
     else:
