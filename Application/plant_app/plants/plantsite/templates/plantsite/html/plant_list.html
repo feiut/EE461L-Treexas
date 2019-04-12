@@ -96,7 +96,7 @@
 				<form method="GET">
 					<div class="input-group">
 						<p class="pfilter">Filter by Plant Type</p>
-							<select name="planttype" multiple="multiple">
+							<select name="planttype" class="custom-select">
 								<option value ="AllType" selected>All Type</option>
 								<option value =" Shrub">Shrub</option>
 								<option value =" Shade Tree"> Shade Tree</option>
@@ -105,7 +105,7 @@
 							</select>
 						<br>
 						<p class="pfilter">Filter by Water Demand</p>
-							<select name="waterdemand" multiple="multiple">
+							<select name="waterdemand" class="custom-select">
 								<option value ="AllType" selected>All Type</option>
 								<option value =" Medium">Medium</option>
 								<option value =" Low">Low</option>
@@ -115,7 +115,7 @@
 							</select>
 						<br>
 						<p class="pfilter">Filter by Plant Form</p>
-							<select name="plantform" multiple="multiple">
+							<select name="plantform" class="custom-select">
 								<option value ="AllType" selected>All Type</option>
 								<option value =" Upright, Rounded"> Upright, Rounded</option>
 								<option value =" Spreading"> Spreading</option>
@@ -125,7 +125,7 @@
 							</select>
 						<br>
 						<p class="pfilter">Filter by Season</p>
-							<select name="season" multiple="multiple">
+							<select class="custom-select" name="season">
 					      <option value ="AllType" selected>All Type</option>
 					      <option value =" Spring"> Spring</option>
 					      <option value =" Summer"> Summer</option>
@@ -134,14 +134,14 @@
 							</select>
 	   				<br>
 						<p class="pfilter">Filter by Native/Adapted</p>
-							<select name="native" multiple="multiple">
+							<select class="custom-select" name="native">
 								<option value ="AllType" selected>All Type</option>
 					      <option value =" Adapted"> Adapted</option>
 					      <option value =" Native"> Native</option>
 							</select>
 	   				<br>
 						<p class="pfilter">Filter by Light Requirement</p>
-							<select name="lightreq" multiple="multiple">
+							<select class="custom-select" name="lightreq">
 								<option value ="AllType" selected>All Type</option>
 								<option value =" Full Sun"> Full Sun</option>
 								<option value =" Partial Shade"> Partial Shade</option>
@@ -155,7 +155,7 @@
 				</form>
 			</div>
 			<!-- plant list and paginator-->
-			<div class="d-flex flex-column col-xs-10">
+			<div class="col-xs-10">
 				<div class="d-flex flex-row flex-wrap">
 					{% for plant in names %}
 					<div class="card col-sm-4 px-4 card-style flex-wrap" onmouseover="img_over(this)" onmouseout="img_out(this)">

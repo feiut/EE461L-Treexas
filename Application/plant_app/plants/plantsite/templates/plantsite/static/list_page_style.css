@@ -81,10 +81,10 @@ p{
 }
 .pfilter{
 	color: #FFFFFF;
-	font-family: "Times New Roman", Times, serif;;
+	font-family: "Times New Roman", Times, serif;
 	font-size: 100%;
 	margin: 20px;
-	width: 80%;
+	width: 100%;
 }
 .horizontal-align{
   position: absolute;
