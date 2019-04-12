@@ -193,8 +193,7 @@ def about_page(request):
                     "connor_commits":c[1], "connor_issues":i[1], "hao_commits":c[3], "hao_issues":i[3],
                     "chaz_commits":c[5], "chaz_issues":c[5], "xiyu_commits":c[6], "xiyu_issues":i[6],
                     "fei_commits":c[4], "fei_issues":i[4], "total_c":sum(c), "total_i":sum(i)}
-    response = HttpResponse(template.render(context_dict, request))
-    return deleteCOOKIE(response, 6)
+    return HttpResponse(template.render(context_dict, request))
 
 def state_park_list(request):
     template = loader.get_template('plantsite/html/park_list.html')
@@ -218,8 +217,7 @@ def ecoregion_list(request):
     eco_list = [eco1, eco2, eco3]
 
     context_dict = {"ecoregion_list": eco_list}
-    response = HttpResponse(template.render(context_dict, request))
-    return deleteCOOKIE(response, 6)
+    return HttpResponse(template.render(context_dict, request))
 
 def pedernales_park(request):
     template = loader.get_template('plantsite/html/park_entry.html')
@@ -434,6 +432,8 @@ def eco_profile_view(request):
     #pla = PlantCsv.objects.filter(econregion=eco_name)
     context_dict = {'profile': prof, 'plants': plants}
     response = HttpResponse(template.render(context_dict, request))
+    for i in range(6):
+        response.delete_cookie('i')
     return response
 
 def park_list_view(request):
@@ -447,18 +447,18 @@ def park_list_view(request):
 				context_dict = paginator_processing(park_list, 1)
 			else:
 				context_dict = paginator_processing(park_list, page)
-			response = HttpResponse(template.render(context_dict, request))
+                    response = HttpResponse(template.render(context_dict, request))
 			return deleteCOOKIE(response, 6)
-		else:
+        else:
 			results = search_park_with_string(textfield)
 			if not results:
 				template = loader.get_template('plantsite/html/park_list.html')
-				response = HttpResponse(template.render({},request))
+                		response = HttpResponse(template.render({},request))
 				return deleteCOOKIE(response, 6)
 			else:
 				template = loader.get_template('plantsite/html/park_list.html')
 				context_dict = {'parks':results}
-				response = HttpResponse(template.render(context_dict,request))
+                		response = HttpResponse(template.render(context_dict,request))
 				return deleteCOOKIE(response, 6)
 	else:
 		template = loader.get_template('plantsite/html/park_list.html')
@@ -468,7 +468,7 @@ def park_list_view(request):
 			context_dict = paginator_processing(park_list, 1)
 		else:
 			context_dict = paginator_processing(park_list, page)
-		response = HttpResponse(template.render(context_dict, request))
+        	response = HttpResponse(template.render(context_dict, request))
 		return deleteCOOKIE(response, 6)
 
 def park_profile_view(request):
