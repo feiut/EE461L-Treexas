@@ -32,6 +32,8 @@ def search_plants_with_string(p):
     return leftover
 
 
+
+
 def filter_plants_with_parameters(value_1, value_2, value_3, value_4, value_5, value_6):
     if not value_1:
         names = PlantCsv.objects.all()
@@ -114,6 +116,7 @@ def get_all_parks():
 		park.image = re.sub('https','https:',str(park.image))
 	return results
 
+
 ''' regular functions '''
 
 class Park(object):
@@ -132,20 +135,48 @@ class Ecoregion(object):
 def main_page(request):
     if request.method == 'GET':
         textfield =request.GET.get('search')
-        if not textfield:
-            template = loader.get_template('plantsite/html/mainPage.html')
+        search_type = request.GET.get('SearchType')
+        if str(search_type) == 'Plant':
+            if not textfield:
+                template = loader.get_template('plantsite/html/mainPage.html')
+                response = HttpResponse(template.render({},request))
+                return deleteCOOKIE(response, 6)
+            results = search_plants_with_string(textfield)
+            if not results:
+                template = loader.get_template('plantsite/html/plant_list.html')
+                response = HttpResponse(template.render({},request))
+                return deleteCOOKIE(response, 6)
+            else:
+                template = loader.get_template('plantsite/html/plant_list.html')
+                context_dict = {"names":results}
+                response = HttpResponse(template.render(context_dict,request))
+                return deleteCOOKIE(response, 6)
+        if str(search_type) == 'Park':
+            if not textfield:
+                template = loader.get_template('plantsite/html/mainPage.html')
+                response = HttpResponse(template.render({},request))
+                return deleteCOOKIE(response, 6)
+            results = search_park_with_string(textfield)
+            if not results:
+                template = loader.get_template('plantsite/html/park_list.html')
+                response = HttpResponse(template.render({},request))
+                return deleteCOOKIE(response, 6)
+            else:
+                template = loader.get_template('plantsite/html/park_list.html')
+                context_dict = {"names":results}
+                response = HttpResponse(template.render(context_dict,request))
+                return deleteCOOKIE(response, 6)
+        if str(search_type) == 'Ecoregion':
+            if not textfield:
+                template = loader.get_template('plantsite/html/mainPage.html')
+                response = HttpResponse(template.render({},request))
+                return deleteCOOKIE(response, 6)
+            template = loader.get_template('plantsite/html/eco_list.html')
             response = HttpResponse(template.render({},request))
             return deleteCOOKIE(response, 6)
-        results = search_plants_with_string(textfield)
-        if not results:
-            template = loader.get_template('plantsite/html/plant_list.html')
-            response = HttpResponse(template.render({},request))
-            return deleteCOOKIE(response, 6)
-        else:
-            template = loader.get_template('plantsite/html/plant_list.html')
-            context_dict = {"plant_names":results}
-            response = HttpResponse(template.render(context_dict,request))
-            return deleteCOOKIE(response, 6)
+        template = loader.get_template('plantsite/html/mainPage.html')
+        response = HttpResponse(template.render({},request))
+        return deleteCOOKIE(response, 6)
     else:
         template = loader.get_template('plantsite/html/mainPage.html')
         return HttpResponse(template.render({}, request))
