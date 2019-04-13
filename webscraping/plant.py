@@ -36,7 +36,8 @@ class Plant:
         self.statepark = []
         self.lifecycle="N/A"
         self.edibility="N/A"
-        self.zones ="N/A"
+        self.zones =[]
+        self.endangered = "N/A"
 
 
     def geteco(self,web):

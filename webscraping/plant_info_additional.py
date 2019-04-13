@@ -29,7 +29,11 @@ for plant in plantlist:
         plant.season = "N/A"
     if plant.landscapeuse.replace(" ","")=="":
         plant.landscapeuse="N/A"
-"""plantlist1=[]
+    if plant.plantspread.replace(" ","")=="":
+        plant.plantspread="N/A"
+    if plant.plantform.replace(" ","")=="":
+        plant.plantform="N/A"
+plantlist1=[]
 for plant in plantlist:
     x = Plant()
     x.nativeadapted = plant.nativeadapted
@@ -56,10 +60,11 @@ for plant in plantlist:
     x.econregion = plant.econregion
     x.statepark = plant.statepark
     x.lifecycle = plant.lifecycle
+    x.edibility = plant.edibility
     plantlist1.append(x)
     #x.edibility = plant.edibility"""
 with open('plantlist.txt','wb') as fp:
-    pickle.dump(plantlist,fp)
-Plant.plantcsv(plantlist)
+    pickle.dump(plantlist1,fp)
+Plant.plantcsv(plantlist1)
 
 #web.get("")
