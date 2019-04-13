@@ -61,9 +61,9 @@ font-size: 28px;
 
 .input-group {
 position: fixed;
-width: 800px;
-left:50%;
-margin-left: -400px;
+width: 1200px;
+left:20%;
+margin-left: 0;
 }
 
 /* style icon */

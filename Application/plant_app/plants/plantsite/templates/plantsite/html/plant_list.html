@@ -37,7 +37,6 @@
 
 	    <div class="navbar-header">
 	      <a class="navbar-brand" href="/">Treexas</a>
-	     <a class="navbar-nav" href="plant_list/" onclick="window.history.go(-1); return false;"> Back </a>
 	    </div>
 
 	    <div class="topnav-entry">
@@ -50,6 +49,8 @@
 	        </li>
 	        <li class="nav-item active"><a class = "nav-link" href="/about">About Us</a>
 	        </li>
+
+
 	      </ul>
 	    </div>
 	  </div>
@@ -80,9 +81,9 @@
 					<form method="GET">
 				      <div class="input-group">
 								<input class="form-control" type="text" name="search" placeholder="Plant Name">
-									<div class="input-group-append">
-				            <button class="btn btn-outline-secondary" type="submit">Search!</button>
-				          </div>
+								<div class="input-group-append">
+			            <button class="btn btn-outline-secondary" type="submit">Search!</button>
+			          </div>
 				      </div>
 				  </form>
 			</div>
@@ -90,10 +91,12 @@
 		<!-- page body -->
 		<div class="d-flex flex-row mt-5 mx-5">
 			<!-- filters -->
-			<div class="col-xs-2 pl-3">
+			<div class="d-inline col-2 pl-3">
+				<!-- back -->
+				<button class="btn btn-inline-secondary" href="plant_list/" onclick="window.history.go(-1); return false;">Back</button>
 				<form method="GET">
 					<div class="input-group">
-						<p class="pfilter">Filter by Plant Type</p>
+						<p class="pfilter">Plant Type</p>
 							<select name="planttype" class="custom-select">
 								<option value ="AllType" selected>All Type</option>
 								<option value =" Shrub">Shrub</option>
@@ -102,7 +105,7 @@
 								<option value=" Ornamental Grass">Ornamental Grass</option>
 							</select>
 						<br>
-						<p class="pfilter">Filter by Water Demand</p>
+						<p class="pfilter">Water Demand</p>
 							<select name="waterdemand" class="custom-select">
 								<option value ="AllType" selected>All Type</option>
 								<option value =" Medium">Medium</option>
@@ -112,7 +115,7 @@
 								<option value=" Medium, High"> Medium, High</option>
 							</select>
 						<br>
-						<p class="pfilter">Filter by Plant Form</p>
+						<p class="pfilter">Plant Form</p>
 							<select name="plantform" class="custom-select">
 								<option value ="AllType" selected>All Type</option>
 								<option value =" Upright, Rounded"> Upright, Rounded</option>
@@ -122,7 +125,7 @@
 								<option value=" Pyramidal"> Pyramidal</option>
 							</select>
 						<br>
-						<p class="pfilter">Filter by Season</p>
+						<p class="pfilter">Season</p>
 							<select class="custom-select" name="season">
 					      <option value ="AllType" selected>All Type</option>
 					      <option value =" Spring"> Spring</option>
@@ -131,14 +134,14 @@
 					      <option value=" Winter"> Winter</option>
 							</select>
 	   				<br>
-						<p class="pfilter">Filter by Native/Adapted</p>
+						<p class="pfilter">Orign</p>
 							<select class="custom-select" name="native">
 								<option value ="AllType" selected>All Type</option>
 					      <option value =" Adapted"> Adapted</option>
 					      <option value =" Native"> Native</option>
 							</select>
 	   				<br>
-						<p class="pfilter">Filter by Light Requirement</p>
+						<p class="pfilter">Light Requirement</p>
 							<select class="custom-select" name="lightreq">
 								<option value ="AllType" selected>All Type</option>
 								<option value =" Full Sun"> Full Sun</option>
@@ -149,29 +152,33 @@
 						<br>
 					</div>
 					<br>
-						<button class="btn btn-inline-secondary" type="submit">Filter!</button>
+						<button class="btn btn-primary" type="submit">Filter!</button>
 				</form>
 			</div>
 			<!-- plant list and paginator-->
-			<div class="col-xs-10">
-				<div class="d-flex flex-row flex-wrap">
-					{% for plant in names %}
-					<div class="card col-sm-4 px-4 card-style flex-wrap" onmouseover="img_over(this)" onmouseout="img_out(this)">
-						<a href="/plant_profile/?id={{plant.id}}">
-							<img class="card-img img-center"src="{{plant.image}}">
-						</a>
-						<div class="card-body">
-							<h3 class="card-text text-center" >{{plant.name}}</h3>
+			<div class="col-10">
+				<!-- plant list  -->
+				<div class="plant_list col" data-spy="scroll">
+					<div class="d-flex flex-row flex-wrap">
+						{% for plant in names %}
+						<div class="card col-sm-4 px-4 card-style flex-wrap" onmouseover="img_over(this)" onmouseout="img_out(this)">
+							<a href="/plant_profile/?id={{plant.id}}">
+								<img class="card-img img-center"src="{{plant.image}}">
+							</a>
+							<div class="card-body">
+								<h3 class="card-text text-center" >{{plant.name}}</h3>
+							</div>
 						</div>
+						{% endfor %}
 					</div>
-					{% endfor %}
 				</div>
+
 				<!-- paginatior -->
-				<div class="d-flex flex-row justify-content-center">
+				<div class="mt-2">
 						<div id="page_footer">
-							<ul class="pagination justify-content-center pagination-lg">
-									<li>
-											<a href="?page=
+							<ul class="pagination justify-content-center">
+									<li class="page-item">
+											<a class="page-link" href="?page=
 													{% if names.has_previous %}
 															{{names.previous_page_number}}
 													{% else %}
@@ -183,13 +190,13 @@
 									</li>
 									{% for page in pages.page_range_ex %}
 										{% if page == '...' %}
-											<li><span>...</span></li>
+											<li class="page-item"><span class="page-link">...</span></li>
 										{% else %}
-											<li><a href="?page={{page}}">{{page}}</a></li>
+											<li class="page-item"><a class="page-link" href="?page={{page}}">{{page}}</a></li>
 										{% endif %}
 									{% endfor %}
-									<li>
-											<a href="?page=
+									<li class="page-item">
+											<a class="page-link" href="?page=
 													{% if names.has_next %}
 															{{names.next_page_number}}
 													{% else %}
@@ -199,15 +206,13 @@
 													<span aria-hidden="true">&raquo;</span>
 											</a>
 									</li>
-							</ul>
-							<ul class="pagination justify-content-center pagination-lg">
-								<li id="page_goto">
-									<span>
+								<li class="page-item" id="page_goto">
+									<span class="page-link">
 										Page
 										<input type="text" value="{{pages.page_goto}}"/>
 									</span>
 								</li>
-								<li><a href = "javascript:void(0);" onClick="page_goto();">Go</a>
+								<li><a class="page-link" href = "javascript:void(0);" onClick="page_goto();">Go</a>
 								</li>
 							</ul>
 							<!--span class="pagination_foot" >
