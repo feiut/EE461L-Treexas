@@ -3,91 +3,69 @@
 <html>
 <head>
 	<link rel="shortcut icon" type="image/png" href="{% static 'browser_icon.png' %}">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	 <!-- Latest compiled and minified CSS -->
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  	<link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="{% static 'list_page_style.css' %}">
 
 	<script>
 		// When the user clicks on <div>, open the popup
 		function transpecosfunc() {
-			document.getElementById("eco_text").innerHTML = "Trans Pecos";
-			document.getElementById("eco_pic").src = "{% static "eco_transpecos.jpg" %}";
-			document.getElementById("eco_pic").className = "img-center";
-			document.getElementById("eco_pic").visibility = "visible";
-		}
-		function edwardsfunc() {
-			document.getElementById("eco_text").innerHTML = "Edwards Plateau";
-			document.getElementById("eco_pic").src = "{% static "eco_edwards.png" %}";
-			document.getElementById("eco_pic").className = "img-center";
-			document.getElementById("eco_pic").visibility = "visible";
+			document.getElementById("map").src = "{% static "ecoregions_transpecos.png" %}";
 
 		}
+		function edwardsfunc() {
+			document.getElementById("map").src = "{% static "ecoregions_edwards.png" %}";
+		}
 		function crosstimbersfunc() {
-			document.getElementById("eco_text").innerHTML = "Cross Timbers";
-			document.getElementById("eco_pic").src = "{% static "eco_crosstimbers.png" %}";
-			document.getElementById("eco_pic").className = "img-center";
-			document.getElementById("eco_pic").visibility = "visible";
+			document.getElementById("map").src = "{% static "ecoregions_crosstimbers.png" %}";
 
 		}
 		function southplainsfunc() {
-			document.getElementById("eco_text").innerHTML = "South Plains";
-			document.getElementById("eco_pic").src = "{% static "eco_southplains.png" %}";
-			document.getElementById("eco_pic").className = "img-center";
-			document.getElementById("eco_pic").visibility = "visible";
+			document.getElementById("map").src = "{% static "ecoregions_southplains.png" %}";
+
 		}
 		function postoakfunc() {
-			document.getElementById("eco_text").innerHTML = "Post Oak";
-			document.getElementById("eco_pic").src = "{% static "eco_postoaksavanah.jpg" %}";
-			document.getElementById("eco_pic").className = "img-center";
-			document.getElementById("eco_pic").visibility = "visible";
+			document.getElementById("map").src = "{% static "ecoregions_postoak.png" %}";
 
 		}
 		function pineywoodsfunc() {
-			document.getElementById("eco_text").innerHTML = "Piney Woods";
-			document.getElementById("eco_pic").src = "{% static "eco_pineywoods.png" %}";
-			document.getElementById("eco_pic").className = "img-center";
-			document.getElementById("eco_pic").visibility = "visible";
+			document.getElementById("map").src = "{% static "ecoregions_pineywoods.png" %}";
 
 		}
 		function blacklandprairiefunc() {
-			document.getElementById("eco_text").innerHTML = "Blackland Prairie";
-			document.getElementById("eco_pic").src = "{% static "eco_blacklandprairie.jpg" %}";
-			document.getElementById("eco_pic").className = "img-center";
-			document.getElementById("eco_pic").visibility = "visible";
+			document.getElementById("map").src = "{% static "ecoregions_blackland.png" %}";
 
 		}
 		function coastfunc() {
-			document.getElementById("eco_text").innerHTML = "Gulf Coast Prairies";
-			document.getElementById("eco_pic").src = "{% static "eco_marshes.png" %}";
-			document.getElementById("eco_pic").className = "img-center";
-			document.getElementById("eco_pic").visibility = "visible";
+			document.getElementById("map").src = "{% static "ecoregions_marshes.png" %}";
+
 		}
 		function highplainsfunc() {
-			document.getElementById("eco_text").innerHTML = "High Plains";
-			document.getElementById("eco_pic").src = "{% static "eco_highplains.png" %}";
-			document.getElementById("eco_pic").className = "img-center";
-			document.getElementById("eco_pic").visibility = "visible";
+			document.getElementById("map").src = "{% static "ecoregions_highplains.png" %}";
 
 		}
 		function rollingplainsfunc() {
-			document.getElementById("eco_text").innerHTML = "Rolling Plains";
-			document.getElementById("eco_pic").src = "{% static "eco_rollingplains.jpg" %}";
-			document.getElementById("eco_pic").className = "img-center";
-			document.getElementById("eco_pic").visibility = "visible";
+			document.getElementById("map").src = "{% static "ecoregions_rollingplains.png" %}";
+
 		}
 		function leave() {
-			document.getElementById("eco_text").innerHTML = "Pick Your Ecoregion!";
-			document.getElementById("eco_pic").visibility = "hidden";
-			document.getElementById("eco_pic").className = "";
-			document.getElementById("eco_pic").src = "";
+			document.getElementById("map").src = "{% static "ecoregions.png" %}";
 		}
 	</script>
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-lg navbar-fixed-top" style="background-color:rgba(0,0,0,0.35);">
+	<nav class="navbar navbar-expand-lg navbar-dark navbar-fixed-top" style="background-color:rgba(0,0,0,0.35);">
 	  <div class="container-fluid">
 
 	    <div class="navbar-header">
@@ -95,14 +73,14 @@
 	    </div>
 
 	    <div class="topnav-entry">
-	      <ul class="nav navbar-nav navbar-right">
-	        <li><a href="/plant_list">Plants</a>
+	      <ul class="navbar-nav mr-auto">
+	        <li class="nav-item active"><a class = "nav-link" href="/plant_list">Plants</a>
 	        </li>
-	        <li><a href="/park_list">State Parks</a>
+	        <li class="nav-item active"><a class = "nav-link" href="/park_list">State Parks</a>
 	        </li>
-	        <li><a href="/eco_list">Ecoregions</a>
+	        <li class="nav-item active"><a class = "nav-link" href="/eco_list">Ecoregions</a>
 	        </li>
-	        <li><a href="/about">About Us</a>
+	        <li class="nav-item active"><a class = "nav-link" href="/about">About Us</a>
 	        </li>
 	      </ul>
 	    </div>
@@ -113,7 +91,8 @@
 	<br>
 	<br>
 	<br>
-	<div class="container">
+
+	<div class="container-fluid">
 		<!--
 		<div class="row">
 			<div class="col">
@@ -121,61 +100,58 @@
 			</div>
 		</div>
 	-->
-	<div class="row">
-		<div class="col-xs-12">
+	<div class="d-flex flex-row mx-auto">
+		<div class="flex-column">
 			<p class="title1 text-center">Ecoregions of Texas</p>
 		</div>
 	</div>
+
 	<br>
 	<br>
 	<br>
 	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<div class="row">
-	<div class="col-xs-6">
-		<h1 class="color1 text-center" id="eco_text">Pick Your Ecoregion!</h1>
-		<img class="" src="" id="eco_pic"/>
-	</div>
-	<div class="col-xs-6">
+
+	<div class="d-flex flex-row justify-content-center">
+	<div class="flex-column justify-content-center mx-auto">
+
 	<!-- Image Map Generated by http://www.image-map.net/ -->
-	<img src="{% static 'ecoregions.png' %}" usemap="#image-map">
+	<img class="justify-content-center" id="map" src="{% static 'ecoregions.png' %}" usemap="#image-map">
 
 	<map name="image-map">
-	    <area target="" alt="transpecos" title="Trans Pecos" href="/eco_profile/?id=9" coords="32,254,66,295,97,323,109,341,112,364,126,381,148,395,171,404,191,371,180,349,182,330,202,322,223,314,210,289,214,279,209,277,199,278,185,260,189,247,179,255,177,263" shape="poly" onmouseover="transpecosfunc()" onmouseout="leave()">
+	    <area target="" alt="transpecos" title="transpecos" href="/eco_profile/?id=9" coords="44,340,239,347,241,334,255,331,247,352,268,374,280,367,288,379,280,387,297,419,239,441,241,470,257,492,229,542,153,495,138,447,127,429,102,408,70,378" shape="poly" onmouseover="transpecosfunc()" onmouseout="leave()">
 
-	    <area target="" alt="edwardsplateau1" title="Edwards Plateau" href="/eco_profile/?id=6" coords="193,368,241,369,266,390,268,372,304,395,321,383,351,386,389,363,393,346,374,330,358,295,344,297,329,296,324,265,318,265,298,302,269,301,273,285,288,281,291,274,278,274,276,266,269,262,263,265,242,252,235,258,239,266,225,274,216,275,213,288,226,314,185,333,182,348" shape="poly" onmouseover="edwardsfunc()" onmouseout="leave()">
+	    <area target="" alt="marshes" title="marshes" href="/eco_profile/?id=1"  coords="568,733,548,722,544,690,538,676,543,660,532,650,537,631,516,630,513,619,522,604,541,592,548,599,554,591,567,574,555,569,561,554,570,557,572,539,577,551,595,537,589,514,610,494,609,482,617,475,626,471,650,471,655,480,679,476,685,468,721,469,750,457,744,489,691,516,664,544,606,579,570,608,552,655" shape="poly" onmouseover="coastfunc()" onmouseout="leave()">
 
-	    <area target="" alt="edwardsplateau2" title="Edwards Plateau" href="/eco_profile/?id=6" coords="284,248,289,262,298,262,305,257,311,255,310,247,299,248,292,244" shape="poly" onmouseover="edwardsfunc()" onmouseout="leave()">
+	    <area target="" alt="blackland1" title="blackland1" href="/eco_profile/?id=3" coords="462,521,472,505,504,498,519,478,535,422,556,399,553,386,564,382,563,345,553,338,556,312,574,287,568,260,574,241,599,248,599,235,619,250,651,235,676,245,660,270,635,279,628,315,623,355,604,358,614,368,609,375,600,368,583,391,582,402,573,413,548,456,539,482,527,504,508,516,488,523" shape="poly" onmouseover="blacklandprairiefunc()" onmouseout="leave()">
 
-	    <area target="" alt="crosstimbers" title="Cross Timbers" href="/eco_profile/?id=4" coords="364,160,381,160,383,173,395,168,415,171,430,170,447,179,448,187,428,182,429,189,426,196,429,215,416,239,416,256,420,261,424,280,417,290,415,302,402,317,400,336,393,342,376,329,361,293,346,294,333,293,340,267,333,248,340,248,335,237,342,231,338,226,351,219,348,201,372,193,361,179" shape="poly" onmouseover="crosstimbersfunc()" onmouseout="leave()">
+	    <area target="" alt="blackland2" title="blackland2" href="/eco_profile/?id=3" coords="547,533,551,545,571,511,582,506,632,447,629,424,569,498" shape="poly" onmouseover="blacklandprairiefunc()" onmouseout="leave()">
 
-	    <area target="" alt="southtexasplains" title="South Texas Plaines" href="/eco_profile/?id=5" coords="267,394,270,375,304,398,322,385,358,386,347,393,372,391,345,404,372,409,400,394,415,414,423,438,411,451,394,446,383,468,384,476,400,473,413,541,423,550,414,556,406,547,383,547,341,528" shape="poly" onmouseover="southplainsfunc()" onmouseout="leave()">
+	    <area target="" alt="postoak1" title="postoak1" href="/eco_profile/?id=2" coords="601,232,620,247,651,233,674,242,665,272,635,280,625,357,607,359,616,367,608,376,600,371,584,391,581,403,550,455,539,484,529,502,497,521,487,529,464,533,462,541,510,541,532,526,549,534,568,499,630,422,650,402,653,370,644,340,652,327,660,339,671,336,660,311,666,282,679,281,699,256,719,248,719,237,702,244,658,221,627,224" shape="poly" onmouseover="postoakfunc()" onmouseout="leave()">
 
-	    <area target="" alt="postoaksavannah1" title="Post Oak Savannah" href="/eco_profile/?id=2" coords="455,175,482,168,494,162,523,181,539,183,528,190,509,210,499,212,493,234,502,253,496,257,489,245,483,257,486,268,493,284,487,302,471,318,470,331,447,347,412,398,402,393,371,406,354,402,394,381,407,341,417,336,448,279,467,255,476,211,491,197,507,185,494,178,464,190" shape="poly" onmouseover="postoakfunc()" onmouseout="leave()">
+	    <area target="" alt="postoak2" title="postoak2" href="/eco_profile/?id=2" coords="552,545,557,551,569,554,571,536,579,547,594,537,587,515,608,493,609,481,627,469,640,469,633,448,585,507,573,512" shape="poly" onmouseover="postoakfunc()" onmouseout="leave()">
 
-	    <area target="" alt="postoaksavannah2" title="Post Oak Savannah" href="/eco_profile/?id=2" coords="415,404,418,413,422,422,427,413,430,402,434,411,444,404,442,390,456,372,461,355,482,351,476,338,450,359,427,382" shape="poly" onmouseover="postoakfunc()" onmouseout="leave()">
+	    <area target="" alt="crosstimbers" title="crosstimbers" href="/eco_profile/?id=4" coords="487,213,597,232,597,244,573,239,565,258,570,285,554,311,552,336,561,348,562,380,553,383,553,398,532,419,521,458,495,431,478,394,442,397,454,352,442,334,451,330,449,316,459,308,452,295,468,287,464,269,496,253,477,238" shape="poly" onmouseover="crosstimbersfunc()" onmouseout="leave()">
 
-	    <area target="" alt="blacklandprairie1" title="Blackland Prairie" href="/eco_profile/?id=3" coords="450,180,456,177,464,191,495,180,505,186,474,209,466,253,445,278,416,335,403,342,393,379,374,389,355,390,391,367,396,343,405,335,403,319,419,303,420,290,429,281,422,261,418,253,418,240,431,214,429,199,432,189,446,189" shape="poly" onmouseover="blacklandprairiefunc()" onmouseout="leave()">
+	    <area target="" alt="southplains" title="southplains" href="/eco_profile/?id=5" coords="352,518,354,502,361,498,405,525,427,509,469,508,459,521,491,524,462,533,461,540,511,544,533,528,546,535,552,551,560,556,552,570,563,575,548,596,542,587,519,602,510,620,516,631,533,634,530,649,541,663,534,675,543,689,545,721,565,734,555,743,537,730,507,726,479,716,459,706" shape="poly" onmouseover="southplainsfunc()" onmouseout="leave()">
 
-	    <area target="" alt="blacklandprairie2" title="Blackland Prairie" href="/eco_profile/?id=3" coords="474,318,471,331,448,349,426,383,412,399,413,405,434,372,454,352,477,339" shape="poly" onmouseover="blacklandprairiefunc()" onmouseout="leave()">
+	    <area target="" alt="edwards1" title="edwards1" href="/eco_profile/?id=6" coords="260,489,244,469,241,443,302,418,283,389,292,379,285,368,300,368,316,356,321,350,317,345,323,339,388,368,383,375,360,380,357,398,373,405,400,403,423,369,420,354,434,353,435,395,448,402,476,396,495,431,520,462,516,480,501,495,469,504,428,504,404,519,362,495,352,501,350,517" shape="poly" onmouseover="edwardsfunc()" onmouseout="leave()">
 
-	    <area target="" alt="Gulf Coast Prairies and Marshes" title="Gulf Coast Prairies and Marshes" href="/eco_profile/?id=1" coords="565,344,543,353,512,352,506,358,494,358,464,356,459,373,444,391,449,400,435,412,422,424,426,436,413,452,397,450,385,473,401,472,416,541,425,547,427,536,417,490,441,446,478,418,500,406,525,383,560,366" shape="poly" onmouseover="coastfunc()" onmouseout="leave()">
+	    <area target="" alt="edwards2" title="edwards2" href="/eco_profile/?id=6" coords="378,333,385,350,398,350,404,342,414,341,413,331,404,328,398,328,386,324" shape="poly" onmouseover="edwardsfunc()" onmouseout="leave()">
 
-	    <area target="" alt="pineywoods" title="Piney Woods" href="/eco_profile/?id=0" coords="541,188,515,209,502,214,497,236,505,250,498,261,491,252,487,257,496,284,491,302,477,318,485,348,493,355,508,355,516,347,540,348,562,342,562,328,568,303,555,277,555,268,546,258,544,246,539,227" shape="poly" onmouseover="pineywoodsfunc()" onmouseout="leave()">
+	    <area target="" alt="rollingplains" title="rollingplains" href="/eco_profile/?id=7" coords="245,112,244,161,259,149,271,148,274,141,288,138,298,146,314,140,321,137,374,106,375,116,363,125,380,120,374,129,361,135,367,142,364,154,343,148,330,152,342,167,335,170,314,161,313,172,336,178,340,209,357,245,351,254,337,252,328,267,331,281,322,300,313,300,307,309,315,315,335,316,337,323,324,337,374,335,388,322,414,330,415,342,403,349,384,351,375,337,330,339,389,368,385,377,360,381,357,397,373,406,401,403,424,370,420,354,435,355,437,394,456,351,442,337,452,329,450,317,457,307,449,293,465,284,462,268,492,252,475,238,485,216,403,183,403,66,356,62,377,87,379,95,342,102,320,109,314,106,316,117,312,128,272,103,266,114" shape="poly" onmouseover="rollingplainsfunc()" onmouseout="leave()">
+	    
+	    <area target="" alt="pineywoods" title="pineywoods" href="/eco_profile/?id=0" coords="722,250,725,341,757,395,749,453,720,469,684,467,680,475,656,478,649,468,643,468,635,445,632,421,652,401,655,368,646,342,652,333,661,341,672,338,664,311,669,284,682,283,700,258" shape="poly" onmouseover="pineywoodsfunc()" onmouseout="leave()">
 
-	    <area target="" alt="highplains1" title="High Plains" href="/eco_profile/?id=8" coords="186,46,268,51,283,69,234,93,206,77,186,84" shape="poly" onmouseover="highplainsfunc()" onmouseout="leave()">
+	    <area target="" alt="highplains1" title="highplains1" href="/eco_profile/?id=8" coords="248,63,355,63,374,86,377,95,318,106,312,106,312,125,273,101,265,112,243,111" shape="poly" onmouseover="highplainsfunc()" onmouseout="leave()">
 
-	    <area target="" alt="highplains2" title="High Plains" href="/eco_profile/?id=8" coords="184,122,210,107,236,106,242,96,280,82,286,90,271,113,251,125,230,123,250,134,259,146,252,155,267,185,262,191,248,206,237,234,252,237,252,245,242,249,232,253,235,266,213,274,197,274,188,260,194,249,187,241,179,255" shape="poly" onmouseover="highplainsfunc()" onmouseout="leave()">
-
-	    <area target="" alt="rollingplains1" title="Rolling Plains" href="/eco_profile/?id=7" coords="183,86,206,83,232,96,285,69,272,49,302,49,303,140,361,163,358,179,367,191,347,201,348,216,336,223,333,250,313,249,294,243,282,246,255,243,253,233,240,232,251,208,273,184,257,154,261,145,252,132,237,125,255,129,270,117,290,92,280,78,241,95,233,103,207,104,185,120" shape="poly" onmouseover="rollingplainsfunc()" onmouseout="leave()">
-
-	    <area target="" alt="rollingplains2" title="Rolling Plains" href="/eco_profile/?id=7" coords="256,246,281,250,285,260,300,265,312,256,315,251,331,254,338,266,331,291,327,264,314,263,296,299,274,298,276,289,289,283,294,272,281,271,277,262,269,260,264,261,246,253" shape="poly" onmouseover="rollingplainsfunc()" onmouseout="leave()">
+	    <area target="" alt="highplains2" title="highplains2" href="/eco_profile/?id=8" coords="244,164,237,333,254,330,250,351,267,372,281,364,302,364,317,350,332,325,335,317,314,317,306,311,312,299,321,297,329,284,325,265,335,252,351,252,356,245,338,209,335,180,314,174,310,157,336,167,331,152,342,147,363,150,367,143,362,136,373,128,379,122,365,125,372,117,373,108,326,137,300,148,288,140,276,144,272,150,260,151" shape="poly" onmouseover="highplainsfunc()" onmouseout="leave()">
 	</map>
+		</div>
+
 	</div>
 	</div>
+
+
 	<!--
 	{% for eco in ecoregion_list %}
 	<div class="container">
