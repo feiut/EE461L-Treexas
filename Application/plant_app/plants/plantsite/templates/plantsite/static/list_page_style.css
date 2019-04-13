@@ -1,28 +1,42 @@
 p {
-	color: #AFBEFF !important;
+	color: #015249 !important;
 }
 
 .navbar-nav {
-	color: #EFEFEF;
-	font: 160% 'Merienda One', Helvetica, sans-serif;
+	color: #57BC90;
+	font: 160% 'Fjalla One', Helvetica, sans-serif;
+}
+
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: #015249;
+}
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+    color: #015249;
+}
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:focus .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: #015249;
 }
 
 .navbar-brand {
-  color: #EFEFEF;
-  padding-top: 0;
-  padding-left: 10px;
-  font: 250% 'Merienda One', Helvetica, sans-serif;
+  color: #015249;
+  font: 250% 'Fjalla One', Helvetica, sans-serif;
 }
 
 .navbar-nav > li > a:hover, .navbar-brand:hover, .navbar-default .navbar-nav > li > a:focus {
-    background-color: #A9A9a9;
-    color: #EFEFEF;
+    background-color: #57bc90;
+    color: #57BC90;
 }
 
 .title1{
-  font: 60px/1.2 'Merienda One', Helvetica, sans-serif;
+  font: 80px/1.2 'Fjalla One', sans-serif;
+  font-weight:800;
   color: rgba(255,255,255,1);
-  text-shadow: 3px 3px 3px #000000;
   position: absolute;
   top: 20%;
   left: 50%;
@@ -30,7 +44,7 @@ p {
   }
 
 a {
-	color: #EFEFEF;
+	color: #A5A5AF;
 }
 
 .thumbnail-settings{
@@ -53,12 +67,6 @@ body{
 	background-color : #FFFFFF;
 	margin: 0px;
 }
-
-.title1{
-  font: 60px/1.2 'Merienda One', Helvetica, sans-serif;
-  color: rgba(255,255,255,1);
-  text-shadow: 3px 3px 3px #000000;
-  }
 
 .card-style{
 	border-color : #FFFFFF;
