@@ -49,6 +49,8 @@
 	        </li>
 	        <li class="nav-item active"><a class = "nav-link" href="/about">About Us</a>
 	        </li>
+
+
 	      </ul>
 	    </div>
 	  </div>
@@ -78,9 +80,6 @@
 			<div class="flex-column justify-content-center">
 					<form method="GET">
 				      <div class="input-group">
-								<div class="input-group-append">
-									<a href="plant_list/" class="btn btn-outline-secondary" onclick="window.history.go(-1); return false;"> Back! </a>
-								</div>
 								<input class="form-control" type="text" name="search" placeholder="Plant Name">
 								<div class="input-group-append">
 			            <button class="btn btn-outline-secondary" type="submit">Search!</button>
@@ -93,6 +92,8 @@
 		<div class="d-flex flex-row mt-5 mx-5">
 			<!-- filters -->
 			<div class="d-inline col-2 pl-3">
+				<!-- back -->
+				<button class="btn btn-inline-secondary" href="plant_list/" onclick="window.history.go(-1); return false;">Back</button>
 				<form method="GET">
 					<div class="input-group">
 						<p class="pfilter">Plant Type</p>
@@ -151,7 +152,7 @@
 						<br>
 					</div>
 					<br>
-						<button class="btn btn-inline-secondary" type="submit">Filter!</button>
+						<button class="btn btn-primary" type="submit">Filter!</button>
 				</form>
 			</div>
 			<!-- plant list and paginator-->
