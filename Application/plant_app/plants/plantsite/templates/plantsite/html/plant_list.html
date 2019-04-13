@@ -37,6 +37,7 @@
 
 	    <div class="navbar-header">
 	      <a class="navbar-brand" href="/">Treexas</a>
+	     <a class="navbar-nav" href="plant_list/" onclick="window.history.go(-1); return false;"> Back </a>
 	    </div>
 
 	    <div class="topnav-entry">
@@ -61,192 +62,176 @@
 	<br>
 
 	<div class="container-fluid">
-			<div class="d-flex flex-row mx-auto">
-				<div class="flex-column justify-content-center">
-  	 				<p class="title1 text-center">Plants of Texas</p>
-				</div>
+			<!-- welcome -->
+		<div class="d-flex flex-row mx-auto">
+			<div class="flex-column justify-content-center">
+	 				<p class="title1 text-center">Plants of Texas</p>
 			</div>
+		</div>
 
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-
-			<div class="d-flex flex-row justify-content-center mx-auto">
-				<div class="flex-column justify-content-center">
-						<form method="GET">
-					      <div class="input-group">
-
-					          <input class="form-control" type="text" name="search" placeholder="Plant Name">
-					            <div class="input-group-append">
-					            <button class="btn btn-outline-secondary" type="submit">Search!</button>
-					            </div>
-					      </div>
-					  </form>
-				</div>
-			</div>
-
-
-			<div class="col-xs-12">
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<!-- search bar -->
+		<div class="d-flex flex-row justify-content-center mx-auto">
+			<div class="flex-column justify-content-center">
 					<form method="GET">
-							<div class="input-group">
-									<!-- <i class="glyphicon glyphicon-search"></i> -->
-									<!-- <input class="form-control" type="text" name="search" placeholder="Search" autofocus/> -->
-										<div class="input-group-btn">
-										<!-- <button class="btn btn-default" type="submit">
-										<i class="glyphicon glyphicon-leaf"></i></button> -->
-										<br>
-									</div>
-							</div>
-							<div class="input-group">
-								<p>Filter by Plant Type</p>
-							<select name="planttype" multiple="multiple">
+				      <div class="input-group">
+								<input class="form-control" type="text" name="search" placeholder="Plant Name">
+									<div class="input-group-append">
+				            <button class="btn btn-outline-secondary" type="submit">Search!</button>
+				          </div>
+				      </div>
+				  </form>
+			</div>
+		</div>
+		<!-- page body -->
+		<div class="d-flex flex-row mt-5 mx-5">
+			<!-- filters -->
+			<div class="col-xs-2 pl-3">
+				<form method="GET">
+					<div class="input-group">
+						<p class="pfilter">Filter by Plant Type</p>
+							<select name="planttype" class="custom-select">
 								<option value ="AllType" selected>All Type</option>
 								<option value =" Shrub">Shrub</option>
 								<option value =" Shade Tree"> Shade Tree</option>
 								<option value=" Groundcover"> Groundcover</option>
 								<option value=" Ornamental Grass">Ornamental Grass</option>
 							</select>
-							<br>
-							<p>Filter by Water Demand</p>
-						<select name="waterdemand" multiple="multiple">
-							<option value ="AllType" selected>All Type</option>
-							<option value =" Medium">Medium</option>
-							<option value =" Low">Low</option>
-							<option value=" Very Low">Very Low</option>
-							<option value=" Low, Medium"> Low, Medium</option>
-							<option value=" Medium, High"> Medium, High</option>
-						</select>
 						<br>
-						<p>Filter by Plant Form</p>
-					<select name="plantform" multiple="multiple">
-						<option value ="AllType" selected>All Type</option>
-						<option value =" Upright, Rounded"> Upright, Rounded</option>
-						<option value =" Spreading"> Spreading</option>
-						<option value=" Rounded"> Rounded</option>
-						<option value=" Upright"> Upright</option>
-						<option value=" Pyramidal"> Pyramidal</option>
-					</select>
-					<br>
-					<p>Filter by Season</p>
-     <select name="season" multiple="multiple">
-      <option value ="AllType" selected>All Type</option>
-      <option value =" Spring"> Spring</option>
-      <option value =" Summer"> Summer</option>
-      <option value=" Fall"> Fall</option>
-      <option value=" Winter"> Winter</option>
-     </select>
-     <br>
-<p>Filter by Native/Adapted</p>
-     <select name="native" multiple="multiple">
-      <option value ="AllType" selected>All Type</option>
-      <option value =" Adapted"> Adapted</option>
-      <option value =" Native"> Native</option>
-     </select>
-     <br>
-<p>Filter by Light Requirement</p>
-     <select name="lightreq" multiple="multiple">
-      <option value ="AllType" selected>All Type</option>
-      <option value =" Full Sun"> Full Sun</option>
-      <option value =" Partial Shade"> Partial Shade</option>
-      <option value =" Full Shade"> Full Shade</option>
-     </select>
-					<br>
-					<button class="btn btn-default" type="submit">
-					<i class="glyphicon glyphicon-leaf"></i></button>
-						</div>
-				</div>
-
-					</form>
-			</div>
-		</div>
-
-
-			<div class="row felx-wrap">
-				{% for plant in names %}
-				<div class="card col-sm-3 py-4 card-style" onmouseover="img_over(this)" onmouseout="img_out(this)">
-					<a href="/plant_profile/?id={{plant.id}}">
-						<img class="card-img img-center"src="{{plant.image}}">
-					</a>
-					<div class="card-body">
-						<h3 class="card-text text-center" >{{plant.name}}</h3>
+						<p class="pfilter">Filter by Water Demand</p>
+							<select name="waterdemand" class="custom-select">
+								<option value ="AllType" selected>All Type</option>
+								<option value =" Medium">Medium</option>
+								<option value =" Low">Low</option>
+								<option value=" Very Low">Very Low</option>
+								<option value=" Low, Medium"> Low, Medium</option>
+								<option value=" Medium, High"> Medium, High</option>
+							</select>
+						<br>
+						<p class="pfilter">Filter by Plant Form</p>
+							<select name="plantform" class="custom-select">
+								<option value ="AllType" selected>All Type</option>
+								<option value =" Upright, Rounded"> Upright, Rounded</option>
+								<option value =" Spreading"> Spreading</option>
+								<option value=" Rounded"> Rounded</option>
+								<option value=" Upright"> Upright</option>
+								<option value=" Pyramidal"> Pyramidal</option>
+							</select>
+						<br>
+						<p class="pfilter">Filter by Season</p>
+							<select class="custom-select" name="season">
+					      <option value ="AllType" selected>All Type</option>
+					      <option value =" Spring"> Spring</option>
+					      <option value =" Summer"> Summer</option>
+					      <option value=" Fall"> Fall</option>
+					      <option value=" Winter"> Winter</option>
+							</select>
+	   				<br>
+						<p class="pfilter">Filter by Native/Adapted</p>
+							<select class="custom-select" name="native">
+								<option value ="AllType" selected>All Type</option>
+					      <option value =" Adapted"> Adapted</option>
+					      <option value =" Native"> Native</option>
+							</select>
+	   				<br>
+						<p class="pfilter">Filter by Light Requirement</p>
+							<select class="custom-select" name="lightreq">
+								<option value ="AllType" selected>All Type</option>
+								<option value =" Full Sun"> Full Sun</option>
+								<option value =" Partial Shade"> Partial Shade</option>
+								<option value =" Full Shade"> Full Shade</option>
+							</select>
+						<br>
+						<br>
 					</div>
+					<br>
+						<button class="btn btn-inline-secondary" type="submit">Filter!</button>
+				</form>
+			</div>
+			<!-- plant list and paginator-->
+			<div class="col-xs-10">
+				<div class="d-flex flex-row flex-wrap">
+					{% for plant in names %}
+					<div class="card col-sm-4 px-4 card-style flex-wrap" onmouseover="img_over(this)" onmouseout="img_out(this)">
+						<a href="/plant_profile/?id={{plant.id}}">
+							<img class="card-img img-center"src="{{plant.image}}">
+						</a>
+						<div class="card-body">
+							<h3 class="card-text text-center" >{{plant.name}}</h3>
+						</div>
+					</div>
+					{% endfor %}
 				</div>
-				{% endfor %}
+				<!-- paginatior -->
+				<div class="d-flex flex-row justify-content-center">
+						<div id="page_footer">
+							<ul class="pagination justify-content-center pagination-lg">
+									<li>
+											<a href="?page=
+													{% if names.has_previous %}
+															{{names.previous_page_number}}
+													{% else %}
+															{{names.number}}
+													{% endif %}
+											" aria-label="Previous">
+													<span aria-hidden="true">&laquo;</span>
+											</a>
+									</li>
+									{% for page in pages.page_range_ex %}
+										{% if page == '...' %}
+											<li><span>...</span></li>
+										{% else %}
+											<li><a href="?page={{page}}">{{page}}</a></li>
+										{% endif %}
+									{% endfor %}
+									<li>
+											<a href="?page=
+													{% if names.has_next %}
+															{{names.next_page_number}}
+													{% else %}
+															{{names.number}}
+													{% endif %}
+											" aria-label="Next">
+													<span aria-hidden="true">&raquo;</span>
+											</a>
+									</li>
+							</ul>
+							<ul class="pagination justify-content-center pagination-lg">
+								<li id="page_goto">
+									<span>
+										Page
+										<input type="text" value="{{pages.page_goto}}"/>
+									</span>
+								</li>
+								<li><a href = "javascript:void(0);" onClick="page_goto();">Go</a>
+								</li>
+							</ul>
+							<!--span class="pagination_foot" >
+									{{page_all}}plants, {{blogs.number}}page/{{pages.num_pages}}pages
+							</span-->
+							<br>
+							<br>
+						</div>
+					</div>
 			</div>
 
-<!-- paginatior -->
-			<div class="d-flex flex-row justify-content-center">
-			<div class="flex-column justify-content-center">
-			<div id="page_footer">
-			    <ul class="pagination justify-content-center pagination-lg">
-
-			        <li>
-			            <a href="?page=
-			                {% if names.has_previous %}
-			                    {{names.previous_page_number}}
-			                {% else %}
-			                    {{names.number}}
-			                {% endif %}
-			            " aria-label="Previous">
-			                <span aria-hidden="true">&laquo;</span>
-			            </a>
-			        </li>
-							{% for page in pages.page_range_ex %}
-								{% if page == '...' %}
-									<li><span>...</span></li>
-								{% else %}
-			            <li><a href="?page={{page}}">{{page}}</a></li>
-								{% endif %}
-			        {% endfor %}
-
-			        <li>
-			            <a href="?page=
-			                {% if names.has_next %}
-			                    {{names.next_page_number}}
-			                {% else %}
-			                    {{names.number}}
-			                {% endif %}
-			            " aria-label="Next">
-			                <span aria-hidden="true">&raquo;</span>
-			            </a>
-			        </li>
-			    </ul>
-					<ul class="pagination justify-content-center pagination-lg">
-						<li id="page_goto">
-							<span>
-								Page
-								<input type="text" value="{{pages.page_goto}}"/>
-							</span>
-						</li>
-						<li><a href = "javascript:void(0);" onClick="page_goto();">Go</a>
-						</li>
-					</ul>
-
-					<!--span class="pagination_foot" >
-							{{page_all}}plants, {{blogs.number}}page/{{pages.num_pages}}pages
-					</span-->
-					<br>
-					<br>
-<script type="text/javascript">
-$(".pagination li a").each(function(){
-	if($(this).text()=="{{names.number}}"){
-			$(this).parent().addClass("active");
-	}
-	});
-
-	function page_goto(){
-	var page = $("#page_goto input")[0].value;
-	window.location.href = '?page=' + page;
-	return false;
-	}
-</script>
-
+		</div>
 	</div>
-	</div>
-	</div>
-
-
+	<script type="text/javascript">
+	$(".pagination li a").each(function(){
+		if($(this).text()=="{{names.number}}"){
+				$(this).parent().addClass("active");
+		}
+		});
+		function page_goto(){
+		var page = $("#page_goto input")[0].value;
+		window.location.href = '?page=' + page;
+		return false;
+		}
+	</script>
 </body>
 </html>

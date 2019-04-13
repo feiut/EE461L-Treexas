@@ -32,6 +32,8 @@ def search_plants_with_string(p):
     return leftover
 
 
+
+
 def filter_plants_with_parameters(value_1, value_2, value_3, value_4, value_5, value_6):
     if not value_1:
         names = PlantCsv.objects.all()
@@ -114,6 +116,7 @@ def get_all_parks():
 		park.image = re.sub('https','https:',str(park.image))
 	return results
 
+
 ''' regular functions '''
 
 class Park(object):
@@ -132,29 +135,50 @@ class Ecoregion(object):
 def main_page(request):
     if request.method == 'GET':
         textfield =request.GET.get('search')
-        if not textfield:
-            template = loader.get_template('plantsite/html/mainPage.html')
+        search_type = request.GET.get('SearchType')
+        if str(search_type) == 'Plant':
+            if not textfield:
+                template = loader.get_template('plantsite/html/mainPage.html')
+                response = HttpResponse(template.render({},request))
+                return deleteCOOKIE(response, 6)
+            results = search_plants_with_string(textfield)
+            if not results:
+                template = loader.get_template('plantsite/html/plant_list.html')
+                response = HttpResponse(template.render({},request))
+                return deleteCOOKIE(response, 6)
+            else:
+                template = loader.get_template('plantsite/html/plant_list.html')
+                context_dict = {"names":results}
+                response = HttpResponse(template.render(context_dict,request))
+                return deleteCOOKIE(response, 6)
+        if str(search_type) == 'Park':
+            if not textfield:
+                template = loader.get_template('plantsite/html/mainPage.html')
+                response = HttpResponse(template.render({},request))
+                return deleteCOOKIE(response, 6)
+            results = search_park_with_string(textfield)
+            if not results:
+                template = loader.get_template('plantsite/html/park_list.html')
+                response = HttpResponse(template.render({},request))
+                return deleteCOOKIE(response, 6)
+            else:
+                template = loader.get_template('plantsite/html/park_list.html')
+                context_dict = {"names":results}
+                response = HttpResponse(template.render(context_dict,request))
+                return deleteCOOKIE(response, 6)
+        if str(search_type) == 'Ecoregion':
+            if not textfield:
+                template = loader.get_template('plantsite/html/mainPage.html')
+                response = HttpResponse(template.render({},request))
+                return deleteCOOKIE(response, 6)
+            template = loader.get_template('plantsite/html/eco_list.html')
             response = HttpResponse(template.render({},request))
             return deleteCOOKIE(response, 6)
-        results = search_plants_with_string(textfield)
-        if not results:
-            template = loader.get_template('plantsite/html/plant_list.html')
-            response = HttpResponse(template.render({},request))
-            return deleteCOOKIE(response, 6)
-        else:
-            template = loader.get_template('plantsite/html/plant_list.html')
-            context_dict = {"plant_names":results}
-            response = HttpResponse(template.render(context_dict,request))
-            return deleteCOOKIE(response, 6)
+        template = loader.get_template('plantsite/html/mainPage.html')
+        response = HttpResponse(template.render({},request))
+        return deleteCOOKIE(response, 6)
     else:
         template = loader.get_template('plantsite/html/mainPage.html')
-        number = request.GET.get('id')
-        number = str(number)
-        if number.isdigit():
-            num = int(number)
-            if -1 < num < 30:
-                response = redirect('/plant_profile/?id=' + number)
-                return response
         return HttpResponse(template.render({}, request))
 
 
@@ -196,18 +220,18 @@ def about_page(request):
     response = HttpResponse(template.render(context_dict, request))
     return deleteCOOKIE(response, 6)
 
-def state_park_list(request):
-    template = loader.get_template('plantsite/html/park_list.html')
-
-    park1 = Park("Pedernales State Park", "sp_pedernales.jpg", "/park1/")
-    park2 = Park("Dinosaur Valley State Park", "sp_dinosaur_valley.jpg", "/park2/")
-    park3 = Park("Daingerfield State Park", "sp_daingerfield.jpg", "/park3/")
-    park4 = Park("Acton State Park", "sp_acton.jpg", "/park4/")
-    parklist = [park1, park2, park3, park4]
-
-    context_dict = {"park_list":parklist}
-    response = HttpResponse(template.render(context_dict, request))
-    return response
+# def state_park_list(request):
+#     template = loader.get_template('plantsite/html/park_list.html')
+#
+#     park1 = Park("Pedernales State Park", "sp_pedernales.jpg", "/park1/")
+#     park2 = Park("Dinosaur Valley State Park", "sp_dinosaur_valley.jpg", "/park2/")
+#     park3 = Park("Daingerfield State Park", "sp_daingerfield.jpg", "/park3/")
+#     park4 = Park("Acton State Park", "sp_acton.jpg", "/park4/")
+#     parklist = [park1, park2, park3, park4]
+#
+#     context_dict = {"park_list":parklist}
+#     response = HttpResponse(template.render(context_dict, request))
+#     return response
 
 def ecoregion_list(request):
     template = loader.get_template('plantsite/html/eco_list.html')
@@ -320,7 +344,7 @@ def plant_type_list(request):
             return HttpResponse(template.render({},request))
         else:
             results = fix_plant_defualt(results)
-            context_dict = {'plant_names': results}
+            context_dict = {'names': results}
             return HttpResponse(template.render(context_dict,request))
 
     planttype_field =request.GET.get('planttype')
@@ -369,7 +393,7 @@ def paginator_processing(names, page):
     except PageNotAnInteger:
         names = pages.page(1)
     except EmptyPage:
-        names = pages.page(paginator.num_pages)
+        names = pages.page(1)
     if page_all <= 2 + mid_pages:
         page_range = pages.page_range
     else:
@@ -405,7 +429,29 @@ def plant_profile_view(request):
     number = request.GET.get('id')
     prof = get_plant_with_id(number)
 
-    context_dict = {'profile': prof}
+    ''' gets parks'''
+    parks_for_plant = prof.statepark
+    parks_for_plant = re.sub("\[",'',str(parks_for_plant)) #gets rid of brackets
+    parks_for_plant = re.sub("\]",'',str(parks_for_plant))
+    park_list = parks_for_plant.split(',') #uses comma as delimiter to split string and make a list
+    park_ids = set() #set will be used to store database objects (a query set)
+    for p in park_list:
+        if not p == '':
+            park_ids.add(p)
+    park_list = Stateparks.objects.filter(dbid__in=park_ids)
+
+    ''' gets eco regions'''
+    eco_for_plant = prof.econregion
+    eco_for_plant = re.sub("\[",'',str(eco_for_plant)) #gets rid of brackets
+    eco_for_plant = re.sub("\]",'',str(eco_for_plant))
+    eco_list =eco_for_plant.split(',') #uses comma as delimiter to split string and make a list
+    eco_ids = set() #set will be used to store database objects (a query set)
+    for e in eco_list:
+        if not e == '':
+            eco_ids.add(p)
+    eco_list = PlantCsvEcoregions.objects.filter(dbid__in=park_ids)
+
+    context_dict = {'profile': prof,'park_list':park_list,'eco_list':eco_list}
     return HttpResponse(template.render(context_dict,request))
 
 #============================================
@@ -457,7 +503,7 @@ def park_list_view(request):
 				return deleteCOOKIE(response, 6)
 			else:
 				template = loader.get_template('plantsite/html/park_list.html')
-				context_dict = {'parks':results}
+				context_dict = {'names':results}
 				response = HttpResponse(template.render(context_dict,request))
 				return deleteCOOKIE(response, 6)
 	else:

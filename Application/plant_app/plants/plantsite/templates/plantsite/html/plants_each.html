@@ -5,153 +5,223 @@
 		<link rel="shortcut icon" type="image/png" href="{% static 'browser_icon.png' %}">
 		<!--<link rel="stylesheet" href="{% static "entry_style.css" %}">-->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-			<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-			<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-			<link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
-			<link rel="stylesheet" href="{% static 'plants_each_page_style.css' %}">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+		<link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="{% static 'plants_each_page_style.css' %}">
 	</head>
 
 <!--<link rel = "stylesheet" href="SubPage.css">-->
 	<body bgcolor=#ABF0D1 id="plant_fields">
-
 		<div class="container">
 			<div class="row">
 				<div class="col">
-				<nav class="navbar navbar-expand-lg navbar-fixed-top" style="background-color:rgba(0,0,0,0.35);">
-					<div class="container-fluid">
-
-						<div class="navbar-header">
-							<a class="navbar-brand" href="/">Treexas</a>
+					<nav class="navbar navbar-expand-lg navbar-fixed-top" style="background-color:rgba(0,0,0,0.35);">
+						<div class="container-fluid">
+							<div class="navbar-header">
+								<a class="navbar-brand" href="/">Treexas</a>
+	     <a class="navbar-nav" href="plant_list/" onclick="window.history.go(-1); return false;"> Back </a>
+							</div>
+							<div class="topnav-entry">
+								<ul class="nav navbar-nav navbar-right">
+									<li>
+										<a href="/plant_list">Plants</a>
+									</li>
+									<li>
+										<a href="/park_list">State Parks</a>
+									</li>
+									<li>
+										<a href="/eco_list">Ecoregions</a>
+									</li>
+								</ul>
+							</div>
 						</div>
-
-						<div class="topnav-entry">
-							<ul class="nav navbar-nav navbar-right">
-								<li><a href="/plant_list">Plants</a>
-								</li>
-								<li><a href="/park_list">State Parks</a>
-								</li>
-								<li><a href="/eco_list">Ecoregions</a>
-								</li>
-	        <li><a href="/about">About Us</a>
-	        </li>
-							</ul>
-						</div>
-					</div>
-				</nav>
+					</nav>
 				</div>
 			</div>
-
-			<br>
-			<br>
-			<br>
-			<h1 class="text-center">{{profile.name}}</h1>
-
-
-	<div class="text-center">
-			<img border="3" class="image-plant-each" class="thumbnail img-center" src="{{profile.image}}" alt="{{profile.name}}">
-	</div>
-</br>
-<div class="text-plant-each">
-	<table style="margin:auto">
-		<tr>
-			<div>
-			<td><font size=4>Common Name:</font></td>
-			<td><font size=4>{{profile.nickname}}</font></td>
-		  </div>
-		</tr>
-		<tr>
-			<td><font size=4>Botanical Name:</font></td>
-			<td><font size=4>{{profile.name}}</font></td>
-		</tr>
-		<tr>
-			<td><font size=4>Plant Type:</font></td>
-			<td><font size=4>{{profile.planttype}}</font></td>
-		</tr>
-		<tr>
-			<td><font size=4>Light Requirement:</font></td>
-			<td><font size=4>{{profile.lightrequirement}}</font></td>
-		</tr>
-		<tr>
-			<td><font size=4>Water Demand:</font></td>
-			<td><font size=4>{{profile.waterdemand}}</font></td>
-		</tr>
-		<tr>
-			<td><font size=4>Land Scape Use</font></td>
-			<td><font size=4>{{profile.landscapeuse}}</font></td>
-		</tr>
-		<tr>
-			<td><font size=4>Ornamental Value:</font></td>
-			<td><font size=4>{{profile.ornamentalvalue}}</font></td>
-		</tr>
-		<tr>
-			<td><font size=4>Native/Adapted:</font></td>
-			<td><font size=4>{{profile.nativeadapted}}</font></td>
-		</tr>
-		<tr>
-			<td><font size=4>Season:</font></td>
-			<td><font size=4>{{profile.season}}</font></td>
-		</tr>
-		<tr>
-			<td><font size=4>deciduous Evergreen:</font></td>
-			<td><font size=4>{{profile.deciduousevergreen}}</font></td>
-		</tr>
-		<tr>
-			<td><font size=4>Plant Form:</front></td>
-			<td><font size=4>{{profile.plantform}}</front></td>
-		</tr>
-		<tr>
-			<td><font size=4>Plant Spread:</font></td>
-			<td><font size=4>{{profile.plantspread}}</font></td>
-		</tr>
-		<tr>
-			<td><font size=4>Plant Height:</font></td>
-			<td><font size=4>{{profile.plantheight}}</font></td>
-		</tr>
-	</table>
-  </div>
+		</div>
+		<br>
+		<br>
+		<br>
+		<h1 class="text-center">{{profile.name}}</h1>
 
 
-	<div class="row">
+<!-- Plant image and data section -->
+
+		<div id="image-and-info">
+			<div id="image-wrapper">
+				<img border="3" class="image-plant-each"src="{{profile.image}}" alt="{{profile.name}}">
+			</div>
+			<table class="text-plant-each" style="margin:auto">
+				<tr>
+				
+					<td><font size=4>Common Name:</font></td>
+					<td><font size=4>{{profile.nickname}}</font></td>
+		  		</tr>
+				<tr>
+					<td><font size=4>Botanical Name:</font></td>
+					<td><font size=4>{{profile.name}}</font></td>
+				</tr>
+				<tr>
+					<td><font size=4>Plant Type:</font></td>
+					<td><font size=4>{{profile.planttype}}</font></td>
+				</tr>
+				<tr>
+					<td><font size=4>Growing Season:</font></td>
+					<td><font size=4>{{profile.season}}</font></td>
+				</tr>
+				<tr>
+					<td><font size=4>Light Requirement:</font></td>
+					<td><font size=4>{{profile.lightrequirement}}</font></td>
+				</tr>
+				<tr>
+					<td><font size=4>Water Demand:</font></td>
+					<td><font size=4>{{profile.waterdemand}}</font></td>
+				</tr>
+				<tr>
+					<td><font size=4>Soil Requirement</font></td>
+					<td><font size=4>{{profile.soil}}</font></td>
+				</tr>
+				<tr>
+					<td><font size=4>Land Scape Use:</font></td>
+					<td><font size=4>{{profile.landscapeuse}}</font></td>
+				</tr>
+				<tr>
+					<td><font size=4>Wild Life Value:</font></td>
+					<td><font size=4>{{profile.wildlifevalue}}</font></td>
+				</tr>
+				<tr>
+					<td><font size=4>Ornamental Value:</font></td>
+					<td><font size=4>{{profile.ornamentalvalue}}</font></td>
+				</tr>
+				<tr>
+					<td><font size=4>Native/Adapted:</font></td>
+					<td><font size=4>{{profile.nativeadapted}}</font></td>
+				</tr>
+				<tr>
+					<td><font size=4>Season:</font></td>
+					<td><font size=4>{{profile.season}}</font></td>
+				</tr>
+				<tr>
+					<td><font size=4>Deciduous Evergreen:</font></td>
+					<td><font size=4>{{profile.deciduousevergreen}}</font></td>
+				</tr>
+				<tr>
+					<td><font size=4>Plant Form:</front></td>
+					<td><font size=4>{{profile.plantform}}</front></td>
+				</tr>
+				<tr>
+					<td><font size=4>Plant Spread:</font></td>
+					<td><font size=4>{{profile.plantspread}}</font></td>
+				</tr>
+				<tr>
+					<td><font size=4>Plant Height:</font></td>
+					<td><font size=4>{{profile.plantheight}}</font></td>
+				</tr>
+				<tr>
+					<td><font size=4>Reproduction:</font></td>
+					<td><font size=4>{{profile.reproduction}}</font></td>
+				</tr>
+				<tr>
+					<td><font size=4>Life Cycle:</font></td>
+					<td><font size=4>{{profile.lifecycle}}</font></td>
+				</tr>
+				<tr>
+					<td><font size=4>Plant Form:</font></td>
+					<td><font size=4>{{profile.plantform}}</font></td>
+				</tr>
+			</table>
+		</div>
+
+
+
+<div id="two-carousel-container">
+<!-- Carousel section for  state parks-->
+	<div class="Carousel-Container">
+		<div class="row">
+			<div class="col-xs-2">
+			</div>
+		<div class="col-xs-8 align-self-center">
+			<div id="myCarousel1" class="myCarousel" class="carousel slide" data-ride="carousel">
+				<!-- Wrapper for carousel items -->
+				<div class="carousel-inner">
+					<div class="item active carouselImg">
+						<img src="{% static "background-succulent.jpeg" %}" class="img-center">
+						<div class="carousel-caption">
+							<h3 class="text-center">State park for this plant</h3>
+						</div>
+					</div>
+					{% for park in park_list %}
+					<div class="item carouselImg">
+						<a href="/park_profile/?id={{park.dbid}}">
+							<img class="img-center" src="{{park.image}}">
+						</a>
+						<div class="carousel-caption">
+							<h3 class="text-center">{{park.name}}</h3>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+				<!-- Carousel controls -->
+				<a class="carousel-control left" href="#myCarousel1" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left"></span>
+				</a>
+				<a class="carousel-control right" href="#myCarousel1" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right"></span>
+				</a>
+			</div>
+		</div>
 		<div class="col-xs-2">
 		</div>
-		<div class="col-xs-8 align-self-center">
-
-				<div id="myCarousel" class="carousel slide" data-ride="carousel">
-						<!-- Wrapper for carousel items -->
-						<div class="carousel-inner">
-							<div class="item active carouselImg">
-										<img src="{% static "background-succulent.jpeg" %}" class="img-center">
-										<div class="carousel-caption">
-									<h3 class="text-center">Ecoregion for This Plants</h3>
-								</div>
-								</div>
-							{% for plant in plants %}
-							<div class="item carouselImg">
-								<a href="/eco_profile/?id={{dbid}}">
-									<img class="img-center" src="{{plant.image}}">
-								</a>
-								<div class="carousel-caption">
-									<h3 class="text-center">{{plant.name}}</h3>
-								</div>
-							</div>
-							{% endfor %}
-						</div>
-						<!-- Carousel controls -->
-						<a class="carousel-control left" href="#myCarousel" data-slide="prev">
-								<span class="glyphicon glyphicon-chevron-left"></span>
-						</a>
-						<a class="carousel-control right" href="#myCarousel" data-slide="next">
-								<span class="glyphicon glyphicon-chevron-right"></span>
-						</a>
-				</div>
-		 </div>
-		 <div class="col-xs-2">
-		 </div>
+		</div>
 	</div>
 
-		  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-		  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-		  <script src="../../assets/js/vendor/popper.min.js"></script>
-		  <script src="../../dist/js/bootstrap.min.js"></script>
+
+
+<!-- Carousel section for  eco regions -->	
+
+	<div class="Carousel-Container">
+		<div class="row">
+			<div class="col-xs-2">
+			</div>
+		<div class="col-xs-8 align-self-center">
+			<div id="myCarousel2" class="myCarousel" class="carousel slide" data-ride="carousel">
+				<!-- Wrapper for carousel items -->
+				<div class="carousel-inner">
+					<div class="item active carouselImg">
+						<img src="{% static "background-succulent.jpeg" %}" class="img-center">
+						<div class="carousel-caption">
+							<h3 class="text-center">Ecoregion for This Plants</h3>
+						</div>
+					</div>
+					{% for eco in eco_list %}
+					<div class="item carouselImg">
+						<a href="/eco_profile/?id={{eco.dbid}}">
+							<img class="img-center" src="{{eco.image}}">
+						</a>
+						<div class="carousel-caption">
+							<h3 class="text-center">{{eco.name}}</h3>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+				<!-- Carousel controls -->
+				<a class="carousel-control left" href="#myCarousel2" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left"></span>
+				</a>
+				<a class="carousel-control right" href="#myCarousel2" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right"></span>
+				</a>
+			</div>
+		</div>
+		<div class="col-xs-2">
+		</div>
+		</div>
+	<div>
+</div>
+	  	 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		 <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+		 <script src="../../assets/js/vendor/popper.min.js"></script>
+		 <script src="../../dist/js/bootstrap.min.js"></script>
 	</body>
 </html>
