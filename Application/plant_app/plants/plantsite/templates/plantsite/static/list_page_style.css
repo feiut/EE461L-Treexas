@@ -90,6 +90,15 @@ p{
 	margin: 20px;
 	width: 80%;
 }
+#plantlist{
+	border-left: 1px solid;
+	color: #cccccc;
+}
+#filters{
+	border-top: 1px;
+	color:#a6a6a6;
+}
+
 .pfilter{
 	color: #FFFFFF;
 	font-family: Arial;
