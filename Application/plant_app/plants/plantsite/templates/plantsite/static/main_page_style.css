@@ -1,19 +1,19 @@
 
 
 p {
-	color: #AFBEFF !important;
+	color: #57bc90 !important;
 }
 
 .navbar-nav {
 	color: #EFEFEF;
-	font: 160% 'Merienda One', Helvetica, sans-serif;
+	font: 160% 'Fjalla One', Helvetica, sans-serif;
 }
 
 .navbar-brand {
   color: #EFEFEF;
   padding-top: 0;
   padding-left: 10px;
-  font: 250% 'Merienda One', Helvetica, sans-serif;
+  font: 250% 'Fjalla One', Helvetica, sans-serif;
 }
 
 .navbar-nav > li > a:hover, .navbar-brand:hover, .navbar-default .navbar-nav > li > a:focus {
@@ -26,7 +26,7 @@ a {
 }
 
 .title1{
-  font: 60px/1.2 'Merienda One', Helvetica, sans-serif;
+  font: 80px/1.2 'Fjalla One', Helvetica, sans-serif;
   color: rgba(255,255,255,1);
   text-shadow: 3px 3px 3px #000000;
   position: absolute;
@@ -61,9 +61,9 @@ font-size: 28px;
 
 .input-group {
 position: fixed;
-width: 1200px;
-left:20%;
-margin-left: 0;
+width: 800px;
+left:50%;
+margin-left: -400px;
 }
 
 /* style icon */

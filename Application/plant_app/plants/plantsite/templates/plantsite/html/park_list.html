@@ -14,11 +14,14 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+	<link href='http://fonts.googleapis.com/css?family=Archivo' rel='stylesheet' type='text/css'>
+  	<link href='http://fonts.googleapis.com/css?family=Archivo:bold' rel='stylesheet' type='text/css'>
+  	<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
   	<link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="{% static 'list_page_style.css' %}">
 	<script type="text/javascript">
 		function img_over(item){
-			item.style.borderColor = "#AFBEFF";
+			item.style.borderColor = "#57BC90";
 		}
 		function img_out(item){
 			item.style.borderColor="#FFFFFF";
@@ -28,12 +31,11 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-lg navbar-dark navbar-fixed-top" style="background-color:rgba(0,0,0,0.35);">
+	<nav class="navbar navbar-expand-sm navbar-custom navbar-light navbar-fixed-top" style="background-color: #A5A5Af">
 	  <div class="container-fluid">
 
 	    <div class="navbar-header">
 	      <a class="navbar-brand" href="/">Treexas</a>
-	     <a class="navbar-nav" href="plant_list/" onclick="window.history.go(-1); return false;"> Back </a>
 	    </div>
 
 	    <div class="topnav-entry">
@@ -46,6 +48,8 @@
 	        </li>
 	        <li class="nav-item active"><a class = "nav-link" href="/about">About Us</a>
 	        </li>
+	     	<li class="nav-item active"><a class="nav-link" href="" onclick="window.history.go(-1); return false;"> Back </a>
+	     	</li>
 	      </ul>
 	    </div>
 	  </div>
@@ -99,7 +103,7 @@
 			<div class="d-flex flex-row justify-content-center">
 			<div class="flex-column justify-content-center">
 			<div id="page_footer">
-			    <ul class="pagination justify-content-center pagination-lg">
+			    <ul class="pagination justify-content-center pagination-lg"  style="background-color:#57BC90">
 
 			        <li>
 			            <a href="?page=
@@ -142,7 +146,7 @@
 						<li><a href = "javascript:void(0);" onClick="page_goto();">Go</li>
 					</ul>
 					<br>
-					<br>]
+					<br>
 		<script type="text/javascript">
 		$(".pagination li a").each(function(){
 			if($(this).text()=="{{names.number}}"){

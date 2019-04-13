@@ -14,12 +14,15 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+	<link href='http://fonts.googleapis.com/css?family=Archivo' rel='stylesheet' type='text/css'>
+  	<link href='http://fonts.googleapis.com/css?family=Archivo:bold' rel='stylesheet' type='text/css'>
+  	<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
   	<link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="{% static 'list_page_style.css' %}">
 
 	<script type="text/javascript">
 		function img_over(item){
-			item.style.borderColor = "#AFBEFF";
+			item.style.borderColor = "#57BC90";
 		}
 		function img_out(item){
 			item.style.borderColor="#FFFFFF";
@@ -32,7 +35,7 @@
 </head>
 <body>
 
-	<nav class="navbar navbar-expand-lg navbar-dark navbar-fixed-top" style="background-color:rgba(0,0,0,0.35);">
+	<nav class="navbar navbar-expand-sm navbar-custom navbar-light navbar-fixed-top" style="background-color: #A5A5Af">
 	  <div class="container-fluid">
 
 	    <div class="navbar-header">
@@ -49,8 +52,8 @@
 	        </li>
 	        <li class="nav-item active"><a class = "nav-link" href="/about">About Us</a>
 	        </li>
-
-
+	     	<li class="nav-item active"><a class="nav-link" href="" onclick="window.history.go(-1); return false;"> Back </a>
+	     	</li>
 	      </ul>
 	    </div>
 	  </div>
@@ -93,7 +96,7 @@
 			<!-- filters -->
 			<div class="d-inline col-2 pl-3">
 				<!-- back -->
-				<button class="btn btn-inline-secondary" href="plant_list/" onclick="window.history.go(-1); return false;">Back</button>
+				<button class="btn btn-inline-secondary" href="plant_list/"  style="background-color:#57BC90; color:#FFFFFF" onclick="window.history.go(-1); return false;">Back</button>
 				<form method="GET">
 					<div class="input-group">
 						<p class="pfilter">Plant Type</p>
@@ -152,7 +155,7 @@
 						<br>
 					</div>
 					<br>
-						<button class="btn btn-primary" type="submit">Filter!</button>
+						<button class="btn btn-primary" type="submit" style="background-color: #57bc90; border-color: #57bc90">Filter!</button>
 				</form>
 			</div>
 			<!-- plant list and paginator-->
@@ -166,7 +169,7 @@
 								<img class="card-img img-center"src="{{plant.image}}">
 							</a>
 							<div class="card-body">
-								<h3 class="card-text text-center" >{{plant.name}}</h3>
+								<h3 class="card-text text-center ff" >{{plant.name}}</h3>
 							</div>
 						</div>
 						{% endfor %}
@@ -177,7 +180,7 @@
 				<div class="mt-2">
 						<div id="page_footer">
 							<ul class="pagination justify-content-center">
-									<li class="page-item">
+									<li class="page-item" >
 											<a class="page-link" href="?page=
 													{% if names.has_previous %}
 															{{names.previous_page_number}}
@@ -190,12 +193,12 @@
 									</li>
 									{% for page in pages.page_range_ex %}
 										{% if page == '...' %}
-											<li class="page-item"><span class="page-link">...</span></li>
+											<li class="page-item" ><span class="page-link">...</span></li>
 										{% else %}
-											<li class="page-item"><a class="page-link" href="?page={{page}}">{{page}}</a></li>
+											<li class="page-item" ><a class="page-link" href="?page={{page}}">{{page}}</a></li>
 										{% endif %}
 									{% endfor %}
-									<li class="page-item">
+									<li class="page-item" >
 											<a class="page-link" href="?page=
 													{% if names.has_next %}
 															{{names.next_page_number}}
@@ -209,7 +212,7 @@
 								<li class="page-item" id="page_goto">
 									<span class="page-link">
 										Page
-										<input type="text" value="{{pages.page_goto}}"/>
+										<input type="text" style="background-color:#57BC90; color:#FFFFFF" value="{{pages.page_goto}}"/>
 									</span>
 								</li>
 								<li><a class="page-link" href = "javascript:void(0);" onClick="page_goto();">Go</a>
