@@ -13,7 +13,7 @@ from webscraping.plant import Plant
 plantlist=[]
 with open('plantlist.txt','rb') as fp:
     plantlist=pickle.load(fp)
-for plant in plantlist:
+"""for plant in plantlist:
     if plant.nickname.replace(" ","") == "NA":
         plant.nickname="N/A"
     if plant.planttype.replace(" ","")=="Perennial":
@@ -62,9 +62,9 @@ for plant in plantlist:
     x.lifecycle = plant.lifecycle
     x.edibility = plant.edibility
     plantlist1.append(x)
-    #x.edibility = plant.edibility"""
+    #x.edibility = plant.edibility
 with open('plantlist.txt','wb') as fp:
-    pickle.dump(plantlist1,fp)
-Plant.plantcsv(plantlist1)
+    pickle.dump(plantlist1,fp)"""
+Plant.plantcsv(plantlist)
 
 #web.get("")
