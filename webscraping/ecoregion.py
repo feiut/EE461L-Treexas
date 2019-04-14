@@ -1,3 +1,14 @@
+import pandas as pd
+from bs4 import BeautifulSoup
+import requests
+from selenium import webdriver
+import time
+import pickle
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 class Ecoregions:
     def __init__(self):
         self.name=""

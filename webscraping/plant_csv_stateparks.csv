@@ -1,4 +1,4 @@
-,Name,Latitude,Longitude,Region,Image,Url,Description,PlantList,Address
+,Name,Latitude,Longitude,Region,Image,Url,Description,PlantList,Address,Ecoregionlist
 0,Abilene State Park, 32.240731, -99.879139,"EDWARDS PLATEAU
 ", https//tpwd.texas.gov/state-parks/abilene/gallery/Abilene_Pool1.jpg,https//tpwd.texas.gov/state-parks/abilene," Come to the shady banks of Elm Creek, where large trees arch overhead and deer and other critters wander by. Just 16 miles southwest of Abilene, the park has a lake and fishing pond, a historic swimming pool, trails, camping and more.","[10, 56, 99, 262, 376, 479, 484, 521, 702, 709]","
         
@@ -6,7 +6,7 @@
         
         Tuscola, TX 
         79562
-    "
+    ",[6]
 1,Atlanta State Park, 33.230731, -94.249693,"PINEYWOODS
 ", https//tpwd.texas.gov/state-parks/atlanta/gallery/Atlanta-bluff.jpg,https//tpwd.texas.gov/state-parks/atlanta," Fishing, camping, birding await in scenic northeast Texas.",[492],"
         
@@ -14,7 +14,7 @@
         
         Atlanta, TX 
         75551
-    "
+    ",[0]
 2,Balmorhea State Park, 30.945036, -103.786663,"TRANS-PECOS
 ", https//tpwd.texas.gov/state-parks/balmorhea/gallery/balmorhea-diver.jpg,https//tpwd.texas.gov/state-parks/balmorhea," Dive into the crystal-clear water of the world’s largest spring-fed swimming pool. Swim, scuba dive, or just relax under the trees at this historic park in arid West Texas.",[],"
         
@@ -22,7 +22,7 @@
         
         Toyahvale, TX 
         79786
-    "
+    ",[9]
 3,Bastrop State Park, 30.110149, -97.286864,"POST OAK SAVANNAH
 ", https//tpwd.texas.gov/state-parks/bastrop/gallery/bastrop-cabin.jpg,https//tpwd.texas.gov/state-parks/bastrop," For more than 70 years, folks have visited Bastrop State Park to enjoy its history and marvel at the Lost Pines. Forest fires and floods have ravaged the park in recent years. Now comes rebirth new trees, new plants and new life. Come see the park’s recovery from nature’s fury. We’re just 32 miles east of Austin.","[130, 209, 233, 245, 269, 279, 326, 401, 427, 452, 455, 456, 475, 535, 646, 657, 712]","
         
@@ -30,14 +30,14 @@
         
         Bastrop, TX 
         78602
-    "
+    ",[2]
 4,Bentsen-Rio Grande Valley State Park, 26.186987, -98.381888,SOUTH TEXAS PLAINS, https//tpwd.texas.gov/state-parks/bentsen-rio-grande-valley/gallery/bentsen-2014_6755.jpg,https//tpwd.texas.gov/state-parks/bentsen-rio-grande-valley," As part of the World Birding Center, Bentsen-Rio Grande Valley State Park is a world-class destination for bird-watching. The Rio Grande Valley hosts one of the most spectacular convergences of birds on earth with more than 525 species documented in this unique place. Bentsen-Rio Grande Valley State Park alone has an impressive list of 358 species recorded within the park’s boundaries. Birders have a chance to see migratory birds during their yearly migrations over the valley including flocks of thousands of hawks from the park’s Hawk Tower in the spring and fall. Some birders travel to the Bentsen to see bird species they can’t find anyplace else in the country--from the Green Jay and the Buff-bellied Hummingbird to the Great Kiskadee and the Altamira Oriole.","[311, 312, 619]","
         
         2800 S. Bentsen Palm Drive (FM 2062)
         
         Mission, TX 
         78572
-    "
+    ",[5]
 5,Big Bend Ranch State Park, 29.470458, -103.957922,"TRANS-PECOS
 ", https//tpwd.texas.gov/state-parks/big-bend-ranch/gallery/BBRSP-Biking.jpg,https//tpwd.texas.gov/state-parks/big-bend-ranch," Big Bend Ranch State Park offers outdoor recreation for the truly adventurous. This remote park features rugged mountains, steep canyons, amazing views, unparalleled night skies, and solitude in a high desert setting. The park stretches along the Rio Grande in far west Texas, on the U.S.-Mexico border.",[],"
         
@@ -48,7 +48,7 @@
         
         Presidio, TX 
         79845
-    "
+    ",[9]
 6,Big Spring State Park, 32.232288, -101.490728,"ROLLING PLAINS
 ", https//tpwd.texas.gov/state-parks/big-spring/gallery/bigspring914_18.jpg,https//tpwd.texas.gov/state-parks/big-spring," Dramatic views off of the 200-foot bluff and from the CCC-built loop road are among the featured attractions of this 382-acre park. Early morning or sunset, joggers, walkers and cyclists circle the loop, enjoying these views as they exercise. An elaborate Fourth of July fireworks display is one of the largest in the region. Other activities include picnicking, nature study and sightseeing.",[],"
         
@@ -56,7 +56,7 @@
         
         Big Spring, TX 
         79720
-    "
+    ",[7]
 7,Blanco State Park, 30.093082, -98.423845,"EDWARDS PLATEAU
 ", https//tpwd.texas.gov/state-parks/blanco/gallery/blanco-sp_065.jpg,https//tpwd.texas.gov/state-parks/blanco," Come for a picnic, afternoon swim, fishing trip or a weekend campout on the banks of the spring-fed Blanco River. We’re just an hour from Austin and San Antonio.","[32, 33, 62, 163, 164, 247, 309, 310, 323, 398, 461, 468]","
         
@@ -64,7 +64,7 @@
         
         Blanco, TX 
         78606
-    "
+    ",[6]
 8,Bonham State Park, 33.546727, -96.144758,"BLACKLAND PRAIRIES
 ", https//tpwd.texas.gov/state-parks/bonham/gallery/bonham-sp_4419.jpg,https//tpwd.texas.gov/state-parks/bonham," Activities include (unsupervised) swimming and fishing in the man-made lake, built in 1935, as well as camping, picnicking, hiking, mountain biking and boating (5 mph speed limit). Check out the interactive trails map for more hiking information. ","[86, 609]","
         
@@ -72,7 +72,7 @@
         
         Bonham, TX 
         75418-9285
-    "
+    ",[3]
 9,Brazos Bend State Park, 29.371000, -95.631921,"GULF PRAIRIES AND MARSHES
 ", https//tpwd.texas.gov/state-parks/brazos-bend/gallery/brazos-bend_8275.jpg,https//tpwd.texas.gov/state-parks/brazos-bend," Looking for a “wild” experience? You will find it at Brazos Bend State Park, just 45 miles from downtown Houston!","[170, 197, 216, 218, 275, 616]","
         
@@ -80,7 +80,7 @@
         
         Needville, TX 
         77461
-    "
+    ",[1]
 10,Buescher State Park, 30.039098, -97.158295,"POST OAK SAVANNAH
 ", https//tpwd.texas.gov/state-parks/buescher/gallery/ccc-group-picnic-shelter-at-buescher.jpg,https//tpwd.texas.gov/state-parks/buescher," Activities include non-motorized boating (no ramp/small lake); fishing in a stocked lake; nature study; hiking, geocaching; interpretive tours (call the park or check the calendar of events); and biking. The scenic, 12-mile paved road between Buescher and Bastrop state parks, which is winding and hilly, is ideal for biking but should be used only by experienced cyclists. Approximately six miles between the parks is private land; trespassing on private land and camping between parks is not permitted. The park also includes about eight miles of mountain bike/trail riding through pine trees and cedar elms. Swimming is not currently allowed in the park; Bastrop State Park has a swimming pool open seasonally. Canoe rentals are available. We also loan fishing equipment for use in the park.","[326, 341, 401, 427, 452]","
         
@@ -88,7 +88,7 @@
         
         Smithville, TX 
         78957
-    "
+    ",[2]
 11,Caddo Lake State Park, 32.680233, -94.176361,"PINEYWOODS
 ", https//tpwd.texas.gov/state-parks/caddo-lake/gallery/caddo0049.jpg,https//tpwd.texas.gov/state-parks/caddo-lake," Bald cypress trees draped with Span­ish moss tower over the maze of bayous, sloughs and ponds of Caddo Lake. Paddle these waterways, stay in a historic cabin, or try your luck fishing. Discover an East Texas treasure!","[492, 636]","
         
@@ -96,7 +96,7 @@
         
         Karnack, TX 
         75661
-    "
+    ",[0]
 12,Caprock Canyons State Park & Trailway, 34.410296, -101.053264,"ROLLING PLAINS
 ", https//tpwd.texas.gov/state-parks/caprock-canyons/gallery/caprock_bison-release-_mg_1243a-opti.jpg,https//tpwd.texas.gov/state-parks/caprock-canyons," Wind and water over the eons shaped the rugged beauty of Caprock Canyons State Park in the Panhandle of Texas. Today, bison roam the plains, bats roost in Clarity Tunnel, and you can explore 90 miles of trails.",[],"
         
@@ -104,7 +104,7 @@
         
         Quitaque, TX 
         79255
-    "
+    ",[7]
 13,Cedar Hill State Park, 32.621721, -96.979087,"BLACKLAND PRAIRIES
 ", https//tpwd.texas.gov/state-parks/cedar-hill/gallery/cedar_hill_sp_u8e9357-opti.jpg,https//tpwd.texas.gov/state-parks/cedar-hill," Relax by the lake, tour an old Texas farm, or explore our rugged limestone hills and rare prairie pockets. Though we’re just a short drive from the DFW Metroplex, it feels like you’re a world away from the city.","[67, 68, 71, 82, 114, 205, 230, 250, 259, 260, 285, 286, 305, 324, 327, 365, 433, 435, 465, 473, 474, 513, 524, 615, 681, 695]","
         
@@ -112,7 +112,7 @@
         
         Cedar Hill, TX 
         75104
-    "
+    ",[3]
 14,Choke Canyon State Park, 28.465773, -98.354195,"SOUTH TEXAS PLAINS
 ", https//tpwd.texas.gov/state-parks/choke-canyon/gallery/spg-cvr_7792.jpg,https//tpwd.texas.gov/state-parks/choke-canyon," Watch the sun rise over the lake while birds sing in the brush. Spend the day casting for your next big fish story. Come see us on the shore of Choke Canyon Res­er­voir, between San Antonio and Corpus Christi.",[],"
         
@@ -120,7 +120,7 @@
         
         Calliham, TX 
         78007
-    "
+    ",[5]
 15,Cleburne State Park, 32.252365, -97.549617,"CROSS TIMBERS AND PRAIRIES
 ", https//tpwd.texas.gov/state-parks/cleburne/gallery/sunrise-on-cedar-lake-at-cleburne-sp.jpg,https//tpwd.texas.gov/state-parks/cleburne," A spring-fed lake, trails through the forest, quiet camp­sites – what more do you need? Get away from hectic city life at Cleburne State Park, just 30 minutes south­west of Fort Worth on the northern edge of the Hill Country.","[39, 71, 250, 329, 365, 433, 465, 615, 681]","
         
@@ -128,7 +128,7 @@
         
         Cleburne, TX 
         76033
-    "
+    ",[4]
 16,Colorado Bend State Park, 31.022965, -98.442401,"CROSS TIMBERS AND PRAIRIES
 ", https//tpwd.texas.gov/state-parks/colorado-bend/gallery/colorado-bend_4926_30.jpg,https//tpwd.texas.gov/state-parks/colorado-bend, Spend a weekend exploring the unspoiled wilderness of Colorado Bend. We’re two hours northwest of Austin.,"[49, 446, 529]","
         
@@ -136,7 +136,7 @@
         
         Bend, TX 
         76824
-    "
+    ",[4]
 17,Cooper Lake State Park, 33.348700, -95.663677,"BLACKLAND PRAIRIES
 ", https//tpwd.texas.gov/state-parks/cooper-lake/gallery/cooper_lake_sp_swim.jpg,https//tpwd.texas.gov/state-parks/cooper-lake," With two park units, you’ll find plenty of room to roam. Bring your fishing pole, your hiking shoes, your horse, your swimsuit–or heck, just bring yourself! We’re only 90 minutes northeast of Dallas.",[172],"
         
@@ -147,7 +147,7 @@
         
         Cooper, TX 
         75432
-    "
+    ",[3]
 18,Copper Breaks State Park, 34.112176, -99.743296,"ROLLING PLAINS
 ", https//tpwd.texas.gov/state-parks/copper-breaks/gallery/copper-breaks_0193.jpg,https//tpwd.texas.gov/state-parks/copper-breaks," Activities include camping, picnicking, boating, fishing, mountain biking, swimming, wildlife viewing, backpacking, kite flying, summer educational/interpretive programs, astronomy, natural and historical exhibits. A portion of the official Texas longhorn herd is at the park.",[143],"
         
@@ -155,7 +155,7 @@
         
         Quanah, TX 
         79252-7679
-    "
+    ",[7]
 19,Daingerfield State Park, 33.013000, -94.690587,"PINEYWOODS
 ", https//tpwd.texas.gov/state-parks/daingerfield/gallery/daingerfield_sp-img_0347.jpg,https//tpwd.texas.gov/state-parks/daingerfield," Tall trees reach for the sky in the north­east corner of Texas. Explore life in the forest at Daingerfield State Park as you wander the trails, paddle Little Pine Lake, or relax at your campsite.",[492],"
         
@@ -163,7 +163,7 @@
         
         Daingerfield, TX 
         75638
-    "
+    ",[0]
 20,Davis Mountains State Park, 30.599103, -103.929450,"TRANS-PECOS
 ", https//tpwd.texas.gov/state-parks/davis-mountains/gallery/davis-mnts_3026.jpg,https//tpwd.texas.gov/state-parks/davis-mountains," High in the mountains of West Texas you will find a beautiful and historic park. Explore Davis Mountains State Park’s miles of trails, stay up late to marvel at the night sky, learn about the history of the park and nearby frontier fort. It’s worth the drive!",[],"
         
@@ -171,7 +171,7 @@
         
         Fort Davis, TX 
         79734
-    "
+    ",[9]
 21,Devils River State Natural Area, 29.939694, -100.970206,"EDWARDS PLATEAU
 ", https//tpwd.texas.gov/state-parks/devils-river/gallery/devils-river_7804.jpg,https//tpwd.texas.gov/state-parks/devils-river," In southwest Texas, far from all cities and most people, lies one of the most pristine rivers in Texas. Clear spring-fed water tumbles past rugged ridges, scenic canyons and brushy banks. It’s not easy to get here, but it’s worth the effort.","[278, 412, 621, 697, 739, 742]","
         
@@ -179,7 +179,7 @@
         
         Del Rio, TX 
         78840
-    "
+    ",[6]
 22,Dinosaur Valley State Park, 32.246194, -97.813375,"CROSS TIMBERS AND PRAIRIES
 ", https//tpwd.texas.gov/state-parks/dinosaur-valley/gallery/DSVSP_opti_9758_05.jpg,https//tpwd.texas.gov/state-parks/dinosaur-valley," Long ago, dinosaurs left footprints in the mud at the edge of an ancient ocean. Today, you can walk in their tracks in the bed of the Paluxy River. This long trip to the past is just a short drive from Fort Worth.","[250, 329, 615]","
         
@@ -187,7 +187,7 @@
         
         Glen Rose, TX 
         76043
-    "
+    ",[4]
 23,Eisenhower State Park, 33.810339, -96.599971,"CROSS TIMBERS AND PRAIRIES
 ", https//tpwd.texas.gov/state-parks/eisenhower/gallery/boy-fishing-at-eisenhower-silhouette.jpg,https//tpwd.texas.gov/state-parks/eisenhower," Adventure awaits on the shores of Lake Texoma! Explore trails along high bluffs, splash at our sandy swimming cove, or fish for striped bass, crappie and catfish. Connect to nature just an hour north of Dallas.","[86, 145, 594, 609]","
         
@@ -195,7 +195,7 @@
         
         Denison, TX 
         75020-4878
-    "
+    ",[4]
 24,Enchanted Rock State Natural Area, 30.496033, -98.819952,"EDWARDS PLATEAU
 ", https//tpwd.texas.gov/state-parks/enchanted-rock/gallery/erock_7008.jpg,https//tpwd.texas.gov/state-parks/enchanted-rock, Climb the ancient dome for amazing Hill Country views.,"[30, 31, 49, 62, 276, 400, 461, 511, 529, 741]","
         
@@ -203,7 +203,7 @@
         
         Fredericksburg, TX 
         78624
-    "
+    ",[6]
 25,Estero Llano Grande State Park, 26.126411, -97.956518,"SOUTH TEXAS PLAINS
 ", https//tpwd.texas.gov/state-parks/estero-llano-grande/gallery/estero_llano_grande-_mg_2613.jpg,https//tpwd.texas.gov/state-parks/estero-llano-grande," At the geographic center of the World Birding Center network, Estero Llano Grande State Park in Weslaco attracts a spectacular array of South Texas wildlife with its varied landscape of shallow lake, woodlands and thorn forest. Even beginning birders and nature lovers will enjoy exploring this 230 plus-acre refuge, which is convenient to all the Rio Grande Valley has to offer.","[41, 178, 311, 312, 687]","
         
@@ -211,7 +211,7 @@
         
         Weslaco, TX 
         78596
-    "
+    ",[5]
 26,Fairfield Lake State Park, 31.765346, -96.073282,"POST OAK SAVANNAH
 ", https//tpwd.texas.gov/state-parks/fairfield-lake/gallery/lake-fairfield-redfish242.jpg,https//tpwd.texas.gov/state-parks/fairfield-lake," Activities include camping, backpacking, hiking, horseback riding on approximately 15 miles of day-use equestrian trails (bring your own horse), nature study, bird watching, boating on a 2,400-acre lake, water skiing, jet skiing, fishing, and lake swimming in a large, buoyed sandy area. Take a virtual tour with our interactive trails map.",[799],"
         
@@ -219,14 +219,14 @@
         
         Fairfield, TX 
         75840
-    "
+    ",[2]
 27,Falcon State Park, 26.582801, -99.142716,SOUTH TEXAS PLAINS, https//tpwd.texas.gov/state-parks/falcon/gallery/falcon_sp_8768.jpg,https//tpwd.texas.gov/state-parks/falcon, Falcon State Park provides refuge from the cold for both humans and wildlife. But that’s not its only draw. Anglers come here to access one of the best freshwater fishing lakes in South Texas.,"[469, 619]","
         
         P. O. Box 2
         
         Falcon Heights, TX 
         78545
-    "
+    ",[5]
 28,Fort Boggy State Park, 31.187372, -95.976646,"POST OAK SAVANNAH
 ", https//tpwd.texas.gov/state-parks/fort-boggy/gallery/fort-boggy_1388.jpg,https//tpwd.texas.gov/state-parks/fort-boggy," Swimming, fishing, hiking and mountain biking are allowed. There is a boat ramp and the 15-acre lake is open to small boats, canoes, kayaks, etc. The park also has a day use group pavilion, that can be reserved.",[799],"
         
@@ -234,7 +234,7 @@
         
         Centerville, TX 
         75833
-    "
+    ",[2]
 29,Fort Parker State Park, 31.592347, -96.526655,"BLACKLAND PRAIRIES
 ", https//tpwd.texas.gov/state-parks/fort-parker/gallery/fort-parker-sunset-1.jpg,https//tpwd.texas.gov/state-parks/fort-parker," Fort Parker offers camping, picnicking, swimming in an unsupervised swimming area, fishing, bird watching, hiking, biking, canoeing, nature study and baseball/softball.",[],"
         
@@ -242,7 +242,7 @@
         
         Mexia, TX 
         76667
-    "
+    ",[3]
 30,Fort Richardson State Park, 33.206158, -98.156966,"CROSS TIMBERS AND PRAIRIES
 ", https//tpwd.texas.gov/state-parks/fort-richardson/gallery/ft-richardson-hospital_996.04.jpg,https//tpwd.texas.gov/state-parks/fort-richardson," Fort site structures include seven of the original buildings which have been restored  the post hospital; the officer's quarters (commanding officer); a powder magazine; a morgue; a commissary; a guard house; and a bakery, which baked 600 loaves per day. There are also two replicas","[453, 593, 791, 803]","
         
@@ -250,7 +250,7 @@
         
         Jacksboro, TX 
         76458
-    "
+    ",[4]
 31,Franklin Mountains State Park, 31.842388, -106.486444,"TRANS-PECOS
 ", https//tpwd.texas.gov/state-parks/franklin-mountains/gallery/franklin-mts-entrance.jpg,https//tpwd.texas.gov/state-parks/franklin-mountains," The Franklin Mountains provided most of the basic necessities of life for early people here. Today, the mountains meet a different human need – our need for time in nature. Come explore these high-desert mountains, just 15 minutes from El Paso.","[12, 236, 319, 332, 471, 491, 690, 691, 714, 728, 749, 750]","
         
@@ -261,14 +261,14 @@
         
         El Paso, TX 
         79930
-    "
+    ",[9]
 32,Galveston Island State Park, 29.193560, -94.954025,GULF PRAIRIES AND MARSHES, https//tpwd.texas.gov/state-parks/galveston-island/gallery/galveston_u8e5190.jpg,https//tpwd.texas.gov/state-parks/galveston-island," Come to the island to stroll the beach or splash in the waves. Or come to the island to go fishing or look for coastal birds. No matter what brings you here, you’ll find a refuge at Galveston Island State Park. Just an hour from Houston, but an island apart!",[],"
         
         14901 FM 3005
         
         Galveston, TX 
         77554
-    "
+    ",[1]
 33,Garner State Park, 29.598887, -99.743981,"EDWARDS PLATEAU
 ", https//tpwd.texas.gov/state-parks/garner/gallery/GARNER-SP_HDR_3941.jpg,https//tpwd.texas.gov/state-parks/garner," Families enjoy swimming, dancing and hiking",[],"
         
@@ -276,7 +276,7 @@
         
         Concan, TX 
         78838
-    "
+    ",[6]
 34,Goliad State Park & Historic Site, 28.656544, -97.387265,"SOUTH TEXAS PLAINS
 ", https//tpwd.texas.gov/state-parks/goliad/gallery/goliad-sp-hs_5690.jpg,https//tpwd.texas.gov/state-parks/goliad," Native Americans, Spanish explorers and missionaries, Texian soldiers and early settlers walked the land of what is now Goliad State Park and Historic Site in southeast Texas. Follow in their footsteps and peek into Texas’ past.",[],"
         
@@ -284,14 +284,14 @@
         
         Goliad, TX 
         77963-3206
-    "
+    ",[5]
 35,Goose Island State Park, 28.133503, -96.984280,GULF PRAIRIES AND MARSHES, https//tpwd.texas.gov/state-parks/goose-island/gallery/goose_island_pier.jpg,https//tpwd.texas.gov/state-parks/goose-island," Lapping water and Gulf breezes  we must be on the coast! Goose Island offers camping, fishing and birding along St. Charles and Aransas bays, north of Corpus Christi.","[374, 416]","
         
         202 S. Palmetto St.
         
         Rockport, TX 
         78382-7965
-    "
+    ",[1]
 36,Government Canyon State Natural Area, 29.549316, -98.764715,"EDWARDS PLATEAU
 ", https//tpwd.texas.gov/state-parks/government-canyon/gallery/gov-canyon-panoramic.jpg,https//tpwd.texas.gov/state-parks/government-canyon," On the north side of San Antonio lies a 12,000-acre wil­der­ness that protects the city’s drinking water. You’ll find your own “Recharge Zone” in this vast urban refuge.","[247, 276, 323, 771]","
         
@@ -299,7 +299,7 @@
         
         San Antonio, TX 
         78254
-    "
+    ",[6]
 37,Guadalupe River State Park, 29.853084, -98.504463,"EDWARDS PLATEAU
 ", https//tpwd.texas.gov/state-parks/guadalupe-river/gallery/GRSP_river.jpg,https//tpwd.texas.gov/state-parks/guadalupe-river," Many folks come here to swim, but the park is more than a great swimming hole. Beautiful scenery and colorful history await, just a short drive from San Antonio and Austin.","[32, 33, 163, 164, 247, 323, 398, 771]","
         
@@ -307,7 +307,7 @@
         
         Spring Branch, TX 
         78070
-    "
+    ",[6]
 38,Hill Country State Natural Area, 29.628034, -99.181086,"EDWARDS PLATEAU
 ", https//tpwd.texas.gov/state-parks/hill-country/gallery/hillcountry003.jpg,https//tpwd.texas.gov/state-parks/hill-country," Explore over 5,000 acres of rugged canyons, scenic plateaus and tranquil creek bottoms at this former ranch northwest of San Antonio. Escape from the bustle of modern life to a more relaxed time and place.","[30, 31, 276, 400, 511, 741]","
         
@@ -315,7 +315,7 @@
         
         Bandera, TX 
         78003
-    "
+    ",[6]
 39,Hueco Tanks State Park & Historic Site, 31.926453, -106.042437,"TRANS-PECOS
 ", https//tpwd.texas.gov/state-parks/hueco-tanks/gallery/peopletop.jpg,https//tpwd.texas.gov/state-parks/hueco-tanks," For thousands of years, people have trekked to these rock hills in far west Texas. In earlier times, they came for the rainwater pooled in natural rock basins, or huecos (“whey-coes”). Visitors today marvel at the imagery left by those ancient people.","[236, 471, 491, 690, 691, 728, 749, 750]","
         
@@ -323,7 +323,7 @@
         
         El Paso, TX 
         79938
-    "
+    ",[9]
 40,Huntsville State Park, 30.628404, -95.525921,"PINEYWOODS
 ", https//tpwd.texas.gov/state-parks/huntsville/gallery/huntsville-_mg_5878.jpg,https//tpwd.texas.gov/state-parks/huntsville," Lose yourself among the majestic trees and natural beauty of the East Texas Pineywoods. Rent a canoe, explore our trails or just relax by the lake. We are a short drive north of Houston, in the Sam Houston National Forest.",[],"
         
@@ -331,7 +331,7 @@
         
         Huntsville, TX 
         77340
-    "
+    ",[0]
 41,Indian Lodge, 30.592638, -103.943469,"TRANS-PECOS
 ", https//tpwd.texas.gov/state-parks/indian-lodge/gallery/indian-ldg_hdr_1167.jpg,https//tpwd.texas.gov/state-parks/indian-lodge," With its white adobe walls, historic aura, and refreshing pool, Indian Lodge is a welcome oasis in West Texas. Explore the natural beauty of the Davis Mountains by day, and relax in your comfortable room by night.",[],"
         
@@ -339,7 +339,7 @@
         
         Fort Davis, TX 
         79734
-    "
+    ",[9]
 42,Inks Lake State Park, 30.737356, -98.369007,"EDWARDS PLATEAU
 ", https//tpwd.texas.gov/state-parks/inks-lake/gallery/Inks-Lake-69-73.jpg,https//tpwd.texas.gov/state-parks/inks-lake," Inks Lake State Park offers family fun on water and land. With its sparkling blue water, colorful rock outcrops, and striking sunsets, this gem of the Hill Country is just an hour northwest of Austin.","[49, 62, 309, 310, 446, 461, 468, 529]","
         
@@ -347,7 +347,7 @@
         
         Burnet, TX 
         78611
-    "
+    ",[6]
 43,Kickapoo Cavern State Park, 29.610016, -100.452465,"EDWARDS PLATEAU
 ", https//tpwd.texas.gov/state-parks/kickapoo-cavern/gallery/kickapoo-cavern,https//tpwd.texas.gov/state-parks/kickapoo-cavern," Bring a sense of wonder and your spirit of adventure to Kickapoo Cavern State Park. Head west from San An­tonio to explore this lightly-developed park with its many caves, birds, bats, trails and more.",[],"
         
@@ -355,7 +355,7 @@
         
         Brackettville, TX 
         78832
-    "
+    ",[6]
 44,Lake Arrowhead State Park, 33.758578, -98.395201,"CROSS TIMBERS AND PRAIRIES
 ", https//tpwd.texas.gov/state-parks/lake-arrowhead/gallery/lake-arrowhead_4667.jpg,https//tpwd.texas.gov/state-parks/lake-arrowhead," The park offers fishing, lake swimming on an unsupervised beach, water skiing, disc golf, picnicking, camping, nature study, hiking, horseback riding and boating.","[593, 791]","
         
@@ -363,7 +363,7 @@
         
         Wichita Falls, TX 
         76310
-    "
+    ",[4]
 45,Lake Bob Sandlin State Park, 33.053955, -95.099155,"POST OAK SAVANNAH
 ", https//tpwd.texas.gov/state-parks/lake-bob-sandlin/gallery/lake-bob-sandlin-2189-hiker-mccorkle.jpg,https//tpwd.texas.gov/state-parks/lake-bob-sandlin," Two ecoregions meet here on the shore of Lake Bob Sandlin in northeast Texas. The result massive trees, tall grasses and a fascinating mix of plants and animals. The fishing is pretty good, too!",[],"
         
@@ -371,7 +371,7 @@
         
         Pittsburg, TX 
         75686
-    "
+    ",[2]
 46,Lake Brownwood State Park, 31.856987, -99.028641,"CROSS TIMBERS AND PRAIRIES
 ", https//tpwd.texas.gov/state-parks/lake-brownwood/gallery/lake-brownwood-sp_g4f6825.jpg,https//tpwd.texas.gov/state-parks/lake-brownwood," Civilian Conservation Corps workers spent years building this special park in the heart of Texas. Today, their legacy endures. Stay in a historic cabin, walk the scenic trails, or play in or on the cool lake.",[],"
         
@@ -379,7 +379,7 @@
         
         Lake Brownwood, TX 
         76801
-    "
+    ",[4]
 47,Lake Casa Blanca State Park, 27.539343, -99.451383,"SOUTH TEXAS PLAINS
 ", https//tpwd.texas.gov/state-parks/lake-casa-blanca/gallery/lk_casa_blanca_9250.jpg,https//tpwd.texas.gov/state-parks/lake-casa-blanca," Lake Casa Blanca is located in Laredo, just minutes from the Mexican border. Here you will find outdoor fun on water and land—and the perfect place for a family outing!",[],"
         
@@ -387,7 +387,7 @@
         
         Laredo, TX 
         78041
-    "
+    ",[5]
 48,Lake Colorado City State Park, 32.318219, -100.936476,"ROLLING PLAINS
 ", https//tpwd.texas.gov/state-parks/lake-colorado-city/gallery/lccsp_2090.jpg,https//tpwd.texas.gov/state-parks/lake-colorado-city," Activities include picnicking, camping, fishing, swimming (unsupervised), kayaking/canoeing, hiking, geocaching, nature photography, and birding. Featuring more than five miles of shoreline and 500 acres of parkland bordering the lake. Take a virtual tour with our interactive trails map.",[],"
         
@@ -395,7 +395,7 @@
         
         Colorado City, TX 
         79512
-    "
+    ",[7]
 49,Lake Corpus Christi State Park, 28.063101, -97.872178,"GULF PRAIRIES AND MARSHES
 ", https//tpwd.texas.gov/state-parks/lake-corpus-christi/gallery/lccsp_1071_hdr.jpg,https//tpwd.texas.gov/state-parks/lake-corpus-christi," Families have been enjoying Lake Corpus Christi State Park for more than 80 years. Come for the water sports, varied wildlife and relaxing atmosphere. Leave refreshed!",[],"
         
@@ -403,7 +403,7 @@
         
         Mathis, TX 
         78368
-    "
+    ",[1]
 50,Lake Livingston State Park, 30.656897, -95.001093,"PINEYWOODS
 ", https//tpwd.texas.gov/state-parks/lake-livingston/gallery/LK-Livingston_3035.jpg,https//tpwd.texas.gov/state-parks/lake-livingston, Make family memories at this Pineywoods park.,[],"
         
@@ -411,7 +411,7 @@
         
         Livingston, TX 
         77351
-    "
+    ",[0]
 51,Lake Mineral Wells State Park & Trailway, 32.812655, -98.043368,"CROSS TIMBERS AND PRAIRIES
 ", https//tpwd.texas.gov/state-parks/lake-mineral-wells/gallery/lmwsp_overlook_0369.jpg,https//tpwd.texas.gov/state-parks/lake-mineral-wells," Lake Mineral Wells State Park & Trailway sits in the heart of cattle country, near what was once a popular health resort. You will love the area’s history and scenery, but you’ll also enjoy the park’s outdoor amenities  a lake, a rock climbing area, and miles of trails. We are just 45 minutes west of Fort Worth – c’mon over!","[134, 292, 329, 342, 458, 593, 715, 791, 792]","
         
@@ -419,7 +419,7 @@
         
         Mineral Wells, TX 
         76067
-    "
+    ",[4]
 52,Lake Somerville State Park & Trailway, 30.308582, -96.634692,"POST OAK SAVANNAH
 ", https//tpwd.texas.gov/state-parks/lake-somerville/gallery/family-fishing_0053.jpg,https//tpwd.texas.gov/state-parks/lake-somerville," Fishing, camping, mountain biking, birding, hiking – whatever your outdoor passion, you can pursue it here. We’re between Houston and Austin.","[304, 326, 423, 424, 539, 777]","
         
@@ -430,7 +430,7 @@
         
         Somerville, TX 
         77879-9713
-    "
+    ",[2]
 53,Lake Tawakoni State Park, 32.841871, -95.993667,"BLACKLAND PRAIRIES
 ", https//tpwd.texas.gov/state-parks/lake-tawakoni/gallery/ltsp_154006.jpg,https//tpwd.texas.gov/state-parks/lake-tawakoni," Imagine yourself in the shade of tall trees, listening to birds chirping and water lapping on the shores of Lake Tawakoni. Sounds good, right? Let’s go! Gather your fishing pole, your binoculars, your hiking shoes and your camping gear - we’re just 50 miles east of Dallas.","[20, 93, 464, 495, 508, 723, 772]","
         
@@ -438,7 +438,7 @@
         
         Wills Point, TX 
         75169
-    "
+    ",[3]
 54,Lake Whitney State Park, 31.931234, -97.356833,"CROSS TIMBERS AND PRAIRIES
 ", https//tpwd.texas.gov/state-parks/lake-whitney/gallery/tree-at-sunset.jpg,https//tpwd.texas.gov/state-parks/lake-whitney," Need to get away? Take a short road trip from DFW or Waco to the shores of Lake Whitney. You’ll find clear water, plenty of campsites, and a great place to relax with the family.",[39],"
         
@@ -446,7 +446,7 @@
         
         Whitney, TX 
         76692
-    "
+    ",[4]
 55,Lockhart State Park, 29.855409, -97.697742,"BLACKLAND PRAIRIES
 ", https//tpwd.texas.gov/state-parks/lockhart/gallery/lockhart-2902.jpg,https//tpwd.texas.gov/state-parks/lockhart," Within easy driving distance of both Austin and San Antonio you’ll find a quiet getaway Lockhart State Park. Come for a morning of golf, an after­noon swim, an evening hike, or an overnight campout. See you soon!","[27, 32, 33, 35, 57, 60, 130, 164, 245, 269, 279, 325, 330, 341, 401, 427, 452, 467, 646, 706, 712, 745]","
         
@@ -454,7 +454,7 @@
         
         Lockhart, TX 
         78644-9716
-    "
+    ",[3]
 56,Longhorn Cavern State Park, 30.684441, -98.350970,"EDWARDS PLATEAU
 ", https//tpwd.texas.gov/state-parks/longhorn-cavern/gallery/longhorn-caverns_1.jpg,https//tpwd.texas.gov/state-parks/longhorn-cavern," Many stories and legends surround Longhorn Cavern. But geology is what makes it truly unique. Explore the cavern for yourself, just 1.5 hours northwest of Austin.","[49, 62, 163, 309, 310, 446, 461, 468, 529]","
         
@@ -462,7 +462,7 @@
         
         Burnet, TX 
         78611
-    "
+    ",[6]
 57,Lost Maples State Natural Area, 29.807719, -99.570697,"EDWARDS PLATEAU
 ", https//tpwd.texas.gov/state-parks/lost-maples/gallery/p-LMSNA_Entrance.jpg,https//tpwd.texas.gov/state-parks/lost-maples," You may know Lost Maples for its fall color, but it is spectacular year-round. Visit any time to see abundant wild­flowers, steep canyon walls and the scenic Sabinal River. We’re just two hours northwest of San Antonio.","[30, 31, 276, 400, 511, 741]","
         
@@ -470,7 +470,7 @@
         
         Vanderpool, TX 
         78885
-    "
+    ",[6]
 58,Lyndon B. Johnson State Park & Historic Site, 30.237656, -98.626279,"EDWARDS PLATEAU
 ", https//tpwd.texas.gov/state-parks/lyndon-b-johnson/gallery/lbj-and-ladybird-in-wildflowers.jpg,https//tpwd.texas.gov/state-parks/lyndon-b-johnson," Visitors to this day use park can enjoy historical sites, picnicking, fishing, swimming, nature and wildlife viewing. As of May 2014, the park is home to part of the Official Texas State Longhorn Herd. If you plan to swim at the park, read through our swimming safety tips before you come.","[62, 163, 247, 276, 323, 398, 461]","
         
@@ -478,7 +478,7 @@
         
         Stonewall, TX 
         78671
-    "
+    ",[6]
 59,Martin Creek Lake State Park, 32.277950, -94.566051,"PINEYWOODS
 ", https//tpwd.texas.gov/state-parks/martin-creek-lake/gallery/kids-goofin.jpg,https//tpwd.texas.gov/state-parks/martin-creek-lake," Activities include excellent, year-round fishing; camping; wildlife observation and photography; picnicking; boating (canoe rentals are available); water skiing; lake swimming (unsupervised); backpacking; hiking; and interpretive programs. The park has cabins and screened shelters available for overnight use, and a 75-person capacity Group Picnic Pavilion.",[],"
         
@@ -486,7 +486,7 @@
         
         Tatum, TX 
         75691-3425
-    "
+    ",[0]
 60,"Martin Dies, Jr. State Park", 30.846627, -94.165869,"PINEYWOODS
 ", https//tpwd.texas.gov/state-parks/martin-dies-jr/gallery/martin-dies_934_023.jpg,https//tpwd.texas.gov/state-parks/martin-dies-jr," Two rivers meet here on the eastern edge of Texas, creating wild and diverse habitats. Come explore the lake, sloughs and forest trails of this very special place at the edge of the Big Thicket.","[136, 672]","
         
@@ -494,7 +494,7 @@
         
         Jasper, TX 
         75951
-    "
+    ",[0]
 61,McKinney Falls State Park, 30.180752, -97.722007,"BLACKLAND PRAIRIES
 ", https//tpwd.texas.gov/state-parks/mckinney-falls/gallery/McKinney-Falls-959_1_423.jpg,https//tpwd.texas.gov/state-parks/mckinney-falls, Listen to Onion Creek flowing over limestone ledges and splashing into pools. Follow trails winding through the Hill Country woods. Explore the remains of an early Texas homestead and a very old rock shelter. All of this lies within Austin’s city limits at McKinney Falls State Park - what are you waiting for?,"[27, 32, 33, 35, 57, 60, 130, 163, 164, 209, 233, 245, 269, 279, 309, 310, 322, 325, 330, 401, 404, 427, 432, 446, 452, 455, 456, 467, 468, 475, 535, 573, 646, 657, 706, 712, 745]","
         
@@ -502,7 +502,7 @@
         
         Austin, TX 
         78744
-    "
+    ",[3]
 62,Meridian State Park, 31.890791, -97.697566,"CROSS TIMBERS AND PRAIRIES
 ", https//tpwd.texas.gov/state-parks/meridian/gallery/meridian_sp-_mg_2819.jpg,https//tpwd.texas.gov/state-parks/meridian," Nestled among limestone bluffs at the top of the Hill Country, you’ll find a tranquil place to unwind with your family. We’re 50 miles northwest of Waco.",[],"
         
@@ -510,7 +510,7 @@
         
         Meridian, TX 
         76665
-    "
+    ",[4]
 63,Mission Tejas State Park, 31.542272, -95.232191,"PINEYWOODS
 ", https//tpwd.texas.gov/state-parks/mission-tejas/gallery/mission-tejas_0689.jpg,https//tpwd.texas.gov/state-parks/mission-tejas," Activities include camping, picnicking, hiking and fishing. A pond located near the picnic area offers an excellent opportunity to explore aquatic life and fish. Hiking and nature trails provide access to the natural beauty of the East Texas Pineywoods. The dogwoods are beautiful the last week or so of March, usually around the 25th.","[383, 600]","
         
@@ -518,7 +518,7 @@
         
         Grapeland, TX 
         75844
-    "
+    ",[0]
 64,Monahans Sandhills State Park, 31.618795, -102.812112,"TRANS-PECOS
 ", https//tpwd.texas.gov/state-parks/monahans-sandhills/gallery/tommy-johnson_0173.jpg,https//tpwd.texas.gov/state-parks/monahans-sandhills," Out west lies a mystical place where the wind sculpts sand dunes into peaks and valleys, sometimes over­night. Mon­a­hans Sandhills State Park offers a Texas-sized sand­box for kids of all ages, as well as a close-up view of a unique desert environment.",[],"
         
@@ -526,7 +526,7 @@
         
         Monahans, TX 
         79756
-    "
+    ",[9]
 65,Monument Hill & Kreische Brewery State Historic Sites, 29.888041, -96.876365,"POST OAK SAVANNAH
 ", https//tpwd.texas.gov/state-parks/monument-hill-kreische-brewery/gallery/monument-hill.jpg,https//tpwd.texas.gov/state-parks/monument-hill-kreische-brewery," The activities at this park include picnicking, nature study, and historical study. Arrangements can be made with the park staff to have weddings, family reunions, or other group functions in the picnic area and/or the historical facilities. Group tours by staff and volunteer docents are available with advanced scheduling, and regularly scheduled tours of the brewery are available on the weekends.",[326],"
         
@@ -534,7 +534,7 @@
         
         La Grange, TX 
         78945-5733
-    "
+    ",[2]
 66,Mother Neff State Park, 31.321559, -97.469150,"CROSS TIMBERS AND PRAIRIES
 ", https//tpwd.texas.gov/state-parks/mother-neff/gallery/couple-hiking-in-cave-at-mother-neff-sp.jpg,https//tpwd.texas.gov/state-parks/mother-neff," Along a scenic stretch of the Leon River southwest of Waco lies Mother Neff State Park, one of Texas’ earliest state parks. Isabella Neff donated the original six acres for the park in 1921. Since then, many folks have discovered what Mother Neff knew  This is a very special place.",[674],"
         
@@ -542,7 +542,7 @@
         
         Moody, TX 
         76557-3317
-    "
+    ",[4]
 67,Mustang Island State Park, 27.672162, -97.175309,"GULF PRAIRIES AND MARSHES
 ", https//tpwd.texas.gov/state-parks/mustang-island/gallery/mustangisland-168.jpg,https//tpwd.texas.gov/state-parks/mustang-island," With more than five miles of coastline, we have plenty of room for fun in the sun. Hang out on the beach, fish in the bay, add birds to your life list, and explore this unspoiled barrier island park. It’s time to head to the coast!","[374, 416, 454]","
         
@@ -550,7 +550,7 @@
         
         Port Aransas, TX 
         78373
-    "
+    ",[1]
 68,Palmetto State Park, 29.596906, -97.585140,"POST OAK SAVANNAH
 ", https//tpwd.texas.gov/state-parks/palmetto/gallery/palmetto-spr_u8e4159-opti.jpg,https//tpwd.texas.gov/state-parks/palmetto," A little piece of the tropics lies just an hour from Austin and San Antonio. With multiple sources of water (including the San Marcos River), Palmetto State Park is a haven for a wide variety of animals and plants. Look for dwarf palmettos, the park’s namesake, growing under the trees.",[341],"
         
@@ -558,7 +558,7 @@
         
         Gonzales, TX 
         78629-5180
-    "
+    ",[2]
 69,Palo Duro Canyon State Park, 34.984709, -101.701867,"ROLLING PLAINS
 ", https//tpwd.texas.gov/state-parks/palo-duro-canyon/gallery/lighthouse-peak.jpg,https//tpwd.texas.gov/state-parks/palo-duro-canyon, The second largest canyon in the country lies in the heart of the Texas Panhandle. Visit Palo Duro Canyon State Park; experience the canyon's rugged beauty and enjoy its colorful history.,[],"
         
@@ -566,7 +566,7 @@
         
         Canyon, TX 
         79015
-    "
+    ",[7]
 70,Pedernales Falls State Park, 30.308054, -98.257649,"EDWARDS PLATEAU
 ", https//tpwd.texas.gov/state-parks/pedernales-falls/gallery/spotted-towhee,https//tpwd.texas.gov/state-parks/pedernales-falls," Flowing over and around huge slabs of limestone, the Pedernales River can be turbulent. But most often it is tranquil, and a great place to relax and recharge. We are just 30 miles west of Austin. Come over for an afternoon swim or hike, or load up your gear for an overnight adventure. The river awaits!","[27, 32, 33, 35, 49, 57, 60, 163, 164, 309, 310, 322, 325, 330, 398, 404, 432, 446, 467, 468, 529, 573, 706, 745]","
         
@@ -574,7 +574,7 @@
         
         Johnson City, TX 
         78636
-    "
+    ",[6]
 71,Possum Kingdom State Park, 32.873573, -98.559331,"CROSS TIMBERS AND PRAIRIES
 ", https//tpwd.texas.gov/state-parks/possum-kingdom/gallery/possum-kingdom_0125.jpg,https//tpwd.texas.gov/state-parks/possum-kingdom," How long since you’ve been to the lake? Grab your family, fishing pole and swimsuit and head for the clear blue water and striking scenery at Possum Kingdom State Park. We're just an hour west of the DFW Metroplex.",[],"
         
@@ -582,7 +582,7 @@
         
         Caddo, TX 
         76429
-    "
+    ",[4]
 72,Purtis Creek State Park, 32.353794, -95.993554,"BLACKLAND PRAIRIES
 ", https//tpwd.texas.gov/state-parks/purtis-creek/gallery/fishing-pier-long-shot.jpg,https//tpwd.texas.gov/state-parks/purtis-creek," Our 355-acre lake is a bass fishing destination, but fishing is not all we offer. Come to swim, canoe, camp, explore nature or relax. We’re just an hour southeast of Dallas.","[20, 93, 464, 495, 508, 723, 772]","
         
@@ -590,7 +590,7 @@
         
         Eustace, TX 
         75124
-    "
+    ",[3]
 73,Ray Roberts Lake State Park, 33.365671, -97.012150,"CROSS TIMBERS AND PRAIRIES
 ", https//tpwd.texas.gov/state-parks/ray-roberts-lake/gallery/ray-roberts_6862.jpg,https//tpwd.texas.gov/state-parks/ray-roberts-lake, Escape the bustle of the city and get back to nature just an hour north of the DFW Metroplex. Come play at Ray Roberts Lake State Park for the day or the weekend!,"[28, 67, 68, 78, 86, 114, 145, 205, 285, 286, 290, 327, 443, 444, 474, 481, 520, 524, 550, 552, 561, 569, 575, 594, 609, 682, 774, 788]","
         
@@ -601,7 +601,7 @@
         
         Pilot Point, TX 
         76258-8944
-    "
+    ",[4]
 74,Resaca de la Palma State Park, 25.996275, -97.5712694,"SOUTH TEXAS PLAINS
 ", https//tpwd.texas.gov/state-parks/resaca-de-la-palma/gallery/resaca-de-las-palmas-sp-_g4f6121.jpg,https//tpwd.texas.gov/state-parks/resaca-de-la-palma,"  As part of the World Birding Center, Brownsville’s Resaca de la Palma boasts the largest tract of native habitat in the World Birding Center network. Etched by ancient curves of the Rio Grande, its 1,200 semi-tropical acres provide a quiet retreat from the hustle and bustle of an international urban center only a few miles away. Through the cooperation of local and federal land management agencies, a wilderness preserved from days gone by is open to nature adventurers for the first time.","[41, 178, 687]","
         
@@ -609,7 +609,7 @@
         
         Brownsville, TX 
         78521
-    "
+    ",[5]
 75,San Angelo State Park, 31.463922, -100.508038,"ROLLING PLAINS
 ", https//tpwd.texas.gov/state-parks/san-angelo/gallery/cliff-overlook.jpg,https//tpwd.texas.gov/state-parks/san-angelo," History and nature converge on the banks of O.C. Fisher Reservoir and the Concho River, near San Angelo. Ex­plore on land, play in the water, and enjoy a look at Texas’ past.",[],"
         
@@ -617,7 +617,7 @@
         
         San Angelo, TX 
         76901
-    "
+    ",[7]
 76,San Jacinto Battleground State Historic Site, 29.751578, -95.089694,"GULF PRAIRIES AND MARSHES
 ", https//tpwd.texas.gov/state-parks/san-jacinto-battleground/gallery/967-1314_300.jpg,https//tpwd.texas.gov/state-parks/san-jacinto-battleground," In 1836, Texian troops surprised the Mexican army camped here. Shouting “Remember the Alamo” and “Remember Goliad,” the rebels routed the larger force in only 18 minutes. Walk in their footsteps, explore the museum, and enjoy a bird’s-eye view from the top of the monument. We’re just a short drive from Houston.","[80, 197, 216, 275, 616, 692]","
         
@@ -625,7 +625,7 @@
         
         La Porte, TX 
         77571
-    "
+    ",[1]
 77,Sea Rim State Park, 29.675634, -94.043222,"GULF PRAIRIES AND MARSHES
 ", https//tpwd.texas.gov/state-parks/sea-rim/gallery/sea-rim_7279.jpg,https//tpwd.texas.gov/state-parks/sea-rim," At the far southeast corner of Texas lies a remote and unique coastal park. Sea Rim State Park has 5.2 miles of Gulf shoreline and 4,000 acres of marshlands.",[735],"
         
@@ -633,7 +633,7 @@
         
         Sabine Pass, TX 
         77655
-    "
+    ",[1]
 78,Seminole Canyon State Park & Historic Site, 29.700094, -101.312875,"EDWARDS PLATEAU
 ", https//tpwd.texas.gov/state-parks/seminole-canyon/gallery/seminole-caynon_7654.jpg,https//tpwd.texas.gov/state-parks/seminole-canyon, Early canyon dwellers left clues to their lives on the stone walls of Seminole Canyon. Their pictographs tell stories that we try to understand today. Come see this special place for yourself; we’re along the Rio Grande near Del Rio.,"[278, 412, 621, 697, 739, 742]","
         
@@ -641,7 +641,7 @@
         
         Comstock, TX 
         78837
-    "
+    ",[6]
 79,Sheldon Lake State Park & Environmental Learning Center, 29.857461, -95.160029,"GULF PRAIRIES AND MARSHES
 ", https//tpwd.texas.gov/state-parks/sheldon-lake/gallery/sheldon-kids.jpg,https//tpwd.texas.gov/state-parks/sheldon-lake, The primary activities at the lake unit are fishing and wildlife observation. Sheldon Lake is open every day to public fishing with appropriate licenses. Boats must not exceed headway speed while operating on the lake; they may be launched at the south boat ramp on Pineland Road. Bank fishing is permitted year-round.,"[80, 170, 197, 216, 218, 275, 616, 692]","
         
@@ -649,7 +649,7 @@
         
         Houston, TX 
         77044
-    "
+    ",[1]
 80,South Llano River State Park, 30.445396, -99.804102,"EDWARDS PLATEAU
 ", https//tpwd.texas.gov/state-parks/south-llano-river/gallery/sllano-tubing_115.jpg,https//tpwd.texas.gov/state-parks/south-llano-river," South Llano River State Park provides refuge for wildlife and people on the southwestern edge of the Hill Country. Bring your hiking boots, water toys, camping gear, and sense of ad­ven­ture!",[],"
         
@@ -657,7 +657,7 @@
         
         Junction, TX 
         76849
-    "
+    ",[6]
 81,Stephen F. Austin State Park, 29.811982, -96.108059,"GULF PRAIRIES AND MARSHES
 ", https//tpwd.texas.gov/state-parks/stephen-f-austin/gallery/sfa-hall_0838.jpg,https//tpwd.texas.gov/state-parks/stephen-f-austin, Stephen F. Austin chose this area as home base for es­tab­lishing Anglo-American colonies in Texas. Learn more of his story and enjoy a time-out in nature on the banks of the Brazos River. We’re just 50 minutes west of the outskirts of Houston.,"[423, 777]","
         
@@ -665,7 +665,7 @@
         
         San Felipe, TX 
         77473
-    "
+    ",[1]
 82,Tyler State Park, 32.482180, -95.283396,"POST OAK SAVANNAH
 ", https//tpwd.texas.gov/state-parks/tyler/gallery/rv-long-shot-on-lake.jpg,https//tpwd.texas.gov/state-parks/tyler," Tyler State Park features a cool, 64-acre spring-fed lake, 100-foot tall trees, and historic structures. Play at the lake, wet a hook, wander through the woods, or relax with your binoculars. You will love this peaceful get-away in Northeast Texas!",[],"
         
@@ -673,7 +673,7 @@
         
         Tyler, TX 
         75706-9141
-    "
+    ",[2]
 83,Village Creek State Park, 30.250499, -94.178700,"PINEYWOODS
 ", https//tpwd.texas.gov/state-parks/village-creek/gallery/villiage-creek-959_05_02.jpg,https//tpwd.texas.gov/state-parks/village-creek," Amazing diversity of both plants and wildlife makes Village Creek State Park a very special place. We’re 10 miles north of Beaumont on the edge of the Big Thicket. Come to camp, canoe, or just enjoy the quiet – you’ll be glad you did!","[136, 653, 672, 735]","
         
@@ -681,7 +681,7 @@
         
         Lumberton, TX 
         77657
-    "
+    ",[0]
 84,Washington-on-the-Brazos State Historic Site, 30.323922, -96.153673,"BLACKLAND PRAIRIES
 ", https//tpwd.texas.gov/state-parks/washington-on-the-brazos/gallery/independence-hall-exhibit-final.jpg,https//tpwd.texas.gov/state-parks/washington-on-the-brazos," The picturesque Washington-on-the-Brazos State Historic Site is located on the Brazos River. The expansive park grounds along the Brazos River provide a beautiful setting for picnicking, sightseeing and bird-watching. The Star of the Republic Museum, Independence Hall and Barrington Living History Farm, offer the visitor a unique insight into the lives and times of the men who fought and won Texas' independence from Mexico.","[423, 424, 539, 777]","
         
@@ -689,7 +689,7 @@
         
         Washington, TX 
         77880
-    "
+    ",[3]
 85,Wyler Aerial Tramway, 31.809390, -106.478426,"TRANS-PECOS
 ", https//tpwd.texas.gov/state-parks/wyler-aerial-tramway/gallery/wyler-tram-_959.61_1.jpg,https//tpwd.texas.gov/state-parks/wyler-aerial-tramway, The Wyler Aerial Tramway at Franklin Mountains State Park features an aerial cable car situated on 195.742 acres of rugged mountain and rock formations on the east side of the Franklin Mountains.,"[12, 236, 319, 332, 471, 491, 690, 691, 714, 728, 749, 750]","
         
@@ -697,4 +697,4 @@
         
         El Paso, TX 
         79930
-    "
+    ",[9]

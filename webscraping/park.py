@@ -1,3 +1,14 @@
+import pandas as pd
+from bs4 import BeautifulSoup
+import requests
+from selenium import webdriver
+import time
+import pickle
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 class Parks():
     def __init__(self):
         self.name="N/A"
@@ -9,6 +20,7 @@ class Parks():
         self.image="N/A"
         self.ecoregion="N/A"
         self.address="N/A"
+        self.ecoregionlist=[]
     @staticmethod
     def createcsv(parklist):
         dictionary = {
@@ -20,7 +32,8 @@ class Parks():
             "Url": [],
             "Description": [],
             "PlantList":[],
-            "Address":[]
+            "Address":[],
+            "Ecoregionlist":[]
         }
         for entry in parklist:
             dictionary['Name'].append(entry.name)
@@ -32,6 +45,7 @@ class Parks():
             dictionary['Description'].append(entry.description)
             dictionary['Address'].append(entry.address)
             dictionary['PlantList'].append(entry.parkplantlist)
+            dictionary['Ecoregionlist'].append(entry.ecoregionlist)
         df = pd.DataFrame(dictionary)
         df.to_csv('./plant_csv_stateparks.csv')
     @staticmethod
