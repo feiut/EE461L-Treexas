@@ -11,25 +11,47 @@
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
+	 <!-- Required meta tags -->
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		 <!-- Latest compiled and minified CSS -->
+		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	  	<link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
+		<!--link rel="stylesheet" href="{% static 'list_page_style.css' %}"-->
+
+		<script type="text/javascript">
+		function img_over(item){
+			item.style.borderColor = "#AFBEFF";
+		}
+		function img_out(item){
+			item.style.borderColor="#FFFFFF";
+		}
+		</script>
+
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-fixed-top" style="background-color:rgba(0,0,0,0.35);">
+
+	<nav class="navbar navbar-expand-lg navbar-dark navbar-fixed-top" style="background-color:rgba(0,0,0,0.35);">
 	  <div class="container-fluid">
 
 	    <div class="navbar-header">
 	      <a class="navbar-brand" href="/">Treexas</a>
-	      <a class="navbar-nav" href="plant_list/" onclick="window.history.go(-1); return false;">Back</a>
 	    </div>
 
 	    <div class="topnav-entry">
-	      <ul class="nav navbar-nav navbar-right">
-	        <li><a href="/plant_list">Plants</a>
+	      <ul class="navbar-nav mr-auto">
+	        <li class="nav-item active"><a class = "nav-link" href="/plant_list">Plants</a>
 	        </li>
-	        <li><a href="/park_list">State Parks</a>
+	        <li class="nav-item active"><a class = "nav-link" href="/park_list">State Parks</a>
 	        </li>
-	        <li><a href="/eco_list">Ecoregions</a>
+	        <li class="nav-item active"><a class = "nav-link" href="/eco_list">Ecoregions</a>
 	        </li>
-	        <li><a href="/about">About Us</a>
+	        <li class="nav-item active"><a class = "nav-link" href="/about">About Us</a>
 	        </li>
 	      </ul>
 	    </div>
@@ -37,93 +59,203 @@
 	</nav>
 
 
+<div style="height:100%;width:100%">
 
-
-
-	<h1 id="title"> About Us </h1>
-	<div id="header">
-	<h4> Description </h4>
-	<p> This site contains information about the plants, ecoregions and stateparks of Texas. The purpose of this site is to provide reliable information about any and all plants that can be found in Texas. This site is meant for anyone looking to learn more about Texas plants and where to find them. This could include researchers, students, survivalists or foragers. </p>
+<div id="header">
+	<h1 id="title" class="text-center"> About Us </h1>
 	<br>
-
-	<h4> Group Name </h4>
-	<p> Owl Team </p>
+	<h2 id="team-name"  class="text-center"> Owl Team </h2>
+	<br>
+	<br>
+	<br>
+<div>
+	<p> 	This site contains information about the plants, ecoregions and stateparks of Texas. The purpose of this site is to provide reliable information about any and all plants that can be found in Texas. This site is meant for anyone looking to learn more about Texas plants and where to find them. This could include researchers, students, survivalists or foragers. </p>
+	<br>
 </div>
-<div style="background-color: #AED9E2">
-	<h4> Group Members </h4>
-	<div id="teammates">
-	<img src="{% static "erick_img.jpg" %}" class="photos">
+</div>
+</div>
+
+
+<br>
+
+<div style="margin-top: 70%">
+	<h4 id="people" class="text-center"> Group Members </h4>
 	<br>
-	<b> Name:</b><p> Eric Cen</p>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div id="teammates" class="container">
+	<div class="row">
+	<div class="col-md-3">
+	<img src="{% static "erick_img.jpg" %}" class="photos">
+	</div>
+	<div class="col-md-6">
+	<p id="team-name"> Eric Cen</p>
 		<b>Major:</b><p> Electrical Engineering</p>
 		<b>Bio:</b><p> I am a junior in the Cockrell School of Engineering. My primary core is power sys/renewable energy and my secondary core is software engineering.</p>
 		<b>Responsibilities:</b><p> Datascraping and Database Management</p>
+	</div>
+	<div class="col-md-3">
 		<b>Number of Commits:</b><p> {{eric_commits}}</p>
 		<b>Number of Issues:</b><p> {{eric_issues}}</p>
 		<b>Number of Unit Tests:</b><p> 0</p>
+	</div>
+	</div>
+	</div>
 	<br>
+
+
+
+
+
+
+	<div id="teammates" class="container">
+	<div class="row">
+	<div class="col-md-3">
 	<img src="{% static "eric_img.jpg" %}" class="photos">
-	<br>
+	</div>
+	<div class="col-md-6">
 	<b> Name:</b><p> Erick Machado</p>
 		<b>Major:</b><p> Electrical Engineering</p>
 		<b>Bio:</b><p>  Hello! My name is Erick. I enjoy working with software and enjoy my time at UT. I have two dogs that I love very much. I’m very friendly so approach me if you wanna chat! </p>
 		<b>Responsibilities:</b><p> Database Management and Static Webpage Design</p>
+	</div>
+	<div class="col-md-3">
 		<b>Number of Commits:</b><p> {{erick_commits}}</p>
 		<b>Number of Issues:</b><p> {{erick_issues}}</p>
 		<b>Number of Unit Tests:</b><p> 0</p>
+	</div>
+	</div>
+	</div>
 	<br>
+
+
+
+
+	<div id="teammates" class="container">
+	<div class="row">
+	<div class="col-md-3">
 	<img src="{% static "connor_img.jpg" %}" class="photos">
-	<br>
+	</div>
+	<div class="col-md-6">
 	<b> Name:</b><p> Connor Fritz</p>
 		<b>Major:</b><p> Electrical Engineering</p>
 		<b>Bio:</b><p> I'm a software track ECE major interested in plants and machine learning</p>
 		<b>Responsibilities:</b><p> Static Webpage Design and Datascraping</p>
+	</div>
+	<div class="col-md-3">
 		<b>Number of Commits:</b><p> {{connor_commits}}</p>
 		<b>Number of Issues:</b><p> {{connor_issues}}</p>
 		<b>Number of Unit Tests:</b><p> 0</p>
+	</div>
+	</div>
+	</div>
 	<br>
+
+
+
+
+
+
+	<div id="teammates" class="container">
+	<div class="row">
+	<div class="col-md-3">
 	<img src="{% static "hao_img.jpg" %}" class="photos">
-	<br>
+	</div>
+	<div class="col-md-6">
 	<b> Name:</b><p> Hao Yao</p>
 		<b>Major:</b><p> Civil Engineering</p>
 		<b>Bio:</b><p> Hello, I am Hao! I am a second year master student in UT. My major in Ocean Engineering. I really enjoy the time working with you guys!</p>
 		<b>Responsibilities:</b><p> Static Webpage Design</p>
+	</div>
+	<div class="col-md-3">
 		<b>Responsibilities:</b><p> API Development</p>
 		<b>Number of Commits:</b><p> {{hao_commits}}</p>
 		<b>Number of Issues:</b><p> {{hao_issues}}</p>
 		<b>Number of Unit Tests:</b><p> 0</p>
+	</div>
+	</div>
+	</div>
 	<br>
+
+
+
+
+
+	<div id="teammates" class="container">
+	<div class="row">
+	<div class="col-md-3">
 	<img src="{% static "chaz_img.jpg" %}" class="photos">
-	<br>
+	</div>
+	<div class="col-md-6">
 	<b> Name:</b><p> Chaz Li</p>
 		<b>Major:</b><p> Electrical Engineering</p>
 		<b>Bio:</b><p> Hello, I am Chaz! My major is Electrical Engineering. I really enjoy the time working and learning with you guys!</p>
+	</div>
+	<div class="col-md-3">
 		<b>Number of Commits:</b><p> {{chaz_commits}}</p>
 		<b>Number of Issues:</b><p> {{chaz_issues}}</p>
 		<b>Number of Unit Tests:</b><p> 0</p>
+	</div>
+	</div>
+	</div>
 	<br>
+
+
+
+
+
+
+	<div id="teammates" class="container">
+	<div class="row">
+	<div class="col-md-3">
 	<img src="{% static "xiyu_img.jpg" %}" class="photos">
-	<br>
+	</div>
+	<div class="col-md-6">
 	<b> Name:</b><p> Xiyu Wang</p>
 		<b>Major:</b><p> Electrical Engineering</p>
 		<b>Bio:</b><p> Hi I’m Xiyu! You can pronounce it as “Shiyu” if you find it confusing:D I’m a master student with only 2 years in UT so I really cherish the time I work and have fun with you!</p>
 		<b>Responsibilities:</b><p> API Development</p>
+	</div>
+	<div class="col-md-3">
 		<b>Number of Commits:</b><p> {{xiyu_commits}}</p>
 		<b>Number of Issues:</b><p> {{xiyu_issues}}</p>
 		<b>Number of Unit Tests:</b><p> 0</p>
+	</div>
+	</div>
+	</div>
 	<br>
+
+
+
+
+
+	<div id="teammates" class="container">
+	<div class="row">
+	<div class="col-md-3">
 	<img src="{% static "fei_img.jpg" %}" class="photos">
-	<br>
+	</div>
+	<div class="col-md-6">
 	<b> Name:</b><p> Fei He</p>
 		<b>Major:</b><p> Electrical Engineering</p>
 		<b>Bio:</b><p> Hi, I am Fei! I am a new master student in UT. I like vegetables. It's great to meet you!</p>
 		<b>Responsibilities:</b><p> API Development</p>
+	</div>
+	<div class="col-md-3">
 		<b>Number of Commits:</b><p> {{fei_commits}}</p>
 		<b>Number of Issues:</b><p> {{fei_issues}}</p>
 		<b>Number of Unit Tests:</b><p> 0</p>
+	</div>
+	</div>
+	</div>
 	<br>
+
 </div>
-</div>
+
+
+
 
 	<div id="sources">
 	<h4>Statistics</h4>
