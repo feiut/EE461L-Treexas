@@ -92,9 +92,6 @@ img{
 	  position: center;
 	  left: 50%;
 	  
-
-
-
 }
 
 #header{
@@ -122,12 +119,23 @@ img{
 
 #teammates{
 	margin: left;
-	padding-left: 10%;
+	padding-left: 0%;
 	text-align: left;
 	align-items: center;
 	max-width: 70%;
 	background-color: #FFFFFF;
 	overflow: auto;
+	margin-top: 5%;
+}
+
+
+#name{
+	  font: 50px/1.2 'Fjalla One', sans-serif;
+	  font-weight:800;
+	  color: #238e23;
+	  position: center;
+	  left: 50%;
+	  
 }
 
 .photos{

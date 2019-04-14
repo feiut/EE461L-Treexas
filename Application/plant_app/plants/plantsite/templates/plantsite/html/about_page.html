@@ -21,6 +21,11 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+  	<link href='http://fonts.googleapis.com/css?family=Archivo' rel='stylesheet' type='text/css'>
+  	<link href='http://fonts.googleapis.com/css?family=Archivo:bold' rel='stylesheet' type='text/css'>
+  	<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+
+
 	  	<link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
 		<!--link rel="stylesheet" href="{% static 'list_page_style.css' %}"-->
 
@@ -53,6 +58,8 @@
 	        </li>
 	        <li class="nav-item active"><a class = "nav-link" href="/about">About Us</a>
 	        </li>
+		<li class="nav-item active"><a class="nav-link" href="" onclick="window.history.go(-1); return false;"> Back </a>
+	     	</li>
 	      </ul>
 	    </div>
 	  </div>
@@ -92,12 +99,23 @@
 	<img src="{% static "erick_img.jpg" %}" class="photos">
 	</div>
 	<div class="col-md-6">
-	<p id="team-name"> Eric Cen</p>
+	<br>
+	<br>
+	<p id="name"> Eric Cen</p>
+	<br>
+	<br>
+	
 		<b>Major:</b><p> Electrical Engineering</p>
 		<b>Bio:</b><p> I am a junior in the Cockrell School of Engineering. My primary core is power sys/renewable energy and my secondary core is software engineering.</p>
 		<b>Responsibilities:</b><p> Datascraping and Database Management</p>
 	</div>
 	<div class="col-md-3">
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+
 		<b>Number of Commits:</b><p> {{eric_commits}}</p>
 		<b>Number of Issues:</b><p> {{eric_issues}}</p>
 		<b>Number of Unit Tests:</b><p> 0</p>
@@ -117,7 +135,9 @@
 	<img src="{% static "eric_img.jpg" %}" class="photos">
 	</div>
 	<div class="col-md-6">
-	<b> Name:</b><p> Erick Machado</p>
+	<p id="name"> Erick Machado</p>
+	<br>
+	<br>
 		<b>Major:</b><p> Electrical Engineering</p>
 		<b>Bio:</b><p>  Hello! My name is Erick. I enjoy working with software and enjoy my time at UT. I have two dogs that I love very much. I’m very friendly so approach me if you wanna chat! </p>
 		<b>Responsibilities:</b><p> Database Management and Static Webpage Design</p>
@@ -140,7 +160,9 @@
 	<img src="{% static "connor_img.jpg" %}" class="photos">
 	</div>
 	<div class="col-md-6">
-	<b> Name:</b><p> Connor Fritz</p>
+	<p id="name"> Connor Fritz</p>
+	<br>
+	<br>
 		<b>Major:</b><p> Electrical Engineering</p>
 		<b>Bio:</b><p> I'm a software track ECE major interested in plants and machine learning</p>
 		<b>Responsibilities:</b><p> Static Webpage Design and Datascraping</p>
@@ -165,13 +187,14 @@
 	<img src="{% static "hao_img.jpg" %}" class="photos">
 	</div>
 	<div class="col-md-6">
-	<b> Name:</b><p> Hao Yao</p>
+	<p id="name"> Hao Yao</p>
+	<br>
+	<br>
 		<b>Major:</b><p> Civil Engineering</p>
 		<b>Bio:</b><p> Hello, I am Hao! I am a second year master student in UT. My major in Ocean Engineering. I really enjoy the time working with you guys!</p>
-		<b>Responsibilities:</b><p> Static Webpage Design</p>
+		<b>Responsibilities:</b><p> API Development</p>
 	</div>
 	<div class="col-md-3">
-		<b>Responsibilities:</b><p> API Development</p>
 		<b>Number of Commits:</b><p> {{hao_commits}}</p>
 		<b>Number of Issues:</b><p> {{hao_issues}}</p>
 		<b>Number of Unit Tests:</b><p> 0</p>
@@ -190,11 +213,15 @@
 	<img src="{% static "chaz_img.jpg" %}" class="photos">
 	</div>
 	<div class="col-md-6">
-	<b> Name:</b><p> Chaz Li</p>
+	<p id="name"> Chaz Li</p>
+	<br>
+	<br>
 		<b>Major:</b><p> Electrical Engineering</p>
 		<b>Bio:</b><p> Hello, I am Chaz! My major is Electrical Engineering. I really enjoy the time working and learning with you guys!</p>
+		<b>Responsibilities:</b><p> Static Webpage Design</p>
 	</div>
 	<div class="col-md-3">
+		
 		<b>Number of Commits:</b><p> {{chaz_commits}}</p>
 		<b>Number of Issues:</b><p> {{chaz_issues}}</p>
 		<b>Number of Unit Tests:</b><p> 0</p>
@@ -214,7 +241,9 @@
 	<img src="{% static "xiyu_img.jpg" %}" class="photos">
 	</div>
 	<div class="col-md-6">
-	<b> Name:</b><p> Xiyu Wang</p>
+	<p id="name"> Xiyu Wang</p>
+	<br>
+	<br>
 		<b>Major:</b><p> Electrical Engineering</p>
 		<b>Bio:</b><p> Hi I’m Xiyu! You can pronounce it as “Shiyu” if you find it confusing:D I’m a master student with only 2 years in UT so I really cherish the time I work and have fun with you!</p>
 		<b>Responsibilities:</b><p> API Development</p>
@@ -238,7 +267,9 @@
 	<img src="{% static "fei_img.jpg" %}" class="photos">
 	</div>
 	<div class="col-md-6">
-	<b> Name:</b><p> Fei He</p>
+	<p id="name"> Fei He</p>
+	<br>
+	<br>
 		<b>Major:</b><p> Electrical Engineering</p>
 		<b>Bio:</b><p> Hi, I am Fei! I am a new master student in UT. I like vegetables. It's great to meet you!</p>
 		<b>Responsibilities:</b><p> API Development</p>
