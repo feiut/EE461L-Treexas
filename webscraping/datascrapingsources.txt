@@ -1,2 +1,3 @@
 http://poisonousplants.ansci.cornell.edu/php/plants.php
 https://garden.org/plants/search/text/
+http://www.missouribotanicalgarden.org/plantfinder/plantfindersearch.aspx

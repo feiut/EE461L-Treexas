@@ -14,6 +14,29 @@ plantlist=[]
 with open('plantlist.txt','rb') as fp:
     plantlist=pickle.load(fp)
 """for plant in plantlist:
+    if len(plant.zones) == 1:
+        first = plant.zones[0].split(" ")
+        if len(first)!= 1:
+            newlist.append(first[1])
+            plant.zones = newlist
+    if len(plant.zones) >= 2:
+        newlist = []
+        first = plant.zones[0].split(" ")
+        second = plant.zones[1].split(" ")
+        if len(plant.zones) == 3:
+            newlist.append(plant.zones[1])
+            newlist.append(plant.zones[2])
+            plant.zones=newlist
+        elif len(first)!=1 and len(second)!=1:
+            newlist.append(first[1])
+            newlist.append(second[1])
+            plant.zones=newlist"""
+"""for plant in plantlist:
+    if "Abelia" in plant.sciname:
+        if len(plant.zones)<2:
+            plant.zones.append('6')
+            plant.zones.append('9')"""
+"""for plant in plantlist:
     if plant.nickname.replace(" ","") == "NA":
         plant.nickname="N/A"
     if plant.planttype.replace(" ","")=="Perennial":
@@ -32,8 +55,8 @@ with open('plantlist.txt','rb') as fp:
     if plant.plantspread.replace(" ","")=="":
         plant.plantspread="N/A"
     if plant.plantform.replace(" ","")=="":
-        plant.plantform="N/A"
-plantlist1=[]
+        plant.plantform="N/A"""""
+"""plantlist1=[]
 for plant in plantlist:
     x = Plant()
     x.nativeadapted = plant.nativeadapted
@@ -61,10 +84,12 @@ for plant in plantlist:
     x.statepark = plant.statepark
     x.lifecycle = plant.lifecycle
     x.edibility = plant.edibility
+    x.zones=plant.zones
+    x.endangered=plant.endangered
     plantlist1.append(x)
-    #x.edibility = plant.edibility
+    #x.edibility = plant.edibility"""
 with open('plantlist.txt','wb') as fp:
-    pickle.dump(plantlist1,fp)"""
+    pickle.dump(plantlist,fp)
 Plant.plantcsv(plantlist)
 
 #web.get("")
