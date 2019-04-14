@@ -3,43 +3,60 @@
 <html>
 <head>
 	<link rel="shortcut icon" type="image/png" href="{% static 'browser_icon.png' %}">
-	<link rel="stylesheet" href="{% static "entry_style.css" %}">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 	 <!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-	<!-- jQuery library -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<!-- Latest compiled JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
   	<link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet'type='text/css'>
+
+	<link rel="stylesheet" href="{% static "entry_style.css" %}">
+
+	<script type="text/javascript">
+		function img_over(item){
+			item.style.borderColor = "#57BC90";
+		}
+		function img_out(item){
+			item.style.borderColor = "#77C9D4";
+		}
+
+	</script>
+
 </head>
 
 <body>
-	<div class="container">
+	<div class="container-fluid">
 		<div class="row">
 			<div class="col">
-			<nav class="navbar navbar-expand-lg navbar-fixed-top" style="background-color:rgba(0,0,0,0.35);">
-			  <div class="container-fluid">
+				<nav class="navbar navbar-expand-sm navbar-custom navbar-light navbar-fixed-top" style="background-color: #A5A5Af">
+				  <div class="container-fluid">
 
-			    <div class="navbar-header">
-			      <a class="navbar-brand" href="/">Treexas</a>
-	     <a class="navbar-nav" href="plant_list/" onclick="window.history.go(-1); return false;"> Back </a>
-			    </div>
+				    <div class="navbar-header">
+				      <a class="navbar-brand" href="/">Treexas</a>
+				    </div>
 
-			    <div class="topnav-entry">
-			      <ul class="nav navbar-nav navbar-right">
-			        <li><a href="/plant_list">Plants</a>
-			        </li>
-			        <li><a href="/park_list">State Parks</a>
-			        </li>
-			        <li><a href="/eco_list">Ecoregions</a>
-			        </li>
-	        <li><a href="/about">About Us</a>
-	        </li>
-			      </ul>
-			    </div>
-			  </div>
-			</nav>
+				    <div class="topnav-entry">
+				      <ul class="navbar-nav mr-auto">
+				        <li class="nav-item active"><a class = "nav-link" href="/plant_list">Plants</a>
+				        </li>
+				        <li class="nav-item active"><a class = "nav-link" href="/park_list">State Parks</a>
+				        </li>
+				        <li class="nav-item active"><a class = "nav-link" href="/eco_list">Ecoregions</a>
+				        </li>
+				        <li class="nav-item active"><a class = "nav-link" href="/about">About Us</a>
+				        </li>
+				     	<li class="nav-item active"><a class="nav-link" href="" onclick="window.history.go(-1); return false;"> Back </a>
+				     	</li>
+				      </ul>
+				    </div>
+				  </div>
+				</nav>
 			</div>
 		</div>
 
@@ -49,10 +66,10 @@
 
 		<div class="row">
 			<div class="col">
-				<h1 class="text-center">{{profile.ecoregion}}</h1>
+				<h1 class="title1 text-center">{{profile.ecoregion}}</h1>
 				<div class="text-center">
 					{% with ''|add:profile.image|add:'' as img_static %}
-						<img class="img imgstyle" src="{% static img_static %}">
+						<img class="img imgstyle-large" src="{% static img_static %}">
 					{% endwith %}
 				</div>
 				<p class="text-center">{{profile.paragraph}}</p>
@@ -60,7 +77,7 @@
 		</div>
 
 
-
+		<!--
 		<div class="row">
 			{% for park in parks %}
 			<div class="col-sm-4">
@@ -73,41 +90,131 @@
 			</div>
 			{% endfor %}
 		</div>
+		-->
 
+	<div class="d-flex flex-row justify-content-around">
+		<div>
+			<h3 class="title2"> Plants In this Ecoregion </h3>
+		</div>
+		<div>
+			<h3 class="title2"> State Parks In this Ecoregion </h3>
+		</div>
+	</div>
 
-
-	<div class="row">
-		<div class="col-xs-12">
+	<div class="d-flex flex-row justify-content-around">
 
 		    <div id="myCarousel" class="carousel slide" data-ride="carousel">
 		        <!-- Wrapper for carousel items -->
 		        <div class="carousel-inner">
-		        	<div class="item active carouselImg">
-		                <img src="{% static "background-succulent.jpeg" %}" class="img-center">
-		               	<div class="carousel-caption">
-		        			<h3 class="text-center">Plants for This Ecoregion</h3>
+		        	<div class="carousel-item active">
+		                <img class="img-medium-center" src="{% static "background-succulent.jpeg" %}">
+		               	<div class="carousel-caption d-non d-md-block" style="background-color: #77c9d4">
+		        			<h6 class="words1 text-center">Plants</h3>
 		        		</div>
 		            </div>
 		        	{% for plant in plants %}
-		        	<div class="item carouselImg">
+		        	<div class="carousel-item">
+
 		        		<a href="/plant_profile/?id={{plant.id}}">
-		        			<img class="img-center" src="{{plant.image}}">
+		        			<img class="img-medium-center" src="{{plant.image}}">
 		        		</a>
-		        		<div class="carousel-caption">
-		        			<h3 class="text-center">{{plant.name}}</h3>
+		        		<div class="carousel-caption d-non d-md-block" style="background-color: #77c9d4">
+		        			<h6 class="words1 text-center">{{plant.name}}</h3>
 		        		</div>
 		        	</div>
 		        	{% endfor %}
 		        </div>
 		        <!-- Carousel controls -->
-		        <a class="carousel-control left" href="#myCarousel" data-slide="prev">
-		            <span class="glyphicon glyphicon-chevron-left"></span>
+		        <a class="carousel-control-prev" href="#myCarousel" role="button"data-slide="prev" style="background-color:#57bc90">
+		                <span class="carousel-control-prev-icon" aria-hidden="true" style="color:#57bc90"></span>
+    					<span class="sr-only" style="color:#57bc90">Previous</span>
 		        </a>
-		        <a class="carousel-control right" href="#myCarousel" data-slide="next">
-		            <span class="glyphicon glyphicon-chevron-right"></span>
+		        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next" style="background-color:#57bc90">
+		                <span class="carousel-control-next-icon" aria-hidden="true" style="color:#57bc90"></span>
+    					<span class="sr-only" style="color:#57bc90">Next</span>
 		        </a>
 		    </div>
-		 </div>
+
+		    <div id="myCarousel2" class="carousel slide" data-ride="carousel">
+		        <!-- Wrapper for carousel items -->
+		        <div class="carousel-inner">
+		        	<div class="carousel-item active">
+		                <img class="img-medium-center" src="{% static "background-succulent.jpeg" %}">
+		               	<div class="carousel-caption d-non d-md-block" style="background-color: #77c9d4">
+		        			<h6 class="words1 text-center">State Parks</h6>
+		        		</div>
+		            </div>
+		        	{% for park in park_list %}
+		        	<div class="carousel-item">
+
+		        		<a href="/park_profile/?id={{park.dbid}}">
+		        			<img class="img-medium-center" src="{{park.image}}">
+		        		</a>
+		        		<div class="carousel-caption d-non d-md-block" style="background-color: #77c9d4">
+		        			<h6 class="words1 text-center">{{park.name}}</h6>
+		        		</div>
+		        	</div>
+		        	{% endfor %}
+		        </div>
+		        <!-- Carousel controls -->
+		        <a class="carousel-control-prev" href="#myCarousel2" role="button"data-slide="prev" style="background-color:#57bc90">
+		                <span class="carousel-control-prev-icon" aria-hidden="true" style="color:#57bc90"></span>
+    					<span class="sr-only" style="color:#57bc90">Previous</span>
+		        </a>
+		        <a class="carousel-control-next" href="#myCarousel2" role="button" data-slide="next" style="background-color:#57bc90">
+		                <span class="carousel-control-next-icon" aria-hidden="true" style="color:#57bc90"></span>
+    					<span class="sr-only" style="color:#57bc90">Next</span>
+		        </a>
+		    </div>
+		
+
+	</div>
+
+	<br>
+	<br>
+	<div class="d-flex justify-content-between">
+
+
+		<div class="col-xs-6">
+			<div class="row" >
+				<div class="card-columns" >
+				{% for plant in plants %}
+				<div class="card" style="width:13vw; margin: 1vw; border-width: 4px; border-color: #77c9d4" onmouseover="img_over(this)" onmouseout="img_out(this)">
+					<a href="/plant_profile/?id={{plant.id}}">
+						<img class="card-img-top img-center-small" src="{{plant.image}}">
+					</a>
+					<div class="card-body">
+						<h3 class="card-text text-center words1" >{{plant.name}}</h3>
+					</div>
+				</div>
+				{% endfor %}
+				</div>
+			</div>
+		</div>
+
+	
+		<div class="col-xs-1">
+			<h3 style="color:#FFFFFF">nothing</h3>
+		</div>
+
+		<div class="col-xs-6">
+			<div class="row">
+				<div class="card-columns">
+				{% for park in park_list %}
+				<div class="card" style="width:13vw; margin: 1vw; border-width: 4px; border-color: #77c9d4" onmouseover="img_over(this)" onmouseout="img_out(this)">
+					<a href="/park_profile/?id={{park.dbid}}">
+						<img class="card-img-top img-center-small" src="{{park.image}}">
+					</a>
+					<div class="card-body">
+						<h3 class="card-text text-center words1" >{{park.name}}</h3>
+					</div>
+				</div>
+				{% endfor %}
+				</div>
+			</div>
+		</div>
+
+
 	</div>
 
 </div>

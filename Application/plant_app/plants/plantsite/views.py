@@ -245,84 +245,6 @@ def ecoregion_list(request):
     response = HttpResponse(template.render(context_dict, request))
     return deleteCOOKIE(response, 6)
 
-def pedernales_park(request):
-    template = loader.get_template('plantsite/html/park_entry.html')
-    park_name = "Pedernales State Park"
-    park_description = "Lorem Ipsum Dolor Sit Amut"
-    park_img = "sp_pedernales.jpg"
-
-    context_dict = {"park_name":park_name,
-                                         "park_description":park_description,
-                                         "img_name":park_img}
-
-    return HttpResponse(template.render(context_dict, request))
-
-
-def dinosaur_valley_park(request):
-    template = loader.get_template('plantsite/html/park_entry.html')
-    park_name = "Dinosaur Valley State Park"
-    park_description = "Lorem Ipsum Dolor Sit Amut"
-    park_img = "sp_dinosaur_valley.jpg"
-
-    context_dict = {"park_name":park_name,
-                                         "park_description":park_description,
-                                         "img_name":park_img}
-
-    return HttpResponse(template.render(context_dict, request))
-
-
-def daingerfield_park(request):
-    template = loader.get_template('plantsite/html/park_entry.html')
-    park_name = "Daingerfield State Park"
-    park_description = "Lorem Ipsum Dolor Sit Amut"
-    park_img = "sp_daingerfield.jpg"
-
-    context_dict = {"park_name":park_name,
-                                         "park_description":park_description,
-                                         "img_name":park_img}
-
-    return HttpResponse(template.render(context_dict, request))
-
-
-def acton_park(request):
-    template = loader.get_template('plantsite/html/park_entry.html')
-    park_name = "Acton State Park"
-    park_description = "Lorem Ipsum Dolor Sit Amut"
-    park_img = "sp_acton.jpg"
-
-    context_dict = {"park_name":park_name,
-                                         "park_description":park_description,
-                                         "img_name":park_img}
-    return HttpResponse(template.render(context_dict, request))
-
-
-def piney_eco(request):
-    template = loader.get_template('plantsite/html/eco_entry.html')
-    name = "Piney Woods"
-    description = "Lorem Ipsum Dolor Sit Amut"
-    img = "eco_pineywoods.jpg"
-
-    context_dict = {"name": name, "description": description, "img_name": img}
-    return HttpResponse(template.render(context_dict, request))
-
-
-def marshes_eco(request):
-    template = loader.get_template('plantsite/html/eco_entry.html')
-    name = "Gulf Prairies and Marshes"
-    description = "Lorem Ipsum Dolor Sit Amut"
-    img = "eco_marshes.jpg"
-
-    context_dict = {"name": name, "description": description, "img_name": img}
-    return HttpResponse(template.render(context_dict, request))
-
-
-def postoaksavanah_eco(request):
-    template = loader.get_template('plantsite/html/eco_entry.html')
-    name = "Post Oak Savanah"
-    description = "Lorem Ipsum Dolor Sit Amut"
-    img = "eco_postoaksavanah.jpg"
-    context_dict = {"name": name, "description": description, "img_name": img}
-    return HttpResponse(template.render(context_dict, request))
 
 def plant_type_list(request):
     template = loader.get_template('plantsite/html/plant_list.html')
@@ -438,7 +360,13 @@ def plant_profile_view(request):
     for p in park_list:
         if not p == '':
             park_ids.add(p)
+
     park_list = Stateparks.objects.filter(dbid__in=park_ids)
+
+    for park in park_list:
+        park.image = park.image.strip()
+        park.image = re.sub('https','https:',str(park.image))
+
 
     ''' gets eco regions'''
     eco_for_plant = prof.econregion
@@ -447,9 +375,15 @@ def plant_profile_view(request):
     eco_list =eco_for_plant.split(',') #uses comma as delimiter to split string and make a list
     eco_ids = set() #set will be used to store database objects (a query set)
     for e in eco_list:
-        if not e == '':
+        if not e == '' and not e=='N/A':
             eco_ids.add(p)
-    eco_list = PlantCsvEcoregions.objects.filter(dbid__in=park_ids)
+
+
+    eco_list = PlantCsvEcoregions.objects.filter(dbid__in=eco_ids)
+
+    for eco in eco_list:
+        eco.image =eco.image.strip()
+        eco.image = re.sub('https', 'https:', str(eco.image))
 
     context_dict = {'profile': prof,'park_list':park_list,'eco_list':eco_list}
     return HttpResponse(template.render(context_dict,request))
@@ -474,11 +408,28 @@ def eco_profile_view(request):
             plant_ids.add(p)
     plants = PlantCsv.objects.filter(id__in=plant_ids)
     plants = fix_plant_defualt(plants)
+
+    ''' gets parks'''
+    parks_for_plant = prof.stateparks
+    parks_for_plant = re.sub("\[",'',str(parks_for_plant)) #gets rid of brackets
+    parks_for_plant = re.sub("\]",'',str(parks_for_plant))
+    park_list = parks_for_plant.split(',') #uses comma as delimiter to split string and make a list
+    park_ids = set() #set will be used to store database objects (a query set)
+    for p in park_list:
+        if not p == '':
+            park_ids.add(p)
+
+    park_list = Stateparks.objects.filter(dbid__in=park_ids)
+
+    for park in park_list:
+        park.image = park.image.strip()
+        park.image = re.sub('https','https:',str(park.image))
+
     # eco_name = str(prof.ecoregion)
     # eco_name = eco_name[22:]
     #eco_name = dictionary[str(dbid)]
     #pla = PlantCsv.objects.filter(econregion=eco_name)
-    context_dict = {'profile': prof, 'plants': plants}
+    context_dict = {'profile': prof, 'plants': plants, 'park_list':park_list}
     response = HttpResponse(template.render(context_dict, request))
     return response
 
@@ -529,6 +480,7 @@ def park_profile_view(request):
     for p in plant_list:
     	if not p == '':
     		plants.add(get_plant_with_id(str(p)))
+
     context_dict = {'profile': prof, 'plants':plants}
     return HttpResponse(template.render(context_dict, request))
 
