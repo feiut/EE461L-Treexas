@@ -1,4 +1,6 @@
-
+body{
+	height:100%;
+}
 
 p {
 	color: #57bc90 !important;
@@ -42,12 +44,13 @@ a {
   transform: translate(-50%, -50%);
 }
 
+
 .bg {
     background-size:cover;
     background-repeat: no-repeat;
     background-position: top;
     background-attachment: fixed;
-	animation: bg 40s infinite;
+		animation: bg 40s infinite;
 }
 
 
@@ -61,22 +64,22 @@ font-size: 28px;
 
 .input-group {
 position: fixed;
-width: 800px;
-left:50%;
-margin-left: -400px;
+width: 60%;
+left:20%;
+/* margin-left: -400px; */
 }
 
 /* style icon */
 .input-group .glyphicon-search {
-position: absolute;
-padding: 20px;
-pointer-events: none;
-left: 0px;
+position: relative;
+padding: 10px;
+/* pointer-events: none; */
+left: 0;
 font-size: 15px;
 }
 
 /* add padding  */
-.input-group input { padding-left: 50px;}
+.input-group input { padding-left: 15px;}
 
 .btn-default{
 width: 100px;
