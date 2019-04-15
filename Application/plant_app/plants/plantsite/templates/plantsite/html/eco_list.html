@@ -65,9 +65,21 @@
 			document.getElementById("map").src = "{% static "ecoregions.png" %}";
 		}
 	</script>
+	
+	<style>
+		.bg{
+			background: url('{% static "green-leaves-flat.jpg"%}') center 30% no-repeat;
+			background-size: 120% 150%;
+			
+		}
+	</style>
+
+
+
+
 </head>
 
-<body>
+<body class="bg">
 	<nav class="navbar navbar-expand-sm navbar-custom navbar-light navbar-fixed-top" style="background-color: #A5A5Af">
 	  <div class="container-fluid">
 
@@ -108,6 +120,9 @@
 	<div class="d-flex flex-row mx-auto">
 		<div class="flex-column">
 			<p class="title1 text-center">Ecoregions of Texas</p>
+			<br>
+			<br>
+			<br>
 		</div>
 	</div>
 
