@@ -149,7 +149,7 @@
 		        	{% for park in park_list %}
 		        	<div class="carousel-item">
 
-		        		<a href="/park_profile/?id={{park.dbid}}">
+		        		<a href="/park_profile/?id={{park.id}}">
 		        			<img class="img-medium-center" src="{{park.image}}">
 		        		</a>
 		        		<div class="carousel-caption d-non d-md-block" style="background-color: #77c9d4">
@@ -243,7 +243,7 @@
 		<div class="d-flex flex-row flex-wrap">
 			{% for park in park_list %}
 			<div class="card col-sm-4 px-4 card-style flex-wrap" onmouseover="img_over(this)" onmouseout="img_out(this)">
-				<a href="/park_profile/?id={{park.dbid}}">
+				<a href="/park_profile/?id={{park.id}}">
 					<img class="card-img img-center"src="{{park.image}}">
 				</a>
 				<div class="card-body">

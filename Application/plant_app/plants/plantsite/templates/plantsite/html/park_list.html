@@ -89,7 +89,7 @@
 			<div class="row flex-wrap">
 				{% for park in names %}
 				<div class="card col-sm-3 py-4 card-style" onmouseover="img_over(this)" onmouseout="img_out(this)">
-					<a href="/park_profile/?id={{park.dbid}}">
+					<a href="/park_profile/?id={{park.id}}">
 						<img class="card-img img-center" src="{{park.image}}">
 					</a>
 					<div class="card-body">

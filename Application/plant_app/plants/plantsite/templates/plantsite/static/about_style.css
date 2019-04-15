@@ -1,9 +1,6 @@
 body{
-	background-color : #FFFFFF;
-	/*border-style: solid;
-	border-width: 0px 0px 0px 0px;
-	border-color: #66FF66;*/
-	margin: 0px;
+
+	margin: 10%;
 
 }
 
@@ -18,7 +15,7 @@ p{
 	color: #000000;
 	font-family: Arial;
 	font-size: 250%;
-	margin-left: 16px;
+	margin-left: 10%;
 }
 
 b{

@@ -105,7 +105,7 @@ def search_park_with_string(p):
     return leftover
 
 def get_park_with_dbid(dbid):
-	results = Stateparks.objects.get(dbid=str(dbid))
+	results = Stateparks.objects.get(id=str(dbid))
 	results.image = re.sub('https','https:',str(results.image))
 	return results
 
@@ -361,7 +361,7 @@ def plant_profile_view(request):
         if not p == '':
             park_ids.add(p)
 
-    park_list = Stateparks.objects.filter(dbid__in=park_ids)
+    park_list = Stateparks.objects.filter(id__in=park_ids)
 
     for park in park_list:
         park.image = park.image.strip()
@@ -394,7 +394,7 @@ def plant_profile_view(request):
 def eco_profile_view(request):
     template = loader.get_template('plantsite/html/eco_profile.html')
     dbid = request.GET.get('id')
-    prof = PlantCsvEcoregions.objects.get(dbid=str(dbid))
+    prof = PlantCsvEcoregions.objects.get(id=str(dbid))
     prof.image = prof.image.strip() #remove leading whitespace ERICK
    # keys = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
     #values = ['PINEYWOODS', 'GULF PRAIRIES AND MARSHES', 'POST OAK SAVANNAH', 'BLACKLAND PRAIRIES', 'CROSS TIMBERS AND PRAIRIES', 'SOUTH TEXAS PLAINS', 'EDWARDS PLATEAU', 'ROLLING PLAINS', 'HIGH PLAINS', 'TRANS-PECOS']
@@ -421,7 +421,7 @@ def eco_profile_view(request):
         if not p == '':
             park_ids.add(p)
 
-    park_list = Stateparks.objects.filter(dbid__in=park_ids)
+    park_list = Stateparks.objects.filter(id__in=park_ids)
 
     for park in park_list:
         park.image = park.image.strip()
