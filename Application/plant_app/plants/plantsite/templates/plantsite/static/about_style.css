@@ -18,13 +18,13 @@ p{
 	color: #000000;
 	font-family: Arial;
 	font-size: 250%;
-	margin: 16px;
+	margin-left: 16px;
 }
 
 b{
 
 	color: #4f4f2f;
-	margin: 14px;
+	margin: 5px;
 	font: 250% 'Fjalla One', Helvetica, sans-serif;
 }
 
@@ -156,11 +156,28 @@ img{
 }
 
 
-#sources{
+#statistics{
 	background-color: #FFFFFF;
-	margin-top:10px;
+	margin-top:20%;
+	text-align: center;
 	
 }
+
+#sources{
+	background-color: #FFFFFF;
+	margin-top:20%;	
+}
+
+
+
+#link{
+	  font: 35px/1.2 'Fjalla One', sans-serif;
+	  font-weight:800;
+	  color: #238e23;
+	  margin-left: 5%;
+	  
+}
+
 
 #mainpage_link{
 	color: black;

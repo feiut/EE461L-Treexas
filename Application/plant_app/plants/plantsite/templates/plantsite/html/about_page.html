@@ -392,23 +392,32 @@
 
 
 
-	<div id="sources">
-	<h4>Statistics</h4>
-	<p>Total number of commits: {{total_c}}</p>
-	<p>Total number of issues: {{total_i}}</p>
-	<p>Total number of unit tests: 0</p>
-	<br>
 
-	<h4> Datasources </h4>
-	<a href='//www.txsmartscape.com' >    Texas Plant Source </a>
+	<div id="statistics">
+	<h4 id="people" style="text-align: center">Statistics</h4>
+	<br>
+	<br>
+	<br>
+	<p id="name" >Total number of commits: {{total_c}}</p>
+	<br>
+	<p id="name" >Total number of issues: {{total_i}}</p>
+	<br>
+	<p id="name" >Total number of unit tests: 0</p>
+	<br>
+	</div>
+
+
+	<div id="sources">
+	<h4 id="people" style="text-align:center; margin-top: 20%"> Datasources </h4>
+	<a href='//www.txsmartscape.com' id="link" >    Texas Plant Source </a>
 	<p> This datasource was scraped using the HTMLParser and BeautifulSoup Python packages. Information about each plant, such as botanical name and growing conditions, were extracted from each plant</p>
-	<a href='//www.tpwd.texas.gov'>    Texas State Park and Ecoregion Datasource </a>
+	<a href='//www.tpwd.texas.gov' id="link">    Texas State Park and Ecoregion Datasource </a>
 	<p> This datasource was scraped using the HTMLParser and BeautifulSoup Python packages. Latitude and longitude information was scraped for the state parks. Descriptions and native plants were scraped for each of the texan ecoregions</p>
 	<br>
-	<a href='https://www.gbif.org'> Global Biodiversity Information Facility </a>
+	<a href='https://www.gbif.org' id="link"> Global Biodiversity Information Facility </a>
 	<p>This datasource was used to obtain latitude and longitude information for plants using Selenium in python.</p>
 	<br>
-	<a href='http://hicksenvplantdatabase.com'>Texas Plant Information Database</a>
+	<a href='http://hicksenvplantdatabase.com' id="link">Texas Plant Information Database</a>
 	<p>This datasource was scraped using Selenium in python to obtain more plant information. It was also used to give each statepark and plant
 a ecoregion if it applied also using Selenium.</p>
 	<br>
