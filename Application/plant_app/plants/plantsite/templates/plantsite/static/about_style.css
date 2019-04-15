@@ -157,15 +157,18 @@ img{
 
 
 #statistics{
-	background-color: #FFFFFF;
 	margin-top:20%;
 	text-align: center;
 	
 }
 
 #sources{
-	background-color: #FFFFFF;
 	margin-top:20%;	
+	font-family: Arial;
+	font-size: 110%;
+	margin-left:5%;
+	margin-right:5%;
+	text-align: left;
 }
 
 
@@ -174,8 +177,12 @@ img{
 	  font: 35px/1.2 'Fjalla One', sans-serif;
 	  font-weight:800;
 	  color: #238e23;
-	  margin-left: 5%;
-	  
+	  margin-top: 5%;
+}
+
+#tools{
+	 text-align:center;
+
 }
 
 
