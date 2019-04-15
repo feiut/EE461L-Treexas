@@ -2,46 +2,43 @@
 {% load static %}
 <html>
 <head>
+
+
 	<link rel="shortcut icon" type="image/png" href="{% static 'browser_icon.png' %}">
 	<link rel="stylesheet" href="{% static "about_style.css" %}">
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	
 	<!-- jQuery library -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<!-- Latest compiled JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	
+	
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	 <!-- Required meta tags -->
-	    <meta charset="utf-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	 <!-- Latest compiled and minified CSS -->
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-		 <!-- Latest compiled and minified CSS -->
-		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-  	<link href='http://fonts.googleapis.com/css?family=Archivo' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Archivo' rel='stylesheet' type='text/css'>
   	<link href='http://fonts.googleapis.com/css?family=Archivo:bold' rel='stylesheet' type='text/css'>
   	<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
-
-
-	  	<link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
-		<!--link rel="stylesheet" href="{% static 'list_page_style.css' %}"-->
-
-		<script type="text/javascript">
+  	<link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="{% static 'list_page_style.css' %}">
+	<script type="text/javascript">
 		function img_over(item){
-			item.style.borderColor = "#AFBEFF";
+			item.style.borderColor = "#57BC90";
 		}
 		function img_out(item){
 			item.style.borderColor="#FFFFFF";
 		}
-		</script>
+
+	</script>
 
 </head>
 <body>
 
-	<nav class="navbar navbar-expand-lg navbar-dark navbar-fixed-top" style="background-color:rgba(0,0,0,0.35);">
+	<nav class="navbar navbar-expand-sm navbar-custom navbar-light navbar-fixed-top" style="background-color: #A5A5Af">
 	  <div class="container-fluid">
 
 	    <div class="navbar-header">
@@ -58,7 +55,7 @@
 	        </li>
 	        <li class="nav-item active"><a class = "nav-link" href="/about">About Us</a>
 	        </li>
-		<li class="nav-item active"><a class="nav-link" href="" onclick="window.history.go(-1); return false;"> Back </a>
+	     	<li class="nav-item active"><a class="nav-link" href="" onclick="window.history.go(-1); return false;"> Back </a>
 	     	</li>
 	      </ul>
 	    </div>
@@ -71,7 +68,7 @@
 <div id="header">
 	<h1 id="title" class="text-center"> About Us </h1>
 	<br>
-	<h2 id="team-name"  class="text-center"> Owl Team </h2>
+	<h2 class="team-name"  class="text-center"> Owl Team </h2>
 	<br>
 	<br>
 	<br>
@@ -85,16 +82,16 @@
 
 <br>
 
-<div style="margin-top: 70%">
-	<h4 id="people" class="text-center"> Group Members </h4>
+<div style="margin-top: 70%; margin-left: 0 ; margin-right: 0;">
+	<h4 class="people" class="text-center"> Group Members </h4>
 	<br>
 	<br>
-	<h2 id="team-name"  class="text-center"> Owl Team </h2>
+	<h2 class="team-name"  class="text-center"> Owl Team </h2>
 	<br>
 	<br>
 	<br>
 	<br>
-	<div id="teammates" class="container">
+	<div class="teammates" class="container">
 	<div class="row">
 	<div class="col-md-3">
 	<img src="{% static "erick_img.jpg" %}" class="photos">
@@ -102,7 +99,7 @@
 	<div class="col-md-6">
 	<br>
 	<br>
-	<p id="name"> Eric Cen</p>
+	<p class="name"> Eric Cen</p>
 	<br>
 	<br>
 	
@@ -138,7 +135,7 @@
 
 
 
-	<div id="teammates" class="container">
+	<div class="teammates" class="container-fluid">
 	<div class="row">
 	<div class="col-md-3">
 	<img src="{% static "eric_img.jpg" %}" class="photos">
@@ -146,7 +143,7 @@
 	<div class="col-md-6">
 	<br>
 	<br>
-	<p id="name"> Erick Machado</p>
+	<p class="name"> Erick Machado</p>
 	<br>
 	<br>
 		<b>Major:</b><p> Electrical Engineering</p>
@@ -179,7 +176,7 @@
 
 
 
-	<div id="teammates" class="container">
+	<div class="teammates" class="container-fluid">
 	<div class="row">
 	<div class="col-md-3">
 	<img src="{% static "connor_img.jpg" %}" class="photos">
@@ -187,7 +184,7 @@
 	<div class="col-md-6">
 	<br>
 	<br>
-	<p id="name"> Connor Fritz</p>
+	<p class="name"> Connor Fritz</p>
 	<br>
 	<br>
 		<b>Major:</b><p> Electrical Engineering</p>
@@ -222,7 +219,7 @@
 
 
 
-	<div id="teammates" class="container">
+	<div class="teammates" class="container">
 	<div class="row">
 	<div class="col-md-3">
 	<img src="{% static "hao_img.jpg" %}" class="photos">
@@ -230,7 +227,7 @@
 	<div class="col-md-6">
 	<br>
 	<br>
-	<p id="name"> Hao Yao</p>
+	<p class="name"> Hao Yao</p>
 	<br>
 	<br>
 		<b>Major:</b><p> Civil Engineering</p>
@@ -264,7 +261,7 @@
 
 
 
-	<div id="teammates" class="container">
+	<div class="teammates" class="container">
 	<div class="row">
 	<div class="col-md-3">
 	<img src="{% static "chaz_img.jpg" %}" class="photos">
@@ -272,7 +269,7 @@
 	<div class="col-md-6">
 	<br>
 	<br>
-	<p id="name"> Chaz Li</p>
+	<p class="name"> Chaz Li</p>
 	<br>
 	<br>
 		<b>Major:</b><p> Electrical Engineering</p>
@@ -307,7 +304,7 @@
 
 
 
-	<div id="teammates" class="container">
+	<div class="teammates" class="container">
 	<div class="row">
 	<div class="col-md-3">
 	<img src="{% static "xiyu_img.jpg" %}" class="photos">
@@ -315,7 +312,7 @@
 	<div class="col-md-6">
 	<br>
 	<br>
-	<p id="name"> Xiyu Wang</p>
+	<p class="name"> Xiyu Wang</p>
 	<br>
 	<br>
 		<b>Major:</b><p> Electrical Engineering</p>
@@ -349,7 +346,7 @@
 
 
 
-	<div id="teammates" class="container">
+	<div class="teammates" class="container">
 	<div class="row">
 	<div class="col-md-3">
 	<img src="{% static "fei_img.jpg" %}" class="photos">
@@ -357,7 +354,7 @@
 	<div class="col-md-6">
 	<br>
 	<br>
-	<p id="name"> Fei He</p>
+	<p class="name"> Fei He</p>
 	<br>
 	<br>
 		<b>Major:</b><p> Electrical Engineering</p>
@@ -394,21 +391,21 @@
 
 
 	<div id="statistics">
-	<h4 id="people" style="text-align: center">Statistics</h4>
+	<h4 class="people" style="text-align: center">Statistics</h4>
 	<br>
 	<br>
 	<br>
-	<p id="name" >Total number of commits: {{total_c}}</p>
+	<p class="name" >Total number of commits: {{total_c}}</p>
 	<br>
-	<p id="name" >Total number of issues: {{total_i}}</p>
+	<p class="name" >Total number of issues: {{total_i}}</p>
 	<br>
-	<p id="name" >Total number of unit tests: 0</p>
+	<p class="name" >Total number of unit tests: 0</p>
 	<br>
 	</div>
 
 
 	<div id="sources">
-	<h4 id="people" style="text-align:center; margin-top: 20%"> Datasources </h4>
+	<h4 class="people" style="text-align:center; margin-top: 20%"> Datasources </h4>
 	<br>
 	<br>
 	<br>
@@ -430,21 +427,21 @@ a ecoregion if it applied also using Selenium.</p>
 	</div>
 
 	<br>
-	<h4 id="people" style="text-align:center; margin-top: 20%">Tools</h4>
+	<h4 class="people" style="text-align:center; margin-top: 20%">Tools</h4>
 	<br>
 	<br>
 	<br>
-	<p id="tools"> We used the Django web framework, along with Python to build our app.</p>
-	<p  id="tools"> We used HTML, CSS and some very simple Javascript to build templates for our web pages. </p>
-	<p  id="tools"> We used Google Cloud Platform to deploy our app, and acquired our domain name from namecheap.com. </p>
-	<p id="tools"> We also used MySQL as our database, and stored our information on Cloud SQL, from Google Cloud Platform. </p>
-	<p id="tools"> Data scraping was performed using the beautifulsoup Python package, while RESTful APIs were used when they were available. </p>
-	<p id="tools"> We used Django to build our API, then used Postman to test it. </p>
-	<p id="tools"> We also used Selenium for UI testing, Mocha for JavaScript testing and Django test for python testing. </p>
+	<p class="tools"> We used the Django web framework, along with Python to build our app.</p>
+	<p  class="tools"> We used HTML, CSS and some very simple Javascript to build templates for our web pages. </p>
+	<p  class="tools"> We used Google Cloud Platform to deploy our app, and acquired our domain name from namecheap.com. </p>
+	<p class="tools"> We also used MySQL as our database, and stored our information on Cloud SQL, from Google Cloud Platform. </p>
+	<p class="tools"> Data scraping was performed using the beautifulsoup Python package, while RESTful APIs were used when they were available. </p>
+	<p class="tools"> We used Django to build our API, then used Postman to test it. </p>
+	<p class="tools"> We also used Selenium for UI testing, Mocha for JavaScript testing and Django test for python testing. </p>
 	<br>
 
 	<div style="text-align: center;margin-top: 20%">
-	<h4 id="people"> Github Repo Link </h4>
+	<h4 class="people"> Github Repo Link </h4>
 	<br>
 	<br>
 	<br>
@@ -452,7 +449,7 @@ a ecoregion if it applied also using Selenium.</p>
 	<br>
 	</div>
 
-	<div id="people" style="text-align:center; margin-top: 30%">
+	<div class="people" style="text-align:center; margin-top: 30%">
 	<a href='/'> back to home </a>
 	<br>
 	</div>

@@ -38,36 +38,21 @@ img{
 }
 
 .navbar-nav {
-	color: #57BC90;
-	font: 160% 'Fjalla One', Helvetica, sans-serif;
-}
-
-/* change the brand and text color */
-.navbar-custom .navbar-brand,
-.navbar-custom .navbar-text {
-    color: #FFFFFF;
-}
-/* change the link color */
-.navbar-custom .navbar-nav .nav-link {
-    color: #FFFFFF;
-}
-/* change the color of active or hovered links */
-.navbar-custom .nav-item.active .nav-link,
-.navbar-custom .nav-item:focus .nav-link,
-.navbar-custom .nav-item:hover .nav-link {
-    color: #FFFFFF;
+	color: #EFEFEF;
+	font: 160% 'Merienda One', Helvetica, sans-serif;
 }
 
 .navbar-brand {
-  color: #FFFFFF;
-  font: 250% 'Fjalla One', Helvetica, sans-serif;
+  color: #EFEFEF;
+  padding-top: 0;
+  padding-left: 10px;
+  font: 250% 'Merienda One', Helvetica, sans-serif;
 }
 
 .navbar-nav > li > a:hover, .navbar-brand:hover, .navbar-default .navbar-nav > li > a:focus {
-    background-color: #57bc90;
-    color: #57BC90;
+    background-color: #A9A9a9;
+    color: #EFEFEF;
 }
-
 
 
 #title{
@@ -85,7 +70,7 @@ img{
 
 }
 
-#team-name{
+.team-name{
 	  font: 30px/1.2 'Fjalla One', sans-serif;
 	  font-weight:800;
 	  color: #238e23;
@@ -107,7 +92,7 @@ img{
 }
 
 
-#people{
+.people{
 	  font: 80px/1.2 'Fjalla One', sans-serif;
 	  font-weight:800;
 	  color: #57bc90;
@@ -117,7 +102,7 @@ img{
 }
 
 
-#teammates{
+.teammates{
 	margin: left;
 	padding-left: 0%;
 	text-align: left;
@@ -129,7 +114,7 @@ img{
 }
 
 
-#name{
+.name{
 	  font: 50px/1.2 'Fjalla One', sans-serif;
 	  font-weight:800;
 	  color: #238e23;
@@ -180,7 +165,7 @@ img{
 	  margin-top: 5%;
 }
 
-#tools{
+.tools{
 	 text-align:center;
 
 }
