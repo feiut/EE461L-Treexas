@@ -15,7 +15,7 @@
     <link href='http://fonts.googleapis.com/css?family=Archivo:bold' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
-    
+
   <style>
   @keyframes bg {
 	0%{
@@ -46,8 +46,25 @@
 
   </style>
 
-  <!--script src="http://codeorigin.jquery.com/jquery-2.0.3.min.js"></script>
+  <script src="http://codeorigin.jquery.com/jquery-2.0.3.min.js"></script>
   <script type="text/javascript">
+  var bgImageArray = [1,2,3,4]
+  bgImageArray.forEach(function(img){
+    if(item==1){new Image().src = {% static "background_mp.jpg"%}}
+    if(item==2){new Image().src = {% static "background_mp2.jpg"%}}
+    if(item==3){new Image().src = {% static "background_mp3.jpg"%}}
+    if(item==4){new Image().src = {% static "background_mp6.jpg"%}}
+  })
+function backgroundSequence(){
+  window.ClearTimeout();
+  var k = 0;
+  for (i=0; i< bgImageArray.length;i++){
+    setTimeout(function(){
+      document.doument.documentElement.style.background
+    })
+  }
+}
+
     window.onload = function () {
      var imageFile = ["('{% static "background_mp.jpg"%}')", "('{% static "background_mp2.jpg"%}')",
       "('{% static "background_mp3.jpg"%}')", "('{% static "background_mp4.jpg"%}')"];
@@ -59,18 +76,11 @@
          $('body').css('background-image', 'url' + imageFile[currentIndex++]);
      }, 3000;)
     };
-</script-->
+</script>
 
 <head>
-<body class="bg">
+<body class="bg" id="mainpage">
 
-  <!--div id="bg">
-  style="background-image: url('{% static "background_mp2.jpg"%}')"
-    <img class="bg1" src= '{% static "background_mp2.jpg"%}'/>
-    <img class="bg2" src= '{% static "background_mp.jpg"%}'/>
-    <img class="bg3" src= '{% static "background_mp3.jpg"%}'/>
-    <img class="bg4" src= '{% static "background_mp4.jpg"%}'/>(147,193,120,0.5)
-  </div-->
 
 	<nav class="navbar navbar-expand-lg navbar-fixed-top" style="background-color:rgba(0,0,0,0.35);">
 	  <div class="container-fluid">
