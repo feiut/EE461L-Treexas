@@ -161,3 +161,96 @@ img{
     margin: 20px;
 
 }
+
+/*
+Added to enable "overflow-y"
+*/
+
+#plantlist{
+	border-left: 1px solid;
+	color: #cccccc;
+}
+#filters{
+	border-top: 1px;
+	color:#a6a6a6;
+}
+
+.pfilter{
+	color: #FFFFFF;
+	font-family: Arial;
+	font-size: 120%;
+	margin: 20px;
+	width: 100%;
+}
+.horizontal-align{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.imgentry{
+	object-fit: cover;
+	width: 250px;
+	height: 250px;
+	border-radius: 8px;
+	margin: 20px;
+}
+.plant_list{
+	height: 45em;
+	overflow-y: scroll;
+}
+
+.glyphicon-leaf{
+font-size: 28px;
+}
+
+/* style icon */
+.input-group .glyphicon-search {
+position: absolute;
+padding: 20px;
+pointer-events: none;
+left: 0px;
+font-size: 15px;
+}
+
+/* add padding  */
+.input-group input { padding-left: 50px;}
+
+.btn-default{
+width: 100px;
+padding: 8.5px;
+background: rgba(255, 255, 255, 0.7);
+}
+
+.form-control{
+padding: 25px;
+font-size: 20px;
+background: rgba(255, 255, 255, 0.7);
+}
+#page_footer{
+	position: relative;
+	width:80%
+	left: 0;
+}
+#page_goto span{
+		padding: 1px 6px 1px 15px;
+}
+#page_goto input{
+		border: none;
+		padding: .45em;
+		width: 2em;
+		text-align: center;
+}
+
+.card-style{
+	border-color : #77C9D4;
+	border-width : 10px;
+}
+
+.prevpage{
+	color: black;
+}
+.nextpage{
+	color: black;
+}

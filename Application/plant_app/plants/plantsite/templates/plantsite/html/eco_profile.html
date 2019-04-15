@@ -16,7 +16,9 @@
   	<link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet'type='text/css'>
 
-	<link rel="stylesheet" href="{% static "entry_style.css" %}">
+<!-- Modified to enable "overflow-y"-->
+	<link rel="stylesheet" href="{% static "entry_style_modified.css" %}">
+<!-- -->
 
 	<script type="text/javascript">
 		function img_over(item){
@@ -166,14 +168,13 @@
     					<span class="sr-only" style="color:#57bc90">Next</span>
 		        </a>
 		    </div>
-		
+
 
 	</div>
 
 	<br>
 	<br>
-	<div class="d-flex justify-content-between">
-
+	<!-- <div class="d-flex justify-content-between">
 
 		<div class="col-xs-6">
 			<div class="row" >
@@ -192,7 +193,6 @@
 			</div>
 		</div>
 
-	
 		<div class="col-xs-1">
 			<h3 style="color:#FFFFFF">nothing</h3>
 		</div>
@@ -215,10 +215,52 @@
 		</div>
 
 
+	</div> -->
+	<br>
+	<br>
+
+	<div class="d-flex justify-content-between">
+	<div class="plant_list col" data-spy="scroll" id="plantlist">
+		<div class="d-flex flex-row flex-wrap">
+			{% for plant in plants %}
+			<div class="card col-sm-4 px-4 card-style flex-wrap" onmouseover="img_over(this)" onmouseout="img_out(this)">
+				<a href="/plant_profile/?id={{plant.id}}">
+					<img class="card-img img-center"src="{{plant.image}}">
+				</a>
+				<div class="card-body">
+					<h3 class="card-text text-center" >{{plant.name}}</h3>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+
+	<div class="col-xs-1">
+		<h3 style="color:#FFFFFF">nothing</h3>
+	</div>
+
+	<div class="plant_list col" data-spy="scroll" id="plantlist">
+		<div class="d-flex flex-row flex-wrap">
+			{% for park in park_list %}
+			<div class="card col-sm-4 px-4 card-style flex-wrap" onmouseover="img_over(this)" onmouseout="img_out(this)">
+				<a href="/park_profile/?id={{park.dbid}}">
+					<img class="card-img img-center"src="{{park.image}}">
+				</a>
+				<div class="card-body">
+					<h3 class="card-text text-center" >{{park.name}}</h3>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
 	</div>
 
 </div>
 
+<br>
+<br>
+<br>
+<br>
 	  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
 	  <script src="../../assets/js/vendor/popper.min.js"></script>
