@@ -278,7 +278,7 @@ def plant_type_list(request):
     season_field = request.GET.get('season')
     native_field = request.GET.get('native')
     lightreq_field = request.GET.get('lightreq')
-    get_par = {'1': str(planttype_field), '2': str(water_demand_field), '3': str(plant_form_field), '4':str(season_field), '5':str(native_field), '6':str(lightreq_field)}
+
     if not planttype_field:
         if '1' in request.COOKIES:
             planttype_field = request.COOKIES['1']
@@ -288,6 +288,7 @@ def plant_type_list(request):
             native_field = request.COOKIES['5']
             lightreq_field = request.COOKIES['6']
 
+    get_par = {'1': str(planttype_field), '2': str(water_demand_field), '3': str(plant_form_field), '4':str(season_field), '5':str(native_field), '6':str(lightreq_field)}
     names = filter_plants_with_parameters(planttype_field, water_demand_field, plant_form_field, season_field, native_field, lightreq_field)
     names = fix_plant_defualt(names)
     page = request.GET.get('page')
