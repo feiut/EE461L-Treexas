@@ -14,8 +14,9 @@ h4{
 p{
 	color: #000000;
 	font-family: Arial;
-	font-size: 250%;
+	font-size: 200%;
 	margin-left: 10%;
+	padding-left: 15%;
 }
 
 b{
@@ -73,7 +74,7 @@ img{
 	  color: #238e23;
 	  position: center;
 	  left: 50%;
-	  
+
 }
 
 #header{
@@ -85,7 +86,7 @@ img{
 	width: 1500px;
 	transform: translate(-50%, -50%);
 
-	
+
 }
 
 
@@ -117,11 +118,16 @@ img{
 	  color: #238e23;
 	  position: center;
 	  left: 50%;
-	  
+
+}
+
+div i{
+	display: inline-block;
+	width: 100%
 }
 
 .photos{
-	
+
 	align-items: center;
 	width: 90%;
 	height: 80%;
@@ -142,11 +148,11 @@ img{
 #statistics{
 	margin-top:20%;
 	text-align: center;
-	
+
 }
 
 #sources{
-	margin-top:20%;	
+	margin-top:20%;
 	font-family: Arial;
 	font-size: 110%;
 	margin-left:5%;
