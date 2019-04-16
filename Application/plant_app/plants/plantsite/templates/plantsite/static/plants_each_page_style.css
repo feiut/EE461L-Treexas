@@ -39,7 +39,7 @@ p{
 	padding: 5px;
 	width: 70%;
 	margin: auto;
-	overflow: auto;
+	overflow: scroll;
 
 
 }
@@ -71,14 +71,14 @@ p{
 
 
 
-.text-plant-each {
-	height: 400px;
-	width: 600px;
+.plant-info {
+	height: 50%;
+	width: 50%;
 	word-wrap: break-word;
 	display: inline-block;
 	padding-left: 10px;
 	padding-right:10px;
-  text-align: left;
+  	text-align: left;
 	color: #000000;
 	font-family: Arial;
 	font-size: 160%;
