@@ -10,8 +10,10 @@ body{
 }
 
 .sections{
+	width: 400px;
+	white-space: break-all;
 	font-weight: bold;
-	font-family: "Georgia",;	
+	font-family: "Georgia";
 }
 
 
@@ -22,4 +24,3 @@ body{
 	text-align: left;
 
 }
-

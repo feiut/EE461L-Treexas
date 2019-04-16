@@ -214,6 +214,11 @@ left: 0px;
 font-size: 15px;
 }
 
+.text-plant-each {
+width: 1000px;
+word-wrap: break-word;
+}
+
 /* add padding  */
 .input-group input { padding-left: 50px;}
 
