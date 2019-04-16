@@ -215,9 +215,11 @@ font-size: 15px;
 }
 
 .text-plant-each {
+height: 20px;
 width: 90%;
 word-wrap: break-word;
-overflow: scroll;
+overflow-y: scroll;
+overflow-x: scroll;
 }
 
 /* add padding  */
