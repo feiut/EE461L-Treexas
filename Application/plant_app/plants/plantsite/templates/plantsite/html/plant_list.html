@@ -103,58 +103,59 @@
 				<!-- back -->
 				<button class="btn btn-inline-secondary" href="plant_list/" onclick="window.history.go(-1); return false;">Back</button>
 				<form method="GET">
+
+
+
+
 					<div class="input-group">
 						<p class="pfilter">Plant Type</p>
 							<select name="planttype" class="custom-select">
-								<option value ="AllType" selected>All Type</option>
-								<option value =" Shrub">Shrub</option>
-								<option value =" Shade Tree"> Shade Tree</option>
-								<option value=" Groundcover"> Groundcover</option>
-								<option value=" Ornamental Grass">Ornamental Grass</option>
+								<option value ="AllType" {%if get_par.1 == 'AllType'%} selected {%endif%}>All Type</option>
+								<option value =" Shrub" {%if get_par.1 == ' Shrub'%} selected {%endif%}>Shrub</option>
+								<option value =" Shade Tree" {%if get_par.1 == ' Shade Tree'%} selected {%endif%}> Shade Tree</option>
+								<option value=" Groundcover" {%if get_par.1 == ' Groundcover'%} selected {%endif%}> Groundcover</option>
+								<option value=" Ornamental Grass" {%if get_par.1 == ' Ornamental Grass'%} selected {%endif%}>Ornamental Grass</option>
 							</select>
 						<br>
 						<p class="pfilter">Water Demand</p>
 							<select name="waterdemand" class="custom-select">
-								<option value ="AllType" selected>All Type</option>
-								<option value =" Medium">Medium</option>
-								<option value =" Low">Low</option>
-								<option value=" Very Low">Very Low</option>
-								<option value=" Low, Medium"> Low, Medium</option>
-								<option value=" Medium, High"> Medium, High</option>
+								<option value ="AllType" {%if get_par.2 == 'AllType'%} selected {%endif%}>All Type</option>
+								<option value =" Medium" {%if get_par.2 == ' Medium'%} selected {%endif%}>Medium</option>
+								<option value =" Low" {%if get_par.2 == ' Low'%} selected {%endif%}>Low</option>
+								<option value=" Very Low" {%if get_par.2 == ' Very Low'%} selected {%endif%}>Very Low</option>
 							</select>
 						<br>
 						<p class="pfilter">Plant Form</p>
 							<select name="plantform" class="custom-select">
-								<option value ="AllType" selected>All Type</option>
-								<option value =" Upright, Rounded"> Upright, Rounded</option>
-								<option value =" Spreading"> Spreading</option>
-								<option value=" Rounded"> Rounded</option>
-								<option value=" Upright"> Upright</option>
-								<option value=" Pyramidal"> Pyramidal</option>
+								<option value ="AllType" {%if get_par.3 == 'AllType'%} selected {%endif%}>All Type</option>
+								<option value =" Spreading" {%if get_par.3 == ' Spreading'%} selected {%endif%}> Spreading</option>
+								<option value=" Rounded" {%if get_par.3 == ' Rounded'%} selected {%endif%}> Rounded</option>
+								<option value=" Upright" {%if get_par.3 == ' Upright'%} selected {%endif%}> Upright</option>
+								<option value=" Pyramidal" {%if get_par.3 == ' Pyramidal'%} selected {%endif%}> Pyramidal</option>
 							</select>
 						<br>
 						<p class="pfilter">Season</p>
 							<select class="custom-select" name="season">
-					      <option value ="AllType" selected>All Type</option>
-					      <option value =" Spring"> Spring</option>
-					      <option value =" Summer"> Summer</option>
-					      <option value=" Fall"> Fall</option>
-					      <option value=" Winter"> Winter</option>
+					      <option value ="AllType" {%if get_par.4 == 'AllType'%} selected {%endif%}>All Type</option>
+					      <option value =" Spring" {%if get_par.4 == ' Spring'%} selected {%endif%}> Spring</option>
+					      <option value =" Summer" {%if get_par.4 == ' Summer'%} selected {%endif%}> Summer</option>
+					      <option value=" Fall" {%if get_par.4 == ' Fall'%} selected {%endif%}> Fall</option>
+					      <option value=" Winter" {%if get_par.4 == ' Winter'%} selected {%endif%}> Winter</option>
 							</select>
 	   				<br>
 						<p class="pfilter">Origin</p>
 							<select class="custom-select" name="native">
-								<option value ="AllType" selected>All Type</option>
-					      <option value =" Adapted"> Adapted</option>
-					      <option value =" Native"> Native</option>
+								<option value ="AllType" {%if get_par.5 == 'AllType'%} selected {%endif%}>All Type</option>
+					      <option value =" Adapted" {%if get_par.5 == ' Adapted'%} selected {%endif%}> Adapted</option>
+					      <option value =" Native" {%if get_par.5 == ' Native'%} selected {%endif%}> Native</option>
 							</select>
 	   				<br>
 						<p class="pfilter">Light Requirement</p>
 							<select class="custom-select" name="lightreq">
-								<option value ="AllType" selected>All Type</option>
-								<option value =" Full Sun"> Full Sun</option>
-								<option value =" Partial Shade"> Partial Shade</option>
-								<option value =" Full Shade"> Full Shade</option>
+								<option value ="AllType" {%if get_par.6 == 'AllType'%} selected {%endif%}>All Type</option>
+								<option value =" Full Sun" {%if get_par.6 == ' Full Sun'%} selected {%endif%}> Full Sun</option>
+								<option value =" Partial Shade" {%if get_par.6 == ' Partial Shade'%} selected {%endif%}> Partial Shade</option>
+								<option value =" Full Shade" {%if get_par.6 == ' Full Shade'%} selected {%endif%}> Full Shade</option>
 							</select>
 						<br>
 						<br>
