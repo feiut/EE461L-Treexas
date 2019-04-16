@@ -20,6 +20,12 @@
 		
 
 		<script type="text/javascript">
+			function parklist() {
+				var x = document.getItemById('parks');
+				x.style.display="block"; 
+
+			}
+
 			function img_over(item){
 				item.style.borderColor = "#57BC90";
 				item.style.borderWidth = "4px";
@@ -198,6 +204,7 @@
 			        </a>
 			    </div>
 
+
 			    <div id="myCarousel2" class="carousel slide" data-ride="carousel">
 			        <!-- Wrapper for carousel items -->
 			        <div class="carousel-inner">
@@ -234,12 +241,16 @@
 
 
 		</div>
+		<div style="text-align: center">
+			<button id="show_parks"   onclick="parklist();">Show all parks </button>
+			<button id="show_eco"  onclick="ecolist();">Show all eco-regions</button>
+		</div>
 
 		<br>
 		<br>
 
 		<div class="d-flex justify-content-between">
-			<div class="plant_list col" data-spy="scroll" id="plantlist">
+			<div id="parks" style="display:none"class="plant_list col" data-spy="scroll" id="plantlist">
 				<div class="d-flex flex-row flex-wrap">
 					{% for park in park_list %}
 					<div class="card col-sm-4 px-4 card-style flex-wrap" onmouseover="img_over(this)" onmouseout="img_out(this)">
@@ -258,7 +269,7 @@
 			<h3 style="color:#FFFFFF">nothing</h3>
 		</div>
 
-		<div class="plant_list col" data-spy="scroll" id="plantlist">
+		<div id="eco_region" style="display:none"class="plant_list col" data-spy="scroll" id="plantlist">
 			<div class="d-flex flex-row flex-wrap">
 				{% for eco in eco_list %}
 				<div class="card col-sm-4 px-4 card-style flex-wrap" onmouseover="img_over(this)" onmouseout="img_out(this)">
