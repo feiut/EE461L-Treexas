@@ -215,8 +215,9 @@ font-size: 15px;
 }
 
 .text-plant-each {
-width: 1000px;
+width: 90%;
 word-wrap: break-word;
+overflow: scroll;
 }
 
 /* add padding  */
