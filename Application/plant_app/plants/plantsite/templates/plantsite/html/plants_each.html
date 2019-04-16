@@ -15,9 +15,9 @@
 
 	  	<link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet'type='text/css'>
-
-		<link rel="stylesheet" href='{% static "entry_style_modified.css" %}'>
 		<link rel="stylesheet" href='{% static "plants_each_page_style.cc" %}'>
+		<link rel="stylesheet" href='{% static "entry_style_modified.css" %}'>
+		
 
 		<script type="text/javascript">
 			function img_over(item){
@@ -33,7 +33,7 @@
 	</head>
 
 <!--<link rel = "stylesheet" href="SubPage.css">-->
-		<div class="container-fluid">
+	<div class="container-fluid">
 			<div class="row">
 				<div class="col">
 						<nav class="navbar navbar-expand-sm navbar-custom navbar-light navbar-fixed-top" style="background-color: #A5A5Af">
@@ -59,112 +59,103 @@
 						</nav>			
 				</div>
 			</div>
-		
-			<br>
-			<br>
-			<br>
-
-			<div class="row">
+		<br>
+		<br>
+		<br>
+		<div class="row">
 				<div class="col">
 					<h1 class="title1">{{profile.name}}</h1>
 				</div>
 			</div>
 
-			<div class="row">
-				<div class="col-4">
-					<div class="text-center">
-						<img class="img imgstyle-large-square-like" src="{{profile.image}}">
-					</div>
-				</div>
-			<div class="col-8">
-				<div id="image-and-info">
-					<div  style="height: 50px; overflow-y: scroll; overflow-x:scroll">
-						<table class="plant-info" style="color: #57bc90; margin:auto">
-							<tr>
-								<td><font size=4>Common Name:</font></td>
-								<td><font size=4>{{profile.nickname}}</font></td>
-		  					</tr>
-							<tr>
-								<td><font size=4>Botanical Name:</font></td>
-								<td><font size=4>{{profile.name}}</font></td>
-							</tr>
-							<tr>
-								<td><font size=4>Plant Type:</font></td>
-								<td><font size=4>{{profile.planttype}}</font></td>
-							</tr>
-							<tr>
-								<td><font size=4>Growing Season:</font></td>
-								<td><font size=4>{{profile.season}}</font></td>
-							</tr>
-							<tr>
-								<td><font size=4>Light Requirement:</font></td>
-								<td><font size=4>{{profile.lightrequirement}}</font></td>
-							</tr>
-							<tr>
-								<td><font size=4>Water Demand:</font></td>
-								<td><font size=4>{{profile.waterdemand}}</font></td>
-							</tr>
-							<tr>
-								<td><font size=4>Soil Requirement</font></td>
-								<td><font size=4>{{profile.soil}}</font></td>
-							</tr>
-							<tr>
-								<td><font size=4>Land Scape Use:</font></td>
-								<td><font size=4>{{profile.landscapeuse}}</font></td>
-							</tr>
-							<tr>
-								<td><font size=4>Wild Life Value:</font></td>
-								<td><font size=4>{{profile.wildlifevalue}}</font></td>
-							</tr>
-							<tr>
-								<td><font size=4>Ornamental Value:</font></td>
-								<td><font size=4>{{profile.ornamentalvalue}}</font></td>
-							</tr>
-							<tr>
-								<td><font size=4>Native/Adapted:</font></td>
-								<td><font size=4>{{profile.nativeadapted}}</font></td>
-							</tr>
-							<tr>
-								<td><font size=4>Season:</font></td>
-								<td><font size=4>{{profile.season}}</font></td>
-							</tr>
-							<tr>
-								<td><font size=4>Deciduous Evergreen:</font></td>
-								<td><font size=4>{{profile.deciduousevergreen}}</font></td>
-							</tr>
-							<tr>
-								<td><font size=4>Plant Form:</front></td>
-								<td><font size=4>{{profile.plantform}}</front></td>
-							</tr>
-							<tr>
-								<td><font size=4>Plant Spread:</font></td>
-								<td><font size=4>{{profile.plantspread}}</font></td>
-							</tr>
-							<tr>
-								<td><font size=4>Plant Height:</font></td>
-								<td><font size=4>{{profile.plantheight}}</font></td>
-							</tr>
-							<tr>
-								<td><font size=4>Reproduction:</font></td>
-								<td><font size=4>{{profile.reproduction}}</font></td>
-							</tr>
-							<tr>
-								<td><font size=4>Life Cycle:</font></td>
-								<td><font size=4>{{profile.lifecycle}}</font></td>
-							</tr>
-							<tr>
-								<td><font size=4>Plant Form:</font></td>
-								<td><font size=4>{{profile.plantform}}</font></td>
-							</tr>
-						</table>
-					</div>
-				</div>
-			</div>
+
+<!-- Plant image and data section -->
+
+		<div style="max-height: 25%;width: 100%">
+				<img style="vertical-align: top;display: inline-block; height: 40vh; width:20vw" src="{{profile.image}}" alt="{{profile.name}}">
+			<table style="vertical-align: top; height: 45vh; width: 75vw; display: inline-block;border: solid; color:#A5A5Af; border-color: #57BC90; overflow: scroll; font: 200% 'Fjalla One', Helvetica, sans-serif;">
+				<tr>
+					<td><font size=4>Common Name:</font></td>
+					<td><font size=4>{{profile.nickname}}</font></td>
+					</tr>
+				<tr>
+					<td><font size=4>Botanical Name:</font></td>
+					<td><font size=4>{{profile.name}}</font></td>
+				</tr>
+				<tr>
+					<td><font size=4>Plant Type:</font></td>
+					<td><font size=4>{{profile.planttype}}</font></td>
+				</tr>
+				<tr>
+					<td><font size=4>Growing Season:</font></td>
+					<td><font size=4>{{profile.season}}</font></td>
+				</tr>
+				<tr>
+					<td><font size=4>Light Requirement:</font></td>
+					<td><font size=4>{{profile.lightrequirement}}</font></td>
+				</tr>
+				<tr>
+					<td><font size=4>Water Demand:</font></td>
+					<td><font size=4>{{profile.waterdemand}}</font></td>
+				</tr>
+				<tr>
+					<td><font size=4>Soil Requirement</font></td>
+					<td><font size=4>{{profile.soil}}</font></td>
+				</tr>
+				<tr>
+					<td><font size=4>Land Scape Use:</font></td>
+					<td><font size=4>{{profile.landscapeuse}}</font></td>
+				</tr>
+				<tr>
+					<td><font size=4>Wild Life Value:</font></td>
+					<td><font size=4>{{profile.wildlifevalue}}</font></td>
+				</tr>
+				<tr>
+					<td><font size=4>Ornamental Value:</font></td>
+					<td><font size=4>{{profile.ornamentalvalue}}</font></td>
+				</tr>
+				<tr>
+					<td><font size=4>Native/Adapted:</font></td>
+					<td><font size=4>{{profile.nativeadapted}}</font></td>
+				</tr>
+				<tr>
+					<td><font size=4>Season:</font></td>
+					<td><font size=4>{{profile.season}}</font></td>
+				</tr>
+				<tr>
+					<td><font size=4>Deciduous Evergreen:</font></td>
+					<td><font size=4>{{profile.deciduousevergreen}}</font></td>
+				</tr>
+				<tr>
+					<td><font size=4>Plant Form:</front></td>
+					<td><font size=4>{{profile.plantform}}</front></td>
+				</tr>
+				<tr>
+					<td><font size=4>Plant Spread:</font></td>
+					<td><font size=4>{{profile.plantspread}}</font></td>
+				</tr>
+				<tr>
+					<td><font size=4>Plant Height:</font></td>
+					<td><font size=4>{{profile.plantheight}}</font></td>
+				</tr>
+				<tr>
+					<td><font size=4>Reproduction:</font></td>
+					<td><font size=4>{{profile.reproduction}}</font></td>
+				</tr>
+				<tr>
+					<td><font size=4>Life Cycle:</font></td>
+					<td><font size=4>{{profile.lifecycle}}</font></td>
+				</tr>
+				<tr>
+					<td><font size=4>Plant Form:</font></td>
+					<td><font size=4>{{profile.plantform}}</font></td>
+				</tr>
+			</table>
 		</div>
 
 
-<!-- Plant image and data section -->
-		<br>
+
+<br>
 		<br>
 		<div class="d-flex flex-row justify-content-around">
 			<div>
@@ -246,40 +237,6 @@
 
 		<br>
 		<br>
-
-		<!-- <div class="d-flex flex-row justify-content-around">
-			<div class="col-xs-5">
-				<div class="flex-column">
-					{% for park in park_list %}
-					<div class="card " style=" border-color: #77c9d4" onmouseover="img_over(this)" onmouseout="img_out(this)">
-						<a href="/park_profile/?id={{park.dbid}}">
-							<img class="card-img-top img-center-wide" src="{{park.image}}">
-						</a>
-						<div class="card-body">
-							<h6 class="card-text text-center words1" >{{park.name}}</h6>
-						</div>
-					</div>
-					{% endfor %}
-				</div>
-			</div>
-
-			<div class="col-xs-5">
-				<div class="flex-column ">
-					{% for eco in eco_list %}
-					<div class="card " style="border-color: #77c9d4" onmouseover="img_over(this)" onmouseout="img_out(this)">
-						<a href="/eco_profile/?id={{eco.dbid}}">
-							{% with ''|add:eco.image|add:'' as img_static %}
-								<img class="card-img-top img-center-wide" src="{% static img_static %}">
-							{% endwith %}
-						</a>
-						<div class="card-body">
-							<h6 class="card-text text-center words1" >{{eco.ecoregion}}</h6>
-						</div>
-					</div>
-					{% endfor %}
-				</div>
-			</div>
-		</div> -->
 
 		<div class="d-flex justify-content-between">
 			<div class="plant_list col" data-spy="scroll" id="plantlist">

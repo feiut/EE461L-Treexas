@@ -72,9 +72,8 @@ p{
 
 
 .plant-info {
-	height: 50%;
-	width: 50%;
-	word-wrap: break-word;
+	height: 50px;
+	width: 50px;
 	display: inline-block;
 	padding-left: 10px;
 	padding-right:10px;
@@ -87,7 +86,7 @@ p{
 	border-width: medium;
 	overflow: scroll;
 	vertical-align: top;
-
+	background-color: black;
 }
 
 
