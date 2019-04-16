@@ -16,7 +16,8 @@
 	  	<link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet'type='text/css'>
 
-		<link rel="stylesheet" href="{% static "entry_style_modified.css" %}">
+		<link rel="stylesheet" href='{% static "entry_style_modified.css" %}'>
+		<link rel="stylesheet" href='{% static "plants_each_page_style.cc" %}'>
 
 		<script type="text/javascript">
 			function img_over(item){
@@ -36,154 +37,145 @@
 			<div class="row">
 				<div class="col">
 						<nav class="navbar navbar-expand-sm navbar-custom navbar-light navbar-fixed-top" style="background-color: #A5A5Af">
-						  <div class="container-fluid">
-
-						    <div class="navbar-header">
-						      <a class="navbar-brand" href="/">Treexas</a>
-						    </div>
-
-						    <div class="topnav-entry">
-						      <ul class="navbar-nav mr-auto">
-						        <li class="nav-item active"><a class = "nav-link" href="/plant_list">Plants</a>
-						        </li>
-						        <li class="nav-item active"><a class = "nav-link" href="/park_list">State Parks</a>
-						        </li>
-						        <li class="nav-item active"><a class = "nav-link" href="/eco_list">Ecoregions</a>
-						        </li>
-						        <li class="nav-item active"><a class = "nav-link" href="/about">About Us</a>
-						        </li>
-						     	<li class="nav-item active"><a class="nav-link" href="" onclick="window.history.go(-1); return false;"> Back </a>
-						     	</li>
-						      </ul>
-						    </div>
-						  </div>
-						</nav>
+						  	<div class="container-fluid">
+								<div class="navbar-header">
+						      		<a class="navbar-brand" href="/">Treexas</a>
+						    	</div>
+								<div class="topnav-entry">
+						      		<ul class="navbar-nav mr-auto">
+						        	<li class="nav-item active"><a class = "nav-link" href="/plant_list">Plants</a>
+						        	</li>
+						        	<li class="nav-item active"><a class = "nav-link" href="/park_list">State Parks</a>
+						        	</li>
+						        	<li class="nav-item active"><a class = "nav-link" href="/eco_list">Ecoregions</a>
+						        	</li>
+						        	<li class="nav-item active"><a class = "nav-link" href="/about">About Us</a>
+						        	</li>
+						     		<li class="nav-item active"><a class="nav-link" href="" onclick="window.history.go(-1); return false;"> Back </a>
+						     		</li>
+						      		</ul>
+						    	</div>
+						  	</div>
+						</nav>			
 				</div>
 			</div>
-		<br>
-		<br>
-		<br>
+		
+			<br>
+			<br>
+			<br>
 
-		<div class="row">
-			<div class="col">
-				<h1 class="title1">{{profile.name}}</h1>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-4">
-				<div class="text-center">
-					<img class="img imgstyle-large-square-like" src="{{profile.image}}">
+			<div class="row">
+				<div class="col">
+					<h1 class="title1">{{profile.name}}</h1>
 				</div>
 			</div>
+
+			<div class="row">
+				<div class="col-4">
+					<div class="text-center">
+						<img class="img imgstyle-large-square-like" src="{{profile.image}}">
+					</div>
+				</div>
 			<div class="col-8">
-			<div id="image-and-info">
-			<div id="table-scroll" style="height:550px; overflow-y:sroll; overflow-x:auto">
-
-			<table class="text-plant-each" style="color: #57bc90; margin:auto">
-				<tr>
-
-					<td><font size=4>Common Name:</font></td>
-					<td><font size=4>{{profile.nickname}}</font></td>
-		  		</tr>
-				<tr>
-					<td><font size=4>Botanical Name:</font></td>
-					<td><font size=4>{{profile.name}}</font></td>
-				</tr>
-				<tr>
-					<td><font size=4>Plant Type:</font></td>
-					<td><font size=4>{{profile.planttype}}</font></td>
-				</tr>
-				<tr>
-					<td><font size=4>Growing Season:</font></td>
-					<td><font size=4>{{profile.season}}</font></td>
-				</tr>
-				<tr>
-					<td><font size=4>Light Requirement:</font></td>
-					<td><font size=4>{{profile.lightrequirement}}</font></td>
-				</tr>
-				<tr>
-					<td><font size=4>Water Demand:</font></td>
-					<td><font size=4>{{profile.waterdemand}}</font></td>
-				</tr>
-				<tr>
-					<td><font size=4>Soil Requirement</font></td>
-					<td><font size=4>{{profile.soil}}</font></td>
-				</tr>
-				<tr>
-					<td><font size=4>Land Scape Use:</font></td>
-					<td><font size=4>{{profile.landscapeuse}}</font></td>
-				</tr>
-				<tr>
-					<td><font size=4>Wild Life Value:</font></td>
-					<td><font size=4>{{profile.wildlifevalue}}</font></td>
-				</tr>
-				<tr>
-					<td><font size=4>Ornamental Value:</font></td>
-					<td><font size=4>{{profile.ornamentalvalue}}</font></td>
-				</tr>
-				<tr>
-					<td><font size=4>Native/Adapted:</font></td>
-					<td><font size=4>{{profile.nativeadapted}}</font></td>
-				</tr>
-				<tr>
-					<td><font size=4>Season:</font></td>
-					<td><font size=4>{{profile.season}}</font></td>
-				</tr>
-				<tr>
-					<td><font size=4>Deciduous Evergreen:</font></td>
-					<td><font size=4>{{profile.deciduousevergreen}}</font></td>
-				</tr>
-				<tr>
-					<td><font size=4>Plant Form:</front></td>
-					<td><font size=4>{{profile.plantform}}</front></td>
-				</tr>
-				<tr>
-					<td><font size=4>Plant Spread:</font></td>
-					<td><font size=4>{{profile.plantspread}}</font></td>
-				</tr>
-				<tr>
-					<td><font size=4>Plant Height:</font></td>
-					<td><font size=4>{{profile.plantheight}}</font></td>
-				</tr>
-				<tr>
-					<td><font size=4>Reproduction:</font></td>
-					<td><font size=4>{{profile.reproduction}}</font></td>
-				</tr>
-				<tr>
-					<td><font size=4>Life Cycle:</font></td>
-					<td><font size=4>{{profile.lifecycle}}</font></td>
-				</tr>
-				<tr>
-					<td><font size=4>Plant Form:</font></td>
-					<td><font size=4>{{profile.plantform}}</font></td>
-				</tr>
-			</table>
-		</div>
-		</div>
+				<div id="image-and-info">
+					<div  style="height: 50px; overflow-y: scroll; overflow-x:scroll">
+						<table class="plant-info" style="color: #57bc90; margin:auto">
+							<tr>
+								<td><font size=4>Common Name:</font></td>
+								<td><font size=4>{{profile.nickname}}</font></td>
+		  					</tr>
+							<tr>
+								<td><font size=4>Botanical Name:</font></td>
+								<td><font size=4>{{profile.name}}</font></td>
+							</tr>
+							<tr>
+								<td><font size=4>Plant Type:</font></td>
+								<td><font size=4>{{profile.planttype}}</font></td>
+							</tr>
+							<tr>
+								<td><font size=4>Growing Season:</font></td>
+								<td><font size=4>{{profile.season}}</font></td>
+							</tr>
+							<tr>
+								<td><font size=4>Light Requirement:</font></td>
+								<td><font size=4>{{profile.lightrequirement}}</font></td>
+							</tr>
+							<tr>
+								<td><font size=4>Water Demand:</font></td>
+								<td><font size=4>{{profile.waterdemand}}</font></td>
+							</tr>
+							<tr>
+								<td><font size=4>Soil Requirement</font></td>
+								<td><font size=4>{{profile.soil}}</font></td>
+							</tr>
+							<tr>
+								<td><font size=4>Land Scape Use:</font></td>
+								<td><font size=4>{{profile.landscapeuse}}</font></td>
+							</tr>
+							<tr>
+								<td><font size=4>Wild Life Value:</font></td>
+								<td><font size=4>{{profile.wildlifevalue}}</font></td>
+							</tr>
+							<tr>
+								<td><font size=4>Ornamental Value:</font></td>
+								<td><font size=4>{{profile.ornamentalvalue}}</font></td>
+							</tr>
+							<tr>
+								<td><font size=4>Native/Adapted:</font></td>
+								<td><font size=4>{{profile.nativeadapted}}</font></td>
+							</tr>
+							<tr>
+								<td><font size=4>Season:</font></td>
+								<td><font size=4>{{profile.season}}</font></td>
+							</tr>
+							<tr>
+								<td><font size=4>Deciduous Evergreen:</font></td>
+								<td><font size=4>{{profile.deciduousevergreen}}</font></td>
+							</tr>
+							<tr>
+								<td><font size=4>Plant Form:</front></td>
+								<td><font size=4>{{profile.plantform}}</front></td>
+							</tr>
+							<tr>
+								<td><font size=4>Plant Spread:</font></td>
+								<td><font size=4>{{profile.plantspread}}</font></td>
+							</tr>
+							<tr>
+								<td><font size=4>Plant Height:</font></td>
+								<td><font size=4>{{profile.plantheight}}</font></td>
+							</tr>
+							<tr>
+								<td><font size=4>Reproduction:</font></td>
+								<td><font size=4>{{profile.reproduction}}</font></td>
+							</tr>
+							<tr>
+								<td><font size=4>Life Cycle:</font></td>
+								<td><font size=4>{{profile.lifecycle}}</font></td>
+							</tr>
+							<tr>
+								<td><font size=4>Plant Form:</font></td>
+								<td><font size=4>{{profile.plantform}}</font></td>
+							</tr>
+						</table>
+					</div>
+				</div>
 			</div>
 		</div>
 
 
 <!-- Plant image and data section -->
-
-
-
-
 		<br>
 		<br>
-
 		<div class="d-flex flex-row justify-content-around">
-				<div>
-					<h3 class="title3"> State Parks with {{profile.name}} </h3>
-				</div>
-				<div>
-					<h3 class="title3"> Ecoregions with {{profile.name}} </h3>
-				</div>
+			<div>
+				<h3 class="title3"> State Parks with {{profile.name}} </h3>
+			</div>
+			<div>
+				<h3 class="title3"> Ecoregions with {{profile.name}} </h3>
+			</div>
 		</div>
 
 		<div class="d-flex flex-row justify-content-around">
-
 			    <div id="myCarousel" class="carousel slide" data-ride="carousel">
 			        <!-- Wrapper for carousel items -->
 			        <div class="carousel-inner">
@@ -195,8 +187,7 @@
 			            </div>
 			        	{% for park in park_list %}
 			        	<div class="carousel-item">
-
-			        		<a href="/park_profile/?id={{park.id}}">
+								<a href="/park_profile/?id={{park.id}}">
 			        			<img class="img-medium-center" src="{{park.image}}">
 			        		</a>
 			        		<div class="carousel-caption d-non d-md-block" style="background-color: #77c9d4">
@@ -330,7 +321,7 @@
 
 
 
-	</div>
+
 
 	  	 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 		 <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
