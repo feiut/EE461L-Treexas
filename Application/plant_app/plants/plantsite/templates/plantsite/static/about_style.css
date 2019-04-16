@@ -130,10 +130,11 @@ img{
 }
 
 .data{
-	top: 50%;
+	/*top: 50%;
 	left: 50%;
-	transform:translate(0, 50%);
+	transform:translate(0, 50%);*/
 	margin-right: 10%;
+	margin-top: 40%;
 
 }
 
