@@ -215,7 +215,7 @@ def about_page(request):
     i = [int(k[2]) for k in github_list]
     context_dict = {"eric_commits": c[2], "eric_issues": i[2], "erick_commits":c[0], "erick_issues":i[0],
                     "connor_commits":c[1], "connor_issues":i[1], "hao_commits":c[3], "hao_issues":i[3],
-                    "chaz_commits":c[5], "chaz_issues":c[5], "xiyu_commits":c[6], "xiyu_issues":i[6],
+                    "chaz_commits":c[5], "chaz_issues":i[5], "xiyu_commits":c[6], "xiyu_issues":i[6],
                     "fei_commits":c[4], "fei_issues":i[4], "total_c":sum(c), "total_i":sum(i)}
     response = HttpResponse(template.render(context_dict, request))
     return deleteCOOKIE(response, 6)
@@ -253,20 +253,23 @@ def plant_type_list(request):
         names = get_all_plants()
         names = fix_plant_defualt(names)
         page = request.GET.get('page')
+        get_par = {'1':'', '2':'', '3':'', '4':'', '5':'', '6':''}
         if not page:
-            context_dict = paginator_processing(names, 1)
+            context_dict = paginator_processing(names, 1, get_par)
         else:
-            context_dict = paginator_processing(names, page)
+            context_dict = paginator_processing(names, page, get_par)
         return HttpResponse(template.render(context_dict,request))
 
     textfield = request.GET.get('search')
     if textfield:
         results = search_plants_with_string(textfield)
+        get_par = {'1':'', '2':'', '3':'', '4':'', '5':'', '6':''}
         if not results:
-            return HttpResponse(template.render({},request))
+            context_dict = {'get_par': get_par}
+            return HttpResponse(template.render(context_dic,request))
         else:
             results = fix_plant_defualt(results)
-            context_dict = {'names': results}
+            context_dict = {'names': results, 'get_par': get_par}
             return HttpResponse(template.render(context_dict,request))
 
     planttype_field =request.GET.get('planttype')
@@ -275,7 +278,7 @@ def plant_type_list(request):
     season_field = request.GET.get('season')
     native_field = request.GET.get('native')
     lightreq_field = request.GET.get('lightreq')
-
+    get_par = {'1': str(planttype_field), '2': str(water_demand_field), '3': str(plant_form_field), '4':str(season_field), '5':str(native_field), '6':str(lightreq_field)}
     if not planttype_field:
         if '1' in request.COOKIES:
             planttype_field = request.COOKIES['1']
@@ -288,10 +291,11 @@ def plant_type_list(request):
     names = filter_plants_with_parameters(planttype_field, water_demand_field, plant_form_field, season_field, native_field, lightreq_field)
     names = fix_plant_defualt(names)
     page = request.GET.get('page')
+
     if not page:
-        context_dict = paginator_processing(names, 1)
+        context_dict = paginator_processing(names, 1, get_par)
     else:
-        context_dict = paginator_processing(names, page)
+        context_dict = paginator_processing(names, page, get_par)
 
     response = HttpResponse(template.render(context_dict,request))
     if planttype_field:
@@ -303,7 +307,7 @@ def plant_type_list(request):
         response.set_cookie('6', str(lightreq_field))
     return response
 
-def paginator_processing(names, page):
+def paginator_processing(names, page, get_par):
     pages = Paginator(names, 15)
     page_range = []
     mid_pages = 3
@@ -338,7 +342,7 @@ def paginator_processing(names, page):
             t+=1
     pages.page_range_ex = page_range
     pages.page_goto = page_goto
-    context_dict = {'names': names, 'pages': pages}
+    context_dict = {'names': names, 'pages': pages, 'get_par': get_par}
     return context_dict
 
 def deleteCOOKIE(response, n):
@@ -442,10 +446,11 @@ def park_list_view(request):
 			template = loader.get_template('plantsite/html/park_list.html')
 			park_list = get_all_parks()
 			page = request.GET.get('page')
+			get_par = {'1':'', '2':'', '3':'', '4':'', '5':'', '6':''}
 			if not page:
-				context_dict = paginator_processing(park_list, 1)
+				context_dict = paginator_processing(park_list, 1, get_par)
 			else:
-				context_dict = paginator_processing(park_list, page)
+				context_dict = paginator_processing(park_list, page, get_par)
 			response = HttpResponse(template.render(context_dict, request))
 			return deleteCOOKIE(response, 6)
 		else:
@@ -463,10 +468,11 @@ def park_list_view(request):
 		template = loader.get_template('plantsite/html/park_list.html')
 		park_list = get_all_parks()
 		page = request.GET.get('page')
+		get_par = {'1':'', '2':'', '3':'', '4':'', '5':'', '6':''}
 		if not page:
-			context_dict = paginator_processing(park_list, 1)
+			context_dict = paginator_processing(park_list, 1, get_par)
 		else:
-			context_dict = paginator_processing(park_list, page)
+			context_dict = paginator_processing(park_list, page, get_par)
 		response = HttpResponse(template.render(context_dict, request))
 		return deleteCOOKIE(response, 6)
 
