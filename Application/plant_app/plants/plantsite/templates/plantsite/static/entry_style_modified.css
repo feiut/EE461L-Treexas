@@ -30,6 +30,8 @@ p {
 
 .navbar-brand {
   color: #FFFFFF;
+  padding-top: 0;
+  padding-left: 0;
   font: 250% 'Fjalla One', Helvetica, sans-serif;
 }
 

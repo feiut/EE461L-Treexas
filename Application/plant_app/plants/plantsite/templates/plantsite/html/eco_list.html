@@ -65,12 +65,12 @@
 			document.getElementById("map").src = "{% static "ecoregions.png" %}";
 		}
 	</script>
-	
+
 	<style>
 		.bg{
 			background: url('{% static "green-leaves-flat.jpg"%}') center 30% no-repeat;
 			background-size: 120% 150%;
-			
+
 		}
 	</style>
 
@@ -80,7 +80,7 @@
 </head>
 
 <body class="bg">
-	<nav class="navbar navbar-expand-sm navbar-custom navbar-light navbar-fixed-top" style="background-color: #A5A5Af">
+	<nav class="navbar navbar-expand-sm navbar-custom navbar-light fixed-top" style="background-color: #A5A5Af">
 	  <div class="container-fluid">
 
 	    <div class="navbar-header">
@@ -97,8 +97,8 @@
 	        </li>
 	        <li class="nav-item active"><a class = "nav-link" href="/about">About Us</a>
 	        </li>
-	     	<li class="nav-item active"><a class="nav-link" href="" onclick="window.history.go(-1); return false;"> Back </a>
-	     	</li>
+	     	<!-- <li class="nav-item active"><a class="nav-link" href="" onclick="window.history.go(-1); return false;"> Back </a>
+	     	</li> -->
 	      </ul>
 	    </div>
 	  </div>
@@ -118,7 +118,7 @@
 		</div>
 	-->
 	<div class="d-flex flex-row mx-auto">
-		<div class="flex-column">
+		<div class="flex-col">
 			<p class="title1 text-center">Ecoregions of Texas</p>
 			<br>
 			<br>
@@ -159,7 +159,7 @@
 	    <area target="" alt="edwards2" title="edwards2" href="/eco_profile/?id=6" coords="378,333,385,350,398,350,404,342,414,341,413,331,404,328,398,328,386,324" shape="poly" onmouseover="edwardsfunc()" onmouseout="leave()">
 
 	    <area target="" alt="rollingplains" title="rollingplains" href="/eco_profile/?id=7" coords="245,112,244,161,259,149,271,148,274,141,288,138,298,146,314,140,321,137,374,106,375,116,363,125,380,120,374,129,361,135,367,142,364,154,343,148,330,152,342,167,335,170,314,161,313,172,336,178,340,209,357,245,351,254,337,252,328,267,331,281,322,300,313,300,307,309,315,315,335,316,337,323,324,337,374,335,388,322,414,330,415,342,403,349,384,351,375,337,330,339,389,368,385,377,360,381,357,397,373,406,401,403,424,370,420,354,435,355,437,394,456,351,442,337,452,329,450,317,457,307,449,293,465,284,462,268,492,252,475,238,485,216,403,183,403,66,356,62,377,87,379,95,342,102,320,109,314,106,316,117,312,128,272,103,266,114" shape="poly" onmouseover="rollingplainsfunc()" onmouseout="leave()">
-	    
+
 	    <area target="" alt="pineywoods" title="pineywoods" href="/eco_profile/?id=0" coords="722,250,725,341,757,395,749,453,720,469,684,467,680,475,656,478,649,468,643,468,635,445,632,421,652,401,655,368,646,342,652,333,661,341,672,338,664,311,669,284,682,283,700,258" shape="poly" onmouseover="pineywoodsfunc()" onmouseout="leave()">
 
 	    <area target="" alt="highplains1" title="highplains1" href="/eco_profile/?id=8" coords="248,63,355,63,374,86,377,95,318,106,312,106,312,125,273,101,265,112,243,111" shape="poly" onmouseover="highplainsfunc()" onmouseout="leave()">

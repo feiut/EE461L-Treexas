@@ -15,14 +15,13 @@
 
 	  	<link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet'type='text/css'>
-		<link rel="stylesheet" href='{% static "plants_each_page_style.cc" %}'>
 		<link rel="stylesheet" href='{% static "entry_style_modified.css" %}'>
-		
+
 
 		<script type="text/javascript">
 			function parklist() {
 				var x = document.getItemById('parks');
-				x.style.display="block"; 
+				x.style.display="block";
 
 			}
 
@@ -39,35 +38,34 @@
 	</head>
 
 <!--<link rel = "stylesheet" href="SubPage.css">-->
+
+
+	<nav class="navbar navbar-expand-sm navbar-custom navbar-light fixed-top" style="background-color: #A5A5Af">
+	  	<div class="container-fluid">
+			<div class="navbar-header">
+	      		<a class="navbar-brand" href="/">Treexas</a>
+	    	</div>
+			<div class="topnav-entry">
+	      		<ul class="navbar-nav mr-auto">
+	        	<li class="nav-item active"><a class = "nav-link" href="/plant_list">Plants</a>
+	        	</li>
+	        	<li class="nav-item active"><a class = "nav-link" href="/park_list">State Parks</a>
+	        	</li>
+	        	<li class="nav-item active"><a class = "nav-link" href="/eco_list">Ecoregions</a>
+	        	</li>
+	        	<li class="nav-item active"><a class = "nav-link" href="/about">About Us</a>
+	        	</li>
+	     		<!-- <li class="nav-item active"><a class="nav-link" href="" onclick="window.history.go(-1); return false;"> Back </a>
+	     		</li> -->
+	      		</ul>
+	    	</div>
+	  	</div>
+	</nav>
+
+		<br>
+		<br>
+		<br>
 	<div class="container-fluid">
-			<div class="row">
-				<div class="col">
-						<nav class="navbar navbar-expand-sm navbar-custom navbar-light navbar-fixed-top" style="background-color: #A5A5Af">
-						  	<div class="container-fluid">
-								<div class="navbar-header">
-						      		<a class="navbar-brand" href="/">Treexas</a>
-						    	</div>
-								<div class="topnav-entry">
-						      		<ul class="navbar-nav mr-auto">
-						        	<li class="nav-item active"><a class = "nav-link" href="/plant_list">Plants</a>
-						        	</li>
-						        	<li class="nav-item active"><a class = "nav-link" href="/park_list">State Parks</a>
-						        	</li>
-						        	<li class="nav-item active"><a class = "nav-link" href="/eco_list">Ecoregions</a>
-						        	</li>
-						        	<li class="nav-item active"><a class = "nav-link" href="/about">About Us</a>
-						        	</li>
-						     		<li class="nav-item active"><a class="nav-link" href="" onclick="window.history.go(-1); return false;"> Back </a>
-						     		</li>
-						      		</ul>
-						    	</div>
-						  	</div>
-						</nav>			
-				</div>
-			</div>
-		<br>
-		<br>
-		<br>
 		<div class="row">
 				<div class="col">
 					<h1 class="title1">{{profile.name}}</h1>

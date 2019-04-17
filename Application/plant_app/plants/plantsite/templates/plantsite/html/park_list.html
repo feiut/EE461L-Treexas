@@ -34,9 +34,8 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-sm navbar-custom navbar-light navbar-fixed-top" style="background-color: #A5A5Af">
+	<nav class="navbar navbar-expand-sm navbar-custom navbar-light fixed-top" style="background-color: #A5A5Af">
 	  <div class="container-fluid">
-
 	    <div class="navbar-header">
 	      <a class="navbar-brand" href="/">Treexas</a>
 	    </div>
@@ -51,8 +50,6 @@
 	        </li>
 	        <li class="nav-item active"><a class = "nav-link" href="/about">About Us</a>
 	        </li>
-	     	<li class="nav-item active"><a class="nav-link" href="" onclick="window.history.go(-1); return false;"> Back </a>
-	     	</li>
 	      </ul>
 	    </div>
 	  </div>
@@ -65,22 +62,19 @@
 	<br>
 
 	<div class="container-fluid">
-			<div class="d-flex flex-row mx-auto">
+			<div class="container" style="height:10em">
 				<div class="flex-column justify-content-center">
   	 				<p class="title1 text-center">State Parks of Texas</p>
 				</div>
 			</div>
-			<br>
-			<br>
-			<br>
-			<br>
+
 			<div class="d-flex flex-row justify-content-center mx-auto">
-				<div class="flex-column justify-content-center">
+				<div class="col-12">
 						<form method="GET">
-					      <div class="input-group">
+					      <div class="input-group" id="search_bar">
 					          <input class="form-control" type="text" name="search" placeholder="State Park Name">
 					          	<div class="input-group-append">
-					            <button class="btn btn-secondary" type="submit"><i class="fa fas fa-tree fa_custom fa-2x"></i></button>
+					            <button class="btn btn-outline-secondary" type="submit"><i class="fa fas fa-tree fa_custom fa-2x"></i></button>
 					          </div>
 					      </div>
 					  </form>

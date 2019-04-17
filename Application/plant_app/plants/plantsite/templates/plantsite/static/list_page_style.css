@@ -27,7 +27,9 @@ p {
 }
 
 .navbar-brand {
-  color: #FFFFFF;
+	color: #EFEFEF;
+  padding-top: 0;
+  padding-left: 0;
   font: 250% 'Fjalla One', Helvetica, sans-serif;
 }
 
@@ -49,6 +51,7 @@ p {
 a {
 	color: #A5A5AF;
 }
+
 
 .thumbnail-settings{
 	margin-top:25px;
@@ -129,6 +132,7 @@ p{
 /* color: #57bc90 */
 }
 
+
 /* style icon */
 .input-group .glyphicon-search {
 position: absolute;
@@ -139,19 +143,19 @@ font-size: 15px;
 }
 
 /* add padding  */
-.input-group input { padding-left: 50px;}
+.input-group input { padding-left: 15px;}
 
-.btn-default{
-width: 100px;
-padding: 8.5px;
-background: rgba(255, 255, 255, 0.7);
+
+#search_bar{
+width: 60%;
+left:20%;
+height:3.5em;
+}
+.btn-outline-secondary{
+	border-color: #d9d9d9;
+	width: 7em;
 }
 
-.form-control{
-padding: 25px;
-font-size: 20px;
-background: rgba(255, 255, 255, 0.7);
-}
 #page_footer{
 	position: relative;
 	width:80%
