@@ -255,9 +255,9 @@ def plant_type_list(request):
         page = request.GET.get('page')
         get_par = {'1':'', '2':'', '3':'', '4':'', '5':'', '6':''}
         if not page:
-            context_dict = paginator_processing(names, 1, get_par)
+            context_dict = paginator_processing(names, 1, get_par, 15)
         else:
-            context_dict = paginator_processing(names, page, get_par)
+            context_dict = paginator_processing(names, page, get_par, 15)
         return HttpResponse(template.render(context_dict,request))
 
     textfield = request.GET.get('search')
@@ -294,9 +294,9 @@ def plant_type_list(request):
     page = request.GET.get('page')
 
     if not page:
-        context_dict = paginator_processing(names, 1, get_par)
+        context_dict = paginator_processing(names, 1, get_par, 15)
     else:
-        context_dict = paginator_processing(names, page, get_par)
+        context_dict = paginator_processing(names, page, get_par, 15)
 
     response = HttpResponse(template.render(context_dict,request))
     if planttype_field:
@@ -308,8 +308,8 @@ def plant_type_list(request):
         response.set_cookie('6', str(lightreq_field))
     return response
 
-def paginator_processing(names, page, get_par):
-    pages = Paginator(names, 15)
+def paginator_processing(names, page, get_par, num_items):
+    pages = Paginator(names, num_items)
     page_range = []
     mid_pages = 3
     page_goto = 1
@@ -422,9 +422,9 @@ def eco_profile_view(request):
     plants = fix_plant_defualt(plants)
     page = request.GET.get('page')
     if not page:
-        context_dict1 = paginator_processing(plants, 1, 0)
+        context_dict1 = paginator_processing(plants, 1, 0, 12)
     else:
-        context_dict1 = paginator_processing(plants, int(page), 0)
+        context_dict1 = paginator_processing(plants, int(page), 0, 12)
     ''' gets parks'''
     parks_for_plant = prof.stateparks
     parks_for_plant = re.sub("\[",'',str(parks_for_plant)) #gets rid of brackets
@@ -463,9 +463,9 @@ def park_list_view(request):
 			page = request.GET.get('page')
 			get_par = {'1':'', '2':'', '3':'', '4':'', '5':'', '6':''}
 			if not page:
-				context_dict = paginator_processing(park_list, 1, get_par)
+				context_dict = paginator_processing(park_list, 1, get_par, 12)
 			else:
-				context_dict = paginator_processing(park_list, page, get_par)
+				context_dict = paginator_processing(park_list, page, get_par, 12)
 			response = HttpResponse(template.render(context_dict, request))
 			return deleteCOOKIE(response, 6)
 		else:
@@ -485,9 +485,9 @@ def park_list_view(request):
 		page = request.GET.get('page')
 		get_par = {'1':'', '2':'', '3':'', '4':'', '5':'', '6':''}
 		if not page:
-			context_dict = paginator_processing(park_list, 1, get_par)
+			context_dict = paginator_processing(park_list, 1, get_par, 12)
 		else:
-			context_dict = paginator_processing(park_list, page, get_par)
+			context_dict = paginator_processing(park_list, page, get_par, 12)
 		response = HttpResponse(template.render(context_dict, request))
 		return deleteCOOKIE(response, 6)
 
