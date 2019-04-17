@@ -415,7 +415,11 @@ def eco_profile_view(request):
             plant_ids.add(p)
     plants = PlantCsv.objects.filter(id__in=plant_ids)
     plants = fix_plant_defualt(plants)
-
+    page = request.GET.get('page')
+    if not page:
+        context_dict1 = paginator_processing(plants, 1, 0)
+    else:
+        context_dict1 = paginator_processing(plants, page, 0)
     ''' gets parks'''
     parks_for_plant = prof.stateparks
     parks_for_plant = re.sub("\[",'',str(parks_for_plant)) #gets rid of brackets
@@ -436,7 +440,9 @@ def eco_profile_view(request):
     # eco_name = eco_name[22:]
     #eco_name = dictionary[str(dbid)]
     #pla = PlantCsv.objects.filter(econregion=eco_name)
-    context_dict = {'profile': prof, 'plants': plants, 'park_list':park_list}
+    context_dict2 = {'profile': prof, 'park_list':park_list}
+    context_dic ={}
+    context_dic = {**context_dict1, **context_dict2}
     response = HttpResponse(template.render(context_dict, request))
     return response
 
