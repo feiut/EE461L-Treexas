@@ -399,6 +399,11 @@ def plant_profile_view(request):
 def eco_profile_view(request):
     template = loader.get_template('plantsite/html/eco_profile.html')
     dbid = request.GET.get('id')
+
+    if not dbid:
+        if 'eco_id' in request.COOKIES:
+            dbid = request.COOKIES['eco_id']
+
     prof = PlantCsvEcoregions.objects.get(id=str(dbid))
     prof.image = prof.image.strip() #remove leading whitespace ERICK
    # keys = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
@@ -445,6 +450,8 @@ def eco_profile_view(request):
     context_dict.update(context_dict1)
     context_dict.update(context_dict2)
     response = HttpResponse(template.render(context_dict, request))
+    if dbid:
+            response.set_cookie('eco_id', str(dbid))
     return response
 
 def park_list_view(request):
