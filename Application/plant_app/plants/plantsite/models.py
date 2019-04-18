@@ -61,11 +61,16 @@ class PlantCsv(models.Model):
     soil = models.TextField(blank=True, null=True)
     reproduction = models.TextField(blank=True, null=True)
     sciname = models.TextField(blank=True, null=True)
-    lat = models.FloatField(blank=True, null=True)
-    #longi = models.FloatField(blank=True, null=True)
+    lat = models.TextField(blank=True, null=True)
+    #long = models.TextField(blank=True, null=True)
     econregion = models.TextField(blank=True, null=True)
     statepark = models.TextField(blank=True, null=True)
     lifecycle = models.TextField(blank=True, null=True)
+    edibility = models.TextField(blank=True, null=True)
+    zone = models.TextField(blank=True, null=True)
+    endangered = models.TextField(blank=True, null=True)
+    ecoregionids = models.TextField(blank=True, null=True)
+
 
     class Meta:
         db_table = 'plant_csv'

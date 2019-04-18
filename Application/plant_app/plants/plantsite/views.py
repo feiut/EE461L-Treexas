@@ -381,7 +381,7 @@ def plant_profile_view(request):
 
     
     #gets eco regions
-    eco_for_plant = prof.econregion
+    eco_for_plant = prof.ecoregionids
     eco_for_plant = re.sub("\[",'',str(eco_for_plant)) #gets rid of brackets
     eco_for_plant = re.sub("\]",'',str(eco_for_plant))
     eco_list =eco_for_plant.split(',') #uses comma as delimiter to split string and make a list
