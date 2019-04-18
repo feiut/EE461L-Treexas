@@ -124,6 +124,12 @@ def is_number(s):
         return False
 
 
+def empty_check(item):
+    if len(item) is 0: 
+        return "true"
+    else:
+        return "false"
+
 ''' regular functions '''
 
 class Park(object):
@@ -362,7 +368,7 @@ def plant_profile_view(request):
     template = loader.get_template('plantsite/html/plants_each.html')
     number = request.GET.get('id')
     prof = get_plant_with_id(number)
-
+    set_check = list() #This will store if a set is empty
     ''' gets parks'''
     parks_for_plant = prof.statepark
     parks_for_plant = re.sub("\[",'',str(parks_for_plant)) #gets rid of brackets
@@ -379,7 +385,8 @@ def plant_profile_view(request):
         park.image = park.image.strip()
         park.image = re.sub('https','https:',str(park.image))
 
-    
+    set_check.append(empty_check(park_list))
+
     #gets eco regions
     eco_for_plant = prof.ecoregionids
     eco_for_plant = re.sub("\[",'',str(eco_for_plant)) #gets rid of brackets
@@ -394,8 +401,10 @@ def plant_profile_view(request):
     for eco in eco_list:
         eco.image =eco.image.strip()
         eco.image = re.sub('https', 'https:', str(eco.image))
+
+    set_check.append(empty_check(eco_list))
     
-    context_dict = {'profile': prof,'park_list':park_list,'eco_list':eco_list}
+    context_dict = {'profile': prof,'park_list':park_list,'eco_list':eco_list,'set_check':set_check}
     return HttpResponse(template.render(context_dict,request))
 
 #============================================

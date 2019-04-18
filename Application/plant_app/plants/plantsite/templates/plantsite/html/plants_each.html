@@ -232,8 +232,8 @@
 
 		</div>
 		<div style="text-align: center">
-			<button style=" background-color: #A5A5Af; border: none;color:  white;padding: 15px 32px;text-align: center;text-decoration: none; display: inline-block; font-size: 16px;"id="show_parks"   onclick="parklist()" onmouseover="backgroundColorBlue(this)" onmouseout="backgroundColorGrey(this)">Show Parks</button>
-			<button  style="background-color: #A5A5Af; border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none; display: inline-block; font-size: 16px;" id="show_eco"  onclick="ecolist()" onmouseover="backgroundColorBlue(this)" onmouseout="backgroundColorGrey(this)">Show all eco-regions</button>
+			<button style=" background-color: #A5A5Af; border: none;color:  white;padding: 15px 32px;text-align: center;text-decoration: none; display: inline-block; font-size: 16px;"id="show_parks"   onclick="xlist(this,'parks','parkSet')">Show Parks</button>
+			<button  style="background-color: #A5A5Af; border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none; display: inline-block; font-size: 16px;" id="show_eco"  onclick="xlist(this,'eco_region','ecoSet')">Show all eco-regions</button>
 		</div>
 
 		<br>
@@ -255,17 +255,13 @@
 				</div>
 			</div>
 
-		<div class="col-xs-1">
-			<h3 style="color:#FFFFFF">nothing</h3>
-		</div>
-
 		<div id="eco_region" style="display:none"class="plant_list col" data-spy="scroll" id="plantlist">
 			<div class="d-flex flex-row flex-wrap">
 				{% for eco in eco_list %}
-				<div class="card col-sm-4 px-4 card-style flex-wrap" onmouseover="img_over(this)" onmouseout="img_out(this)">
+				<div style="display: inline-block" class="card col-sm-4 px-4 card-style flex-wrap" onmouseover="img_over(this)" onmouseout="img_out(this)">
 					<a href="/eco_profile/?id={{eco.id}}">
 						{% with ''|add:eco.image|add:'' as img_static %}
-							<img class="card-img-top img-center-wide" src="{% static img_static %}">
+							<img style="max-width: 100%" class="card-img-top img-center-wide" src="{% static img_static %}">
 						{% endwith %}
 					</a>
 					<div class="card-body">
@@ -286,37 +282,37 @@
 		 <script src="../../assets/js/vendor/popper.min.js"></script>
 		 <script src="../../dist/js/bootstrap.min.js"></script>
 
-
+	<!-- Below are variables needed to store data, do not use for show --->
+	<p id="parkSet" style="display: none">{{set_check.0}}</p>
+	<p id="ecoSet" style="display: none">{{set_check.1}}</p>
 
 	</body>
+<script type="text/javascript">
 
-	 <script type="text/javascript">
 
+			function xlist(button,elementID, variableID) {
 
-			function parklist() {
-				var x = document.getElementById('parks');
+				if(document.getElementById(variableID).innerHTML === 'false'){
+
+					var x = document.getElementById(elementID);
 				
-				if(x.style.display === "none"){
-					x.style.display="block";
+					if(x.style.display === "none"){
+						x.style.display="block";
+						button.style.backgroundColor = "#57BC90";
 
-				}else{
-					x.style.display ="none";
+					}else{
+						x.style.display ="none";
+						button.style.backgroundColor = "#A5A5AF";
+
+					}
 
 				}
-			}
+				else{
 
-
-			function ecolist() {
-				var x = document.getElementById('eco_region');
-				
-				if(x.style.display === "none"){
-					x.style.display="block";
-
-				}else{
-					x.style.display ="none";
-
+					button.style.backgroundColor = "#FF6961";
+					setTimeout(() => backgroundColorGrey(button), 500);
 				}
-			}
+			}			
 
 			function backgroundColorBlue(item){
 
@@ -333,6 +329,14 @@
 			}
 			function img_out(item){
 				item.style.borderColor = "#77C9D4";
+			}
+
+			function buttonReverseColor(item){
+				if(item.style.backgroundColor === "57BC90"){
+					item.style.backgroundColor = "#A5A5Af"; 
+				} else{
+					item.style.backgroundColor = "#57BC90"
+				}
 			}
 
 
