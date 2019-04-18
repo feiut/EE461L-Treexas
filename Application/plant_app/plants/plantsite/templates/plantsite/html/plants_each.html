@@ -224,8 +224,8 @@
 
 		</div>
 		<div style="text-align: center">
-			<button id="show_parks"   onclick="parklist();">Show Parks</button>
-			<button id="show_eco"  onclick="ecolist();">Show all eco-regions</button>
+			<button style=" background-color: #A5A5Af; border: none;color:  white;padding: 15px 32px;text-align: center;text-decoration: none; display: inline-block; font-size: 16px;"id="show_parks"   onclick="parklist()" onmouseover="backgroundColorBlue(this)" onmouseout="backgroundColorGrey(this)">Show Parks</button>
+			<button  style="background-color: #A5A5Af; border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none; display: inline-block; font-size: 16px;" id="show_eco"  onclick="ecolist()" onmouseover="backgroundColorBlue(this)" onmouseout="backgroundColorGrey(this)">Show all eco-regions</button>
 		</div>
 
 		<br>
@@ -310,14 +310,23 @@
 				}
 			}
 
+			function backgroundColorBlue(item){
+
+				item.style.backgroundColor = "#57BC90";
+			}
+
+			function backgroundColorGrey(button){
+				button.style.backgroundColor = "#A5A5Af";
+			}
+
 			function img_over(item){
 				item.style.borderColor = "#57BC90";
 				item.style.borderWidth = "4px";
 			}
 			function img_out(item){
 				item.style.borderColor = "#77C9D4";
-				item.style.borderWidth = "1px";
 			}
+
 
 		</script>
 
