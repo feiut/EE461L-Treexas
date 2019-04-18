@@ -116,6 +116,13 @@ def get_all_parks():
 		park.image = re.sub('https','https:',str(park.image))
 	return results
 
+def is_number(s):
+    try:
+        float(s)
+        return True
+    except ValueError:
+        return False
+
 
 ''' regular functions '''
 
@@ -372,7 +379,7 @@ def plant_profile_view(request):
         park.image = park.image.strip()
         park.image = re.sub('https','https:',str(park.image))
 
-    '''
+    
     #gets eco regions
     eco_for_plant = prof.econregion
     eco_for_plant = re.sub("\[",'',str(eco_for_plant)) #gets rid of brackets
@@ -380,18 +387,14 @@ def plant_profile_view(request):
     eco_list =eco_for_plant.split(',') #uses comma as delimiter to split string and make a list
     eco_ids = set() #set will be used to store database objects (a query set)
     for e in eco_list:
-        if not e == '' and not e=='N/A':
+        if not e == '' and not e=='N/A' and is_number(e):
             eco_ids.add(e)
-    print(eco_ids)
-    print(eco_list)
-
-    eco_list = PlantCsvEcoregions.objects.filter(dbid__in=eco_ids)
+    eco_list = PlantCsvEcoregions.objects.filter(id__in=eco_ids)
 
     for eco in eco_list:
         eco.image =eco.image.strip()
         eco.image = re.sub('https', 'https:', str(eco.image))
-    '''
-    eco_list = []
+    
     context_dict = {'profile': prof,'park_list':park_list,'eco_list':eco_list}
     return HttpResponse(template.render(context_dict,request))
 

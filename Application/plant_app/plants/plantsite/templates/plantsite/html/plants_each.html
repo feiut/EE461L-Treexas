@@ -18,23 +18,7 @@
 		<link rel="stylesheet" href='{% static "entry_style_modified.css" %}'>
 
 
-		<script type="text/javascript">
-			function parklist() {
-				var x = document.getItemById('parks');
-				x.style.display="block";
-
-			}
-
-			function img_over(item){
-				item.style.borderColor = "#57BC90";
-				item.style.borderWidth = "4px";
-			}
-			function img_out(item){
-				item.style.borderColor = "#77C9D4";
-				item.style.borderWidth = "1px";
-			}
-
-		</script>
+		
 	</head>
 
 <!--<link rel = "stylesheet" href="SubPage.css">-->
@@ -240,7 +224,7 @@
 
 		</div>
 		<div style="text-align: center">
-			<button id="show_parks"   onclick="parklist();">Show all parks </button>
+			<button id="show_parks"   onclick="parklist();">Show Parks</button>
 			<button id="show_eco"  onclick="ecolist();">Show all eco-regions</button>
 		</div>
 
@@ -251,9 +235,9 @@
 			<div id="parks" style="display:none"class="plant_list col" data-spy="scroll" id="plantlist">
 				<div class="d-flex flex-row flex-wrap">
 					{% for park in park_list %}
-					<div class="card col-sm-4 px-4 card-style flex-wrap" onmouseover="img_over(this)" onmouseout="img_out(this)">
+					<div style="display: inline-block" class="card col-sm-4 px-4 card-style flex-wrap" onmouseover="img_over(this)" onmouseout="img_out(this)">
 						<a href="/park_profile/?id={{park.id}}">
-							<img class="card-img img-center"src="{{park.image}}">
+							<img style="max-width: 100%" class="card-img img-center"src="{{park.image}}">
 						</a>
 						<div class="card-body">
 							<h3 class="card-text text-center" >{{park.name}}</h3>
@@ -284,7 +268,7 @@
 			</div>
 		</div>
 		</div>
-
+		</div>
 
 
 
@@ -293,5 +277,49 @@
 		 <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
 		 <script src="../../assets/js/vendor/popper.min.js"></script>
 		 <script src="../../dist/js/bootstrap.min.js"></script>
+
+
+
 	</body>
+
+	 <script type="text/javascript">
+
+
+			function parklist() {
+				var x = document.getElementById('parks');
+				
+				if(x.style.display === "none"){
+					x.style.display="block";
+
+				}else{
+					x.style.display ="none";
+
+				}
+			}
+
+
+			function ecolist() {
+				var x = document.getElementById('eco_region');
+				
+				if(x.style.display === "none"){
+					x.style.display="block";
+
+				}else{
+					x.style.display ="none";
+
+				}
+			}
+
+			function img_over(item){
+				item.style.borderColor = "#57BC90";
+				item.style.borderWidth = "4px";
+			}
+			function img_out(item){
+				item.style.borderColor = "#77C9D4";
+				item.style.borderWidth = "1px";
+			}
+
+		</script>
+
+
 </html>
