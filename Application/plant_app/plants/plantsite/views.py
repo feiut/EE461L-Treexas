@@ -279,7 +279,7 @@ def plant_type_list(request):
         get_par = {'1':'', '2':'', '3':'', '4':'', '5':'', '6':''}
         if not results:
             context_dict = {'get_par': get_par}
-            return HttpResponse(template.render(context_dic,request))
+            return HttpResponse(template.render(context_dict,request))
         else:
             results = fix_plant_defualt(results)
             context_dict = {'names': results, 'get_par': get_par}
