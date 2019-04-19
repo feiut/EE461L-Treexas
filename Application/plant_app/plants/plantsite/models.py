@@ -70,7 +70,8 @@ class PlantCsv(models.Model):
     zone = models.TextField(blank=True, null=True)
     endangered = models.TextField(blank=True, null=True)
     ecoregionids = models.TextField(blank=True, null=True)
-
+    search_times = models.TextField(blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
 
     class Meta:
         db_table = 'plant_csv'
