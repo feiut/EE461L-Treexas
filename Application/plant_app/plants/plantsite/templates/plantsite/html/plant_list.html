@@ -57,18 +57,13 @@
 	  </div>
 	</nav>
 
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
 
 	<div class="container-fluid">
 			<!-- welcome -->
 		<div class="container" style="height:10em">
-			<div class="flex-column justify-content-center">
+
 	 				<p class="title1 text-center">Plants of Texas</p>
-			</div>
+
 		</div>
 
 		<!-- search bar -->
@@ -89,7 +84,7 @@
 			<!-- filters -->
 			<div class="d-inline col-2 pl-3" id="filters">
 				<!-- back -->
-				<button class="btn btn-inline-secondary" href="plant_list/" onclick="window.history.go(-1); return false;">Back</button>
+<!-- 				<button class="btn btn-inline-secondary" href="plant_list/" onclick="window.history.go(-1); return false;">Back</button> -->
 				<form method="GET">
 
 					<div class="input-group">
@@ -101,7 +96,7 @@
 								<option value=" Groundcover" {%if get_par.1 == ' Groundcover'%} selected {%endif%}> Groundcover</option>
 								<option value=" Ornamental Grass" {%if get_par.1 == ' Ornamental Grass'%} selected {%endif%}>Ornamental Grass</option>
 							</select>
-						<br>
+						<hr>
 						<p class="pfilter">Water Demand</p>
 							<select name="waterdemand" class="custom-select">
 								<option value ="AllType" {%if get_par.2 == 'AllType'%} selected {%endif%}>All Type</option>
@@ -167,7 +162,7 @@
 								<img class="card-img img-center"src="{{plant.image}}">
 							</a>
 							<div class="card-body">
-								<h3 class="card-text text-center" >{{plant.name}}</h3>
+								<h4 class="card-text text-center" >{{plant.name}}</h4>
 							</div>
 						</div>
 						{% endfor %}
