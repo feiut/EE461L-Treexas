@@ -505,18 +505,37 @@ def park_list_view(request):
 
 def park_profile_view(request):
     template = loader.get_template('plantsite/html/park_profile.html')
+    set_check = list()
     dbid = request.GET.get('id')
     prof = get_park_with_dbid(str(dbid))
     plants_in_park = prof.plantlist
     plants_in_park = re.sub("\[",'',str(plants_in_park)) #gets rid of brackets
     plants_in_park = re.sub("\]",'',str(plants_in_park))
     plant_list = plants_in_park.split(',') #uses comma as delimiter to split string and make a list
-    plants = set() #set will be used to store database objects (a query set)
+    plant_ids = set() #set will be used to store database objects (a query set)
     for p in plant_list:
     	if not p == '':
-    		plants.add(get_plant_with_id(str(p)))
+    		plant_ids.add(p)
 
-    context_dict = {'profile': prof, 'plants':plants}
+    plants = PlantCsv.objects.filter(id__in=plant_ids)
+
+    set_check.append(empty_check(plants))
+
+    eco_in_park = prof.ecoregionlist
+    eco_in_park = re.sub("\[",'',str(eco_in_park)) #gets rid of brackets
+    eco_in_park = re.sub("\]",'',str(eco_in_park))
+    eco_list = plants_in_park.split(',') #uses comma as delimiter to split string and make a list
+    eco_ids = set()
+    for e in eco_list:
+        if not e == '' and not e=='N/A' and is_number(e):
+            eco_ids.add(e)
+    eco_list = PlantCsvEcoregions.objects.filter(id__in=eco_ids)
+
+    for eco in eco_list:
+        eco.image =eco.image.strip()
+        eco.image = re.sub('https', 'https:', str(eco.image))
+    set_check.append(empty_check(eco_list))
+    context_dict = {'profile': prof, 'plants':plants,'eco_list':eco_list,'set_check':set_check}
     return HttpResponse(template.render(context_dict, request))
 
 #<img src="{{ MEDIA_URL }}{{ image.image.url }}" />

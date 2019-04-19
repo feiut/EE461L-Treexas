@@ -92,7 +92,7 @@ class Stateparks(models.Model): #THIS MODEL NEEDS TO BE CHANGED IT SEEMS TO BE E
 '''
 
 class Stateparks(models.Model):
-    id = models.IntegerField(blank=True, primary_key=True)
+    #id = models.IntegerField(blank=True, null=True)
     name = models.TextField(db_column='Name', blank=True, null=True)  # Field name made lowercase.
     latitude = models.FloatField(db_column='Latitude', blank=True, null=True)  # Field name made lowercase.
     longitude = models.FloatField(db_column='Longitude', blank=True, null=True)  # Field name made lowercase.
@@ -102,6 +102,8 @@ class Stateparks(models.Model):
     description = models.TextField(db_column='Description', blank=True, null=True)  # Field name made lowercase.
     plantlist = models.TextField(db_column='PlantList', blank=True, null=True)  # Field name made lowercase.
     address = models.TextField(db_column='Address', blank=True, null=True)  # Field name made lowercase.
+    ecoregionlist = models.TextField(db_column='Ecoregionlist', blank=True, null=True)  # Field name made lowercase.
+
 
     class Meta:
         db_table = 'plant_csv_stateparks'
