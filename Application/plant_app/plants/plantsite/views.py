@@ -76,10 +76,8 @@ def filter_plants_with_parameters(value_1, value_2, value_3, value_4, value_5, v
         names = names.all()
     elif str(value_7) == "AllType":
         names = names.all()
-    elif str(value_7) == "Edible":
-        names = names.filter(edibility__contains="edible")
     else:
-        names = names.filter(Q(edibility__contains="toxic")|Q(edibility__contains="N/A"))
+        names = names.filter(edibility__contains=str(value_7))
     return names
 
 
