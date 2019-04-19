@@ -404,6 +404,8 @@ def plant_profile_view(request):
     plant_description = PlantCsv.objects.get(id=str(plant_id)).description
 
     prof = get_plant_with_id(number)
+    prof.search_times = str(int(prof.search_times) + 1)
+    prof.save()                                  #Every time you search for this plant, the searching times will be added by 1
     set_check = list() #This will store if a set is empty
     ''' gets parks'''
     parks_for_plant = prof.statepark
