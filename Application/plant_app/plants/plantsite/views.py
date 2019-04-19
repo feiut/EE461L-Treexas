@@ -79,7 +79,7 @@ def filter_plants_with_parameters(value_1, value_2, value_3, value_4, value_5, v
     elif str(value_7) == "Edible":
         names = names.filter(edibility__contains="edible")
     else:
-        names = names.filter(Q(edibility__contains="toxic")|Q(edibility__contains="N/A")) 
+        names = names.filter(Q(edibility__contains="toxic")|Q(edibility__contains="N/A"))
     return names
 
 
@@ -384,8 +384,24 @@ def plant_profile_view(request):
         describe = 'hidden'
     if request.method == 'POST':
         number = request.POST.get('plant_id')
-        describe = request.POST.get('Des')
+        Des = request.POST.get('Des')
+        describe = request.POST.get('describe')
+        if Des == "Save":
+            if describe == "Edit":
+                plant_id = number
+                a = PlantCsv.objects.get(id=str(plant_id))
+                a.description = request.POST.get('description')
+                a.save()
+                describe = "Show"
+        if Des == "Edit":
+            describe = "Edit"
+        if Des == "Show":
+            if describe == "Show":
+                describe = "hidden"
+            else:
+                describe = "Show"
     plant_id = number
+    plant_description = PlantCsv.objects.get(id=str(plant_id)).description
 
     prof = get_plant_with_id(number)
     set_check = list() #This will store if a set is empty
@@ -423,7 +439,7 @@ def plant_profile_view(request):
         eco.image = re.sub('https', 'https:', str(eco.image))
     set_check.append(empty_check(eco_list))
 
-    context_dict = {'profile': prof,'park_list':park_list,'eco_list':eco_list,'set_check':set_check, 'plant_id':plant_id, 'describe':describe}
+    context_dict = {'profile': prof,'park_list':park_list,'eco_list':eco_list,'set_check':set_check, 'plant_id':plant_id, 'describe':describe, 'plant_description':plant_description}
     return HttpResponse(template.render(context_dict,request))
 
 #============================================
