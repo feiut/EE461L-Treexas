@@ -125,7 +125,7 @@ def is_number(s):
 
 
 def empty_check(item):
-    if len(item) is 0: 
+    if len(item) is 0:
         return "true"
     else:
         return "false"
@@ -366,7 +366,15 @@ def deleteCOOKIE(response, n):
 
 def plant_profile_view(request):
     template = loader.get_template('plantsite/html/plants_each.html')
-    number = request.GET.get('id')
+
+    if request.method == 'GET':
+        number = request.GET.get('id')
+        describe = 'hidden'
+    if request.method == 'POST':
+        number = request.POST.get('plant_id')
+        describe = request.POST.get('Des')
+    plant_id = number
+
     prof = get_plant_with_id(number)
     set_check = list() #This will store if a set is empty
     ''' gets parks'''
@@ -401,10 +409,9 @@ def plant_profile_view(request):
     for eco in eco_list:
         eco.image =eco.image.strip()
         eco.image = re.sub('https', 'https:', str(eco.image))
-
     set_check.append(empty_check(eco_list))
-    
-    context_dict = {'profile': prof,'park_list':park_list,'eco_list':eco_list,'set_check':set_check}
+
+    context_dict = {'profile': prof,'park_list':park_list,'eco_list':eco_list,'set_check':set_check, 'plant_id':plant_id, 'describe':describe}
     return HttpResponse(template.render(context_dict,request))
 
 #============================================

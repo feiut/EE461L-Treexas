@@ -18,7 +18,7 @@
 		<link rel="stylesheet" href='{% static "entry_style_modified.css" %}'>
 
 
-		
+
 	</head>
 
 <!--<link rel = "stylesheet" href="SubPage.css">-->
@@ -149,8 +149,21 @@
 			</table>
 		</div>
 
-
-
+<br>
+<br>
+<form action="/plant_profile/" method="post">
+	{% csrf_token %}
+		<div style="text-align: center">
+			<button style=" background-color: #A5A5Af; border: none;color:  white;padding: 15px 32px;text-align: center;text-decoration: none; display: inline-block; font-size: 16px;"id="show_parks"  type="submit" name="Des" value="Show" >Show Description</button>
+			<button  style="background-color: #A5A5Af; border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none; display: inline-block; font-size: 16px;" id="show_eco" type="submit" name="Des" value="Edit" >Edit Description</button>
+			<button  style="background-color: #A5A5Af; border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none; display: inline-block; font-size: 16px;" id="show_eco" type="submit" name="Des" value="Save" >Save Description</button>
+		</div>
+		{%if describe == 'Show' %}
+		<textarea class="form-control" style="min-width: 100%"></textarea>
+		{% endif %}
+		<input type="hidden" name="plant_id" value={{plant_id}}>
+</form>
+<br>
 <br>
 		<br>
 		<div class="d-flex flex-row justify-content-around">
@@ -295,7 +308,7 @@
 				if(document.getElementById(variableID).innerHTML === 'false'){
 
 					var x = document.getElementById(elementID);
-				
+
 					if(x.style.display === "none"){
 						x.style.display="block";
 						button.style.backgroundColor = "#57BC90";
@@ -312,7 +325,7 @@
 					button.style.backgroundColor = "#FF6961";
 					setTimeout(() => backgroundColorGrey(button), 500);
 				}
-			}			
+			}
 
 			function backgroundColorBlue(item){
 
@@ -333,7 +346,7 @@
 
 			function buttonReverseColor(item){
 				if(item.style.backgroundColor === "57BC90"){
-					item.style.backgroundColor = "#A5A5Af"; 
+					item.style.backgroundColor = "#A5A5Af";
 				} else{
 					item.style.backgroundColor = "#57BC90"
 				}
