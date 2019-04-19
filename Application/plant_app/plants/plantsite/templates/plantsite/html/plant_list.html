@@ -143,6 +143,13 @@
 								<option value =" Full Shade" {%if get_par.6 == ' Full Shade'%} selected {%endif%}> Full Shade</option>
 							</select>
 						<br>
+						<p class="pfilter">Edible or Not</p>
+							<select class="custom-select" name="edibility">
+								<option value ="AllType" {%if get_par.7 == 'AllType'%} selected {%endif%}>All Type</option>
+								<option value ="Edible" {%if get_par.7 == 'Edible'%} selected {%endif%}> Edible</option>
+								<option value ="Toxic" {%if get_par.7 == 'Toxic'%} selected {%endif%}> Inedible</option>
+							</select>
+						<br>
 						<br>
 					</div>
 					<br>
