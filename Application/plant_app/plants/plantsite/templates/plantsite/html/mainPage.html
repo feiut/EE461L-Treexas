@@ -1,42 +1,49 @@
 
 <!DOCTYPE html>
-{% load static %}
-<html style="height:100%;">
+{%load static%}
+<html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" type="image/png" href="{% static 'browser_icon.png' %}">
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+   <!-- Latest compiled and minified CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
   <link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="{% static 'main_page_style.css' %}">
+  <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" type='text/css'>
+
+ 
 
 
-  <link href='http://fonts.googleapis.com/css?family=Archivo' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Archivo:bold' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
 
 <style>
 @keyframes bg1 {
-	0%{
-	background-image: url('{% static "background_mp.jpg"%}');
-	}
-	25%{
-	background-image: url('{% static "background_mp2.jpg"%}');
-	}
+  0%{
+  background-image: url('{% static "background_mp.jpg"%}');
+  }
+  25%{
+  background-image: url('{% static "background_mp2.jpg"%}');
+  }
 
-	50%{
-	background-image: url('{% static "background_mp3.jpg"%}');
-	}
+  50%{
+  background-image: url('{% static "background_mp3.jpg"%}');
+  }
 
-	75%{
-	background-image: url('{% static "background_mp6.jpg"%}');
-	}
+  75%{
+  background-image: url('{% static "background_mp6.jpg"%}');
+  }
 
-	100%{
-	background-image: url('{% static "background_mp.jpg"%}');
-	}
+  100%{
+  background-image: url('{% static "background_mp.jpg"%}');
+  }
 }
 .bg2 {
   box-sizing:border-box;
@@ -44,8 +51,103 @@
     background-size:cover;
     background-repeat: no-repeat;
     background-position: top;
-		animation: bg1 40s cubic-bezier(.9,0,0,.9) infinite;
+    animation: bg1 40s cubic-bezier(.9,0,0,.9) infinite;
     -moz-transition: all 1s cubic-bezier(.9,0,0,.9);
+}
+
+
+html{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+  color: #57bc90 !important;
+  padding:0;
+}
+
+.page-link{
+  background-color:#57BC90; color:#FFFFFF;
+}
+.navbar-nav {
+  color: #57BC90;
+  font: 160% 'Fjalla One', Helvetica, sans-serif;
+}
+
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: #FFFFFF;
+}
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+    color: #FFFFFF;
+}
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:focus .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: #FFFFFF;
+}
+
+.navbar-brand {
+  color: #EFEFEF;
+  padding-top: 0;
+  padding-left: 0;
+  font: 250% 'Fjalla One', Helvetica, sans-serif;
+}
+
+.navbar-nav > li > a:hover, .navbar-brand:hover, .navbar-default .navbar-nav > li > a:focus {
+    background-color: #57bc90;
+    color: #57BC90;
+}
+.container{
+  margin-top:5%;
+}
+.title1{
+  font: 80px/1.2 'Fjalla One', sans-serif;
+  font-weight:800;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  }
+
+a {
+  color: #A5A5AF;
+}
+
+/* style icon */
+.input-group .glyphicon-search {
+position: absolute;
+padding: 20px;
+pointer-events: none;
+left: 0px;
+font-size: 15px;
+}
+
+/* add padding  */
+.input-group input { 
+  padding-left: 15px;
+}
+
+.form-control{
+background: rgba(255, 255, 255, 0.7);
+}
+
+#search_bar{
+width: 70%;
+left:15%;
+}
+.btn-outline{
+  border-color: #d9d9d9;
+  width: 7em;
 }
 
 </style>
@@ -76,132 +178,70 @@
     })
 
   </script>
-  <!-- <script type="text/javascript">
-  var bgImageArray = [1,2,3,4]
-  bgImageArray.forEach(function(img){
-    if(item==1){new Image().src = {% static "background_mp.jpg"%}}
-    if(item==2){new Image().src = {% static "background_mp2.jpg"%}}
-    if(item==3){new Image().src = {% static "background_mp3.jpg"%}}
-    if(item==4){new Image().src = {% static "background_mp6.jpg"%}}
-  })
-function backgroundSequence(){
-  window.ClearTimeout();
-  var k = 0;
-  for (i=0; i< bgImageArray.length;i++){
-    setTimeout(function(){
-      document.doument.documentElement.style.background
-    })
-  }
-}
-
-    window.onload = function () {
-     var imageFile = ["('{% static "background_mp.jpg"%}')", "('{% static "background_mp2.jpg"%}')",
-      "('{% static "background_mp3.jpg"%}')", "('{% static "background_mp4.jpg"%}')"];
-     var currentIndex = 0;
-      window.setInterval(function() {
-         if (currentIndex == imageFile.length) {
-             currentIndex = 0;
-         }
-         $('body').css('background-image', 'url' + imageFile[currentIndex++]);
-     }, 3000;)
-    };
-</script> -->
-
-<head>
-<body id="mainpage" style="height:100%;">
-
-<!-- <div id="spinner">
-<div class="trunk"><div><div><div><div><div><div><div><div></div><div></div></div><div><div></div><div></div></div></div><div><div><div></div><div></div></div><div><div></div><div></div></div></div></div><div><div><div><div></div><div></div></div><div><div></div><div></div></div></div><div><div><div></div><div></div></div><div><div></div><div></div></div></div></div></div><div><div><div><div><div></div><div></div></div><div><div></div><div></div></div></div><div><div><div></div><div></div></div><div><div></div><div></div></div></div></div><div><div><div><div></div><div></div></div><div><div></div><div></div></div></div><div><div><div></div><div></div></div><div><div></div><div></div></div></div></div></div></div><div><div><div><div><div><div></div><div></div></div><div><div></div><div></div></div></div><div><div><div></div><div></div></div><div><div></div><div></div></div></div></div><div><div><div><div></div><div></div></div><div><div></div><div></div></div></div><div><div><div></div><div></div></div><div><div></div><div></div></div></div></div></div><div><div><div><div><div></div><div></div></div><div><div></div><div></div></div></div><div><div><div></div><div></div></div><div><div></div><div></div></div></div></div><div><div><div><div></div><div></div></div><div><div></div><div></div></div></div><div><div><div></div><div></div></div><div><div></div><div></div></div></div></div></div></div></div><div><div><div><div><div><div><div></div><div></div></div><div><div></div><div></div></div></div><div><div><div></div><div></div></div><div><div></div><div></div></div></div></div><div><div><div><div></div><div></div></div><div><div></div><div></div></div></div><div><div><div></div><div></div></div><div><div></div><div></div></div></div></div></div><div><div><div><div><div></div><div></div></div><div><div></div><div></div></div></div><div><div><div></div><div></div></div><div><div></div><div></div></div></div></div><div><div><div><div></div><div></div></div><div><div></div><div></div></div></div><div><div><div></div><div></div></div><div><div></div><div></div></div></div></div></div></div><div><div><div><div><div><div></div><div></div></div><div><div></div><div></div></div></div><div><div><div></div><div></div></div><div><div></div><div></div></div></div></div><div><div><div><div></div><div></div></div><div><div></div><div></div></div></div><div><div><div></div><div></div></div><div><div></div><div></div></div></div></div></div><div><div><div><div><div></div><div></div></div><div><div></div><div></div></div></div><div><div><div></div><div></div></div><div><div></div><div></div></div></div></div><div><div><div><div></div><div></div></div><div><div></div><div></div></div></div><div><div><div></div><div></div></div><div><div></div><div></div></div></div></div></div></div></div></div><div><div><div><div><div><div><div><div></div><div></div></div><div><div></div><div></div></div></div><div><div><div></div><div></div></div><div><div></div><div></div></div></div></div><div><div><div><div></div><div></div></div><div><div></div><div></div></div></div><div><div><div></div><div></div></div><div><div></div><div></div></div></div></div></div><div><div><div><div><div></div><div></div></div><div><div></div><div></div></div></div><div><div><div></div><div></div></div><div><div></div><div></div></div></div></div><div><div><div><div></div><div></div></div><div><div></div><div></div></div></div><div><div><div></div><div></div></div><div><div></div><div></div></div></div></div></div></div><div><div><div><div><div><div></div><div></div></div><div><div></div><div></div></div></div><div><div><div></div><div></div></div><div><div></div><div></div></div></div></div><div><div><div><div></div><div></div></div><div><div></div><div></div></div></div><div><div><div></div><div></div></div><div><div></div><div></div></div></div></div></div><div><div><div><div><div></div><div></div></div><div><div></div><div></div></div></div><div><div><div></div><div></div></div><div><div></div><div></div></div></div></div><div><div><div><div></div><div></div></div><div><div></div><div></div></div></div><div><div><div></div><div></div></div><div><div></div><div></div></div></div></div></div></div></div><div><div><div><div><div><div><div></div><div></div></div><div><div></div><div></div></div></div><div><div><div></div><div></div></div><div><div></div><div></div></div></div></div><div><div><div><div></div><div></div></div><div><div></div><div></div></div></div><div><div><div></div><div></div></div><div><div></div><div></div></div></div></div></div><div><div><div><div><div></div><div></div></div><div><div></div><div></div></div></div><div><div><div></div><div></div></div><div><div></div><div></div></div></div></div><div><div><div><div></div><div></div></div><div><div></div><div></div></div></div><div><div><div></div><div></div></div><div><div></div><div></div></div></div></div></div></div><div><div><div><div><div><div></div><div></div></div><div><div></div><div></div></div></div><div><div><div></div><div></div></div><div><div></div><div></div></div></div></div><div><div><div><div></div><div></div></div><div><div></div><div></div></div></div><div><div><div></div><div></div></div><div><div></div><div></div></div></div></div></div><div><div><div><div><div></div><div></div></div><div><div></div><div></div></div></div><div><div><div></div><div></div></div><div><div></div><div></div></div></div></div><div><div><div><div></div><div></div></div><div><div></div><div></div></div></div><div><div><div></div><div></div></div><div><div></div><div></div></div></div></div></div></div></div></div></div>
-</div> -->
-
-<div class="bg2">
-
-	<nav class="navbar navbar-expand-sm navbar-fixed-top" style="background-color:rgba(0,0,0,0.35);">
-	  <div class="container-fluid">
-
-	    <div class="navbar-header">
-	      <a class="navbar-brand" href="#">Treexas</a>
-	    </div>
-
-	    <div class="topnav-entry">
-	      <ul class="nav navbar-nav navbar-right">
-	        <li><a href="/plant_list">Plants</a>
-	        </li>
-	        <li><a href="/park_list">State Parks</a>
-	        </li>
-	        <li><a href="/eco_list">Ecoregions</a>
-	        </li>
-	        <li><a href="/about">About Us</a>
-	        </li>
-	      </ul>
-	    </div>
-	  </div>
-	</nav>
-
-<br>
-<br>
-<br>
-<br>
 
 
-<div class="container vertical-center">
-  <!--label> Search for Plants! </label-->
-  <div class="row vertical-center">
-  	 <p class="title1">Welcome to Treexas</p>
+</head>
+
+<body id="mainpage">
+
+<div class="bg2" style="height:100%;">
+  <nav class="navbar navbar-expand-sm navbar-custom navbar-light" style="background-color:rgba(0,0,0,0.35);">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Treexas</a>
+      </div>
+
+      <div class="topnav-entry">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active"><a class = "nav-link" href="/plant_list">Plants</a>
+          </li>
+          <li class="nav-item active"><a class = "nav-link" href="/park_list">State Parks</a>
+          </li>
+          <li class="nav-item active"><a class = "nav-link" href="/eco_list">Ecoregions</a>
+          </li>
+          <li class="nav-item active"><a class = "nav-link" href="/about">About Us</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="container-fluid">
+      <!-- welcome -->
+    <div class="container" style="height:8em">
+
+          <p class="title1">Welcome to Treexas</p>
+
+    </div>
+
+    <!-- search bar -->
+    <div class="d-flex flex-row justify-content-center mx-auto">
+      <div class="col-12">
+          <form method="GET">
+              <div class="input-group" id="search_bar">
+              
+              <div class="input-group-append">
+                      <select class="form-control" name="SearchType" style="height:3.5em;">
+                          <option value="Plant" selected>Plant</option>
+                          <option value="Park">State park</option>
+                          <option value="Ecoregion">Ecoregion</option>
+                      </select>
+            </div>
+
+            <input class="form-control" type="text" name="search" placeholder="Plant Name">
+            <div class="input-group-append">
+                  <button class="btn btn-outline form-control" type="submit"><i class="fa fa-leaf fa_custom fa-2x"></i></button>
+                </div>
+              </div>
+          </form>
+      </div>
+    </div>
   </div>
 
 
-    <!--div class="input-group mb-3">
-      <input type="text" class="form-control" placeholder="Plant name" aria-label="Plant name" aria-describedby="basic-addon2">
-      <div class="input-group-append">
-        <button class="btn btn-outline-secondary" type="submit"><span class="glyphicon glyphicon-leaf"></span></button>
-      </div>
-    </div-->
-      <!--div class="d-flex justify-content-center h-100"-->
+ </div>
 
-        <!-- <p class="pfilter">Plant Type</p>
-          <select name="planttype" class="custom-select">
-            <option value ="AllType" selected>All Type</option>
-            <option value =" Shrub">Shrub</option>
-            <option value =" Shade Tree"> Shade Tree</option>
-            <option value=" Groundcover"> Groundcover</option>
-            <option value=" Ornamental Grass">Ornamental Grass</option>
-          </select>
-        <br> -->
-    <form method="GET">
-        <div class="input-group">
-          <div class="input-group-btn" style="min-width:250px">
-              <select class="form-control" name="SearchType">
-                  <option value="Plant" selected>Plant</option>
-                  <option value="Park">State park</option>
-                  <option value="Ecoregion">Ecoregion</option>
-              </select>
-
-          </div>
-          <input class="form-control" type="text" name="search" placeholder="search" autofocus/>
-
-          <!-- <i class="glyphicon glyphicon-search"></i> -->
-
-          <span class="input-group-btn">
-            <button class="btn btn-default" type="submit">
-            <i class="glyphicon glyphicon-leaf"></i></button>
-          </span>
-        </div>
-    </form>
-
-
-
-  <br>
-  <br>
-  <br>
-
-
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-      <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-      <script src="../../assets/js/vendor/popper.min.js"></script>
-      <script src="../../dist/js/bootstrap.min.js"></script>
-
-    </div>
-</div>
 </body>
 </html>
