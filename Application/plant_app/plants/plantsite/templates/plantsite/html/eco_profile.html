@@ -211,16 +211,20 @@
 
 
 	</div> -->
+	<div style="text-align: center">
+			<button style=" background-color: #A5A5Af; border: none;color:  white;padding: 15px 32px;text-align: center;text-decoration: none; display: inline-block; font-size: 16px;"id="show_plants"   onclick="xlist(this,'plants','plantSet')">Show plants</button>
+			<button  style="background-color: #A5A5Af; border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none; display: inline-block; font-size: 16px;" id="show_parks"  onclick="xlist(this,'parks','parkSet')">Show parks</button>
+		</div>
 	<br>
 	<br>
 
 	<div class="d-flex justify-content-between">
-	<div class="plant_list col" data-spy="scroll" id="plantlist">
+	<div id="plants" style="display: none" class="plant_list col" data-spy="scroll" id="plantlist">
 		<div class="d-flex flex-row flex-wrap">
 			{% for plant in names %}
-			<div class="card col-sm-4 px-4 card-style flex-wrap" onmouseover="img_over(this)" onmouseout="img_out(this)">
+			<div style="display: inline-block" class="card col-sm-4 px-4 card-style flex-wrap" onmouseover="img_over(this)" onmouseout="img_out(this)">
 				<a href="/plant_profile/?id={{plant.id}}">
-					<img class="card-img img-center"src="{{plant.image}}">
+					<img style="max-width: 100%" class="card-img img-center"src="{{plant.image}}">
 				</a>
 				<div class="card-body">
 					<h3 class="card-text text-center" >{{plant.name}}</h3>
@@ -278,16 +282,14 @@
 			</div>
 	</div>
 
-	<div class="col-xs-1">
-		<h3 style="color:#FFFFFF">nothing</h3>
-	</div>
+	
 
-	<div class="plant_list col" data-spy="scroll" id="plantlist">
+	<div id="parks" style="display: none" class="plant_list col" data-spy="scroll" id="plantlist">
 		<div class="d-flex flex-row flex-wrap">
 			{% for park in park_list %}
-			<div class="card col-sm-4 px-4 card-style flex-wrap" onmouseover="img_over(this)" onmouseout="img_out(this)">
+			<div style="display: inline-block" class="card col-sm-4 px-4 card-style flex-wrap" onmouseover="img_over(this)" onmouseout="img_out(this)">
 				<a href="/park_profile/?id={{park.id}}">
-					<img class="card-img img-center"src="{{park.image}}">
+					<img style="max-width: 100%" class="card-img img-center"src="{{park.image}}">
 				</a>
 				<div class="card-body">
 					<h3 class="card-text text-center" >{{park.name}}</h3>
@@ -320,5 +322,56 @@
 	  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
 	  <script src="../../assets/js/vendor/popper.min.js"></script>
 	  <script src="../../dist/js/bootstrap.min.js"></script>
+	<p id="plantSet" style="display: none">{{set_check.0}}</p>
+	<p id="parkSet" style="display: none">{{set_check.1}}</p>
 </body>
+<script type="text/javascript">
+	function xlist(button,elementID, variableID) {
+		if(document.getElementById(variableID).innerHTML === 'false'){
+			var x = document.getElementById(elementID);
+				if(x.style.display === "none"){
+					x.style.display="block";
+					button.style.backgroundColor = "#57BC90";
+
+				}else{
+					x.style.display ="none";
+					button.style.backgroundColor = "#A5A5AF";
+
+				}
+
+				}
+				else{
+					button.style.backgroundColor = "#FF6961";
+					setTimeout(() => backgroundColorGrey(button), 500);
+				}
+			}
+
+	function backgroundColorBlue(item){
+
+		item.style.backgroundColor = "#57BC90";
+	}
+
+	function backgroundColorGrey(button){
+		button.style.backgroundColor = "#A5A5Af";
+	}
+
+	function img_over(item){
+		item.style.borderColor = "#57BC90";
+		item.style.borderWidth = "4px";
+	}
+	function img_out(item){
+		item.style.borderColor = "#77C9D4";
+	}
+
+	function buttonReverseColor(item){
+		if(item.style.backgroundColor === "57BC90"){
+			item.style.backgroundColor = "#A5A5Af";
+		} else{
+			item.style.backgroundColor = "#57BC90"
+		}
+	}
+
+
+</script>
+
 </html>
