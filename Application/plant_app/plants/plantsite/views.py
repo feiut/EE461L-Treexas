@@ -572,7 +572,7 @@ def park_profile_view(request):
     eco_in_park = prof.ecoregionlist
     eco_in_park = re.sub("\[",'',str(eco_in_park)) #gets rid of brackets
     eco_in_park = re.sub("\]",'',str(eco_in_park))
-    eco_list = plants_in_park.split(',') #uses comma as delimiter to split string and make a list
+    eco_list = eco_in_park.split(',') #uses comma as delimiter to split string and make a list
     eco_ids = set()
     for e in eco_list:
         if not e == '' and not e=='N/A' and is_number(e):
@@ -582,6 +582,7 @@ def park_profile_view(request):
     for eco in eco_list:
         eco.image =eco.image.strip()
         eco.image = re.sub('https', 'https:', str(eco.image))
+        eco.image = re.sub('http','http:',str(eco.image))
     set_check.append(empty_check(eco_list))
     context_dict = {'profile': prof, 'plants':plants,'eco_list':eco_list,'set_check':set_check}
     return HttpResponse(template.render(context_dict, request))

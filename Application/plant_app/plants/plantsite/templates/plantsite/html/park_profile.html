@@ -132,11 +132,13 @@
 		        	{% for eco in eco_list %}
 		        	<div class="carousel-item">
 
-		        		<a href="/plant_profile/?id={{eco.id}}">
-		        			<img class="img-medium-center" src="{{eco.image}}">
+		        		<a href="/eco_profile/?id={{eco.id}}">
+		        			{% with ''|add:eco.image|add:'' as img_static %}
+									<img class="img-medium-center" src="{% static img_static %}">
+								{% endwith %}
 		        		</a>
 		        		<div class="carousel-caption d-non d-md-block" style="background-color: #77c9d4">
-		        			<h6 class="words1 text-center">{{eco.name}}</h6>
+		        			<h6 class="words1 text-center">{{eco.ecoregion}}</h6>
 		        		</div>
 		        	</div>
 		        	{% endfor %}
@@ -254,7 +256,7 @@
 				item.style.borderWidth = "4px";
 			}
 			function img_out(item){
-				item.style.borderColor = "#77C9D4";
+				item.style.borderColor = "#FFFFFF";
 			}
 
 			function buttonReverseColor(item){
