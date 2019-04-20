@@ -285,6 +285,8 @@ def plant_type_list(request):
             context_dict = paginator_processing(names, page, get_par, 15)
         return HttpResponse(template.render(context_dict,request))
 
+   
+
     textfield = request.GET.get('search')
     if textfield:
         results = search_plants_with_string(textfield)
