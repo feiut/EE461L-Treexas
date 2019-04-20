@@ -18,7 +18,7 @@ class EcoRegion(models.Model):
 
 
 class PlantCsvEcoregions(models.Model):
-    id = models.IntegerField(blank=True, primary_key=True)
+    #id = models.IntegerField(blank=True, primary_key=True)
     ecoregion = models.TextField(db_column='Ecoregion', blank=True, null=True)  # Field name made lowercase.
     paragraph = models.TextField(db_column='Paragraph', blank=True, null=True)  # Field name made lowercase.
     trees = models.TextField(db_column='Trees', blank=True, null=True)  # Field name made lowercase.

@@ -79,6 +79,13 @@
 				  </form>
 			</div>
 		</div>
+
+    <br>
+		<div style="text-align: center">
+			<button style=" background-color: #A5A5Af; border: none;color:  white;padding: 15px 32px;text-align: center;text-decoration: none; display: inline-block; font-size: 16px;"id="show_Top5_plants"  onclick="xlist(this,'Top5_plants')" >Show Top 5 Plants</button>
+		</div>
+		<textarea class="form-control" style="display:none" cols="30" readonly="readonly" id="Top5_plants"></textarea>
+		<br>
 		<!-- page body -->
 		<div class="d-flex flex-row mt-5 mx-5">
 			<!-- filters -->
@@ -239,6 +246,18 @@
 		window.location.href = '?page=' + page;
 		return false;
 		}
+
+		function xlist(button,elementID) {
+				var x = document.getElementById(elementID);
+				if(x.style.display === "none"){
+					x.style.display="block";
+					button.style.backgroundColor = "#57BC90";
+				}else{
+					x.style.display ="none";
+					button.style.backgroundColor = "#A5A5AF";
+				}
+		}
+
 	</script>
 </body>
 </html>
