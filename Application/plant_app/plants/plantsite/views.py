@@ -285,7 +285,8 @@ def plant_type_list(request):
             context_dict = paginator_processing(names, page, get_par, 15)
         return HttpResponse(template.render(context_dict,request))
 
-   
+    searched_plants = PlantCsv.objects.filter(search_times__gte=7)
+    searched_plants = fix_plant_defualt(searched_plants)
 
     textfield = request.GET.get('search')
     if textfield:
@@ -293,10 +294,14 @@ def plant_type_list(request):
         get_par = {'1':'', '2':'', '3':'', '4':'', '5':'', '6':'', '7':'', '8':''}
         if not results:
             context_dict = {'get_par': get_par}
+            new_dict = {'searched_plants':searched_plants}
+            context_dict.update(new_dict)
             return HttpResponse(template.render(context_dict,request))
         else:
             results = fix_plant_defualt(results)
             context_dict = {'names': results, 'get_par': get_par}
+            new_dict = {'searched_plants':searched_plants}
+            context_dict.update(new_dict)
             return HttpResponse(template.render(context_dict,request))
 
     planttype_field =request.GET.get('planttype')
@@ -328,7 +333,8 @@ def plant_type_list(request):
         context_dict = paginator_processing(names, 1, get_par, 15)
     else:
         context_dict = paginator_processing(names, page, get_par, 15)
-
+    new_dict = {'searched_plants':searched_plants}
+    context_dict.update(new_dict)
     response = HttpResponse(template.render(context_dict,request))
     if planttype_field:
         response.set_cookie('1', str(planttype_field))
