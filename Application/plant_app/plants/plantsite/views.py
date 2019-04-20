@@ -244,7 +244,8 @@ def about_page(request):
                     "chaz_commits":c[5], "chaz_issues":i[5], "xiyu_commits":c[6], "xiyu_issues":i[6],
                     "fei_commits":c[4], "fei_issues":i[4], "total_c":sum(c), "total_i":sum(i)}
     response = HttpResponse(template.render(context_dict, request))
-    return deleteCOOKIE(response, 8)
+    #return deleteCOOKIE(response, 8)
+    return response
 
 # def state_park_list(request):
 #     template = loader.get_template('plantsite/html/park_list.html')
