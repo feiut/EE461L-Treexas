@@ -8,7 +8,12 @@ from plantsite.views import get_all_plants
 from plantsite.views import get_park_with_dbid
 from plantsite.views import get_all_parks
 from plantsite.views import search_park_with_string
-
+from plantsite.views import is_number
+from plantsite.views import empty_check
+from plantsite.views import plants_each
+from plantsite.views import plant_profile_view
+from plantsite.views import eco_profile_view
+from plantsite.views import park_profile_view
 
 # Create your tests here.
 
@@ -18,12 +23,14 @@ class viewTest(TestCase):
         self.client = Client()
 
         # Tests must use fake dataset to do the works
-        PlantCsv.objects.create(name="Plant1", lat="32.24", longi="-99.87", image="test", nickname="test")
         
-        PlantCsvEcoregions.objects.create(dbid=0, ecoregion="Eco1", paragraph="Null", trees="Null", shrubs="Null",
-                                          succulents="Null", vines="Null", vine="Null", conifers="Null", grasses="Null", wildflowers="Null", image="https/test_img.png")
+        #PlantCsv.objects.create(name="Plant1", lat="32.24", longi="-99.87", image="test", nickname="test")
+        PlantCsv.objects.create(name="Plant1", lat="32.24", longi="-99.87", image="test", nickname="test", planttype=" Shrub", waterdemand=" Low", plantform=" Bushy", season=" Spring", nativeadapted=" Native", lightreq=" Full Sun", edibility="toxic", endangered="Endangered")
+        
+        PlantCsvEcoregions.objects.create(ecoregion="Eco1", paragraph="Null", trees="Null", shrubs="Null",
+                                          succulents="Null", vines="Null", vine="Null", conifers="Null", grasses="Null", wildflowers="Null", image="https/test_img.png", stateparks="[0]", plants="[0]")
                                           
-        Stateparks.objects.create(dbid=0, name="Park1", latitude="32.24", longitude="-99.87")
+        Stateparks.objects.create(name="Park1", latitude="32.24", longitude="-99.87", plantlist="[0]", ecoregionlisr="[0]")
         
         # Park.objects.create("Park2", "sp_dinosaur_valley.jpg", "/park2/")
         # Park.objects.create("Park3", "sp_daingerfield.jpg", "/park3/")
@@ -61,7 +68,6 @@ class viewTest(TestCase):
         response = self.client.get('/plant_list/')
         # Check that the response is 200 OK.
         self.assertEqual(response.status_code, 200)
-
     
     def test_ecoregion_list(self): #Passed
         # Issue a GET request.
@@ -69,6 +75,29 @@ class viewTest(TestCase):
         # Check that the response is 200 OK.
         self.assertEqual(response.status_code, 200)
 
+    #def test_plants_each(self):
+        # Issue a GET request.
+        #response = self.client.get('/plant_profile/?id=0')
+        # Check that the response is 200 OK.
+        #self.assertEqual(response.status_code, 200)
+
+    #def test_plant_profile_view(self):
+        # Issue a GET request.
+        #response = self.client.get('/plant_profile/?id=0')
+        # Check that the response is 200 OK.
+        #self.assertEqual(response.status_code, 200)
+
+    #def test_eco_profile_view(self):
+        # Issue a GET request.
+        #response = self.client.get('/eco_profile/?id=0')
+        # Check that the response is 200 OK.
+        #self.assertEqual(response.status_code, 200)
+
+    #def test_park_profile_view(self):
+        # Issue a GET request.
+        #response = self.client.get('/park_profile/?id=0')
+        # Check that the response is 200 OK.
+        #self.assertEqual(response.status_code, 200)
 
     '''Test the inner functions corresponding to searching in views.py'''
 
@@ -95,4 +124,22 @@ class viewTest(TestCase):
     def test_get_all_parks(self):
         result = get_all_parks()
         self.assertEqual(len(result), Stateparks.objects.count())
+
+    #def test_filter_plants_with_parameters(self):
+
+    #def test_is_number(self):
+        #s = 123
+        #self.assertEqual(is_number(s), True)
+
+    #def test_is_not_number(self):
+        #s = abrakadabra
+        #self.assertEqual(is_number(s), False)
+
+    #def test_empty_check(self):
+        #item = ""
+        #self.assertEqual(empty_check(item), "true")
+
+    #def test_not_empty_check(self):
+        #item = "flower"
+        #self.assertEqual(empty_check(item), "false")
 

@@ -157,6 +157,7 @@ class Ecoregion(object):
         self.name = name
         self.img = img
         self.url = url
+        
 def main_page(request):
     if request.method == 'GET':
         textfield =request.GET.get('search')
