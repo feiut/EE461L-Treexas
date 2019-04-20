@@ -562,6 +562,7 @@ def park_profile_view(request):
     set_check = list()
     dbid = request.GET.get('id')
     prof = get_park_with_dbid(str(dbid))
+    prof.url = re.sub('https', 'https:', str(prof.url))
     plants_in_park = prof.plantlist
     plants_in_park = re.sub("\[",'',str(plants_in_park)) #gets rid of brackets
     plants_in_park = re.sub("\]",'',str(plants_in_park))
@@ -588,7 +589,6 @@ def park_profile_view(request):
     for eco in eco_list:
         eco.image =eco.image.strip()
         eco.image = re.sub('https', 'https:', str(eco.image))
-        eco.image = re.sub('http','http:',str(eco.image))
     set_check.append(empty_check(eco_list))
     context_dict = {'profile': prof, 'plants':plants,'eco_list':eco_list,'set_check':set_check}
     return HttpResponse(template.render(context_dict, request))
