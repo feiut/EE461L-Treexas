@@ -82,10 +82,23 @@
 
     <br>
 		<div style="text-align: center">
-			<button style=" background-color: #A5A5Af; border: none;color:  white;padding: 15px 32px;text-align: center;text-decoration: none; display: inline-block; font-size: 16px;"id="show_Top5_plants"  onclick="xlist(this,'Top5_plants')" >Show Top 5 Plants</button>
+			<button style=" background-color: #A5A5Af; border: none;color:  white;padding: 15px 32px;text-align: center;text-decoration: none; display: inline-block; font-size: 16px;"id="show_Top5_plants"  onclick="xlist(this,'Top5_plants')" >Show most searched plants</button>
 		</div>
-		<textarea class="form-control" style="display:none" cols="30" readonly="readonly" id="Top5_plants"></textarea>
-		<br>
+		<!-- <textarea class="form-control" style="display:none" cols="30" readonly="readonly" id="Top5_plants"></textarea> -->
+		<div style="display: none" class="plant_list col" data-spy="scroll" id="Top5_plants">
+			<div class="d-flex flex-row flex-wrap">
+				{% for plant in searched_plants %}
+				<div style="display: inline-block" class="card col-sm-4 px-4 card-style flex-wrap" onmouseover="img_over(this)" onmouseout="img_out(this)">
+					<a href="/plant_profile/?id={{plant.id}}">
+						<img style="max-width: 100%" class="card-img img-center"src="{{plant.image}}">
+					</a>
+					<div class="card-body">
+						<h3 class="card-text text-center" >{{plant.name}}</h3>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
 		<!-- page body -->
 		<div class="d-flex flex-row mt-5 mx-5">
 			<!-- filters -->
