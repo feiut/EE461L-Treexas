@@ -154,17 +154,17 @@ left:15%;
 
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script type="text/javascript">
+  var count = 0;
+  var images = ["('{% static "background_mp2.jpg"%}')","('{% static "background_mp.jpg"%}')","('{% static "background_mp3.jpg"%}')","('{% static "background_mp6.jpg"%}')"];
+  var image = $(".bg2");
+
+  image.css("background-image","url"+images[count]);
+
     $(document).ready(function(){
       $(function(){
           $('#spinner').fadeOut();
       })
-
-      var count = 0;
-      var images = ["('{% static "background_mp2.jpg"%}')","('{% static "background_mp.jpg"%}')","('{% static "background_mp3.jpg"%}')","('{% static "background_mp6.jpg"%}')"];
-      var image = $(".bg2");
-
-      image.css("background-image","url"+images[count]);
-
+      
       setInterval(function(){
         image.fadeOut(1000,function(){
             image.css("background-image","url"+images[count++]);
@@ -176,6 +176,7 @@ left:15%;
         }
       },5000);
     });
+
 
   </script>
 
