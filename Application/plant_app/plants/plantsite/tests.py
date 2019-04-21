@@ -31,7 +31,7 @@ class viewTest(TestCase):
         PlantCsvEcoregions.objects.create(id=1, ecoregion="Eco1", paragraph="Null", trees="Null", shrubs="Null",
                                           succulents="Null", vines="Null", vine="Null", conifers="Null", grasses="Null", wildflowers="Null", image="https/test_img.png", stateparks="[1]", plants="[1]")
                                           
-        Stateparks.objects.create(id=1, name="Park1", latitude="32.24", longitude="-99.87", plantlist="[1]", ecoregionlist="[1]")
+        Stateparks.objects.create(id=1, name="Park1", latitude="32.24", longitude="-99.87", plantlist="[1]", ecoregionlist="[1]", image="test")
         
         # Park.objects.create("Park2", "sp_dinosaur_valley.jpg", "/park2/")
         # Park.objects.create("Park3", "sp_daingerfield.jpg", "/park3/")
