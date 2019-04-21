@@ -157,11 +157,13 @@ class Ecoregion(object):
         self.name = name
         self.img = img
         self.url = url
-        
+
 def main_page(request):
     if request.method == 'GET':
         textfield =request.GET.get('search')
         search_type = request.GET.get('SearchType')
+        searched_plants = PlantCsv.objects.filter(search_times__gte=7)
+        searched_plants = fix_plant_defualt(searched_plants)
         if str(search_type) == 'Plant':
             if not textfield:
                 template = loader.get_template('plantsite/html/mainPage.html')
@@ -170,11 +172,12 @@ def main_page(request):
             results = search_plants_with_string(textfield)
             if not results:
                 template = loader.get_template('plantsite/html/plant_list.html')
-                response = HttpResponse(template.render({},request))
+                context_dict = {'searched_plants':searched_plants}
+                response = HttpResponse(template.render(context_dict,request))
                 return deleteCOOKIE(response, 8)
             else:
                 template = loader.get_template('plantsite/html/plant_list.html')
-                context_dict = {"names":results}
+                context_dict = {"names":results, 'searched_plants':searched_plants}
                 response = HttpResponse(template.render(context_dict,request))
                 return deleteCOOKIE(response, 8)
         if str(search_type) == 'Park':
