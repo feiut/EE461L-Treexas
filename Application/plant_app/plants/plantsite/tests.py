@@ -15,6 +15,7 @@ from plantsite.views import plant_profile_view
 from plantsite.views import eco_profile_view
 from plantsite.views import park_profile_view
 from plantsite.views import get_plant_with_id
+from plantsite.views import filter_plants_with_parameters
 
 # Create your tests here.
 
@@ -26,8 +27,15 @@ class viewTest(TestCase):
         # Tests must use fake dataset to do the works
         
         #PlantCsv.objects.create(name="Plant1", lat="32.24", longi="-99.87", image="test", nickname="test")
-        PlantCsv.objects.create(id=1, name="Plant1", lat="32.24", image="test", nickname="test", planttype=" Shrub", waterdemand=" Low", plantform=" Bushy", season=" Spring", nativeadapted=" Native", lightreq=" Full Sun", edibility="toxic", endangered="Endangered", ecoregionids="[1]", statepark="[1]", search_times="1")
-        
+        PlantCsv.objects.create(id=1, name="Plant1", lat="32.24", image="test", nickname="test", planttype=" test", waterdemand=" Low", plantform=" Bushy", season=" Spring", nativeadapted=" Native", lightreq=" Full Sun", edibility="toxic", endangered="N/A", ecoregionids="[1]", statepark="[1]", search_times="1")
+        PlantCsv.objects.create(id=2, name="Plant2", lat="32.24", image="test", nickname="test", planttype=" Shrub", waterdemand=" test", plantform=" Bushy", season=" Spring", nativeadapted=" Native", lightreq=" Full Sun", edibility="toxic", endangered="N/A", ecoregionids="[1]", statepark="[1]", search_times="1")
+        PlantCsv.objects.create(id=3, name="Plant3", lat="32.24", image="test", nickname="test", planttype=" Shrub", waterdemand=" Low", plantform=" test", season=" Spring", nativeadapted=" Native", lightreq=" Full Sun", edibility="toxic", endangered="N/A", ecoregionids="[1]", statepark="[1]", search_times="1")
+        PlantCsv.objects.create(id=4, name="Plant4", lat="32.24", image="test", nickname="test", planttype=" Shrub", waterdemand=" Low", plantform=" Bushy", season=" test", nativeadapted=" Native", lightreq=" Full Sun", edibility="toxic", endangered="N/A", ecoregionids="[1]", statepark="[1]", search_times="1")
+        PlantCsv.objects.create(id=5, name="Plant5", lat="32.24", image="test", nickname="test", planttype=" Shrub", waterdemand=" Low", plantform=" Bushy", season=" Spring", nativeadapted=" test", lightreq=" Full Sun", edibility="toxic", endangered="N/A", ecoregionids="[1]", statepark="[1]", search_times="1")
+        PlantCsv.objects.create(id=6, name="Plant6", lat="32.24", image="test", nickname="test", planttype=" Shrub", waterdemand=" Low", plantform=" Bushy", season=" Spring", nativeadapted=" Native", lightreq=" test", edibility="toxic", endangered="N/A", ecoregionids="[1]", statepark="[1]", search_times="1")
+        PlantCsv.objects.create(id=7, name="Plant7", lat="32.24", image="test", nickname="test", planttype=" Shrub", waterdemand=" Low", plantform=" Bushy", season=" Spring", nativeadapted=" Native", lightreq=" Full Sun", edibility="test", endangered="N/A", ecoregionids="[1]", statepark="[1]", search_times="1")
+        PlantCsv.objects.create(id=8, name="Plant8", lat="32.24", image="test", nickname="test", planttype=" Shrub", waterdemand=" Low", plantform=" Bushy", season=" Spring", nativeadapted=" Native", lightreq=" Full Sun", edibility="toxic", endangered="Endangered", ecoregionids="[1]", statepark="[1]", search_times="1")
+
         PlantCsvEcoregions.objects.create(id=1, ecoregion="Eco1", paragraph="Null", trees="Null", shrubs="Null",
                                           succulents="Null", vines="Null", vine="Null", conifers="Null", grasses="Null", wildflowers="Null", image="https/test_img.png", stateparks="[1]", plants="[1]")
                                           
@@ -126,8 +134,6 @@ class viewTest(TestCase):
         result = get_all_parks()
         self.assertEqual(len(result), Stateparks.objects.count())
 
-    #def test_filter_plants_with_parameters(self):
-
     def test_is_number(self):#Passed
         s = 123
         self.assertEqual(is_number(s), True)
@@ -144,3 +150,43 @@ class viewTest(TestCase):
         item = "flower"
         self.assertEqual(empty_check(item), "false")
 
+    '''Test the very important filter in different branches and main pathes.'''
+    def test_filter_plants_with_parameters1(self):
+        names = filter_plants_with_parameters("test", "AllType", "AllType", "AllType", "AllType", "AllType", "AllType", "AllType")
+        self.assertEqual(list(names)[0].id, 1)
+
+    def test_filter_plants_with_parameters2(self):
+        names = filter_plants_with_parameters("AllType", "test", "AllType", "AllType", "AllType", "AllType", "AllType", "AllType")
+        self.assertEqual(list(names)[0].id, 2)
+
+    def test_filter_plants_with_parameters3(self):
+        names = filter_plants_with_parameters("AllType", "AllType", "test", "AllType", "AllType", "AllType", "AllType", "AllType")
+        self.assertEqual(list(names)[0].id, 3)
+
+    def test_filter_plants_with_parameters4(self):
+        names = filter_plants_with_parameters("AllType", "AllType", "AllType", "test", "AllType", "AllType", "AllType", "AllType")
+        self.assertEqual(list(names)[0].id, 4)
+
+    def test_filter_plants_with_parameters5(self):
+        names = filter_plants_with_parameters("AllType", "AllType", "AllType", "AllType", "test", "AllType", "AllType", "AllType")
+        self.assertEqual(list(names)[0].id, 5)
+
+    def test_filter_plants_with_parameters6(self):
+        names = filter_plants_with_parameters("AllType", "AllType", "AllType", "AllType", "AllType", "test", "AllType", "AllType")
+        self.assertEqual(list(names)[0].id, 6)
+
+    def test_filter_plants_with_parameters7(self):
+        names = filter_plants_with_parameters("AllType", "AllType", "AllType", "AllType", "AllType", "AllType", "test", "AllType")
+        self.assertEqual(list(names)[0].id, 7)
+
+    def test_filter_plants_with_parameters8(self):
+        names = filter_plants_with_parameters("AllType", "AllType", "AllType", "AllType", "AllType", "AllType", "AllType", "test")
+        self.assertEqual(list(names)[0].id, 8)
+
+    def test_filter_plants_with_parameters_all(self):
+        names = filter_plants_with_parameters("AllType", "AllType", "AllType", "AllType", "AllType", "AllType", "AllType", "AllType")
+        self.assertEqual(len(names), 8)
+
+    def test_filter_plants_with_parameters_none(self):
+        names = filter_plants_with_parameters("test", "test", "AllType", "AllType", "AllType", "AllType", "AllType", "AllType")
+        self.assertEqual(len(names), 0)
