@@ -30,6 +30,8 @@ p {
 
 .navbar-brand {
   color: #FFFFFF;
+  padding-top: 0;
+  padding-left: 0;
   font: 250% 'Fjalla One', Helvetica, sans-serif;
 }
 
@@ -160,4 +162,120 @@ img{
     border-radius: 8px;
     margin: 20px;
 
+}
+
+/*
+Added to enable "overflow-y"
+*/
+
+#plantlist{
+	border-left: 1px solid;
+	color: #cccccc;
+}
+#filters{
+	border-top: 1px;
+	color:#a6a6a6;
+}
+
+.pfilter{
+	color: #FFFFFF;
+	font-family: Arial;
+	font-size: 120%;
+	margin: 20px;
+	width: 100%;
+}
+.horizontal-align{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.imgentry{
+	object-fit: cover;
+	width: 250px;
+	height: 250px;
+	border-radius: 8px;
+	margin: 20px;
+}
+.plant_list{
+	height: 45em;
+	overflow-y: scroll;
+}
+
+.glyphicon-leaf{
+font-size: 28px;
+}
+
+/* style icon */
+.input-group .glyphicon-search {
+position: absolute;
+padding: 20px;
+pointer-events: none;
+left: 0px;
+font-size: 15px;
+}
+
+/*change the plant information text*/
+.text-plant-each {
+height: 20px;
+width: 90%;
+word-wrap: break-word;
+
+}
+.table-scroll {
+  /*
+  height: 500px;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  */
+  scrollbar-DarkShadow-Color: #9FB7D7;
+  scrollbar-Track-Color: #F7F7F7;
+  scrollbar-Face-Color: #C7CFFF;
+  scrollbar-Shadow-Color: #FFFFFF;
+  scrollbar-Highlight-Color: #FFFFFF;
+  scrollbar-3dLight-Color: #C7CFF7;
+  scrollbar-Arrow-Color: #4F5F87;
+}
+
+
+/* add padding  */
+.input-group input { padding-left: 50px;}
+
+.btn-default{
+width: 100px;
+padding: 8.5px;
+background: rgba(255, 255, 255, 0.7);
+}
+
+.form-control{
+padding: 25px;
+font-size: 20px;
+background: rgba(255, 255, 255, 0.7);
+}
+#page_footer{
+	position: relative;
+	width:80%
+	left: 0;
+}
+#page_goto span{
+		padding: 1px 6px 1px 15px;
+}
+#page_goto input{
+		border: none;
+		padding: .45em;
+		width: 2em;
+		text-align: center;
+}
+
+.card-style{
+	border-color : #FFFFFF;
+	border-width : 10px;
+}
+
+.prevpage{
+	color: black;
+}
+.nextpage{
+	color: black;
 }

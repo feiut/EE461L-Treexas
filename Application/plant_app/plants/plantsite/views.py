@@ -435,13 +435,7 @@ def plant_profile_view(request):
         if not p == '':
             park_ids.add(p)
 
-    park_list = Stateparks.objects.filter(id__in=park_ids)
 
-    for park in park_list:
-        park.image = park.image.strip()
-        park.image = re.sub('https','https:',str(park.image))
-
-    set_check.append(empty_check(park_list))
 
     #gets eco regions
     eco_for_plant = prof.ecoregionids
@@ -453,11 +447,26 @@ def plant_profile_view(request):
         if not e == '' and not e=='N/A' and is_number(e):
             eco_ids.add(e)
     eco_list = PlantCsvEcoregions.objects.filter(id__in=eco_ids)
+    for e in eco_list:
+        parks_for_eco = e.stateparks
+        parks_for_eco = re.sub("\[",'',str(parks_for_eco)) #gets rid of brackets
+        parks_for_eco = re.sub("\]",'',str(parks_for_eco))
+        park_eco = parks_for_eco.split(',') #uses comma as delimiter to split string and make a list
+        for p in park_eco:
+            if not p == '':
+                park_ids.add(p)
 
     for eco in eco_list:
         eco.image =eco.image.strip()
         eco.image = re.sub('https', 'https:', str(eco.image))
     set_check.append(empty_check(eco_list))
+
+    park_list = Stateparks.objects.filter(id__in=park_ids)
+
+    for park in park_list:
+        park.image = park.image.strip()
+        park.image = re.sub('https','https:',str(park.image))
+    set_check.append(empty_check(park_list))
 
     context_dict = {'profile': prof,'park_list':park_list,'eco_list':eco_list,'set_check':set_check, 'plant_id':plant_id, 'describe':describe, 'plant_description':plant_description}
     return HttpResponse(template.render(context_dict,request))
