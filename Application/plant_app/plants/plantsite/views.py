@@ -578,6 +578,10 @@ def park_profile_view(request):
     template = loader.get_template('plantsite/html/park_profile.html')
     set_check = list()
     dbid = request.GET.get('id')
+    if not dbid:
+        if 'park_id' in request.COOKIES:
+            dbid = request.COOKIES['park_id']
+
     prof = get_park_with_dbid(str(dbid))
     prof.url = re.sub('https', 'https:', str(prof.url))
     plants_in_park = prof.plantlist
@@ -585,13 +589,9 @@ def park_profile_view(request):
     plants_in_park = re.sub("\]",'',str(plants_in_park))
     plant_list = plants_in_park.split(',') #uses comma as delimiter to split string and make a list
     plant_ids = set() #set will be used to store database objects (a query set)
-    for p in plant_list:
-        if not p == '':
-            plant_ids.add(p)
-
-    plants = PlantCsv.objects.filter(id__in=plant_ids)
-
-    set_check.append(empty_check(plants))
+    # for p in plant_list:
+    #     if not p == '':
+    #         plant_ids.add(p)
 
     eco_in_park = prof.ecoregionlist
     eco_in_park = re.sub("\[",'',str(eco_in_park)) #gets rid of brackets
@@ -603,11 +603,33 @@ def park_profile_view(request):
             eco_ids.add(e)
     eco_list = PlantCsvEcoregions.objects.filter(id__in=eco_ids)
 
+    for e in eco_list:
+        plants_for_eco = e.plants
+        plants_for_eco = re.sub("\[",'',str(plants_for_eco)) #gets rid of brackets
+        plants_for_eco = re.sub("\]",'',str(plants_for_eco))
+        plants_eco = plants_for_eco.split(',') #uses comma as delimiter to split string and make a list
+        for p in plants_eco:
+            if not p == '':
+                plant_ids.add(p)
+    plants = PlantCsv.objects.filter(id__in=plant_ids)
+
+    page = request.GET.get('page')
+    if not page:
+        context_dict1 = paginator_processing(plants, 1, 0, 12)
+    else:
+        context_dict1 = paginator_processing(plants, int(page), 0, 12)
+
+    set_check.append(empty_check(plants))
+
     for eco in eco_list:
         eco.image =eco.image.strip()
         eco.image = re.sub('https', 'https:', str(eco.image))
     set_check.append(empty_check(eco_list))
-    context_dict = {'profile': prof, 'plants':plants,'eco_list':eco_list,'set_check':set_check}
-    return HttpResponse(template.render(context_dict, request))
+    context_dict = {'profile': prof, 'eco_list':eco_list,'set_check':set_check}
+    context_dict.update(context_dict1)
+    response = HttpResponse(template.render(context_dict, request))
+    if dbid:
+        response.set_cookie('park_id', str(dbid))
+    return response
 
 #<img src="{{ MEDIA_URL }}{{ image.image.url }}" />
