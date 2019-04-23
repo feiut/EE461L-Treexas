@@ -5,17 +5,22 @@
     <link rel="stylesheet" href="node_modules/mocha/mocha.css">
   </head>
   <body>
+    <!-- load code you want to test here -->
 
     <div id="mocha"></div>
     <script src="node_modules/mocha/mocha.js"></script>
     <script src="node_modules/chai/chai.js"></script>
     <script>mocha.setup('bdd')</script>
 
-    <script src="eco_list.js"></script>
+    <script src="plant_list.js"></script>
     <script src="park_list.js"></script>
-    <script src="add.js"></script>
-    <script src="JStest.js"></script>
+    <script src="eco_list.js"></script>
+    <script src="plant_profile.js"></script>
+    <script src="park_profile.js"></script>
+    <script src="eco_profile.js"></script>
 
+    <!-- load your test files here -->
+    <script src="JStest.js"></script>
 
 
     <div id="item">
@@ -35,15 +40,22 @@
     </div>
 
     <br>
-
+    <div>
+    <button id="show_Top5_plants"  style="background-color: #A5A5Af;" onclick="xlist(this,'Top5_plants')" >plant list page Top5_plants</button>
+      <div style="display: none" class="plant_list col" data-spy="scroll" id="Top5_plants">
+      Top5_plants!
+      </div>
+    </div>
+<div>
+  <button id="plant_profile"  style="background-color: #A5A5Af;">plant profile</button>
+  <p id="parkSet" style="display: none">true</p>
+  <p id="ecoSet" style="display: none">false</p>
+</div>
     <div class="col-xs-6">
       <p>test info3:</p>
   		<h1 class="color1 text-center" id="eco_text">Pick Your Ecoregion!</h1>
   		<img class="" src="" id="eco_pic"/>
   	</div>
-    <!-- load code you want to test here -->
-
-    <!-- load your test files here -->
 
     <script>
       mocha.run();

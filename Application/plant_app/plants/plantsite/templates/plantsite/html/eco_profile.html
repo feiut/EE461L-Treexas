@@ -3,42 +3,59 @@
 <html>
 <head>
 	<link rel="shortcut icon" type="image/png" href="{% static 'browser_icon.png' %}">
-	<link rel="stylesheet" href="{% static "entry_style.css" %}">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 	 <!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-	<!-- jQuery library -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<!-- Latest compiled JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
   	<link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet'type='text/css'>
+
+<!-- Modified to enable "overflow-y"-->
+	<link rel="stylesheet" href="{% static "entry_style_modified.css" %}">
+<!-- -->
+
+	<script type="text/javascript">
+		function img_over(item){
+			item.style.borderColor = "#57BC90";
+		}
+		function img_out(item){
+			item.style.borderColor = "#FFFFFF";
+		}
+
+	</script>
+
 </head>
 
 <body>
-	<div class="container">
-		<div class="row">
-			<div class="col">
-			<nav class="navbar navbar-expand-lg navbar-fixed-top" style="background-color:rgba(0,0,0,0.35);">
-			  <div class="container-fluid">
+	<nav class="navbar navbar-expand-sm navbar-custom navbar-light fixed-top" style="background-color: #A5A5Af">
+	  <div class="container-fluid">
 
-			    <div class="navbar-header">
-			      <a class="navbar-brand" href="/">Treexas</a>
-			    </div>
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="/">Treexas</a>
+	    </div>
 
-			    <div class="topnav-entry">
-			      <ul class="nav navbar-nav navbar-right">
-			        <li><a href="/plant_list">Plants</a>
-			        </li>
-			        <li><a href="/park_list">State Parks</a>
-			        </li>
-			        <li><a href="/eco_list">Ecoregions</a>
-			        </li>
-			      </ul>
-			    </div>
-			  </div>
-			</nav>
-			</div>
-		</div>
+	    <div class="topnav-entry">
+	      <ul class="navbar-nav mr-auto">
+	        <li class="nav-item active"><a class = "nav-link" href="/plant_list">Plants</a>
+	        </li>
+	        <li class="nav-item active"><a class = "nav-link" href="/park_list">State Parks</a>
+	        </li>
+	        <li class="nav-item active"><a class = "nav-link" href="/eco_list">Ecoregions</a>
+	        </li>
+	        <li class="nav-item active"><a class = "nav-link" href="/about">About Us</a>
+	        </li>
+	     	<!-- <li class="nav-item active"><a class="nav-link" href="" onclick="window.history.go(-1); return false;"> Back </a>
+	     	</li> -->
+	      </ul>
+	    </div>
+	  </div>
+	</nav>
 
 		<br>
 		<br>
@@ -46,10 +63,10 @@
 
 		<div class="row">
 			<div class="col">
-				<h1 class="text-center">{{profile.ecoregion}}</h1>
+				<h1 class="title1 text-center">{{profile.ecoregion}}</h1>
 				<div class="text-center">
 					{% with ''|add:profile.image|add:'' as img_static %}
-						<img class="img imgstyle" src="{% static img_static %}">
+						<img class="img imgstyle-large" src="{% static img_static %}">
 					{% endwith %}
 				</div>
 				<p class="text-center">{{profile.paragraph}}</p>
@@ -57,7 +74,7 @@
 		</div>
 
 
-
+		<!--
 		<div class="row">
 			{% for park in parks %}
 			<div class="col-sm-4">
@@ -70,48 +87,291 @@
 			</div>
 			{% endfor %}
 		</div>
+		-->
 
+	<div class="d-flex flex-row justify-content-around">
+		<div>
+			<h3 class="title2"> Plants In this Ecoregion </h3>
+		</div>
+		<div>
+			<h3 class="title2"> State Parks In this Ecoregion </h3>
+		</div>
+	</div>
 
-
-	<div class="row">
-		<div class="col-xs-12">
+	<div class="d-flex flex-row justify-content-around">
 
 		    <div id="myCarousel" class="carousel slide" data-ride="carousel">
 		        <!-- Wrapper for carousel items -->
 		        <div class="carousel-inner">
-		        	<div class="item active carouselImg">
-		                <img src="{% static "background-succulent.jpeg" %}" class="img-center">
-		               	<div class="carousel-caption">
-		        			<h3 class="text-center">Plants for This Ecoregion</h3>
+		        	<div class="carousel-item active">
+		                <img class="img-medium-center" src="{% static "background-succulent.jpeg" %}">
+		               	<div class="carousel-caption d-non d-md-block" style="background-color: #77c9d4">
+		        			<h6 class="words1 text-center">Plants</h3>
 		        		</div>
 		            </div>
-		        	{% for plant in plants %}
-		        	<div class="item carouselImg">
+		        	{% for plant in names %}
+		        	<div class="carousel-item">
+
 		        		<a href="/plant_profile/?id={{plant.id}}">
-		        			<img class="img-center" src="{{plant.image}}">
+		        			<img class="img-medium-center" src="{{plant.image}}">
 		        		</a>
-		        		<div class="carousel-caption">
-		        			<h3 class="text-center">{{plant.name}}</h3>
+		        		<div class="carousel-caption d-non d-md-block" style="background-color: #77c9d4">
+		        			<h6 class="words1 text-center">{{plant.name}}</h3>
 		        		</div>
 		        	</div>
 		        	{% endfor %}
 		        </div>
 		        <!-- Carousel controls -->
-		        <a class="carousel-control left" href="#myCarousel" data-slide="prev">
-		            <span class="glyphicon glyphicon-chevron-left"></span>
+		        <a class="carousel-control-prev" href="#myCarousel" role="button"data-slide="prev" style="background-color:#57bc90">
+		                <span class="carousel-control-prev-icon" aria-hidden="true" style="color:#57bc90"></span>
+    					<span class="sr-only" style="color:#57bc90">Previous</span>
 		        </a>
-		        <a class="carousel-control right" href="#myCarousel" data-slide="next">
-		            <span class="glyphicon glyphicon-chevron-right"></span>
+		        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next" style="background-color:#57bc90">
+		                <span class="carousel-control-next-icon" aria-hidden="true" style="color:#57bc90"></span>
+    					<span class="sr-only" style="color:#57bc90">Next</span>
 		        </a>
 		    </div>
-		 </div>
+
+		    <div id="myCarousel2" class="carousel slide" data-ride="carousel">
+		        <!-- Wrapper for carousel items -->
+		        <div class="carousel-inner">
+		        	<div class="carousel-item active">
+		                <img class="img-medium-center" src="{% static "background-succulent.jpeg" %}">
+		               	<div class="carousel-caption d-non d-md-block" style="background-color: #77c9d4">
+		        			<h6 class="words1 text-center">State Parks</h6>
+		        		</div>
+		            </div>
+		        	{% for park in park_list %}
+		        	<div class="carousel-item">
+
+		        		<a href="/park_profile/?id={{park.id}}">
+		        			<img class="img-medium-center" src="{{park.image}}">
+		        		</a>
+		        		<div class="carousel-caption d-non d-md-block" style="background-color: #77c9d4">
+		        			<h6 class="words1 text-center">{{park.name}}</h6>
+		        		</div>
+		        	</div>
+		        	{% endfor %}
+		        </div>
+		        <!-- Carousel controls -->
+		        <a class="carousel-control-prev" href="#myCarousel2" role="button"data-slide="prev" style="background-color:#57bc90">
+		                <span class="carousel-control-prev-icon" aria-hidden="true" style="color:#57bc90"></span>
+    					<span class="sr-only" style="color:#57bc90">Previous</span>
+		        </a>
+		        <a class="carousel-control-next" href="#myCarousel2" role="button" data-slide="next" style="background-color:#57bc90">
+		                <span class="carousel-control-next-icon" aria-hidden="true" style="color:#57bc90"></span>
+    					<span class="sr-only" style="color:#57bc90">Next</span>
+		        </a>
+		    </div>
+
+
 	</div>
 
-</div>
+	<br>
+	<br>
+	<!-- <div class="d-flex justify-content-between">
 
+		<div class="col-xs-6">
+			<div class="row" >
+				<div class="card-columns" >
+				{% for plant in plants %}
+				<div class="card" style="width:13vw; margin: 1vw; border-width: 4px; border-color: #77c9d4" onmouseover="img_over(this)" onmouseout="img_out(this)">
+					<a href="/plant_profile/?id={{plant.id}}">
+						<img class="card-img-top img-center-small" src="{{plant.image}}">
+					</a>
+					<div class="card-body">
+						<h3 class="card-text text-center words1" >{{plant.name}}</h3>
+					</div>
+				</div>
+				{% endfor %}
+				</div>
+			</div>
+		</div>
+
+		<div class="col-xs-1">
+			<h3 style="color:#FFFFFF">nothing</h3>
+		</div>
+
+		<div class="col-xs-6">
+			<div class="row">
+				<div class="card-columns">
+				{% for park in park_list %}
+				<div class="card" style="width:13vw; margin: 1vw; border-width: 4px; border-color: #77c9d4" onmouseover="img_over(this)" onmouseout="img_out(this)">
+					<a href="/park_profile/?id={{park.dbid}}">
+						<img class="card-img-top img-center-small" src="{{park.image}}">
+					</a>
+					<div class="card-body">
+						<h3 class="card-text text-center words1" >{{park.name}}</h3>
+					</div>
+				</div>
+				{% endfor %}
+				</div>
+			</div>
+		</div>
+
+
+	</div> -->
+	<div style="text-align: center">
+			<button style=" background-color: #A5A5Af; border: none;color:  white;padding: 15px 32px;text-align: center;text-decoration: none; display: inline-block; font-size: 16px;"id="show_plants"   onclick="xlist(this,'plants','plantSet')">Show plants</button>
+			<button  style="background-color: #A5A5Af; border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none; display: inline-block; font-size: 16px;" id="show_parks"  onclick="xlist(this,'parks','parkSet')">Show parks</button>
+		</div>
+	<br>
+	<br>
+
+	<div class="d-flex justify-content-between">
+	<div id="plants" style="display: none" class="plant_list col" data-spy="scroll" id="plantlist">
+		<div class="d-flex flex-row flex-wrap">
+			{% for plant in names %}
+			<div style="display: inline-block" class="card col-sm-4 px-4 card-style flex-wrap" onmouseover="img_over(this)" onmouseout="img_out(this)">
+				<a href="/plant_profile/?id={{plant.id}}">
+					<img style="max-width: 100%" class="card-img img-center"src="{{plant.image}}">
+				</a>
+				<div class="card-body">
+					<h3 class="card-text text-center" >{{plant.name}}</h3>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+		<div class="mt-2">
+				<div id="page_footer">
+					<ul class="pagination justify-content-center">
+							<li class="page-item">
+									<a class="page-link" href="?page=
+											{% if names.has_previous %}
+													{{names.previous_page_number}}
+											{% else %}
+													{{names.number}}
+											{% endif %}
+									" aria-label="Previous">
+											<span aria-hidden="true">&laquo;</span>
+									</a>
+							</li>
+							{% for page in pages.page_range_ex %}
+								{% if page == '...' %}
+									<li class="page-item"><span class="page-link">...</span></li>
+								{% else %}
+									<li class="page-item"><a class="page-link" href="?page={{page}}">{{page}}</a></li>
+								{% endif %}
+							{% endfor %}
+							<li class="page-item">
+									<a class="page-link" href="?page=
+											{% if names.has_next %}
+													{{names.next_page_number}}
+											{% else %}
+													{{names.number}}
+											{% endif %}
+									" aria-label="Next">
+											<span aria-hidden="true">&raquo;</span>
+									</a>
+							</li>
+						<li class="page-item" id="page_goto">
+							<span class="page-link">
+								Page
+								<input type="text" value="{{pages.page_goto}}"/>
+							</span>
+						</li>
+						<li><a class="page-link" href = "javascript:void(0);" onClick="page_goto();">Go</a>
+						</li>
+					</ul>
+					<!--span class="pagination_foot" >
+							{{page_all}}plants, {{blogs.number}}page/{{pages.num_pages}}pages
+					</span-->
+					<br>
+					<br>
+				</div>
+			</div>
+	</div>
+
+
+
+	<div id="parks" style="display: none" class="plant_list col" data-spy="scroll" id="plantlist">
+		<div class="d-flex flex-row flex-wrap">
+			{% for park in park_list %}
+			<div style="display: inline-block" class="card col-sm-4 px-4 card-style flex-wrap" onmouseover="img_over(this)" onmouseout="img_out(this)">
+				<a href="/park_profile/?id={{park.id}}">
+					<img style="max-width: 100%" class="card-img img-center"src="{{park.image}}">
+				</a>
+				<div class="card-body">
+					<h3 class="card-text text-center" >{{park.name}}</h3>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+	</div>
+
+	<script type="text/javascript">
+	$(".pagination li a").each(function(){
+		if($(this).text()=="{{names.number}}"){
+				$(this).parent().addClass("active");
+		}
+		});
+
+		function page_goto(){
+		var page = $("#page_goto input")[0].value;
+		window.location.href = '?page=' + page;
+		return false;
+		}
+	</script>
+
+<br>
+<br>
+<br>
+<br>
 	  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
 	  <script src="../../assets/js/vendor/popper.min.js"></script>
 	  <script src="../../dist/js/bootstrap.min.js"></script>
+	<p id="plantSet" style="display: none">{{set_check.0}}</p>
+	<p id="parkSet" style="display: none">{{set_check.1}}</p>
 </body>
+<script type="text/javascript">
+	function xlist(button,elementID, variableID) {
+		if(document.getElementById(variableID).innerHTML === 'false'){
+			var x = document.getElementById(elementID);
+				if(x.style.display === "none"){
+					x.style.display="block";
+					button.style.backgroundColor = "#57BC90";
+
+				}else{
+					x.style.display ="none";
+					button.style.backgroundColor = "#A5A5AF";
+
+				}
+
+				}
+				else{
+					button.style.backgroundColor = "#FF6961";
+					setTimeout(() => backgroundColorGrey(button), 500);
+				}
+			}
+
+	function backgroundColorBlue(item){
+
+		item.style.backgroundColor = "#57BC90";
+	}
+
+	function backgroundColorGrey(button){
+		button.style.backgroundColor = "#A5A5Af";
+	}
+
+	function img_over(item){
+		item.style.borderColor = "#57BC90";
+		item.style.borderWidth = "4px";
+	}
+	function img_out(item){
+		item.style.borderColor = "#FFFFFF";
+	}
+
+	function buttonReverseColor(item){
+		if(item.style.backgroundColor === "57BC90"){
+			item.style.backgroundColor = "#A5A5Af";
+		} else{
+			item.style.backgroundColor = "#57BC90"
+		}
+	}
+
+
+</script>
+
 </html>

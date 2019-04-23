@@ -24,7 +24,6 @@ SECRET_KEY = '$*yl6=tfu&4_3a$r*e#39_tl19elz2$$4vhwg&qy6kq$e_sw7e'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG =True
-
 ALLOWED_HOSTS = ['ip.ip.ip.ip', '.example.com', '127.0.0.1', '*']
 
 

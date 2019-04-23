@@ -34,9 +34,11 @@ class Plant:
         self.long = "N/A"
         self.econregion = "N/A"
         self.statepark = []
+        self.ecoregionids=[]
         self.lifecycle="N/A"
         self.edibility="N/A"
-        self.zones ="N/A"
+        self.zones =[]
+        self.endangered = "N/A"
 
 
     def geteco(self,web):
@@ -133,7 +135,9 @@ class Plant:
             "statepark": [],
             "lifecycle": [],
             "edibility": [],
-            "zone":[]
+            "zone":[],
+            "endangered":[],
+            "ecoregionids":[]
         }
         for plant in plantlist:
             dictionary['nativeadapted'].append(plant.nativeadapted)
@@ -162,5 +166,7 @@ class Plant:
             dictionary['lifecycle'].append(plant.lifecycle)
             dictionary['edibility'].append(plant.edibility)
             dictionary['zone'].append(plant.zones)
+            dictionary['endangered'].append(plant.endangered)
+            dictionary['ecoregionids'].append(plant.ecoregionids)
         df = pd.DataFrame(dictionary)
         df.to_csv('./plant_csv.csv')

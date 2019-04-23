@@ -1,9 +1,6 @@
 body{
-	background-color : #2F2F2F;
-	/*border-style: solid;
-	border-width: 0px 0px 0px 0px;
-	border-color: #66FF66;*/
-	margin: 0px;
+
+	margin: 10%;
 
 }
 
@@ -17,16 +14,14 @@ h4{
 p{
 	color: #000000;
 	font-family: Arial;
-	font-size: 160%;
-	margin: 14px;
+	font-size: 200%;
 }
 
 b{
 
-	color: #000000;
-	font-family: Arial;
-	font-size: 160%;
-	margin: 16px;
+	color: #4f4f2f;
+	margin: 5px;
+	font: 250% 'Fjalla One', Helvetica, sans-serif;
 }
 
 img{
@@ -38,35 +33,143 @@ img{
 
 }
 
+.navbar-nav {
+	color: #EFEFEF;
+	font: 160% 'Merienda One', Helvetica, sans-serif;
+}
+
+.navbar-brand {
+  color: #EFEFEF;
+  padding-top: 0;
+  padding-left: 10px;
+  font: 250% 'Merienda One', Helvetica, sans-serif;
+}
+
+.navbar-nav > li > a:hover, .navbar-brand:hover, .navbar-default .navbar-nav > li > a:focus {
+    background-color: #A9A9a9;
+    color: #EFEFEF;
+}
+
+
 #title{
-	color: white;
+	/*color: white;
 	text-align: center;
 	font-size: 300%;
 	/*font-family: "Times New Roman", serif;*/
+	  font: 80px/1.2 'Fjalla One', sans-serif;
+	  font-weight:800;
+	  color: #57bc90;
+	  position: center;
+	  top: 20%;
+	  left: 50%;
+
+}
+
+.team-name{
+	  font: 30px/1.2 'Fjalla One', sans-serif;
+	  font-weight:800;
+	  color: #238e23;
+	  position: center;
+	  left: 50%;
 
 }
 
 #header{
-	background-color: #DFF4E1
+	background-color: #FFFFFF;
+	font:20px/1.2 'Fjalla One', sans-serif;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 1500px;
+
+
 }
 
-#teammates{
+
+.people{
+	  font: 80px/1.2 'Fjalla One', sans-serif;
+	  font-weight:800;
+	  color: #57bc90;
+	  position: center;
+	  top: 10%;
+	  left: 50%;
+}
+
+
+.teammates{
 	margin: left;
-	padding-left: 2%;
+	padding-left: 0%;
 	text-align: left;
 	align-items: center;
-	max-width: 50%;
-	background-color: #AED9E2;
+	max-width: 70%;
+	/*overflow: auto;*/
+	margin-top: 4%;
+	background-color:#EEE9E9;
+}
+
+
+.name{
+	  font: 50px/1.2 'Fjalla One', sans-serif;
+	  font-weight:800;
+	  color: #238e23;
+	  position: center;
+	  left: 50%;
+
+}
+
+div i{
+	display: inline-block;
+	width: 100%
 }
 
 .photos{
-	margin: auto;
+
 	align-items: center;
+	width: 90%;
+	height: 80%;
+	margin-left: 5%;
+	margin-top: 15%;
+}
+
+.data{
+	/*top: 50%;
+	left: 50%;
+	transform:translate(0, 50%);*/
+	margin-right: 10%;
+	margin-top: 40%;
+
+}
+
+
+#statistics{
+	margin-top:20%;
+	text-align: center;
+
 }
 
 #sources{
-	background-color: #E1B894;
+	margin-top:20%;
+	font-family: Arial;
+	font-size: 110%;
+	margin-left:5%;
+	margin-right:5%;
+	text-align: left;
 }
+
+
+
+.link{
+	  font: 35px/1.2 'Fjalla One', sans-serif;
+	  font-weight:800;
+	  color: #238e23;
+	  margin-top: 5%;
+}
+
+.tools{
+	 text-align:justify;
+
+}
+
 
 #mainpage_link{
 	color: black;

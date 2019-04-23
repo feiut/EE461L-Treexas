@@ -1,0 +1,227 @@
+.trunk, .trunk div {
+    background: #179E25;
+
+    width: 100px;
+    height: 10px;
+    position: absolute;
+    left:50%;
+    top:50%;
+    margin-left: -10px;
+    -webkit-animation-name: rot;
+            animation-name: rot;
+    -webkit-animation-duration: 2.02s;
+            animation-duration: 2.02s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+    -webkit-transform-origin: 5px 5px;
+        -ms-transform-origin: 5px 5px;
+            transform-origin: 5px 5px;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+
+}
+.trunk.trunk, .trunk div.trunk {
+    bottom: 0;
+    left: 50%;
+    -webkit-animation-name: rot-root;
+            animation-name: rot-root;
+    -webkit-animation-duration: 2.5s;
+            animation-duration: 2.5s;
+}
+.trunk > div, .trunk div > div {
+
+    top: 0;
+    left: 100px;
+    -webkit-animation-duration: calc(inherit / 2);
+            animation-duration: calc(inherit / 2);
+
+}
+.trunk > div:nth-child(2), .trunk div > div:nth-child(2) {
+
+    -webkit-animation-name: rot-inv;
+            animation-name: rot-inv;
+    -webkit-animation-duration: 1.7s;
+            animation-duration: 1.7s;
+}
+
+@-webkit-keyframes rot {
+    from {
+      -webkit-transform: rotate(15deg) scale(0.72);
+              transform: rotate(15deg) scale(0.72);
+    }
+    to {
+      -webkit-transform: rotate(45deg) scale(0.72);
+              transform: rotate(45deg) scale(0.72);
+    }
+}
+
+@keyframes rot {
+    from {
+      -webkit-transform: rotate(15deg) scale(0.72);
+              transform: rotate(15deg) scale(0.72);
+    }
+    to {
+      -webkit-transform: rotate(45deg) scale(0.72);
+              transform: rotate(45deg) scale(0.72);
+    }
+}
+@-webkit-keyframes rot-inv {
+    from {
+      -webkit-transform: rotate(-45deg) scale(0.72);
+              transform: rotate(-45deg) scale(0.72);
+    }
+    to {
+      -webkit-transform: rotate(-15deg) scale(0.72);
+              transform: rotate(-15deg) scale(0.72);
+    }
+}
+@keyframes rot-inv {
+    from {
+      -webkit-transform: rotate(-45deg) scale(0.72);
+              transform: rotate(-45deg) scale(0.72);
+    }
+    to {
+      -webkit-transform: rotate(-15deg) scale(0.72);
+              transform: rotate(-15deg) scale(0.72);
+    }
+}
+@-webkit-keyframes rot-root {
+    from {
+      -webkit-transform: rotate(-95deg);
+              transform: rotate(-95deg);
+    }
+    to {
+      -webkit-transform: rotate(-85deg);
+              transform: rotate(-85deg);
+    }
+}
+@keyframes rot-root {
+    from {
+      -webkit-transform: rotate(-95deg);
+              transform: rotate(-95deg);
+    }
+    to {
+      -webkit-transform: rotate(-85deg);
+              transform: rotate(-85deg);
+    }
+}
+
+
+#spinner{
+		position: fixed;
+		z-index: 9999999;
+		width: 100%;
+		height: 100%;
+}
+
+html{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+	height:100%;
+}
+
+p {
+	color: #57bc90 !important;
+}
+
+.navbar-nav {
+	color: #EFEFEF;
+	font: 160% 'Fjalla One', Helvetica, sans-serif;
+}
+
+.navbar-brand {
+  color: #EFEFEF;
+  padding-top: 5px;
+  padding-left: 10px;
+  font: 250% 'Fjalla One', Helvetica, sans-serif;
+}
+
+.navbar-nav > li > a:hover, .navbar-brand:hover, .navbar-default .navbar-nav > li > a:focus {
+    background-color: #A9A9a9;
+    color: #EFEFEF;
+}
+
+a {
+	color: #EFEFEF;
+}
+
+.title1{
+  font: 80px/1.2 'Fjalla One', Helvetica, sans-serif;
+  color: rgba(255,255,255,1);
+  text-shadow: 3px 3px 3px #000000;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  }
+
+.inner{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.bg {
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment: fixed;
+		animation: bg 40s infinite;
+}
+
+
+.container{
+margin-top:200px;
+}
+
+.glyphicon-leaf{
+font-size: 28px;
+}
+
+.input-group {
+position: fixed;
+width: 60%;
+left:20%;
+/* margin-left: -400px; */
+}
+
+/* style icon */
+.input-group .glyphicon-search {
+position: relative;
+padding: 10px;
+/* pointer-events: none; */
+left: 0;
+font-size: 15px;
+}
+
+/* add padding  */
+.input-group input { padding-left: 15px;}
+
+.btn-default{
+width: 100px;
+padding: 8.5px;
+background: rgba(255, 255, 255, 0.7);
+}
+
+.form-control{
+padding: 25px;
+font-size: 20px;
+background: rgba(255, 255, 255, 0.7);
+}
+.footer{
+position: fixed;
+right:0;
+bottom: 0;
+left: 0;
+padding: 1rem;
+background-color: transparent;
+text-align: center;
+}

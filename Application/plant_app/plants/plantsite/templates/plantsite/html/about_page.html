@@ -2,131 +2,453 @@
 {% load static %}
 <html>
 <head>
+
+
 	<link rel="shortcut icon" type="image/png" href="{% static 'browser_icon.png' %}">
 	<link rel="stylesheet" href="{% static "about_style.css" %}">
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
 	<!-- jQuery library -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<!-- Latest compiled JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	 <!-- Latest compiled and minified CSS -->
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	<link href='http://fonts.googleapis.com/css?family=Archivo' rel='stylesheet' type='text/css'>
+  	<link href='http://fonts.googleapis.com/css?family=Archivo:bold' rel='stylesheet' type='text/css'>
+  	<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+  	<link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="{% static 'list_page_style.css' %}">
+	<script type="text/javascript">
+		function img_over(item){
+			item.style.borderColor = "#57BC90";
+		}
+		function img_out(item){
+			item.style.borderColor="#FFFFFF";
+		}
+
+	</script>
 
 </head>
 <body>
-	<h1 id="title"> About Us </h1>
-	<div id="header">
-	<h4> Description </h4>
-	<p> This site contains information about the plants, ecoregions and stateparks of Texas. The purpose of this site is to provide reliable information about any and all plants that can be found in Texas. This site is meant for anyone looking to learn more about Texas plants and where to find them. This could include researchers, students, survivalists or foragers. </p>
+
+	<nav class="navbar navbar-expand-sm navbar-custom navbar-light fixed-top" style="background-color: #A5A5Af">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="/">Treexas</a>
+	    </div>
+
+	    <div class="topnav-entry">
+	      <ul class="navbar-nav mr-auto">
+	        <li class="nav-item active"><a class = "nav-link" href="/plant_list">Plants</a>
+	        </li>
+	        <li class="nav-item active"><a class = "nav-link" href="/park_list">State Parks</a>
+	        </li>
+	        <li class="nav-item active"><a class = "nav-link" href="/eco_list">Ecoregions</a>
+	        </li>
+	        <!-- <li class="nav-item active"><a class = "nav-link" href="/about">About Us</a>
+	        </li> -->
+	     	<li class="nav-item active"><a class="nav-link" href="" onclick="window.history.go(-1); return false;"> Back </a>
+	     	</li>
+	      </ul>
+	    </div>
+	  </div>
+	</nav>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="d-flex flex-column justify-content-center">
+	<h1 id="title" class="text-center"> About Us </h1>
+	<br>
+	<h2 class="team-name text-center" style="text-align: center"> Owl Team </h2>
+	<br>
+	<p style="font-size: 200%; color:#4f4f2f; text-align: center; margin-left:5%; margin-right: 5%;"> This site contains information about the plants, ecoregions and stateparks of Texas. The purpose of this site is to provide reliable information about any and all plants that can be found in Texas. This site is meant for anyone looking to learn more about Texas plants and where to find them. This could include researchers, students, survivalists or foragers.</p>
+</div>
+
+<div style="margin-top: 10%; margin-left: 0 ; margin-right: 0;">
+	<h4 class="people" style="text-align: center"> Group Members </h4>
+	<br>
+	<h2 class="team-name"  style="text-align: center"> Owl Team </h2>
+	<br>
+	<div class="teammates" class="container-fluid" style="left: 50%; transform: translate(20%)">
+	<div class="row">
+	<div class="col-md-3">
+	<img src="{% static "erick_img.jpg" %}" class="photos">
+	</div>
+	<div class="col-md-6">
+	<br>
+	<h2 class="name"> Eric Cen</h2>
+	<br>
 	<br>
 
-	<h4> Group Name </h4>
-	<p> Owl Team </p>
-</div>
-<div style="background-color: #AED9E2">
-	<h4> Group Members </h4>
-	<div id="teammates">
-	<img src="{% static "erick_img.jpg" %}" class="photos">
-	<br>
-	<b> Name:</b><p> Eric Cen</p>
 		<b>Major:</b><p> Electrical Engineering</p>
-		<b>Bio:</b><p> I am a junior in the Cockrell School of Engineering. My primary core is power sys/renewable energy and my secondary core is software engineering.</p>
-		<b>Responsibilities:</b><p> Datascraping and Database Management</p>
-		<b>Number of Commits:</b><p> {{eric_commits}}</p>
-		<b>Number of Issues:</b><p> {{eric_issues}}</p>
-		<b>Number of Unit Tests:</b><p> 0</p>
+		<b>Responsibilities:</b><p> Datascraping and Database Management, Selenium UI Test</p>
+		<b>Bio:</b><p> I am a junior in the Cockrell School of Engineering. My primary core is power sys/renewable energy and my secondary core is software engineering.<i></i></p>
 	<br>
+	<br>
+	</div>
+	<div class="col-md-3">
+	<div class="data">
+
+		<b>Number of Commits:</b><p style="float:right"> {{eric_commits}}</p>
+		<br>
+		<br>
+		<br>
+		<br>
+		<b>Number of Issues:</b><p  style="float:right"> {{eric_issues}}</p>
+		<br>
+		<br>
+		<br>
+		<br>
+		<b>Number of Unit Tests:</b><p  style="float:right"> 8</p>
+	</div>
+	</div>
+	</div>
+	</div>
+	<br>
+
+
+
+
+
+
+	<div class="teammates" class="container" style="left: 50%; transform: translate(20%)">
+	<div class="row">
+	<div class="col-md-3">
 	<img src="{% static "eric_img.jpg" %}" class="photos">
+	</div>
+	<div class="col-md-6">
 	<br>
-	<b> Name:</b><p> Erick Machado</p>
+	<br>
+	<h2 class="name"> Erick Machado</h2>
+	<br>
+	<br>
 		<b>Major:</b><p> Electrical Engineering</p>
-		<b>Bio:</b><p>  Hello! My name is Erick. I enjoy working with software and enjoy my time at UT. I have two dogs that I love very much. I’m very friendly so approach me if you wanna chat! </p>
-		<b>Responsibilities:</b><p> Database Management and Static Webpage Design</p>
-		<b>Number of Commits:</b><p> {{erick_commits}}</p>
-		<b>Number of Issues:</b><p> {{erick_issues}}</p>
-		<b>Number of Unit Tests:</b><p> 0</p>
+		<b>Responsibilities:</b><p> Usability Improvement, Database Management, Frontend Webpage Design and Backend Functionality</p>
+		<b>Bio:</b><p>  Hello! My name is Erick. I enjoy working with software and enjoy my time at UT. I have two dogs that I love very much. I’m very friendly so approach me if you wanna chat!<i></i></p>
 	<br>
+	<br>
+	</div>
+	<div class="col-md-3">
+	<div class="data">
+
+		<b>Number of Commits:</b><p style="float:right"> {{erick_commits}}</p>
+		<br>
+		<br>
+		<br>
+		<br>
+		<b>Number of Issues:</b><p style="float:right"> {{erick_issues}}</p>
+		<br>
+		<br>
+		<br>
+		<br>
+		<b>Number of Unit Tests:</b><p style="float:right"> 0</p>
+	</div>
+	</div>
+	</div>
+	</div>
+	<br>
+
+
+
+
+	<div class="teammates" class="container" style="left: 50%; transform: translate(20%)">
+	<div class="row">
+	<div class="col-md-3">
 	<img src="{% static "connor_img.jpg" %}" class="photos">
+	</div>
+	<div class="col-md-6">
 	<br>
-	<b> Name:</b><p> Connor Fritz</p>
+	<br>
+	<h2 class="name"> Connor Fritz</h2>
+	<br>
+	<br>
 		<b>Major:</b><p> Electrical Engineering</p>
-		<b>Bio:</b><p> I'm a software track ECE major interested in plants and machine learning</p>
-		<b>Responsibilities:</b><p> Static Webpage Design and Datascraping</p>
-		<b>Number of Commits:</b><p> {{connor_commits}}</p>
-		<b>Number of Issues:</b><p> {{connor_issues}}</p>
-		<b>Number of Unit Tests:</b><p> 0</p>
+		<b>Responsibilities:</b><p> Domain Name Management, Basic Structure Design and Frontend Webpage Design</p>
+		<b>Bio:</b><p> I'm a software track ECE major interested in plants and machine learning<i></i></p>
 	<br>
+	<br>
+	</div>
+	<div class="col-md-3">
+	<div class="data">
+
+		<b>Number of Commits:</b><p style="float:right"> {{connor_commits}}</p>
+		<br>
+		<br>
+		<br>
+		<br>
+		<b>Number of Issues:</b><p style="float:right"> {{connor_issues}}</p>
+		<br>
+		<br>
+		<br>
+		<br>
+		<b>Number of Unit Tests:</b><p style="float:right"> 3</p>
+	</div>
+	</div>
+	</div>
+	</div>
+	<br>
+
+
+
+
+
+
+	<div class="teammates" class="container" style="left: 50%; transform: translate(20%)">
+	<div class="row">
+	<div class="col-md-3">
 	<img src="{% static "hao_img.jpg" %}" class="photos">
+	</div>
+	<div class="col-md-6">
 	<br>
-	<b> Name:</b><p> Hao Yao</p>
+	<br>
+	<h2 class="name"> Hao Yao</h2>
+	<br>
+	<br>
 		<b>Major:</b><p> Civil Engineering</p>
-		<b>Bio:</b><p> Hello, I am Hao! I am a second year master student in UT. My major in Ocean Engineering. I really enjoy the time working with you guys!</p>
-		<b>Responsibilities:</b><p> Static Webpage Design</p>
-		<b>Responsibilities:</b><p> API Development</p>
-		<b>Number of Commits:</b><p> {{hao_commits}}</p>
-		<b>Number of Issues:</b><p> {{hao_issues}}</p>
-		<b>Number of Unit Tests:</b><p> 0</p>
+		<b>Responsibilities:</b><p>
+			Backend Function Development, Usability Improvement, Frontend Webpage Design, API Development
+			<!-- <ul>
+				<li>Implemented filters and refactor to enable their selected value staying. </li>
+				<li>Utilized COOKIES to make filters, search bars, and paginations bars to work together. </li>
+				<li>Used POST method to enable users to interact with our database (writing or editing users' description for each plant).</li>
+				<li>Added a sorting method to show the most searched plants. </li>
+				<li>Modified search-by-category functions in main_page.</li>
+				<li>Refined several profile and list pages by using JavaScript and CSS. </li>
+			</ul> -->
+		</p>
+		<b>Bio:</b><p > Hello, I am Hao! I am a second year master student in UT. My major in Ocean Engineering. I really enjoy the time working with you guys!<i></i></p>
 	<br>
+	<br>
+	</div>
+	<div class="col-md-3">
+		<div class="data">
+
+		<b>Number of Commits:</b><p style="float:right"> {{hao_commits}}</p>
+		<br>
+		<br>
+		<br>
+		<br>
+		<b>Number of Issues:</b><p style="float:right"> {{hao_issues}}</p>
+		<br>
+		<br>
+		<br>
+		<br>
+		<b>Number of Unit Tests:</b><p style="float:right"> 0</p>
+	</div>
+	</div>
+	</div>
+	</div>
+	<br>
+
+
+
+
+
+	<div class="teammates" class="container" style="left: 50%; transform: translate(20%)">
+	<div class="row">
+	<div class="col-md-3">
 	<img src="{% static "chaz_img.jpg" %}" class="photos">
+	</div>
+	<div class="col-md-6">
 	<br>
-	<b> Name:</b><p> Chaz Li</p>
+	<br>
+	<h2 class="name"> Chaz Li</h2>
+	<br>
+	<br>
 		<b>Major:</b><p> Electrical Engineering</p>
-		<b>Bio:</b><p> Hello, I am Chaz! My major is Electrical Engineering. I really enjoy the time working and learning with you guys!</p>
-		<b>Number of Commits:</b><p> {{chaz_commits}}</p>
-		<b>Number of Issues:</b><p> {{chaz_issues}}</p>
-		<b>Number of Unit Tests:</b><p> 0</p>
+		<b>Responsibilities:</b><p> Frontend Webpage Design, Backend Function Development, Usability Improvement</p>
+		<b>Bio:</b><p > Hello, I am Chaz! My major is Electrical Engineering. I really enjoy the time working and learning with you guys!<i></i></p>
 	<br>
+	<br>
+	</div>
+	<div class="col-md-3">
+		<div class="data">
+
+		<b>Number of Commits:</b><p style="float:right"> {{chaz_commits}}</p>
+		<br>
+		<br>
+		<br>
+		<br>
+		<b>Number of Issues:</b><p style="float:right"> {{chaz_issues}}</p>
+		<br>
+		<br>
+		<br>
+		<br>
+		<b>Number of Unit Tests:</b><p style="float:right"> 0</p>
+	</div>
+	</div>
+	</div>
+	</div>
+	<br>
+
+
+
+
+
+
+	<div class="teammates" class="container" style="left: 50%; transform: translate(20%)">
+	<div class="row">
+	<div class="col-md-3">
 	<img src="{% static "xiyu_img.jpg" %}" class="photos">
+	</div>
+	<div class="col-md-6">
 	<br>
-	<b> Name:</b><p> Xiyu Wang</p>
+	<br>
+	<h2 class="name"> Xiyu Wang</h2>
+	<br>
+	<br>
 		<b>Major:</b><p> Electrical Engineering</p>
-		<b>Bio:</b><p> Hi I’m Xiyu! You can pronounce it as “Shiyu” if you find it confusing:D I’m a master student with only 2 years in UT so I really cherish the time I work and have fun with you!</p>
-		<b>Responsibilities:</b><p> API Development</p>
-		<b>Number of Commits:</b><p> {{xiyu_commits}}</p>
-		<b>Number of Issues:</b><p> {{xiyu_issues}}</p>
-		<b>Number of Unit Tests:</b><p> 0</p>
+		<b>Responsibilities:</b><p> API Development, Backend Function Development, Frontend Webpage Design, Python Unittests and User Cases.</p>
+		<b>Bio:</b><p > Hi I’m Xiyu! You can pronounce it as “Shiyu” if you find it confusing:D I’m a master student with only 2 years in UT so I really cherish the time I work and have fun with you!<i></i></p>
 	<br>
+	<br>
+	</div>
+	<div class="col-md-3">
+	<div class="data">
+
+		<b>Number of Commits:</b><p style="float:right"> {{xiyu_commits}}</p>
+		<br>
+		<br>
+		<br>
+		<br>
+		<b>Number of Issues:</b><p style="float:right"> {{xiyu_issues}}</p>
+		<br>
+		<br>
+		<br>
+		<br>
+		<b>Number of Unit Tests:</b><p style="float:right"> 28</p>
+	</div>
+	</div>
+	</div>
+	</div>
+	<br>
+
+
+
+
+
+	<div class="teammates" class="container" style="left: 50%; transform: translate(20%)">
+	<div class="row">
+	<div class="col-md-3">
 	<img src="{% static "fei_img.jpg" %}" class="photos">
+	</div>
+	<div class="col-md-6">
 	<br>
-	<b> Name:</b><p> Fei He</p>
+	<br>
+	<h2 class="name"> Fei He</h2>
+	<br>
+	<br>
 		<b>Major:</b><p> Electrical Engineering</p>
-		<b>Bio:</b><p> Hi, I am Fei! I am a new master student in UT. I like vegetables. It's great to meet you!</p>
-		<b>Responsibilities:</b><p> API Development</p>
-		<b>Number of Commits:</b><p> {{fei_commits}}</p>
-		<b>Number of Issues:</b><p> {{fei_issues}}</p>
-		<b>Number of Unit Tests:</b><p> 0</p>
+		<b>Responsibilities:</b><p> Frontend Design and Implementation, Usability Improvement, Mocha Unittests, API Development</p>
+		<b>Bio:</b><p > Hi, I am Fei, a master student in UT. I like animation. It's great to meet you!<i></i></p>
 	<br>
+	<br>
+	</div>
+	<div class="col-md-3">
+	<div class="data">
+
+		<b>Number of Commits:</b><p style="float:right"> {{fei_commits}}</p>
+		<br>
+		<br>
+		<br>
+		<br>
+		<b>Number of Issues:</b><p style="float:right"> {{fei_issues}}</p>
+		<br>
+		<br>
+		<br>
+		<br>
+		<b>Number of Unit Tests:</b><p style="float:right"> 30</p>
+	</div>
+	</div>
+	</div>
+	</div>
+	<br>
+
 </div>
-</div>
+
+
+
+
+
+	<div id="statistics">
+	<h4 class="people" style="text-align: center">Statistics</h4>
+	<br>
+	<br>
+	<br>
+	<h2 class="name" >Total number of commits: {{total_c}}</h2>
+	<br>
+	<h2 class="name" >Total number of issues: {{total_i}}</h2>
+	<br>
+	<h2 class="name" >Total number of unit tests: 69</h2>
+	<br>
+	</div>
+
 
 	<div id="sources">
-	<h4>Statistics</h4>
-	<p>Total number of commits: {{total_c}}</p>
-	<p>Total number of issues: {{total_i}}</p>
-	<p>Total number of unit tests: 0</p>
+	<h4 class="people" style="text-align:center; margin-top: 20%"> Datasources </h4>
 	<br>
-
-	<h4> Datasources </h4>
-	<a href='//www.txsmartscape.com' >    Texas Plant Source </a>
-	<p> This datasource was scraped using the HTMLParser and BeautifulSoup Python packages. Information about each plant, such as botanical name and growing conditions, were extracted from each plant</p>
-	<a href='//www.tpwd.texas.gov'>    Texas State Park and Ecoregion Datasource </a>
-	<p> This datasource was scraped using the HTMLParser and BeautifulSoup Python packages. Latitude and longitude information was scraped for the state parks. Descriptions and native plants were scraped for each of the texan ecoregions</p>
 	<br>
-	<a href='https://www.gbif.org'> Global Biodiversity Information Facility </a>
-	<p>This datasource was used to obtain latitude and longitude information for plants using Selenium in python.</p>
 	<br>
-	<a href='http://hicksenvplantdatabase.com'>Texas Plant Information Database</a>
-	<p>This datasource was scraped using Selenium in python to obtain more plant information. It was also used to give each statepark and plant
+	<br>
+	<br>
+	<br>
+	<a href='//www.txsmartscape.com' class="link" >   <h2 class="text-center"> Texas Plant Source </h2></a>
+	<p class="text-center" style="margin-bottom: 5%;font: 80%"> This datasource was scraped using the HTMLParser and BeautifulSoup Python packages. Information about each plant, such as botanical name, growing conditions, ecoregions and stateparks, were extracted from each plant<i></i></p>
+	<a href='//www.tpwd.texas.gov' class="link">   <h2 class="text-center"> Texas State Park and Ecoregion Datasource </h2></a>
+	<p class="text-center" style="margin-bottom: 5%;"> This datasource was scraped using the HTMLParser and BeautifulSoup Python packages. Latitude and longitude information was scraped for the state parks. Descriptions and native plants were scraped for each of the texan ecoregions</p>
+	<br>
+	<a href='https://www.gbif.org' class="link"> <h2 class="text-center">Global Biodiversity Information Facility </h2></a>
+	<p class="text-center" style="margin-bottom: 5%;">This datasource was used to obtain latitude and longitude information for plants using Selenium in python.</p>
+	<br>
+	<a href='http://hicksenvplantdatabase.com' class="link"> <h2 class="text-center">Texas Plant Information Database</h2></a>
+	<p class="text-center" style="margin-bottom: 5%;">This datasource was scraped using Selenium in python to obtain more plant information. It was also used to give each statepark and plant
 a ecoregion if it applied also using Selenium.</p>
-	<br>
-	<br>
-	<h4>Tools</h4>
-	<p> We used the Django web framework, along with Python to build our app. We used HTML, CSS and some very simple Javascript to build templates for our web pages. We used Google Cloud Platform to deploy our app, and acquired our domain name from namecheap.com. We also used MySQL as our database, and stored our information on Cloud SQL, from Google Cloud Platform. Data scraping was performed using the beautifulsoup Python package, while RESTful APIs were used when they were available. We used Node.js to build our API, then used Postman to test it. We also used Selenium for UI testing. </p>
-	<br>
 
-	<h4> Github Repo Link </h4>
-	<a href='https://github.com/ec505/EE461L-sp19-owl-team' style="font-size: 125%">Click Here!</a>
+	<a href='http://poisonousplants.ansci.cornell.edu/php/plants.php' class="link"> <h2 class="text-center">Poisonous Plants - Cornell University</h2></a>
+	<p class="text-center" style="margin-bottom: 5%;">This datasource was scraped using Selenium to obtain edible plant data</p>
+
+	<a href='https://garden.org/plants/search/text/' class="link"> <h2 class="text-center">National Gardening Association Plant Database</h2></a>
+	<p class="text-center" style="margin-bottom: 5%;">This datasource was scraped using Selenium to help refine existing plant data.</p>
+
+	<a href=http://www.missouribotanicalgarden.org/plantfinder/plantfindersearch.aspx  class="link"> <h2 class="text-center">Missouri Botanical Garden</h2></a>
+	<p class="text-center" style="margin-bottom: 5%;">This datasource was scraped using Selenium to help refine existing plant data.</p>
+	</div>
+
+	<h4 class="people" style="text-align:center; margin-top: 20%">Tools</h4>
 	<br>
-	<a href='/' id="mainpage_link"> back to home </a>
+	<div style="text-align: center">
+	<p class="text-center tools" style="margin-right: 5%; margin-left: 5%"> We used the Django web framework, along with Python to build our app.
+		<br>We used HTML, CSS and some very simple Javascript to build templates for our web pages.
+		<br>We used Google Cloud Platform to deploy app, and acquired domain name from namecheap.com.
+		<br>We used MySQL as our database, and stored information on Cloud SQL, from Google Cloud Platform.
+		<br>Data scraping was performed using the beautifulsoup Python package, while RESTful APIs were used when they were available.
+		<br>We used Selenium for UI testing, Mocha for JavaScript testing and Django test for python testing.
+		<br>We used Django to build our API, then used Postman to test it.</p>
+	<br>
+  </div>
+
+	<div style="text-align: center;margin-top: 20%">
+	<h4 class="people"> Github Repo Link </h4>
+	<br>
+	<br>
+	<br>
+	<a class="link" href='https://github.com/ec505/EE461L-sp19-owl-team' >https://github.com/ec505/EE461L-sp19-owl-team</a>
+	<br>
+	</div>
+
+	<div class="people" style="text-align:center; margin-top: 30%">
+	<a href='/'> back to home </a>
 	<br>
 	</div>
 

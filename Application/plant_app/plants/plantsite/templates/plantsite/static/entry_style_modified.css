@@ -1,0 +1,397 @@
+/* .trunk, .trunk div {
+    background: #179E25;
+
+    width: 100px;
+    height: 10px;
+    position: absolute;
+    right:10%;
+    top:50%;
+    margin-left: -10px;
+    -webkit-animation-name: rot;
+            animation-name: rot;
+    -webkit-animation-duration: 2.02s;
+            animation-duration: 2.02s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+    -webkit-transform-origin: 5px 5px;
+        -ms-transform-origin: 5px 5px;
+            transform-origin: 5px 5px;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+
+}
+.trunk.trunk, .trunk div.trunk {
+    bottom: 0;
+    left: 50%;
+    -webkit-animation-name: rot-root;
+            animation-name: rot-root;
+    -webkit-animation-duration: 2.5s;
+            animation-duration: 2.5s;
+}
+.trunk > div, .trunk div > div {
+
+    top: 0;
+    left: 100px;
+    -webkit-animation-duration: calc(inherit / 2);
+            animation-duration: calc(inherit / 2);
+
+}
+.trunk > div:nth-child(2), .trunk div > div:nth-child(2) {
+
+    -webkit-animation-name: rot-inv;
+            animation-name: rot-inv;
+    -webkit-animation-duration: 1.7s;
+            animation-duration: 1.7s;
+}
+
+@-webkit-keyframes rot {
+    from {
+      -webkit-transform: rotate(15deg) scale(0.72);
+              transform: rotate(15deg) scale(0.72);
+    }
+    to {
+      -webkit-transform: rotate(45deg) scale(0.72);
+              transform: rotate(45deg) scale(0.72);
+    }
+}
+
+@keyframes rot {
+    from {
+      -webkit-transform: rotate(15deg) scale(0.72);
+              transform: rotate(15deg) scale(0.72);
+    }
+    to {
+      -webkit-transform: rotate(45deg) scale(0.72);
+              transform: rotate(45deg) scale(0.72);
+    }
+}
+@-webkit-keyframes rot-inv {
+    from {
+      -webkit-transform: rotate(-45deg) scale(0.72);
+              transform: rotate(-45deg) scale(0.72);
+    }
+    to {
+      -webkit-transform: rotate(-15deg) scale(0.72);
+              transform: rotate(-15deg) scale(0.72);
+    }
+}
+@keyframes rot-inv {
+    from {
+      -webkit-transform: rotate(-45deg) scale(0.72);
+              transform: rotate(-45deg) scale(0.72);
+    }
+    to {
+      -webkit-transform: rotate(-15deg) scale(0.72);
+              transform: rotate(-15deg) scale(0.72);
+    }
+}
+@-webkit-keyframes rot-root {
+    from {
+      -webkit-transform: rotate(-95deg);
+              transform: rotate(-95deg);
+    }
+    to {
+      -webkit-transform: rotate(-85deg);
+              transform: rotate(-85deg);
+    }
+}
+@keyframes rot-root {
+    from {
+      -webkit-transform: rotate(-95deg);
+              transform: rotate(-95deg);
+    }
+    to {
+      -webkit-transform: rotate(-85deg);
+              transform: rotate(-85deg);
+    }
+} */
+
+
+/* #spinner{
+		position: fixed;
+		z-index: 9999999;
+		width: 100%;
+		height: 100%;
+} */
+
+p {
+  color: #57bc90 !important;
+}
+
+.page-link{
+  background-color:#57BC90; color:#FFFFFF;
+}
+.navbar-nav {
+  color: #57BC90;
+  font: 160% 'Fjalla One', Helvetica, sans-serif;
+}
+
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: #FFFFFF;
+}
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+    color: #FFFFFF;
+}
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:focus .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: #FFFFFF;
+}
+
+.navbar-brand {
+  color: #FFFFFF;
+  padding-top: 0;
+  padding-left: 0;
+  font: 250% 'Fjalla One', Helvetica, sans-serif;
+}
+
+.navbar-nav > li > a:hover, .navbar-brand:hover, .navbar-default .navbar-nav > li > a:focus {
+    background-color: #57bc90;
+    color: #57BC90;
+}
+
+
+
+.title1{
+  font: 80px/1.2 'Fjalla One', sans-serif;
+  font-weight:800;
+  color: #57BC90;
+}
+
+
+.title2{
+  font: 50px/1.2 'Fjalla One', sans-serif;
+  font-weight:800;
+  color: #57BC90;
+}
+
+.title3{
+  font: 30px/1.2 'Fjalla One', sans-serif;
+  font-weight:800;
+  color: #57BC90;
+}
+
+.words1{
+  font: 20px/1.2 'Fjalla One', sans-serif;
+  font-weight:800;
+  color: #015249;
+}
+
+.imgstyle{
+	object-fit: cover;
+	width: 400px;
+	height: 300px;
+	border-radius: 8px;
+	margin: 20px;
+}
+
+.imgstyle-large{
+  object-fit: cover;
+  width: 600px;
+  height: 300px;
+  border-radius: 8px;
+  margin: 20px;
+}
+
+.imgstyle-large-square-like{
+  object-fit: cover;
+  width: 600px;
+  height: 500px;
+  border-radius: 8px;
+  margin: 20px;
+}
+
+.img-medium-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
+  width: 400px;
+  height: 350px;
+  border-radius: 8px;
+}
+
+.carouselImg img {
+  width: auto;
+  height: 400px;
+  max-height: 400px;
+  min-height: 400px;
+}
+
+.img-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
+  width: 300px;
+  height: 300px;
+	object-fit: cover;
+	border-radius: 8px;
+}
+
+.img-center-wide {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
+  width: 400px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.img-center-small {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+h1{
+	color: #000000;
+	font-family: Arial;
+	font-size: 260%;
+	margin: 20px;
+}
+
+p{
+	color: #000000;
+	font-family: Arial;
+	font-size: 160%;
+	margin: 20px;
+}
+
+img{
+    object-fit: cover;
+    width: 300px;
+    height: 300px;
+    border-radius: 8px;
+    margin: 20px;
+
+}
+
+/*
+Added to enable "overflow-y"
+*/
+
+#plantlist{
+	border-left: 1px solid;
+	color: #cccccc;
+}
+#filters{
+	border-top: 1px;
+	color:#a6a6a6;
+}
+
+.pfilter{
+	color: #FFFFFF;
+	font-family: Arial;
+	font-size: 120%;
+	margin: 20px;
+	width: 100%;
+}
+.horizontal-align{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.imgentry{
+	object-fit: cover;
+	width: 250px;
+	height: 250px;
+	border-radius: 8px;
+	margin: 20px;
+}
+.plant_list{
+	height: 45em;
+	overflow-y: scroll;
+}
+
+.glyphicon-leaf{
+font-size: 28px;
+}
+
+/* style icon */
+.input-group .glyphicon-search {
+position: absolute;
+padding: 20px;
+pointer-events: none;
+left: 0px;
+font-size: 15px;
+}
+
+/*change the plant information text*/
+.text-plant-each {
+height: 20px;
+width: 90%;
+word-wrap: break-word;
+
+}
+.table-scroll {
+  /*
+  height: 500px;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  */
+  scrollbar-DarkShadow-Color: #9FB7D7;
+  scrollbar-Track-Color: #F7F7F7;
+  scrollbar-Face-Color: #C7CFFF;
+  scrollbar-Shadow-Color: #FFFFFF;
+  scrollbar-Highlight-Color: #FFFFFF;
+  scrollbar-3dLight-Color: #C7CFF7;
+  scrollbar-Arrow-Color: #4F5F87;
+}
+
+
+/* add padding  */
+.input-group input { padding-left: 50px;}
+
+.btn-default{
+width: 100px;
+padding: 8.5px;
+background: rgba(255, 255, 255, 0.7);
+}
+
+.form-control{
+padding: 25px;
+font-size: 20px;
+background: rgba(255, 255, 255, 0.7);
+}
+#page_footer{
+	position: relative;
+	width:80%
+	left: 0;
+}
+#page_goto span{
+		padding: 1px 6px 1px 15px;
+}
+#page_goto input{
+		border: none;
+		padding: .45em;
+		width: 2em;
+		text-align: center;
+}
+
+.card-style{
+	border-color : #FFFFFF;
+	border-width : 10px;
+}
+
+.prevpage{
+	color: black;
+}
+.nextpage{
+	color: black;
+}

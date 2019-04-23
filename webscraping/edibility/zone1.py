@@ -21,14 +21,14 @@ with open('plantlist.txt','rb') as fp:
 web.get("http://poisonousplants.ansci.cornell.edu/php/plants.php")
 i=0
 for plant in plantlist:
-    if plant.edibility=="N/A":
+    if plant.edibility=="N/A" or plant.edibility =="poisonous":
         input=web.find_element_by_xpath("//*[@id=\"main\"]/div/form/table[1]/tbody/tr[1]/td[2]/input")
         input.send_keys(Keys.CONTROL + "a")
         input.send_keys(plant.sciname)
         web.find_element_by_xpath("//*[@id=\"main\"]/div/form/table[2]/tbody/tr[1]/td/input[1]").click()
         try:
             if len(web.find_elements_by_xpath("//*[@id=\"main\"]/div/table/tbody/tr[2]/td[2]")) != 0:
-                plant.edibility="poisonous"
+                plant.edibility=web.find_element_by_xpath("//*[@id=\"main\"]/div/table/tbody/tr[2]/td[4]").text
         except:
             i=i+1
             print(i)
