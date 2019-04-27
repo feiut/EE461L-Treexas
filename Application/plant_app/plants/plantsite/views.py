@@ -142,22 +142,85 @@ def empty_check(item):
     else:
         return "false"
 
-''' regular functions '''
+#facade pattern example
+class PlantListHelper(object):
+    planttype=None
+    waterdemand=None
+    plantform=None
+    season=None
+    native=None
+    lightreq=None
+    edibility=None
+    endangered=None
 
-class Park(object):
+    @staticmethod
+    def get_plant_info(request):
+        if not request.GET.get('planttype'):
+                if '1' in request.COOKIES:
+                    PlantListHelper.planttype=request.COOKIES['1']
+                    PlantListHelper.waterdemand=request.COOKIES['2']
+                    PlantListHelper.plantform=request.COOKIES['3']
+                    PlantListHelper.season=request.COOKIES['4']
+                    PlantListHelper.native=request.COOKIES['5']
+                    PlantListHelper.lightreq=request.COOKIES['6']
+                    PlantListHelper.edibility=request.COOKIES['7']
+                    PlantListHelper.endangered=request.COOKIES['8']
 
-    def __init__(self, name, img, url):
-        self.name=name
-        self.img = img
-        self.url= url
+        else:
+            PlantListHelper.planttype=request.GET.get('planttype')
+            PlantListHelper.waterdemand=request.GET.get('waterdemand')
+            PlantListHelper.plantform=request.GET.get('plantform')
+            PlantListHelper.season=request.GET.get('season')
+            PlantListHelper.native=request.GET.get('native')
+            PlantListHelper.lightreq=request.GET.get('lightreq')
+            PlantListHelper.edibility=request.GET.get('edibility')
+            PlantListHelper.endangered=request.GET.get('endangered')  
 
-class Ecoregion(object):
+        return PlantListHelper.planttype, PlantListHelper.waterdemand, \
+        PlantListHelper.plantform, PlantListHelper.season, PlantListHelper.native, \
+        PlantListHelper.lightreq, PlantListHelper.edibility, PlantListHelper.endangered 
 
-    def __init__(self, name, img, url):
-        self.name = name
-        self.img = img
-        self.url = url
+    @staticmethod
+    def set_cookies(response):
+        if PlantListHelper.planttype:
+            response.set_cookie('1', str(PlantListHelper.planttype))
+            response.set_cookie('2', str(PlantListHelper.waterdemand))
+            response.set_cookie('3', str(PlantListHelper.plantform))
+            response.set_cookie('4', str(PlantListHelper.season))
+            response.set_cookie('5', str(PlantListHelper.native))
+            response.set_cookie('6', str(PlantListHelper.lightreq))
+            response.set_cookie('7', str(PlantListHelper.edibility))
+            response.set_cookie('8', str(PlantListHelper.endangered))        
 
+    @staticmethod
+    def get_par_and_names(request):
+        textfield = request.GET.get('search')
+
+        if textfield:
+            get_par = {'1':'', '2':'', '3':'', '4':'', '5':'', '6':'', '7':'', '8':''}
+            names = None
+
+        elif not request.method =='GET':
+            names = get_all_plants()
+            names = fix_plant_defualt(names)
+            get_par = {'1':'', '2':'', '3':'', '4':'', '5':'', '6':'', '7':'', '8':''}
+
+        else:
+            planttype_field, water_demand_field, plant_form_field, \
+                season_field, native_field, lightreq_field, edibility_field, \
+                endangered_field = PlantListHelper.get_plant_info(request)
+
+
+            get_par = {'1': str(planttype_field), '2': str(water_demand_field), '3': str(plant_form_field), 
+                        '4':str(season_field), '5':str(native_field), '6':str(lightreq_field), 
+                        '7':str(edibility_field), '8':str(endangered_field)}
+
+            names = fix_plant_defualt(filter_plants_with_parameters(planttype_field, water_demand_field, plant_form_field, 
+                                                    season_field, native_field, lightreq_field, 
+                                                    edibility_field, endangered_field))
+        return get_par, names
+
+#pages
 def main_page(request):
     if request.method == 'GET':
         textfield =request.GET.get('search')
@@ -170,6 +233,7 @@ def main_page(request):
                 response = HttpResponse(template.render({},request))
                 return deleteCOOKIE(response, 8)
             results = search_plants_with_string(textfield)
+
             if not results:
                 template = loader.get_template('plantsite/html/plant_list.html')
                 context_dict = {'searched_plants':searched_plants}
@@ -183,12 +247,14 @@ def main_page(request):
                 context_dict.update(new_dict)
                 response = HttpResponse(template.render(context_dict,request))
                 return deleteCOOKIE(response, 8)
+
         if str(search_type) == 'Park':
             if not textfield:
                 template = loader.get_template('plantsite/html/mainPage.html')
                 response = HttpResponse(template.render({},request))
                 return deleteCOOKIE(response, 8)
             results = search_park_with_string(textfield)
+
             if not results:
                 template = loader.get_template('plantsite/html/park_list.html')
                 response = HttpResponse(template.render({},request))
@@ -198,40 +264,29 @@ def main_page(request):
                 context_dict = {"names":results}
                 response = HttpResponse(template.render(context_dict,request))
                 return deleteCOOKIE(response, 8)
+
         if str(search_type) == 'Ecoregion':
             if not textfield:
                 template = loader.get_template('plantsite/html/mainPage.html')
                 response = HttpResponse(template.render({},request))
                 return deleteCOOKIE(response, 8)
+
             template = loader.get_template('plantsite/html/eco_list.html')
             response = HttpResponse(template.render({},request))
             return deleteCOOKIE(response, 8)
+
         template = loader.get_template('plantsite/html/mainPage.html')
         response = HttpResponse(template.render({},request))
         return deleteCOOKIE(response, 8)
+
     else:
         template = loader.get_template('plantsite/html/mainPage.html')
         return HttpResponse(template.render({}, request))
 
 
-class Plant(object):
-
-    def __init__(self, name, img, url):
-        self.name = name
-        self.img = img
-        self.url = url
-
-
 def plants_each(request):
     template = loader.get_template('plantsite/html/plants_each.html')
-    """
-    park1 = Park("Pedernales State Park", "sp_pedernales.jpg", "/park1/")
-    park2 = Park("Dinosaur Valley State Park", "sp_dinosaur_valley.jpg", "/park2/")
-    park3 = Park("Daingerfield State Park", "sp_daingerfield.jpg", "/park3/")
-    park4 = Park("Acton State Park", "sp_acton.jpg", "/park4/")
-    parklist = [park1, park2, park3, park4]
-    context_dict = {"park_list":parklist}
-    """
+    
     number = request.GET.get('id')
     prof = PlantCsv.objects.get(id=number)
     context_dict = {'profile': prof}
@@ -252,28 +307,10 @@ def about_page(request):
     #return deleteCOOKIE(response, 8)
     return response
 
-# def state_park_list(request):
-#     template = loader.get_template('plantsite/html/park_list.html')
-#
-#     park1 = Park("Pedernales State Park", "sp_pedernales.jpg", "/park1/")
-#     park2 = Park("Dinosaur Valley State Park", "sp_dinosaur_valley.jpg", "/park2/")
-#     park3 = Park("Daingerfield State Park", "sp_daingerfield.jpg", "/park3/")
-#     park4 = Park("Acton State Park", "sp_acton.jpg", "/park4/")
-#     parklist = [park1, park2, park3, park4]
-#
-#     context_dict = {"park_list":parklist}
-#     response = HttpResponse(template.render(context_dict, request))
-#     return response
-
 def ecoregion_list(request):
     template = loader.get_template('plantsite/html/eco_list.html')
 
-    eco1 = Ecoregion("Piney Woods", "eco_pineywoods.jpg", "/eco1/")
-    eco2 = Ecoregion("Gulf Prairies and Marches", "eco_marshes.jpg", "/eco2/")
-    eco3 = Ecoregion("Post Oak Savanah", "eco_postoaksavanah.jpg", "/eco3/")
-    eco_list = [eco1, eco2, eco3]
-
-    context_dict = {"ecoregion_list": eco_list}
+    context_dict = {}
     response = HttpResponse(template.render(context_dict, request))
     return deleteCOOKIE(response, 8)
 
@@ -281,11 +318,11 @@ def ecoregion_list(request):
 def plant_type_list(request):
     template = loader.get_template('plantsite/html/plant_list.html')
 
+    get_par, names = PlantListHelper.get_par_and_names(request)
+
     if not request.method == 'GET':
-        names = get_all_plants()
-        names = fix_plant_defualt(names)
+
         page = request.GET.get('page')
-        get_par = {'1':'', '2':'', '3':'', '4':'', '5':'', '6':'', '7':'', '8':''}
         if not page:
             context_dict = paginator_processing(names, 1, get_par, 15)
         else:
@@ -296,9 +333,10 @@ def plant_type_list(request):
     searched_plants = fix_plant_defualt(searched_plants)
 
     textfield = request.GET.get('search')
+
     if textfield:
         results = search_plants_with_string(textfield)
-        get_par = {'1':'', '2':'', '3':'', '4':'', '5':'', '6':'', '7':'', '8':''}
+
         if not results:
             context_dict = {'get_par': get_par}
             new_dict = {'searched_plants':searched_plants}
@@ -312,29 +350,6 @@ def plant_type_list(request):
             context_dict.update(new_dict)
             return HttpResponse(template.render(context_dict,request))
 
-    planttype_field =request.GET.get('planttype')
-    water_demand_field =request.GET.get('waterdemand')
-    plant_form_field =request.GET.get('plantform')
-    season_field = request.GET.get('season')
-    native_field = request.GET.get('native')
-    lightreq_field = request.GET.get('lightreq')
-    edibility_field = request.GET.get('edibility')
-    endangered_field = request.GET.get('endangered')
-
-    if not planttype_field:
-        if '1' in request.COOKIES:
-            planttype_field = request.COOKIES['1']
-            water_demand_field = request.COOKIES['2']
-            plant_form_field = request.COOKIES['3']
-            season_field = request.COOKIES['4']
-            native_field = request.COOKIES['5']
-            lightreq_field = request.COOKIES['6']
-            edibility_field = request.COOKIES['7']
-            endangered_field = request.COOKIES['8']
-
-    get_par = {'1': str(planttype_field), '2': str(water_demand_field), '3': str(plant_form_field), '4':str(season_field), '5':str(native_field), '6':str(lightreq_field), '7':str(edibility_field), '8':str(endangered_field)}
-    names = filter_plants_with_parameters(planttype_field, water_demand_field, plant_form_field, season_field, native_field, lightreq_field, edibility_field, endangered_field)
-    names = fix_plant_defualt(names)
     page = request.GET.get('page')
 
     if not page:
@@ -344,15 +359,9 @@ def plant_type_list(request):
     new_dict = {'searched_plants':searched_plants}
     context_dict.update(new_dict)
     response = HttpResponse(template.render(context_dict,request))
-    if planttype_field:
-        response.set_cookie('1', str(planttype_field))
-        response.set_cookie('2', str(water_demand_field))
-        response.set_cookie('3', str(plant_form_field))
-        response.set_cookie('4', str(season_field))
-        response.set_cookie('5', str(native_field))
-        response.set_cookie('6', str(lightreq_field))
-        response.set_cookie('7', str(edibility_field))
-        response.set_cookie('8', str(endangered_field))
+    
+    PlantListHelper.set_cookies(response)
+
     return response
 
 def paginator_processing(names, page, get_par, num_items):
