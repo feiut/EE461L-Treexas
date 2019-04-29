@@ -12,7 +12,7 @@
 	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!-- 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
 
   	<link href='http://fonts.googleapis.com/css?family=Archivo' rel='stylesheet' type='text/css'>
   	<link href='http://fonts.googleapis.com/css?family=Archivo:bold' rel='stylesheet' type='text/css'>
@@ -20,67 +20,64 @@
 
 	<link rel="stylesheet" href="{% static 'list_page_style.css' %}">
 
-	<script>
-		// When the user clicks on <div>, open the popup
-		// function transpecosfunc() {
-		// 	document.getElementById("map").src = "{% static "ecoregions_transpecos.png" %}";
+	<script type="text/javascript" src="{% static 'list_page.js' %}"></script>
+	<script type="text/javascript">// Eco_List page
+	// When the user clicks on <div>, open the popup
+	function transpecosfunc() {
+		document.getElementById("map").src = "{% static "ecoregions_transpecos.png" %}";
 
-		// }
-		// function edwardsfunc() {
-		// 	document.getElementById("map").src = "{% static "ecoregions_edwards.png" %}";
-		// }
-		// function crosstimbersfunc() {
-		// 	document.getElementById("map").src = "{% static "ecoregions_crosstimbers.png" %}";
+	}
+	function edwardsfunc() {
+		document.getElementById("map").src = "{% static "ecoregions_edwards.png" %}";
+	}
+	function crosstimbersfunc() {
+		document.getElementById("map").src = "{% static "ecoregions_crosstimbers.png" %}";
 
-		// }
-		// function southplainsfunc() {
-		// 	document.getElementById("map").src = "{% static "ecoregions_southplains.png" %}";
+	}
+	function southplainsfunc() {
+		document.getElementById("map").src = "{% static "ecoregions_southplains.png" %}";
 
-		// }
-		// function postoakfunc() {
-		// 	document.getElementById("map").src = "{% static "ecoregions_postoak.png" %}";
+	}
+	function postoakfunc() {
+		document.getElementById("map").src = "{% static "ecoregions_postoak.png" %}";
 
-		// }
-		// function pineywoodsfunc() {
-		// 	document.getElementById("map").src = "{% static "ecoregions_pineywoods.png" %}";
+	}
+	function pineywoodsfunc() {
+		document.getElementById("map").src = "{% static "ecoregions_pineywoods.png" %}";
 
-		// }
-		// function blacklandprairiefunc() {
-		// 	document.getElementById("map").src = "{% static "ecoregions_blackland.png" %}";
+	}
+	function blacklandprairiefunc() {
+		document.getElementById("map").src = "{% static "ecoregions_blackland.png" %}";
 
-		// }
-		// function coastfunc() {
-		// 	document.getElementById("map").src = "{% static "ecoregions_marshes.png" %}";
+	}
+	function coastfunc() {
+		document.getElementById("map").src = "{% static "ecoregions_marshes.png" %}";
 
-		// }
-		// function highplainsfunc() {
-		// 	document.getElementById("map").src = "{% static "ecoregions_highplains.png" %}";
+	}
+	function highplainsfunc() {
+		document.getElementById("map").src = "{% static "ecoregions_highplains.png" %}";
 
-		// }
-		// function rollingplainsfunc() {
-		// 	document.getElementById("map").src = "{% static "ecoregions_rollingplains.png" %}";
+	}
+	function rollingplainsfunc() {
+		document.getElementById("map").src = "{% static "ecoregions_rollingplains.png" %}";
 
-		// }
-		// function leave() {
-		// 	document.getElementById("map").src = "{% static "ecoregions2.png" %}";
-		// }
-	</script>
+	}
+	function leave() {
+		document.getElementById("map").src = "{% static "ecoregions2.png" %}";
+	}
+</script>
+<style type="text/css">#eco{
+  background: url('{% static "green-leaves-flat.jpg"%}') center 30% no-repeat;
+  background-size: 120% 150%;
+</style>
 
-	<style>
-		.bg{
-			background: url('{% static "green-leaves-flat.jpg"%}') center 30% no-repeat;
-			background-size: 120% 150%;
-
-		}
-	</style>
-
-
+}
 
 
 </head>
 
-<body class="bg">
-	<nav class="navbar navbar-expand-sm navbar-custom navbar-light fixed-top" style="background-color: #A5A5Af">
+<body class="bg" id="eco">
+	<nav class="navbar navbar-expand-sm navbar-custom navbar-light fixed-top">
 	  <div class="container-fluid">
 
 	    <div class="navbar-header">
@@ -106,17 +103,9 @@
 
 
 	<div class="container-fluid">
-		<div class="container" style="height:10em">
+		<div class="container">
   	 		<p class="title1 text-center">Ecoregions of Texas</p>
 		</div>
-<!-- 	<div class="d-flex flex-row mx-auto">
-		<div class="flex-col">
-			<p class="title1 text-center">Ecoregions of Texas</p>
-			<br>
-			<br>
-			<br>
-		</div>
-	</div> -->
 
 	<div class="d-flex flex-row justify-content-center">
 	<div class="flex-column justify-content-center mx-auto">

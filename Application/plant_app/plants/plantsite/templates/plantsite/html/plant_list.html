@@ -60,7 +60,7 @@
 </head>
 <body>
 
-	<nav class="navbar navbar-expand-sm navbar-custom navbar-light fixed-top" style="background-color: #A5A5Af">
+	<nav class="navbar navbar-expand-sm navbar-custom navbar-light fixed-top">
 	  <div class="container-fluid">
 	    <div class="navbar-header">
 	      <a class="navbar-brand" href="/">Treexas</a>
@@ -127,8 +127,8 @@ animation commented
 		</div>
 
     <br>
-		<div style="text-align: center">
-			<button style=" background-color: #A5A5Af; border: none;color:  white;padding: 15px 32px;text-align: center;text-decoration: none; display: inline-block; font-size: 16px;"id="show_Top5_plants"  onclick="xlist(this,'Top5_plants')" >Show most searched plants</button>
+		<div id="div_top5">
+			<button id="show_Top5_plants"  onclick="xlist(this,'Top5_plants')" >Show most searched plants</button>
 		</div>
 		<!-- <textarea class="form-control" style="display:none" cols="30" readonly="readonly" id="Top5_plants"></textarea> -->
 		<div style="display: none" class="plant_list col" data-spy="scroll" id="Top5_plants">
@@ -149,8 +149,7 @@ animation commented
 		<div class="d-flex flex-row mt-5 mx-5">
 			<!-- filters -->
 			<div class="d-inline col-2 pl-3" id="filters">
-				<!-- back -->
-<!-- 				<button class="btn btn-inline-secondary" href="plant_list/" onclick="window.history.go(-1); return false;">Back</button> -->
+
 				<form method="GET">
 
 					<div class="input-group">
@@ -287,12 +286,13 @@ animation commented
 							<!--span class="pagination_foot" >
 									{{page_all}}plants, {{blogs.number}}page/{{pages.num_pages}}pages
 							</span-->
-							<br>
-							<br>
+
 						</div>
 					</div>
 			</div>
 
+		</div>
+		<div id="footer">
 		</div>
 	</div>
 	<script type="text/javascript">

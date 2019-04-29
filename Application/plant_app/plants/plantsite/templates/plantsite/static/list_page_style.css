@@ -1,4 +1,5 @@
-.sk-wave {
+/*don't know what is this for --Fei 29/4
+  .sk-wave {
   margin: 15px auto;
   width: 50px;
   height: 40px;
@@ -43,9 +44,10 @@
     -webkit-transform: scaleY(1);
             transform: scaleY(1); } }
 
-
+*/
 p {
 	color: #57bc90 !important;
+  margin: 0;
 }
 
 .page-link{
@@ -64,12 +66,17 @@ p {
 /* change the link color */
 .navbar-custom .navbar-nav .nav-link {
     color: #FFFFFF;
+
 }
 /* change the color of active or hovered links */
 .navbar-custom .nav-item.active .nav-link,
 .navbar-custom .nav-item:focus .nav-link,
 .navbar-custom .nav-item:hover .nav-link {
     color: #FFFFFF;
+
+}
+.fixed-top{
+  background-color: #A5A5Af;
 }
 
 .navbar-brand {
@@ -85,7 +92,7 @@ p {
 }
 .container{
 	margin-top:10%;
-	height:8em;
+	height:10em;
 }
 .title1{
   font: 80px/1.2 'Fjalla One', sans-serif;
@@ -126,18 +133,27 @@ h1{
 	margin: 20px;
 }
 
-p{
-/*	color: #000000;
-	font-family: Arial;
-	font-size: 160%;
-	width: 80%;*/
-	margin: 0;
-
-}
 #plantlist{
 	border-left: 1px solid;
 	color: #cccccc;
 }
+
+#show_Top5_plants{
+   background-color: #A5A5Af; 
+   border: none;
+   color:  white;
+   padding: 15px 32px;
+   text-align: center;
+   text-decoration: none; 
+   display: inline-block; 
+   font-size: 16px;
+}
+
+#div_top5{
+  text-align: center
+}
+
+
 #filters{
 	border-top: 1px;
 	color:#a6a6a6;
@@ -147,7 +163,7 @@ p{
 	font-family: Arial;
 	font-size: 120%;
 	width: 100%;
-	margin-top: 1.5em;
+	margin-top: 1em;
 	background-color: #d9d9d9;
 }
 .horizontal-align{
@@ -167,10 +183,6 @@ p{
 .plant_list{
 	height: 45em;
 	overflow-y: scroll;
-}
-
-.fa_custom{
-/* color: #57bc90 */
 }
 
 
@@ -218,3 +230,9 @@ height:3.5em;
 .nextpage{
 	color: black;
 }
+
+#footer{
+  height:4em;
+}
+
+/*Eco_list background*/
