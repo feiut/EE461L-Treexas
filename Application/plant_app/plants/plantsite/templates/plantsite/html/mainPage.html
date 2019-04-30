@@ -75,6 +75,9 @@ p {
 .page-link{
   background-color:#57BC90; color:#FFFFFF;
 }
+.navbar{
+  background-color:rgba(0,0,0,0.35);
+}
 .navbar-nav {
   color: #57BC90;
   font: 160% 'Fjalla One', Helvetica, sans-serif;
@@ -109,6 +112,7 @@ p {
 }
 .container{
   margin-top:5%;
+  height:8em;
 }
 .title1{
   font: 80px/1.2 'Fjalla One', sans-serif;
@@ -138,7 +142,8 @@ font-size: 15px;
 }
 
 .form-control{
-background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.7);
+  height:3.5em;
 }
 
 #search_bar{
@@ -193,7 +198,7 @@ left:15%;
 
 
 <div class="bg2" style="height:100%;">
-  <nav class="navbar navbar-expand-sm navbar-custom navbar-light" style="background-color:rgba(0,0,0,0.35);">
+  <nav class="navbar navbar-expand-sm navbar-custom navbar-light">
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" href="/">Treexas</a>
@@ -217,11 +222,9 @@ left:15%;
 
 
   <div class="container-fluid">
-      <!-- welcome -->
-    <div class="container" style="height:8em">
-
+    <!-- welcome -->
+    <div class="container" >
           <p class="title1">Welcome to Treexas</p>
-
     </div>
 
     <!-- search bar -->
@@ -229,17 +232,16 @@ left:15%;
       <div class="col-12">
           <form method="GET">
               <div class="input-group" id="search_bar">
-
-              <div class="input-group-append">
+                <div class="input-group-append">
                       <select class="form-control" name="SearchType" style="height:3.5em;">
                           <option value="Plant" selected>Plant</option>
                           <option value="Park">State park</option>
                           <option value="Ecoregion">Ecoregion</option>
                       </select>
-            </div>
+                </div>
 
-            <input class="form-control" type="text" name="search" placeholder="Search..">
-            <div class="input-group-append">
+                <input class="form-control" type="text" name="search" placeholder="Search..">
+                <div class="input-group-append">
                   <button class="btn btn-outline form-control" type="submit"><i class="fa fa-leaf fa_custom fa-2x"></i></button>
                 </div>
               </div>
