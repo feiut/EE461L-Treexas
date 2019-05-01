@@ -58,8 +58,8 @@
 <!-- Plant image and data section -->
 
 		<div class="imgarea">
-				<img style="vertical-align: top;display: inline-block; height: 40vh; width:20vw" src="{{profile.image}}" alt="{{profile.name}}">
-			<table style="vertical-align: top; height: 45vh; width: 75vw; display: inline-block;border: solid; color:#A5A5Af; border-color: #57BC90; overflow: scroll; font: 200% 'Fjalla One', Helvetica, sans-serif;">
+				<img class="main_img" src="{{profile.image}}" alt="{{profile.name}}">
+			<table class="img_table">
 				{% if profile.nickname != "N/A" and profile.nickname != None %}
 				<tr>
 					<td><font size=4>Common Name:</font></td>
@@ -216,16 +216,16 @@
 	{% csrf_token %}
 		<div style="text-align: center">
 			{%if describe == 'Show' %}
-			<button  style="background-color: #A5A5Af; border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none; display: inline-block; font-size: 16px;" id="show_eco" type="submit" name="Des" value="Edit" >Edit</button>
+			<button class="buttons" id="show_eco" type="submit" name="Des" value="Edit" >Edit</button>
 			{% endif %}
 			{% if describe == 'Show' %}
-			<button style=" background-color: #A5A5Af; border: none;color:  white;padding: 15px 32px;text-align: center;text-decoration: none; display: inline-block; font-size: 16px;"id="show_parks"  type="submit" name="Des" value="Show" >Hide</button>
+			<button class="buttons" id="show_parks"  type="submit" name="Des" value="Show" >Hide</button>
 			{% elif describe == 'hidden'%}
-			<button style=" background-color: #A5A5Af; border: none;color:  white;padding: 15px 32px;text-align: center;text-decoration: none; display: inline-block; font-size: 16px;"id="show_parks"  type="submit" name="Des" value="Show" >Show Comment</button>
+			<button class="buttons" id="show_parks"  type="submit" name="Des" value="Show" >Show Comment</button>
 			{% endif %}
 			{%if describe == 'Edit' %}
-			<button  style="background-color: #A5A5Af; border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none; display: inline-block; font-size: 16px;" id="show_eco" type="submit" name="Des" value="Save" >Save</button>
-			<button  style="background-color: #A5A5Af; border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none; display: inline-block; font-size: 16px;" id="show_eco" type="submit" name="Des" value="Show" >Cancel</button>
+			<button class="buttons" id="show_eco" type="submit" name="Des" value="Save" >Save</button>
+			<button class="buttons" id="show_eco" type="submit" name="Des" value="Show" >Cancel</button>
 			{% endif %}
 		</div>
 		{%if describe == 'Show' %}
@@ -271,13 +271,13 @@
 			        	{% endfor %}
 			        </div>
 			        <!-- Carousel controls -->
-			        <a class="carousel-control-prev" href="#myCarousel" role="button"data-slide="prev" style="background-color:#57bc90">
-			                <span class="carousel-control-prev-icon" aria-hidden="true" style="color:#57bc90"></span>
-	    					<span class="sr-only" style="color:#57bc90">Previous</span>
+			        <a class="carousel-control-prev" href="#myCarousel" role="button"data-slide="prev" style="background-color:#A5A5Af">
+			                <span class="carousel-control-prev-icon" aria-hidden="true" style="color:#A5A5Af"></span>
+	    					<span class="sr-only" style="color:#A5A5Af">Previous</span>
 			        </a>
-			        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next" style="background-color:#57bc90">
-			                <span class="carousel-control-next-icon" aria-hidden="true" style="color:#57bc90"></span>
-	    					<span class="sr-only" style="color:#57bc90">Next</span>
+			        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next" style="background-color:#A5A5Af">
+			                <span class="carousel-control-next-icon" aria-hidden="true" style="color:#A5A5Af"></span>
+	    					<span class="sr-only" style="color:#A5A5Af">Next</span>
 			        </a>
 			    </div>
 
@@ -299,8 +299,8 @@
 									<img class="img-medium-center" src="{% static img_static %}">
 								{% endwith %}
 			        		</a>
-			        		<div class="carousel-caption d-non d-md-block" style="background-color: #77c9d4">
-			        			<h6 class="words1 text-center">{{eco.ecoregion}}</h6>
+			        		<div class="carousel-caption d-non d-md-block" style="background-color: #57bc90">
+			        			<h6 class="words1 text-center" style="color:#ffffff">{{eco.ecoregion}}</h6>
 			        		</div>
 			        	</div>
 			        	{% endfor %}

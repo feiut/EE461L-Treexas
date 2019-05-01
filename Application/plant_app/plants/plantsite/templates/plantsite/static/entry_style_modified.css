@@ -80,6 +80,30 @@ p {
   width:20vw; 
 }
 
+.img_table{
+  vertical-align: top; 
+  height: 45vh; 
+  width: 75vw; 
+  display: inline-block;
+  border: dashed; 
+  border-width: 5px;
+  color:#A5A5Af;
+  border-color: #57BC90; 
+  overflow: scroll; 
+  font: 200% 'Fjalla One', Helvetica, sans-serif;
+}
+
+.buttons{
+  background-color: #A5A5Af;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none; 
+  display: inline-block; 
+  font-size: 22px;
+}
+
 .imgstyle{
 	object-fit: cover;
 	width: 400px;
