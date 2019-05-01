@@ -21,6 +21,15 @@ All templates can be referred to with plantsite/<template_name>.html
 even though they actually reside in plantsite/templates/plantsite/<template_name>.html'''
 
 ''' Some important functions that are useful '''
+
+#example of making duplicated code into it's own method/class
+class parser:
+    @staticmethod
+    def stringArrayToList( stringArray ):
+        parsedString = re.sub("\[",'',str(stringArray)) #gets rid of brackets
+        parsedString = re.sub("\]",'',str(parsedString))
+        return parsedString.split(",")
+
 def search_plants_with_string(p):
     result = PlantCsv.objects.all()
     leftover = list()
@@ -440,9 +449,8 @@ def plant_profile_view(request):
     set_check = list() #This will store if a set is empty
     ''' gets parks'''
     parks_for_plant = prof.statepark
-    parks_for_plant = re.sub("\[",'',str(parks_for_plant)) #gets rid of brackets
-    parks_for_plant = re.sub("\]",'',str(parks_for_plant))
-    park_list = parks_for_plant.split(',') #uses comma as delimiter to split string and make a list
+   
+    park_list = parser.stringArrayToList(parks_for_plant) #uses comma as delimiter to split string and make a list
     park_ids = set() #set will be used to store database objects (a query set)
     for p in park_list:
         if not p == '':
@@ -452,9 +460,7 @@ def plant_profile_view(request):
 
     #gets eco regions
     eco_for_plant = prof.ecoregionids
-    eco_for_plant = re.sub("\[",'',str(eco_for_plant)) #gets rid of brackets
-    eco_for_plant = re.sub("\]",'',str(eco_for_plant))
-    eco_list =eco_for_plant.split(',') #uses comma as delimiter to split string and make a list
+    eco_list = parser.stringArrayToList(eco_for_plant) #uses comma as delimiter to split string and make a list
     eco_ids = set() #set will be used to store database objects (a query set)
     for e in eco_list:
         if not e == '' and not e=='N/A' and is_number(e):
