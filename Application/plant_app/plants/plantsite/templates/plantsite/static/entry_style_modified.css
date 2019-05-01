@@ -5,6 +5,14 @@ p {
 .page-link{
   background-color:#57BC90; color:#FFFFFF;
 }
+
+.grey-theme{
+  background-color:#A5A5Af; 
+}
+
+.green-theme{
+  background-color: #57bc90;
+}
 .navbar{
   background-color: #A5A5Af;
 }
@@ -93,6 +101,10 @@ p {
   font: 200% 'Fjalla One', Helvetica, sans-serif;
 }
 
+.button-set{
+  text-align: center;
+}
+
 .buttons{
   background-color: #A5A5Af;
   border: none;
@@ -102,6 +114,7 @@ p {
   text-decoration: none; 
   display: inline-block; 
   font-size: 22px;
+  font-family: 'Fjalla One', sans-serif;
 }
 
 .imgstyle{
@@ -185,6 +198,10 @@ h1{
 	margin: 20px;
 }
 
+h6{
+  color: #FFFFFF!important;
+}
+
 p{
 	color: #000000;
 	font-family: Arial;
@@ -237,7 +254,8 @@ Added to enable "overflow-y"
 }
 .plant_list{
 	height: 45em;
-	overflow-y: scroll;
+  overflow-y: scroll;
+  display:none
 }
 
 .glyphicon-leaf{
@@ -293,8 +311,9 @@ background: rgba(255, 255, 255, 0.7);
 #page_footer{
 	position: relative;
 	width:80%
-	left: 0;
+	
 }
+
 #page_goto span{
 		padding: 1px 6px 1px 15px;
 }
@@ -307,7 +326,8 @@ background: rgba(255, 255, 255, 0.7);
 
 .card-style{
 	border-color : #FFFFFF;
-	border-width : 10px;
+  border-width : 10px;
+  display: inline-block;
 }
 
 .prevpage{
