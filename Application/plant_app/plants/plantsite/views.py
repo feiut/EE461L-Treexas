@@ -57,22 +57,18 @@ class Profile(ABC):
 
     def createProfilePageItems(self):
         #context_dict = {'profileItem': self.profileitem(),'leftCarousel':self.leftCarouselList(),'rightCarousel':self.rightCarouselList()}
-        list = []
-        list.append(self.profileItem())
-        list.append(self.leftCarouselList())
-        list.append(self.rightCarouselList())
-        return list
+        dict = {'profile':self.profileItem(),'leftCarousel':self.leftCarouselList(),'rightCarousel':self.rightCarouselList()}
+        return dict
 
 
 class parkProfile(Profile):
     def __init__(self,dbid):
-        self.id = dbid;
         self.parkProf = get_park_with_dbid(str(dbid))
 
     def profileItem(self):
         self.parkProf.url = re.sub('https', 'https:', str(self.parkProf.url))
         return self.parkProf
-        
+
     def leftCarouselList(self):
         plants_in_park = self.parkProf.plantlist
         plant_list = parser.stringArrayToList(plants_in_park) #uses comma as delimiter to split string and make a list
@@ -90,6 +86,49 @@ class parkProfile(Profile):
         eco_ids = parser.idListToSet(eco_list)
         return PlantCsvEcoregions.objects.filter(id__in=eco_ids)
 
+
+class ecoProfile(Profile):
+    def __init__(self,dbid):
+        self.ecoProf = PlantCsvEcoregions.objects.get(id=str(dbid))
+
+    def profileItem(self):
+        return self.ecoProf
+
+    def leftCarouselList(self):
+        plant_list = parser.stringArrayToList(self.ecoProf.plants) 
+        plant_ids = parser.idListToSet(plant_list)
+        return PlantCsv.objects.filter(id__in=plant_ids)
+
+    def rightCarouselList(self):
+        park_list = parser.stringArrayToList(self.ecoProf.stateparks)
+        park_ids = parser.idListToSet(park_list)
+        return Stateparks.objects.filter(id__in=park_ids)
+
+
+class plantProfile(Profile):
+    def __init__(self,dbid):
+        self.plantProf = get_plant_with_id(dbid)
+
+    def profileItem(self):
+        return self.plantProf
+
+    def leftCarouselList(self):
+        parks_for_plant = self.plantProf.statepark
+        park_list = parser.stringArrayToList(parks_for_plant) #uses comma as delimiter to split string and make a list
+        park_ids = parser.idListToSet(park_list)
+        eco_list = self.rightCarouselList()
+        for e in eco_list:
+            parks_for_eco = e.stateparks
+            park_eco = parser.stringArrayToList(parks_for_eco) #uses comma as delimiter to split string and make a list
+            park_ids.update(park_eco)
+        return Stateparks.objects.filter(id__in=park_ids)
+
+
+    def rightCarouselList(self):
+        eco_for_plant = self.plantProf.ecoregionids
+        eco_list = parser.stringArrayToList(eco_for_plant) #uses comma as delimiter to split string and make a list
+        eco_ids = parser.idListToSet(eco_list)
+        return  PlantCsvEcoregions.objects.filter(id__in=eco_ids)
 
 
 class parser:
@@ -513,39 +552,27 @@ def plant_profile_view(request):
             else:
                 describe = "Show"
 
-    plant_id = number
-    plant_description = PlantCsv.objects.get(id=str(plant_id)).description
-    prof = get_plant_with_id(number)
+    profileOfPlant = plantProfile(number)
+    profileBuild = profileOfPlant.createProfilePageItems()
+    prof = profileBuild['profile']
+    plant_description =  prof.description
     prof.search_times = str(int(prof.search_times) + 1)
     prof.save()                                  #Every time you search for this plant, the searching times will be added by 1
     set_check = list() #This will store if a set is empty
     ''' gets parks'''
-    parks_for_plant = prof.statepark
-    park_list = parser.stringArrayToList(parks_for_plant) #uses comma as delimiter to split string and make a list
-    park_ids = parser.idListToSet(park_list)
-
-    #gets eco regions
-    eco_for_plant = prof.ecoregionids
-    eco_list = parser.stringArrayToList(eco_for_plant) #uses comma as delimiter to split string and make a list
-    eco_ids = parser.idListToSet(eco_list)
-    eco_list = PlantCsvEcoregions.objects.filter(id__in=eco_ids)
-    for e in eco_list:
-        parks_for_eco = e.stateparks
-        park_eco = parser.stringArrayToList(parks_for_eco) #uses comma as delimiter to split string and make a list
-        park_ids.update(park_eco)
-
+    eco_list = profileBuild['rightCarousel'] 
     for eco in eco_list:
         eco.image =eco.image.strip()
         eco.image = re.sub('https', 'https:', str(eco.image))
     set_check.append(empty_check(eco_list))
-
-    park_list = Stateparks.objects.filter(id__in=park_ids)
+    park_list = profileBuild['leftCarousel']
 
     for park in park_list:
+        park.image = park.image.strip()
         park.image = fix.http(park.image)
 
     set_check.append(empty_check(park_list))
-    context_dict = {'profile': prof,'park_list':park_list,'eco_list':eco_list,'set_check':set_check, 'plant_id':plant_id, 'describe':describe, 'plant_description':plant_description}
+    context_dict = {'profile': prof,'park_list':park_list,'eco_list':eco_list,'set_check':set_check, 'plant_id':number, 'describe':describe, 'plant_description':plant_description}
     return HttpResponse(template.render(context_dict,request))
 
 
@@ -557,15 +584,11 @@ def eco_profile_view(request):
     if not dbid:
         if 'eco_id' in request.COOKIES:
             dbid = request.COOKIES['eco_id']
-
-    prof = PlantCsvEcoregions.objects.get(id=str(dbid))
+    profileOfEco = ecoProfile(dbid)
+    profileBuild = profileOfEco.createProfilePageItems()
+    prof = profileBuild['profile']
     prof.image = prof.image.strip() #remove leading whitespace ERICK
-   
-    plants_in_eco = prof.plants
-
-    plant_list = parser.stringArrayToList(plants_in_eco) #uses comma as delimiter to split string and make a list
-    plant_ids = parser.idListToSet(plant_list)
-    plants = PlantCsv.objects.filter(id__in=plant_ids)
+    plants = profileBuild['leftCarousel']   
     plants = fix_plant_defualt(plants)
     page = request.GET.get('page')
     if not page:
@@ -573,12 +596,7 @@ def eco_profile_view(request):
     else:
         context_dict1 = paginator_processing(plants, int(page), 0, 12)
     ''' gets parks'''
-    parks_for_plant = prof.stateparks
-    park_list = parser.stringArrayToList(parks_for_plant) #uses comma as delimiter to split string and make a list
-    park_ids = parser.idListToSet(park_list)
-
-    park_list = Stateparks.objects.filter(id__in=park_ids)
-
+    park_list = profileBuild['rightCarousel']
     for park in park_list:
         park.image = fix.http(park.image)
    
@@ -642,9 +660,9 @@ def park_profile_view(request):
     #prof.url = re.sub('https', 'https:', str(prof.url))
     profileOfPark = parkProfile(dbid);
     profileBuild = profileOfPark.createProfilePageItems();
-    prof = profileBuild[0]
-    plants = profileBuild[1]
-    eco_list = profileBuild[2]
+    prof = profileBuild['profile']
+    plants = profileBuild['leftCarousel']
+    eco_list = profileBuild['rightCarousel']
     page = request.GET.get('page')
     if not page:
         context_dict1 = paginator_processing(plants, 1, 0, 12)
