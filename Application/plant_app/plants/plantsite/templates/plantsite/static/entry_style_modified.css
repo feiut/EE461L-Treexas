@@ -76,7 +76,7 @@ p {
   color: #015249;
 }
 
-.imgarea{
+.img-area{
   max-height: 25%;
   width: 100%;
 }
@@ -127,9 +127,9 @@ p {
 
 .imgstyle-large{
   object-fit: cover;
-  width: 600px;
-  height: 300px;
-  border-radius: 8px;
+  width: 1000px;
+  height: 500px;
+  border-radius: 10px;
   margin: 20px;
 }
 

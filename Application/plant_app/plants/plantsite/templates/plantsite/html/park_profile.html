@@ -32,7 +32,7 @@
 
 <body>
 
-	<nav class="navbar navbar-expand-sm navbar-custom navbar-light fixed-top" style="background-color: #A5A5Af">
+	<nav class="navbar navbar-expand-sm navbar-custom navbar-light fixed-top">
 		  <div class="container-fluid">
 
 		    <div class="navbar-header">
@@ -49,8 +49,6 @@
 		        </li>
 		        <li class="nav-item active"><a class = "nav-link" href="/about">About Us</a>
 		        </li>
-		     	<!-- <li class="nav-item active"><a class="nav-link" href="" onclick="window.history.go(-1); return false;"> Back </a>
-		     	</li> -->
 		      </ul>
 		    </div>
 		  </div>
@@ -61,10 +59,9 @@
 		<br>
 		<br>
 	<div class="container-fluid">
-
 		<div class="row">
 			<div class="col">
-				<h1 class="title1 text-center">{{profile.name}}</h1>
+				<!--h1 class="title1 text-center">{{profile.name}}</h1>
 				<div class="text-center">
 					<img class="img imgstyle-large" src="{{profile.image}}">
 				</div>
@@ -74,8 +71,33 @@
 				<p class="text-center">Longitude: {{profile.longitude}}</p>
 				<div class="text-center">
 				<a href="{{profile.url}}">Want to know more? Visit the website!</a>
-				</div>
+				</div-->
+				<h1 class="title1">{{profile.name}}</h1>
 			</div>
+		</div>
+		<div class="img-area">
+				<img class="img imgstyle-large" src="{{profile.image}}">
+				<table class="img_table" style="width: 40vw">
+					<tr>
+						<td>Address:</td>
+						<td>{{profile.address}}</td>
+					</tr>
+					<tr>
+							<td>Latitude:</td>
+							<td>{{profile.latitude}}</td>
+					</tr>
+					<tr>
+							<td>Longitude:</td>
+							<td>{{profile.longitude}}</td>
+					</tr>
+					<tr>
+						<td>Description:</td>
+						<td>{{profile.description}}</td>
+					</tr>>
+				</table>
+				<div class="text-center">
+				<a href="{{profile.url}}">Want to know more? Visit the website!</a>
+				</div>
 		</div>
 	</div>
 
