@@ -254,7 +254,7 @@
 			        <!-- Wrapper for carousel items -->
 			        <div class="carousel-inner">
 			        	<div class="carousel-item active">
-			                <img class="img-medium-center" src="{% static "background-succulent.jpeg" %}">
+			                <img class="img-medium-center" src='{% static "background-succulent.jpeg" %}'>
 			               	<div class="carousel-caption d-non d-md-block green-theme">
 			        			<h6 class="words1 text-center">Parks</h6>
 			        		</div>
@@ -274,11 +274,9 @@
 					
 					<a class="carousel-control-prev grey-theme" href="#myCarousel" role="button"data-slide="prev">
 						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						<!--span class="sr-only">Previous</span-->
 					</a>
 					<a class="carousel-control-next  grey-theme" href="#myCarousel" role="button" data-slide="next">
 						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-						<!--span class="sr-only">Next</span-->
 					</a>
 			    </div>
 
@@ -287,7 +285,7 @@
 			        <!-- Wrapper for carousel items -->
 			        <div class="carousel-inner">
 			        	<div class="carousel-item active">
-			                <img class="img-medium-center" src="{% static "background-succulent.jpeg" %}">
+			                <img class="img-medium-center" src='{% static "background-succulent.jpeg" %}'>
 			               	<div class="carousel-caption d-non d-md-block green-theme">
 			        			<h6 class="words1 text-center">Ecoregions</h6>
 			        		</div>
@@ -309,11 +307,9 @@
 			        <!-- Carousel controls -->
 			        <a class="carousel-control-prev grey-theme" href="#myCarousel2" role="button" data-slide="prev">
 			                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-	    					<!--span class="sr-only" >Previous</span-->
 			        </a>
 			        <a class="carousel-control-next grey-theme" href="#myCarousel2" role="button" data-slide="next">
 			                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-	    					<!--span class="sr-only" >Next</span-->
 			        </a>
 			    </div>
 
@@ -328,7 +324,7 @@
 		<br>
 
 		<div class="d-flex justify-content-between">
-			<div id="parks" class="plant_list col" data-spy="scroll">
+			<div id="parks" style="display: none" class="plant_list col" data-spy="scroll">
 				<div class="d-flex flex-row flex-wrap">
 					{% for park in park_list %}
 					<div class="card col-sm-4 px-4 card-style flex-wrap" onmouseover="img_over(this)" onmouseout="img_out(this)">
@@ -343,7 +339,7 @@
 				</div>
 			</div>
 
-		<div id="eco_region" class="plant_list col" data-spy="scroll">
+		<div id="eco_region" style="display: none" class="plant_list col" data-spy="scroll">
 			<div class="d-flex flex-row flex-wrap">
 				{% for eco in eco_list %}
 				<div class="card col-sm-4 px-4 card-style flex-wrap" onmouseover="img_over(this)" onmouseout="img_out(this)">
@@ -376,7 +372,6 @@
 
 	</body>
 
-	<!--animation><--->
 
 <script type="text/javascript">
 
