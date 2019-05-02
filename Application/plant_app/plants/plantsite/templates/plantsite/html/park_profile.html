@@ -98,13 +98,15 @@
 				</table>
 		</div>
 	</div>
-
+<br>
+<br>
+<br>
 	<div class="d-flex flex-row justify-content-around">
 		<div>
-			<h3 class="title3 text-center"> Plants In {{profile.name}} </h3>
+			<h3 class="title3"> Plants In {{profile.name}} </h3>
 		</div>
 		<div>
-			<h3 class="title3 text-center"> Ecoregion of {{profile.name}} </h3>
+			<h3 class="title3"> Ecoregion of {{profile.name}} </h3>
 		</div>
 	</div>
 
@@ -115,7 +117,7 @@
 		        <div class="carousel-inner">
 		        	<div class="carousel-item active">
 		                <img class="img-medium-center" src="{% static "background-succulent.jpeg" %}">
-		               	<div class="carousel-caption d-non d-md-block" style="background-color: #77c9d4">
+		               	<div class="carousel-caption d-non d-md-block green-theme">
 		        			<h6 class="words1 text-center">Plants</h3>
 		        		</div>
 		            </div>
@@ -125,20 +127,20 @@
 		        		<a href="/plant_profile/?id={{plant.id}}">
 		        			<img class="img-medium-center" src="{{plant.image}}">
 		        		</a>
-		        		<div class="carousel-caption d-non d-md-block" style="background-color: #77c9d4">
+		        		<div class="carousel-caption d-non d-md-block green-theme">
 		        			<h6 class="words1 text-center">{{plant.name}}</h3>
 		        		</div>
 		        	</div>
 		        	{% endfor %}
 		        </div>
 		        <!-- Carousel controls -->
-		        <a class="carousel-control-prev" href="#myCarousel" role="button"data-slide="prev" style="background-color:#57bc90">
-		                <span class="carousel-control-prev-icon" aria-hidden="true" style="color:#57bc90"></span>
-    					<span class="sr-only" style="color:#57bc90">Previous</span>
+		        <a class="carousel-control-prev grey-theme" href="#myCarousel" role="button"data-slide="prev">
+		                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    					<!--span class="sr-only" >Previous</span-->
 		        </a>
-		        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next" style="background-color:#57bc90">
-		                <span class="carousel-control-next-icon" aria-hidden="true" style="color:#57bc90"></span>
-    					<span class="sr-only" style="color:#57bc90">Next</span>
+		        <a class="carousel-control-next grey-theme" href="#myCarousel" role="button" data-slide="next">
+		                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    					<!--span class="sr-only" style="color:#57bc90">Next</span-->
 		        </a>
 		    </div>
 
@@ -147,7 +149,7 @@
 		        <div class="carousel-inner">
 		        	<div class="carousel-item active">
 		                <img class="img-medium-center" src="{% static "background-succulent.jpeg" %}">
-		               	<div class="carousel-caption d-non d-md-block" style="background-color: #77c9d4">
+		               	<div class="carousel-caption d-non d-md-block green-theme">
 		        			<h6 class="words1 text-center">Ecoregion</h6>
 		        		</div>
 		            </div>
@@ -159,28 +161,28 @@
 									<img class="img-medium-center" src="{% static img_static %}">
 								{% endwith %}
 		        		</a>
-		        		<div class="carousel-caption d-non d-md-block" style="background-color: #77c9d4">
+		        		<div class="carousel-caption d-non d-md-block green-theme">
 		        			<h6 class="words1 text-center">{{eco.ecoregion}}</h6>
 		        		</div>
 		        	</div>
 		        	{% endfor %}
 		        </div>
 		        <!-- Carousel controls -->
-		        <a class="carousel-control-prev" href="#myCarousel2" role="button"data-slide="prev" style="background-color:#57bc90">
-		                <span class="carousel-control-prev-icon" aria-hidden="true" style="color:#57bc90"></span>
-    					<span class="sr-only" style="color:#57bc90">Previous</span>
+		        <a class="carousel-control-prev grey-theme" href="#myCarousel2" role="button"data-slide="prev">
+		                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    					<!--span class="sr-only" style="color:#57bc90">Previous</span-->
 		        </a>
-		        <a class="carousel-control-next" href="#myCarousel2" role="button" data-slide="next" style="background-color:#57bc90">
-		                <span class="carousel-control-next-icon" aria-hidden="true" style="color:#57bc90"></span>
-    					<span class="sr-only" style="color:#57bc90">Next</span>
+		        <a class="carousel-control-next grey-theme" href="#myCarousel2" role="button" data-slide="next">
+		                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    					<!--span class="sr-only" style="color:#57bc90">Next</span-->
 		        </a>
 		    </div>
 
 
 	</div>
 	<div style="text-align: center">
-			<button style=" background-color: #A5A5Af; border: none;color:  white;padding: 15px 32px;text-align: center;text-decoration: none; display: inline-block; font-size: 16px;"id="show_plants"   onclick="xlist(this,'plants','plantSet')">Show plants</button>
-			<button  style="background-color: #A5A5Af; border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none; display: inline-block; font-size: 16px;" id="show_eco"  onclick="xlist(this,'eco_region','ecoSet')">Show eco-regions</button>
+			<button class="buttons" id="show_plants"   onclick="xlist(this,'plants','plantSet')">Show plants</button>
+			<button class="buttons" id="show_eco"  onclick="xlist(this,'eco_region','ecoSet')">Show eco-regions</button>
 		</div>
 	<br>
 	<br>
@@ -188,20 +190,6 @@
 	<br>
 	<br>
 	<div class="d-flex justify-content-between">
-	<!-- <div id="plants" style="display: none" class="plant_list col" data-spy="scroll" id="plantlist">
-		<div class="d-flex flex-row flex-wrap">
-			{% for plant in plants %}
-			<div style="display: inline-block" class="card col-sm-4 px-4 card-style flex-wrap" onmouseover="img_over(this)" onmouseout="img_out(this)">
-				<a href="/plant_profile/?id={{plant.id}}">
-					<img style="max-width: 100%" class="card-img img-center"src="{{plant.image}}">
-				</a>
-				<div class="card-body">
-					<h3 class="card-text text-center" >{{plant.name}}</h3>
-				</div>
-			</div>
-			{% endfor %}
-		</div>
-	</div> -->
 
 	<div id="plants" style="display: none" class="plant_list col" data-spy="scroll" id="plantlist">
 		<div class="d-flex flex-row flex-wrap">
@@ -257,9 +245,6 @@
 						<li><a class="page-link" href = "javascript:void(0);" onClick="page_goto();">Go</a>
 						</li>
 					</ul>
-					<!--span class="pagination_foot" >
-							{{page_all}}plants, {{blogs.number}}page/{{pages.num_pages}}pages
-					</span-->
 					<br>
 					<br>
 				</div>
