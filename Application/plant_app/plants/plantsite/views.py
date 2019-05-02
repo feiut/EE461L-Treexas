@@ -263,83 +263,87 @@ def get_all_parks():
 
 
 
-#facade pattern example
+#singleton pattern example
 class PlantListHelper(object):
-    planttype=None
-    waterdemand=None
-    plantform=None
-    season=None
-    native=None
-    lightreq=None
-    edibility=None
-    endangered=None
-
-    @staticmethod
-    def get_plant_info(request):
-        if not request.GET.get('planttype'):
+    class __PlantListHelper:
+        def __init__(self):
+            self.planttype = None
+            self.waterdemand = None
+            self.plantform = None
+            self.season = None
+            self.native = None
+            self.lightreq = None
+            self.edibility = None
+            self.endangered = None
+        def get_plant_info(self,request):
+            if not request.GET.get('planttype'):
                 if '1' in request.COOKIES:
-                    PlantListHelper.planttype=request.COOKIES['1']
-                    PlantListHelper.waterdemand=request.COOKIES['2']
-                    PlantListHelper.plantform=request.COOKIES['3']
-                    PlantListHelper.season=request.COOKIES['4']
-                    PlantListHelper.native=request.COOKIES['5']
-                    PlantListHelper.lightreq=request.COOKIES['6']
-                    PlantListHelper.edibility=request.COOKIES['7']
-                    PlantListHelper.endangered=request.COOKIES['8']
+                    self.planttype = request.COOKIES['1']
+                    self.waterdemand = request.COOKIES['2']
+                    self.plantform = request.COOKIES['3']
+                    self.season = request.COOKIES['4']
+                    self.native = request.COOKIES['5']
+                    self.lightreq = request.COOKIES['6']
+                    self.edibility = request.COOKIES['7']
+                    self.endangered = request.COOKIES['8']
 
-        else:
-            PlantListHelper.planttype=request.GET.get('planttype')
-            PlantListHelper.waterdemand=request.GET.get('waterdemand')
-            PlantListHelper.plantform=request.GET.get('plantform')
-            PlantListHelper.season=request.GET.get('season')
-            PlantListHelper.native=request.GET.get('native')
-            PlantListHelper.lightreq=request.GET.get('lightreq')
-            PlantListHelper.edibility=request.GET.get('edibility')
-            PlantListHelper.endangered=request.GET.get('endangered')  
+            else:
+                self.planttype = request.GET.get('planttype')
+                self.waterdemand = request.GET.get('waterdemand')
+                self.plantform = request.GET.get('plantform')
+                self.season = request.GET.get('season')
+                self.native = request.GET.get('native')
+                self.lightreq = request.GET.get('lightreq')
+                self.edibility = request.GET.get('edibility')
+                self.endangered = request.GET.get('endangered')
 
-        return PlantListHelper.planttype, PlantListHelper.waterdemand, \
-        PlantListHelper.plantform, PlantListHelper.season, PlantListHelper.native, \
-        PlantListHelper.lightreq, PlantListHelper.edibility, PlantListHelper.endangered 
+            return self.planttype, self.waterdemand, \
+                   self.plantform, self.season, self.native, \
+                   self.lightreq, self.edibility, self.endangered
+        def set_cookies(self,response):
+            if self.planttype:
+                response.set_cookie('1', str(self.planttype))
+                response.set_cookie('2', str(self.waterdemand))
+                response.set_cookie('3', str(self.plantform))
+                response.set_cookie('4', str(self.season))
+                response.set_cookie('5', str(self.native))
+                response.set_cookie('6', str(self.lightreq))
+                response.set_cookie('7', str(self.edibility))
+                response.set_cookie('8', str(self.endangered))
 
-    @staticmethod
-    def set_cookies(response):
-        if PlantListHelper.planttype:
-            response.set_cookie('1', str(PlantListHelper.planttype))
-            response.set_cookie('2', str(PlantListHelper.waterdemand))
-            response.set_cookie('3', str(PlantListHelper.plantform))
-            response.set_cookie('4', str(PlantListHelper.season))
-            response.set_cookie('5', str(PlantListHelper.native))
-            response.set_cookie('6', str(PlantListHelper.lightreq))
-            response.set_cookie('7', str(PlantListHelper.edibility))
-            response.set_cookie('8', str(PlantListHelper.endangered))        
+        def get_par_and_names(self,request):
+            textfield = request.GET.get('search')
 
-    @staticmethod
-    def get_par_and_names(request):
-        textfield = request.GET.get('search')
+            if textfield:
+                get_par = {'1': '', '2': '', '3': '', '4': '', '5': '', '6': '', '7': '', '8': ''}
+                names = None
 
-        if textfield:
-            get_par = {'1':'', '2':'', '3':'', '4':'', '5':'', '6':'', '7':'', '8':''}
-            names = None
+            elif not request.method == 'GET':
+                names = get_all_plants()
+                names = fix_plant_defualt(names)
+                get_par = {'1': '', '2': '', '3': '', '4': '', '5': '', '6': '', '7': '', '8': ''}
 
-        elif not request.method =='GET':
-            names = get_all_plants()
-            names = fix_plant_defualt(names)
-            get_par = {'1':'', '2':'', '3':'', '4':'', '5':'', '6':'', '7':'', '8':''}
-
-        else:
-            planttype_field, water_demand_field, plant_form_field, \
+            else:
+                planttype_field, water_demand_field, plant_form_field, \
                 season_field, native_field, lightreq_field, edibility_field, \
-                endangered_field = PlantListHelper.get_plant_info(request)
+                endangered_field = self.get_plant_info(request)
 
+                get_par = {'1': str(planttype_field), '2': str(water_demand_field), '3': str(plant_form_field),
+                           '4': str(season_field), '5': str(native_field), '6': str(lightreq_field),
+                           '7': str(edibility_field), '8': str(endangered_field)}
 
-            get_par = {'1': str(planttype_field), '2': str(water_demand_field), '3': str(plant_form_field), 
-                        '4':str(season_field), '5':str(native_field), '6':str(lightreq_field), 
-                        '7':str(edibility_field), '8':str(endangered_field)}
+                names = fix_plant_defualt(
+                    filter_plants_with_parameters(planttype_field, water_demand_field, plant_form_field,
+                                                  season_field, native_field, lightreq_field,
+                                                  edibility_field, endangered_field))
+            return get_par, names
 
-            names = fix_plant_defualt(filter_plants_with_parameters(planttype_field, water_demand_field, plant_form_field, 
-                                                    season_field, native_field, lightreq_field, 
-                                                    edibility_field, endangered_field))
-        return get_par, names
+    instance = None
+    @staticmethod
+    def getInstance(self):
+        if PlantListHelper.instance == None:
+            PlantListHelper.instance = PlantListHelper.__PlantListHelper()
+        return PlantListHelper.instance
 
 #pages
 def main_page(request):
@@ -438,8 +442,8 @@ def ecoregion_list(request):
 
 def plant_type_list(request):
     template = loader.get_template('plantsite/html/plant_list.html')
-
-    get_par, names = PlantListHelper.get_par_and_names(request)
+    plantlisthelper = PlantListHelper.getInstance()
+    get_par, names = plantlisthelper.get_par_and_names(request)
 
     if not request.method == 'GET':
 
@@ -480,7 +484,7 @@ def plant_type_list(request):
     context_dict.update(new_dict)
     response = HttpResponse(template.render(context_dict,request))
     
-    PlantListHelper.set_cookies(response)
+    plantlisthelper.set_cookies(response)
 
     return response
 
