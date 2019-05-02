@@ -11,6 +11,7 @@ from . import githubdynamic
 from .githubdynamic import get_issues_commits
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
+from abc import ABC, abstractmethod
 import re
 # Create your views here.
 '''
@@ -23,6 +24,7 @@ even though they actually reside in plantsite/templates/plantsite/<template_name
 ''' Some important functions that are useful '''
 
 #example of making duplicated code into it's own method/class
+
 
 def is_number(s):
     try:
@@ -39,10 +41,61 @@ def empty_check(item):
         return "false"
 
 
+class Profile(ABC):
+
+    @abstractmethod
+    def profileItem(self):
+        pass
+    
+    @abstractmethod
+    def leftCarouselList(self):
+        pass
+
+    @abstractmethod
+    def rightCarouselList(self):
+        pass
+
+    def createProfilePageItems(self):
+        #context_dict = {'profileItem': self.profileitem(),'leftCarousel':self.leftCarouselList(),'rightCarousel':self.rightCarouselList()}
+        list = []
+        list.append(self.profileItem())
+        list.append(self.leftCarouselList())
+        list.append(self.rightCarouselList())
+        return list
+
+
+class parkProfile(Profile):
+    def __init__(self,dbid):
+        self.id = dbid;
+        self.parkProf = get_park_with_dbid(str(dbid))
+
+    def profileItem(self):
+        self.parkProf.url = re.sub('https', 'https:', str(self.parkProf.url))
+        return self.parkProf
+        
+    def leftCarouselList(self):
+        plants_in_park = self.parkProf.plantlist
+        plant_list = parser.stringArrayToList(plants_in_park) #uses comma as delimiter to split string and make a list
+        plant_ids = parser.idListToSet(plant_list) #set will be used to store database objects (a query set)
+        eco_list = self.rightCarouselList()
+        for e in eco_list:
+            plants_for_eco = e.plants
+            plants_eco = parser.stringArrayToList(plants_for_eco) #uses comma as delimiter to split string and make a list
+            plant_ids.update(plants_eco)
+        return PlantCsv.objects.filter(id__in=plant_ids)
+
+    def rightCarouselList(self):
+        eco_in_park = self.parkProf.ecoregionlist
+        eco_list = parser.stringArrayToList(eco_in_park) #uses comma as delimiter to split string and make a list
+        eco_ids = parser.idListToSet(eco_list)
+        return PlantCsvEcoregions.objects.filter(id__in=eco_ids)
+
+
+
 class parser:
     @staticmethod
     def stringArrayToList( stringArray ):
-        parsedString = re.sub("\[",'',str(stringArray)) #gets rid of brackets
+        parsedString = re.sub("\[",'',str(stringArray)) #gets rid of brckets
         parsedString = re.sub("\]",'',str(parsedString))
         return parsedString.split(",")
 
@@ -585,23 +638,13 @@ def park_profile_view(request):
         if 'park_id' in request.COOKIES:
             dbid = request.COOKIES['park_id']
 
-    prof = get_park_with_dbid(str(dbid))
-    prof.url = re.sub('https', 'https:', str(prof.url))
-    plants_in_park = prof.plantlist
-    plant_list = parser.stringArrayToList(plants_in_park) #uses comma as delimiter to split string and make a list
-    plant_ids = set() #set will be used to store database objects (a query set)
-
-    eco_in_park = prof.ecoregionlist
-    eco_list = parser.stringArrayToList(eco_in_park) #uses comma as delimiter to split string and make a list
-    eco_ids = parser.idListToSet(eco_list)
-    eco_list = PlantCsvEcoregions.objects.filter(id__in=eco_ids)
-
-    for e in eco_list:
-        plants_for_eco = e.plants
-        plants_eco = parser.stringArrayToList(plants_for_eco) #uses comma as delimiter to split string and make a list
-        plant_ids.update(plants_eco)
-
-    plants = PlantCsv.objects.filter(id__in=plant_ids)
+    #prof = get_park_with_dbid(str(dbid))
+    #prof.url = re.sub('https', 'https:', str(prof.url))
+    profileOfPark = parkProfile(dbid);
+    profileBuild = profileOfPark.createProfilePageItems();
+    prof = profileBuild[0]
+    plants = profileBuild[1]
+    eco_list = profileBuild[2]
     page = request.GET.get('page')
     if not page:
         context_dict1 = paginator_processing(plants, 1, 0, 12)
