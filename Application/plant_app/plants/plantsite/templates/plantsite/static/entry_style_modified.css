@@ -101,6 +101,27 @@ p {
   font: 200% 'Fjalla One', Helvetica, sans-serif;
 }
 
+.profile_table{
+  vertical-align: top;  
+  text-align: left;
+  width: 80%; 
+  margin-left: 10%;
+  margin-right: 10%;
+  border: dashed; 
+  border-width: 5px;
+  color:#A5A5Af;
+  border-color: #57BC90; 
+  overflow: scroll; 
+  font: 200% 'Fjalla One', Helvetica, sans-serif;
+  
+}
+.border-style{
+  width: 100%;
+  border-bottom: dashed;
+  border-width: 5px;
+  border-color: #dddddd;
+}
+
 .button-set{
   text-align: center;
 }
