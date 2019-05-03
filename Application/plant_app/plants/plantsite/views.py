@@ -165,61 +165,37 @@ class fix:
         return item
 
 
+def filter_plants_with_type(search_type, value, names):
+    if not value:
+        names = names.all()
+    elif str(value) == "AllType":
+        names = names.all()
+    else:
+        arg = {'%s__contains' %search_type: value,}
+        names = names.filter(**arg)
+    return names
 
 
-def filter_plants_with_parameters(value_1, value_2, value_3, value_4, value_5, value_6, value_7, value_8):
-    if not value_1:
-        names = PlantCsv.objects.all()
-    elif str(value_1) == "AllType":
-        names = PlantCsv.objects.all()
-    else:
-        # names = PlantCsv.objects.filter(planttype__contains=value_1)
-        search_type = "planttype"
-        # arg = {'planttype__contains': value_1,}
-        arg = {'%s__contains' %search_type: value_1,}
-        names = PlantCsv.objects.filter(**arg)
-    if not value_2:
+def filter_plants_with_SpecialType(search_type, value, names):
+    if not value:
         names = names.all()
-    elif str(value_2) == "AllType":
-        names = names.all()
-    else:
-        names = names.filter(waterdemand__contains=str(value_2))
-    if not value_3:
-        names = names.all()
-    elif str(value_3) == "AllType":
-        names = names.all()
-    else:
-        names = names.filter(plantform__contains=str(value_3))
-    if not value_4:
-        names = names.all()
-    elif str(value_4) == "AllType":
-        names = names.all()
-    else:
-        names = names.filter(season__contains=str(value_4))
-    if not value_5:
-        names = names.all()
-    elif str(value_5) == "AllType":
-        names = names.all()
-    else:
-        names = names.filter(nativeadapted__contains=str(value_5))
-    if not value_6:
-        names = names.all()
-    elif str(value_6) == "AllType":
-        names = names.all()
-    else:
-        names = names.filter(lightreq__contains=str(value_6))
-    if not value_7:
-        names = names.all()
-    elif str(value_7) == "AllType":
-        names = names.all()
-    else:
-        names = names.filter(edibility__contains=str(value_7))
-    if not value_8:
-        names = names.all()
-    elif str(value_8) == "AllType":
+    elif str(value) == "AllType":
         names = names.all()
     else:
         names = names.filter(Q(endangered__contains="Vulnerable")|Q(endangered__contains="Endangered")|Q(endangered__contains="Threatened"))
+    return names
+
+
+def filter_plants_with_parameters(value_1, value_2, value_3, value_4, value_5, value_6, value_7, value_8):
+    names = PlantCsv.objects.all()
+    names = filter_plants_with_type("planttype", value_1, names)
+    names = filter_plants_with_type("waterdemand", value_2, names)
+    names = filter_plants_with_type("plantform", value_3, names)
+    names = filter_plants_with_type("season", value_4, names)
+    names = filter_plants_with_type("nativeadapted", value_5, names)
+    names = filter_plants_with_type("lightreq", value_6, names)
+    names = filter_plants_with_type("edibility", value_7, names)
+    names = filter_plants_with_SpecialType("endangered", value_8, names)
     return names
 
 
