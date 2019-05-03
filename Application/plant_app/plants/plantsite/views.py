@@ -182,6 +182,10 @@ def filter_plants_with_parameters(Filter_Helper):
     names = filter_plants_with_SpecialType(Filter_Helper.type_list[7], Filter_Helper.value_list[7], names)
     return names
 
+def find_Top6_plants(model):
+    top6_Plants = model.objects.filter(search_times__gte=model.objects.order_by('-search_times')[5].search_times)
+    return top6_Plants
+
 
 def fix_plant_defualt(qset):
     for plants in qset:
@@ -316,7 +320,7 @@ def main_page(request):
     if request.method == 'GET':
         textfield =request.GET.get('search')
         search_type = request.GET.get('SearchType')
-        searched_plants = PlantCsv.objects.filter(search_times__gte=7)
+        searched_plants = find_Top6_plants(PlantCsv)
         searched_plants = fix_plant_defualt(searched_plants)
         if str(search_type) == 'Plant':
             if not textfield:
@@ -420,7 +424,7 @@ def plant_type_list(request):
             context_dict = paginator_processing(names, page, get_par, 15)
         return HttpResponse(template.render(context_dict,request))
 
-    searched_plants = PlantCsv.objects.filter(search_times__gte=30)
+    searched_plants = find_Top6_plants(PlantCsv)
     searched_plants = fix_plant_defualt(searched_plants)
 
     textfield = request.GET.get('search')
