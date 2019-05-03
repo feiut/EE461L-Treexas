@@ -185,17 +185,17 @@ def filter_plants_with_SpecialType(search_type, value, names):
         names = names.filter(Q(endangered__contains="Vulnerable")|Q(endangered__contains="Endangered")|Q(endangered__contains="Threatened"))
     return names
 
+class Filter_Helper:
+  def __init__(self, type_list, value_list):
+    self.type_list = type_list
+    self.value_list = value_list
 
-def filter_plants_with_parameters(value_1, value_2, value_3, value_4, value_5, value_6, value_7, value_8):
+
+def filter_plants_with_parameters(Filter_Helper):
     names = PlantCsv.objects.all()
-    names = filter_plants_with_type("planttype", value_1, names)
-    names = filter_plants_with_type("waterdemand", value_2, names)
-    names = filter_plants_with_type("plantform", value_3, names)
-    names = filter_plants_with_type("season", value_4, names)
-    names = filter_plants_with_type("nativeadapted", value_5, names)
-    names = filter_plants_with_type("lightreq", value_6, names)
-    names = filter_plants_with_type("edibility", value_7, names)
-    names = filter_plants_with_SpecialType("endangered", value_8, names)
+    for value_num in range(0, 7):
+        names = filter_plants_with_type(Filter_Helper.type_list[value_num], Filter_Helper.value_list[value_num], names)
+    names = filter_plants_with_SpecialType(Filter_Helper.type_list[7], Filter_Helper.value_list[7], names)
     return names
 
 
@@ -312,10 +312,12 @@ class PlantListHelper(object):
                            '4': str(season_field), '5': str(native_field), '6': str(lightreq_field),
                            '7': str(edibility_field), '8': str(endangered_field)}
 
+                type_list = ["planttype", "waterdemand", "plantform", "season", "nativeadapted", "lightreq", "edibility", "endangered"]
+                value_list = [planttype_field, water_demand_field, plant_form_field, season_field, native_field, lightreq_field,edibility_field, endangered_field]
+                filter_helper = Filter_Helper(type_list, value_list)
+
                 names = fix_plant_defualt(
-                    filter_plants_with_parameters(planttype_field, water_demand_field, plant_form_field,
-                                                  season_field, native_field, lightreq_field,
-                                                  edibility_field, endangered_field))
+                    filter_plants_with_parameters(filter_helper))
             return get_par, names
 
     instance = None
