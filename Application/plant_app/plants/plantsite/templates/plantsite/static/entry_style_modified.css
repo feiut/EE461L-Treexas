@@ -1,10 +1,3 @@
-p {
-  color: #57bc90 !important;
-}
-
-.page-link{
-  background-color:#57BC90; color:#FFFFFF;
-}
 
 .grey-theme{
   background-color:#A5A5Af; 
@@ -14,41 +7,6 @@ p {
   background-color: #57bc90;
   opacity: 0.75;
   filter: alpha(opacity=0.75);
-}
-.navbar{
-  background-color: #A5A5Af;
-}
-.navbar-nav {
-  color: #57BC90;
-  font: 160% 'Fjalla One', Helvetica, sans-serif;
-}
-
-/* change the brand and text color */
-.navbar-custom .navbar-brand,
-.navbar-custom .navbar-text {
-    color: #FFFFFF;
-}
-/* change the link color */
-.navbar-custom .navbar-nav .nav-link {
-    color: #FFFFFF;
-}
-/* change the color of active or hovered links */
-.navbar-custom .nav-item.active .nav-link,
-.navbar-custom .nav-item:focus .nav-link,
-.navbar-custom .nav-item:hover .nav-link {
-    color: #FFFFFF;
-}
-
-.navbar-brand {
-  color: #FFFFFF;
-  padding-top: 0;
-  padding-left: 0;
-  font: 250% 'Fjalla One', Helvetica, sans-serif;
-}
-
-.navbar-nav > li > a:hover, .navbar-brand:hover, .navbar-default .navbar-nav > li > a:focus {
-    background-color: #57bc90;
-    color: #57BC90;
 }
 
 
@@ -195,17 +153,6 @@ p {
   height: 400px;
   max-height: 400px;
   min-height: 400px;
-}
-
-.img-center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  object-fit: cover;
-  width: 300px;
-  height: 300px;
-	object-fit: cover;
-	border-radius: 8px;
 }
 
 .img-center-wide {

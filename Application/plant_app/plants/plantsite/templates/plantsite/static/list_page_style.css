@@ -1,52 +1,12 @@
-p {
-	color: #57bc90;;
-  margin: 0;
-}
-
-.page-link{
-	background-color:#57BC90; color:#FFFFFF;
-}
-.navbar-nav {
-	color: #57BC90;
-	font: 160% 'Fjalla One', Helvetica, sans-serif;
-}
-
-/* change the brand and text color */
-.navbar-custom .navbar-brand,
-.navbar-custom .navbar-text {
-    color: #FFFFFF;
-}
-/* change the link color */
-.navbar-custom .navbar-nav .nav-link {
-    color: #FFFFFF;
-
-}
-/* change the color of active or hovered links */
-.navbar-custom .nav-item.active .nav-link,
-.navbar-custom .nav-item:focus .nav-link,
-.navbar-custom .nav-item:hover .nav-link {
-    color: #FFFFFF;
-
-}
 .fixed-top{
   background-color: #A5A5Af;
 }
 
-.navbar-brand {
-	color: #EFEFEF;
-  padding-top: 0;
-  padding-left: 0;
-  font: 250% 'Fjalla One', Helvetica, sans-serif;
-}
-
-.navbar-nav > li > a:hover, .navbar-brand:hover, .navbar-default .navbar-nav > li > a:focus {
-    background-color: #57bc90;
-    color: #57BC90;
-}
 .container{
 	margin-top:10%;
 	height:10em;
 }
+
 .title1{
   font: 80px/1.2 'Fjalla One', sans-serif;
   font-weight:800;
@@ -61,29 +21,9 @@ a {
 	color: #A5A5AF;
 }
 
-
-.img-center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  object-fit: cover;
-  width: 300px;
-  height: 300px;
-	object-fit: cover;
-	border-radius: 8px;
-}
-
-
 .card-style{
 	border-color : #FFFFFF;
 	border-width : 10px;
-}
-
-h1{
-	color: #000000;
-	font-family: Arial;
-	font-size: 260%;
-	margin: 20px;
 }
 
 #plantlist{
@@ -121,6 +61,7 @@ h1{
   padding-left: 5%;
   background-color: #d9d9d9;
 }
+
 .horizontal-align{
   position: absolute;
   top: 50%;
@@ -128,13 +69,6 @@ h1{
   transform: translate(-50%, -50%);
 }
 
-.imgentry{
-	object-fit: cover;
-	width: 250px;
-	height: 250px;
-	border-radius: 8px;
-	margin: 20px;
-}
 .plant_list{
 	height: 45em;
 	overflow-y: scroll;
