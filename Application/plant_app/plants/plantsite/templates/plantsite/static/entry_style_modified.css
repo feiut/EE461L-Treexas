@@ -177,13 +177,6 @@
   border-radius: 8px;
 }
 
-h1{
-	color: #000000;
-	font-family: Arial;
-	font-size: 260%;
-	margin: 20px;
-}
-
 h6{
   color: #FFFFFF!important;
 }
@@ -231,13 +224,7 @@ Added to enable "overflow-y"
   transform: translate(-50%, -50%);
 }
 
-.imgentry{
-	object-fit: cover;
-	width: 250px;
-	height: 250px;
-	border-radius: 8px;
-	margin: 20px;
-}
+
 .plant_list{
 	height: 45em;
   overflow-y: scroll;
