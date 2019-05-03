@@ -60,7 +60,7 @@ img{
 	  font-weight:800;
 	  color: #57bc90;
 	  position: center;
-	  top: 20%;
+	  margin-top: 6%;
 	  left: 50%;
 
 }
@@ -84,6 +84,14 @@ img{
 
 
 }
+#about-us{
+	margin-top: 5%;
+	font-size: 200%; 
+	color:#4f4f2f; 
+	text-align: justify; 
+	margin-left:10%; 
+	margin-right: 10%;
+}
 
 
 .people{
@@ -101,10 +109,12 @@ img{
 	padding-left: 0%;
 	text-align: left;
 	align-items: center;
-	max-width: 70%;
+	max-width: 80%;
 	/*overflow: auto;*/
 	margin-top: 4%;
 	background-color:#EEE9E9;
+	left: 50%; 
+	transform: translate(13%);
 }
 
 
@@ -113,8 +123,19 @@ img{
 	  font-weight:800;
 	  color: #238e23;
 	  position: center;
-	  left: 50%;
+		left: 50%;
+		margin-top: 10%;
+		margin-bottom: 8%;
 
+}
+
+.total-data{
+	font: 50px/1.2 'Fjalla One', sans-serif;
+	font-weight:800;
+	color: #238e23;
+	position: center;
+	left: 50%;
+	margin-top: 10%;
 }
 
 div i{
@@ -132,11 +153,8 @@ div i{
 }
 
 .data{
-	/*top: 50%;
-	left: 50%;
-	transform:translate(0, 50%);*/
-	margin-right: 10%;
-	margin-top: 40%;
+	margin-right: 30%;
+	margin-top: 55%;
 
 }
 

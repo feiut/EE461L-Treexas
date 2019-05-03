@@ -38,7 +38,7 @@
 </head>
 <body>
 
-	<nav class="navbar navbar-expand-sm navbar-custom navbar-light fixed-top" style="background-color: #A5A5Af">
+	<nav class="navbar navbar-expand-sm navbar-custom navbar-light fixed-top">
 	  <div class="container-fluid">
 	    <div class="navbar-header">
 	      <a class="navbar-brand" href="/">Treexas</a>
@@ -52,8 +52,6 @@
 	        </li>
 	        <li class="nav-item active"><a class = "nav-link" href="/eco_list">Ecoregions</a>
 	        </li>
-	        <!-- <li class="nav-item active"><a class = "nav-link" href="/about">About Us</a>
-	        </li> -->
 	     	<li class="nav-item active"><a class="nav-link" href="" onclick="window.history.go(-1); return false;"> Back </a>
 	     	</li>
 	      </ul>
@@ -70,27 +68,23 @@
 <div class="d-flex flex-column justify-content-center">
 	<h1 id="title" class="text-center"> About Us </h1>
 	<br>
-	<h2 class="team-name text-center" style="text-align: center"> Owl Team </h2>
+	<h2 class="team-name text-center"> Owl Team </h2>
 	<br>
-	<p style="font-size: 200%; color:#4f4f2f; text-align: center; margin-left:5%; margin-right: 5%;"> This site contains information about the plants, ecoregions and stateparks of Texas. The purpose of this site is to provide reliable information about any and all plants that can be found in Texas. This site is meant for anyone looking to learn more about Texas plants and where to find them. This could include researchers, students, survivalists or foragers.</p>
+	<p id="about-us"> This site contains information about the plants, ecoregions and stateparks of Texas. The purpose of this site is to provide reliable information about any and all plants that can be found in Texas. This site is meant for anyone looking to learn more about Texas plants and where to find them. This could include researchers, students, survivalists or foragers.</p>
 </div>
 
-<div style="margin-top: 10%; margin-left: 0 ; margin-right: 0;">
-	<h4 class="people" style="text-align: center"> Group Members </h4>
+<div style="margin-top: 10%">
+	<h4 class="people text-center"> Group Members </h4>
 	<br>
-	<h2 class="team-name"  style="text-align: center"> Owl Team </h2>
+	<h2 class="team-name text-center"> Owl Team </h2>
 	<br>
-	<div class="teammates" class="container-fluid" style="left: 50%; transform: translate(20%)">
+	<div class="teammates" class="container-fluid">
 	<div class="row">
 	<div class="col-md-3">
-	<img src="{% static "erick_img.jpg" %}" class="photos">
+	<img src='{% static "erick_img.jpg" %}' class="photos">
 	</div>
 	<div class="col-md-6">
-	<br>
 	<h2 class="name"> Eric Cen</h2>
-	<br>
-	<br>
-
 		<b>Major:</b><p> Electrical Engineering</p>
 		<b>Responsibilities:</b><p> Datascraping and Database Management, Selenium UI Test</p>
 		<b>Bio:</b><p> I am a junior in the Cockrell School of Engineering. My primary core is power sys/renewable energy and my secondary core is software engineering.<i></i></p>
@@ -100,17 +94,17 @@
 	<div class="col-md-3">
 	<div class="data">
 
-		<b>Number of Commits:</b><p style="float:right"> {{eric_commits}}</p>
+		<b>Commits:</b><p style="float:right"> {{eric_commits}}</p>
 		<br>
 		<br>
 		<br>
 		<br>
-		<b>Number of Issues:</b><p  style="float:right"> {{eric_issues}}</p>
+		<b>Issues:</b><p  style="float:right"> {{eric_issues}}</p>
 		<br>
 		<br>
 		<br>
 		<br>
-		<b>Number of Unit Tests:</b><p  style="float:right"> 8</p>
+		<b>Unit Tests:</b><p  style="float:right"> 8</p>
 	</div>
 	</div>
 	</div>
@@ -119,20 +113,13 @@
 
 
 
-
-
-
-	<div class="teammates" class="container" style="left: 50%; transform: translate(20%)">
+	<div class="teammates" class="container">
 	<div class="row">
 	<div class="col-md-3">
 	<img src="{% static "eric_img.jpg" %}" class="photos">
 	</div>
 	<div class="col-md-6">
-	<br>
-	<br>
 	<h2 class="name"> Erick Machado</h2>
-	<br>
-	<br>
 		<b>Major:</b><p> Electrical Engineering</p>
 		<b>Responsibilities:</b><p> Usability Improvement, Database Management, Frontend Webpage Design and Backend Functionality</p>
 		<b>Bio:</b><p>  Hello! My name is Erick. I enjoy working with software and enjoy my time at UT. I have two dogs that I love very much. I’m very friendly so approach me if you wanna chat!<i></i></p>
@@ -142,17 +129,17 @@
 	<div class="col-md-3">
 	<div class="data">
 
-		<b>Number of Commits:</b><p style="float:right"> {{erick_commits}}</p>
+		<b>Commits:</b><p style="float:right"> {{erick_commits}}</p>
 		<br>
 		<br>
 		<br>
 		<br>
-		<b>Number of Issues:</b><p style="float:right"> {{erick_issues}}</p>
+		<b>Issues:</b><p style="float:right"> {{erick_issues}}</p>
 		<br>
 		<br>
 		<br>
 		<br>
-		<b>Number of Unit Tests:</b><p style="float:right"> 0</p>
+		<b>Unit Tests:</b><p style="float:right"> 0</p>
 	</div>
 	</div>
 	</div>
@@ -162,17 +149,13 @@
 
 
 
-	<div class="teammates" class="container" style="left: 50%; transform: translate(20%)">
+	<div class="teammates" class="container">
 	<div class="row">
 	<div class="col-md-3">
 	<img src="{% static "connor_img.jpg" %}" class="photos">
 	</div>
 	<div class="col-md-6">
-	<br>
-	<br>
 	<h2 class="name"> Connor Fritz</h2>
-	<br>
-	<br>
 		<b>Major:</b><p> Electrical Engineering</p>
 		<b>Responsibilities:</b><p> Domain Name Management, Basic Structure Design and Frontend Webpage Design</p>
 		<b>Bio:</b><p> I'm a software track ECE major interested in plants and machine learning<i></i></p>
@@ -182,17 +165,17 @@
 	<div class="col-md-3">
 	<div class="data">
 
-		<b>Number of Commits:</b><p style="float:right"> {{connor_commits}}</p>
+		<b>Commits:</b><p style="float:right"> {{connor_commits}}</p>
 		<br>
 		<br>
 		<br>
 		<br>
-		<b>Number of Issues:</b><p style="float:right"> {{connor_issues}}</p>
+		<b>Issues:</b><p style="float:right"> {{connor_issues}}</p>
 		<br>
 		<br>
 		<br>
 		<br>
-		<b>Number of Unit Tests:</b><p style="float:right"> 3</p>
+		<b>Unit Tests:</b><p style="float:right"> 3</p>
 	</div>
 	</div>
 	</div>
@@ -204,28 +187,16 @@
 
 
 
-	<div class="teammates" class="container" style="left: 50%; transform: translate(20%)">
+	<div class="teammates" class="container">
 	<div class="row">
 	<div class="col-md-3">
 	<img src="{% static "hao_img.jpg" %}" class="photos">
 	</div>
 	<div class="col-md-6">
-	<br>
-	<br>
 	<h2 class="name"> Hao Yao</h2>
-	<br>
-	<br>
 		<b>Major:</b><p> Civil Engineering</p>
 		<b>Responsibilities:</b><p>
 			Backend Function Development, Usability Improvement, Frontend Webpage Design, API Development
-			<!-- <ul>
-				<li>Implemented filters and refactor to enable their selected value staying. </li>
-				<li>Utilized COOKIES to make filters, search bars, and paginations bars to work together. </li>
-				<li>Used POST method to enable users to interact with our database (writing or editing users' description for each plant).</li>
-				<li>Added a sorting method to show the most searched plants. </li>
-				<li>Modified search-by-category functions in main_page.</li>
-				<li>Refined several profile and list pages by using JavaScript and CSS. </li>
-			</ul> -->
 		</p>
 		<b>Bio:</b><p > Hello, I am Hao! I am a second year master student in UT. My major in Ocean Engineering. I really enjoy the time working with you guys!<i></i></p>
 	<br>
@@ -234,17 +205,17 @@
 	<div class="col-md-3">
 		<div class="data">
 
-		<b>Number of Commits:</b><p style="float:right"> {{hao_commits}}</p>
+		<b>Commits:</b><p style="float:right"> {{hao_commits}}</p>
 		<br>
 		<br>
 		<br>
 		<br>
-		<b>Number of Issues:</b><p style="float:right"> {{hao_issues}}</p>
+		<b>Issues:</b><p style="float:right"> {{hao_issues}}</p>
 		<br>
 		<br>
 		<br>
 		<br>
-		<b>Number of Unit Tests:</b><p style="float:right"> 0</p>
+		<b>Unit Tests:</b><p style="float:right"> 0</p>
 	</div>
 	</div>
 	</div>
@@ -255,17 +226,13 @@
 
 
 
-	<div class="teammates" class="container" style="left: 50%; transform: translate(20%)">
+	<div class="teammates" class="container">
 	<div class="row">
 	<div class="col-md-3">
 	<img src="{% static "chaz_img.jpg" %}" class="photos">
 	</div>
 	<div class="col-md-6">
-	<br>
-	<br>
 	<h2 class="name"> Chaz Li</h2>
-	<br>
-	<br>
 		<b>Major:</b><p> Electrical Engineering</p>
 		<b>Responsibilities:</b><p> Frontend Webpage Design, Backend Function Development, Usability Improvement</p>
 		<b>Bio:</b><p > Hello, I am Chaz! My major is Electrical Engineering. I really enjoy the time working and learning with you guys!<i></i></p>
@@ -275,17 +242,17 @@
 	<div class="col-md-3">
 		<div class="data">
 
-		<b>Number of Commits:</b><p style="float:right"> {{chaz_commits}}</p>
+		<b>Commits:</b><p style="float:right"> {{chaz_commits}}</p>
 		<br>
 		<br>
 		<br>
 		<br>
-		<b>Number of Issues:</b><p style="float:right"> {{chaz_issues}}</p>
+		<b>Issues:</b><p style="float:right"> {{chaz_issues}}</p>
 		<br>
 		<br>
 		<br>
 		<br>
-		<b>Number of Unit Tests:</b><p style="float:right"> 0</p>
+		<b>Unit Tests:</b><p style="float:right"> 0</p>
 	</div>
 	</div>
 	</div>
@@ -297,17 +264,13 @@
 
 
 
-	<div class="teammates" class="container" style="left: 50%; transform: translate(20%)">
+	<div class="teammates" class="container">
 	<div class="row">
 	<div class="col-md-3">
 	<img src="{% static "xiyu_img.jpg" %}" class="photos">
 	</div>
 	<div class="col-md-6">
-	<br>
-	<br>
 	<h2 class="name"> Xiyu Wang</h2>
-	<br>
-	<br>
 		<b>Major:</b><p> Electrical Engineering</p>
 		<b>Responsibilities:</b><p> API Development, Backend Function Development, Frontend Webpage Design, Python Unittests and User Cases.</p>
 		<b>Bio:</b><p > Hi I’m Xiyu! You can pronounce it as “Shiyu” if you find it confusing:D I’m a master student with only 2 years in UT so I really cherish the time I work and have fun with you!<i></i></p>
@@ -317,17 +280,17 @@
 	<div class="col-md-3">
 	<div class="data">
 
-		<b>Number of Commits:</b><p style="float:right"> {{xiyu_commits}}</p>
+		<b>Commits:</b><p style="float:right"> {{xiyu_commits}}</p>
 		<br>
 		<br>
 		<br>
 		<br>
-		<b>Number of Issues:</b><p style="float:right"> {{xiyu_issues}}</p>
+		<b>Issues:</b><p style="float:right"> {{xiyu_issues}}</p>
 		<br>
 		<br>
 		<br>
 		<br>
-		<b>Number of Unit Tests:</b><p style="float:right"> 28</p>
+		<b>Unit Tests:</b><p style="float:right"> 28</p>
 	</div>
 	</div>
 	</div>
@@ -338,17 +301,13 @@
 
 
 
-	<div class="teammates" class="container" style="left: 50%; transform: translate(20%)">
+	<div class="teammates" class="container">
 	<div class="row">
 	<div class="col-md-3">
 	<img src="{% static "fei_img.jpg" %}" class="photos">
 	</div>
 	<div class="col-md-6">
-	<br>
-	<br>
 	<h2 class="name"> Fei He</h2>
-	<br>
-	<br>
 		<b>Major:</b><p> Electrical Engineering</p>
 		<b>Responsibilities:</b><p> Frontend Design and Implementation, Usability Improvement, Mocha Unittests, API Development</p>
 		<b>Bio:</b><p > Hi, I am Fei, a master student in UT. I like animation. It's great to meet you!<i></i></p>
@@ -358,17 +317,17 @@
 	<div class="col-md-3">
 	<div class="data">
 
-		<b>Number of Commits:</b><p style="float:right"> {{fei_commits}}</p>
+		<b>Commits:</b><p style="float:right"> {{fei_commits}}</p>
 		<br>
 		<br>
 		<br>
 		<br>
-		<b>Number of Issues:</b><p style="float:right"> {{fei_issues}}</p>
+		<b>Issues:</b><p style="float:right"> {{fei_issues}}</p>
 		<br>
 		<br>
 		<br>
 		<br>
-		<b>Number of Unit Tests:</b><p style="float:right"> 30</p>
+		<b>Unit Tests:</b><p style="float:right"> 30</p>
 	</div>
 	</div>
 	</div>

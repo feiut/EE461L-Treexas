@@ -1,5 +1,5 @@
 p {
-	color: #57bc90 !important;
+	color: #57bc90;;
   margin: 0;
 }
 
@@ -50,7 +50,7 @@ p {
 .title1{
   font: 80px/1.2 'Fjalla One', sans-serif;
   font-weight:800;
-  color: rgba(255,255,255,1);
+  color: #57bc90;
   position: absolute;
   left: 50%;
   transform: translate(-50%, -20%);
