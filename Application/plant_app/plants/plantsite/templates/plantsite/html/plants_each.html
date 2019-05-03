@@ -216,16 +216,16 @@
 	{% csrf_token %}
 		<div class="button-set">
 			{%if describe == 'Show' %}
-			<button class="buttons" id="show_eco" type="submit" name="Des" value="Edit" >Edit</button>
+			<button class="buttons btn btn-success" id="show_eco" type="submit" name="Des" value="Edit" >Edit</button>
 			{% endif %}
 			{% if describe == 'Show' %}
-			<button class="buttons" id="show_parks"  type="submit" name="Des" value="Show" >Hide</button>
+			<button class="buttons btn btn-success" id="show_parks"  type="submit" name="Des" value="Show" >Hide</button>
 			{% elif describe == 'hidden'%}
-			<button class="buttons" id="show_parks"  type="submit" name="Des" value="Show" >Show Comment</button>
+			<button class="buttons btn btn-success" id="show_parks"  type="submit" name="Des" value="Show" >Show Comment</button>
 			{% endif %}
 			{%if describe == 'Edit' %}
-			<button class="buttons" id="show_eco" type="submit" name="Des" value="Save" >Save</button>
-			<button class="buttons" id="show_eco" type="submit" name="Des" value="Show" >Cancel</button>
+			<button class="buttons btn btn-success" id="show_eco" type="submit" name="Des" value="Save" >Save</button>
+			<button class="buttons btn btn-success" id="show_eco" type="submit" name="Des" value="Show" >Cancel</button>
 			{% endif %}
 		</div>
 		{%if describe == 'Show' %}
@@ -316,8 +316,8 @@
 
 		</div>
 		<div class="button-set">
-			<button class="buttons" id="show_parks"   onclick="xlist(this,'parks','parkSet')">Show Parks</button>
-			<button class="buttons" id="show_eco"  onclick="xlist(this,'eco_region','ecoSet')">Show eco-regions</button>
+			<button class="buttons btn btn-success" id="show_parks"   onclick="xlist(this,'parks','parkSet')">Show Parks</button>
+			<button class="buttons btn btn-success" id="show_eco"  onclick="xlist(this,'eco_region','ecoSet')">Show Ecoregions</button>
 		</div>
 
 		<br>

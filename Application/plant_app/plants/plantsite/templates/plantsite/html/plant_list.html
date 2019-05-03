@@ -29,33 +29,6 @@
 			}
 	</script>
 
-<!--
-<style>
-	#container1 {
-		position: absolute;
-		left: 45%;
-		top: 21%;
-		margin-left:30px;
-		font-size: 12px;
-		color: #57BC90;
-		display: flex;
-		flex-wrap: wrap;
-		width: 3%;
-		height: 3.5%;
-		background-color:#57BC90;
-		padding-top:0px;
-	}
-	.vbox{
-		display: flex;
-		flex-direction: column;
-		text-align: center;
-		width:5%;
-		height:5%;
-	}
-	.sk-wave{
-		color: #57BC90;
-	}
-</style>-->
 
 </head>
 <body>
@@ -76,8 +49,6 @@
 	        </li>
 	        <li class="nav-item active"><a class = "nav-link" href="/about">About Us</a>
 	        </li>
-	     	<!-- <li class="nav-item active"><a class="nav-link" href="" onclick="window.history.go(-1); return false;"> Back </a>
-	     	</li> -->
 	      </ul>
 	    </div>
 	  </div>
@@ -93,25 +64,7 @@
 		</div>
 
 
-<!--
-=======
-animation commented
->>>>>>> 2f5e15f1ff9e76efc882827234677bbfeeaafa50
- <div id="container1">
-<div class="vbox">
-	<div class="sk-wave">
-		<div class="sk-rect sk-rect1"></div>
-		<div class="sk-rect sk-rect2"></div>
-		<div class="sk-rect sk-rect3"></div>
-		<div class="sk-rect sk-rect4"></div>
-		<div class="sk-rect sk-rect5"></div>
-	</div>
-</div>
-<<<<<<< HEAD
-</div>
 
-=======
-</div>-->
 		<!-- search bar -->
 		<div class="d-flex flex-row justify-content-center mx-auto">
 			<div class="col-12">
@@ -128,9 +81,8 @@ animation commented
 
     <br>
 		<div id="div_top5">
-			<button id="show_Top5_plants"  onclick="xlist(this,'Top5_plants')" >Show most searched plants</button>
+			<button class="buttons btn btn-success"  onclick="xlist(this,'Top5_plants')" >Show Most Searched Plants</button>
 		</div>
-		<!-- <textarea class="form-control" style="display:none" cols="30" readonly="readonly" id="Top5_plants"></textarea> -->
 		<div style="display: none" class="plant_list col" data-spy="scroll" id="Top5_plants">
 			<div class="d-flex flex-row flex-wrap">
 				{% for plant in searched_plants %}
@@ -153,7 +105,8 @@ animation commented
 				<form method="GET">
 
 					<div class="input-group">
-						<button class="btn btn-success" type="submit">Filter!</button>
+						<!--button class="btn btn-success" type="submit">Filter!</button-->
+						<button class="buttons btn btn-success" type="submit">Filter!</button>
 						<p class="pfilter">Plant Type</p>
 							<select name="planttype" class="custom-select">
 								<option value ="AllType" {%if get_par.1 == 'AllType'%} selected {%endif%}>All Type</option>
@@ -162,15 +115,7 @@ animation commented
 								<option value=" Groundcover" {%if get_par.1 == ' Groundcover'%} selected {%endif%}> Groundcover</option>
 								<option value=" Ornamental Grass" {%if get_par.1 == ' Ornamental Grass'%} selected {%endif%}>Ornamental Grass</option>
 							</select>
-						<hr>
-						<p class="pfilter">Water Demand</p>
-							<select name="waterdemand" class="custom-select">
-								<option value ="AllType" {%if get_par.2 == 'AllType'%} selected {%endif%}>All Type</option>
-								<option value =" Medium" {%if get_par.2 == ' Medium'%} selected {%endif%}>Medium</option>
-								<option value =" Low" {%if get_par.2 == ' Low'%} selected {%endif%}>Low</option>
-								<option value=" Very Low" {%if get_par.2 == ' Very Low'%} selected {%endif%}>Very Low</option>
-							</select>
-						<br>
+						<br>						
 						<p class="pfilter">Plant Form</p>
 							<select name="plantform" class="custom-select">
 								<option value ="AllType" {%if get_par.3 == 'AllType'%} selected {%endif%}>All Type</option>
@@ -196,12 +141,10 @@ animation commented
 					      <option value =" Native" {%if get_par.5 == ' Native'%} selected {%endif%}> Native</option>
 							</select>
 	   				<br>
-						<p class="pfilter">Light Requirement</p>
-							<select class="custom-select" name="lightreq">
-								<option value ="AllType" {%if get_par.6 == 'AllType'%} selected {%endif%}>All Type</option>
-								<option value =" Full Sun" {%if get_par.6 == ' Full Sun'%} selected {%endif%}> Full Sun</option>
-								<option value =" Partial Shade" {%if get_par.6 == ' Partial Shade'%} selected {%endif%}> Partial Shade</option>
-								<option value =" Full Shade" {%if get_par.6 == ' Full Shade'%} selected {%endif%}> Full Shade</option>
+						<p class="pfilter">Endangered</p>
+							<select class="custom-select" name="endangered">
+								<option value ="AllType" {%if get_par.8 == 'AllType'%} selected {%endif%}>All Type</option>
+								<option value ="Endangered" {%if get_par.8 == 'Endangered'%} selected {%endif%}> Endangered</option>
 							</select>
 						<br>
 						<p class="pfilter">Edible or Not</p>
@@ -211,10 +154,20 @@ animation commented
 								<option value ="toxic" {%if get_par.7 == 'toxic'%} selected {%endif%}> Toxic</option>
 							</select>
 						<br>
-						<p class="pfilter">Endangered</p>
-							<select class="custom-select" name="endangered">
-								<option value ="AllType" {%if get_par.8 == 'AllType'%} selected {%endif%}>All Type</option>
-								<option value ="Endangered" {%if get_par.8 == 'Endangered'%} selected {%endif%}> Endangered</option>
+						<p class="pfilter">Light Requirement</p>
+							<select class="custom-select" name="lightreq">
+								<option value ="AllType" {%if get_par.6 == 'AllType'%} selected {%endif%}>All Type</option>
+								<option value =" Full Sun" {%if get_par.6 == ' Full Sun'%} selected {%endif%}> Full Sun</option>
+								<option value =" Partial Shade" {%if get_par.6 == ' Partial Shade'%} selected {%endif%}> Partial Shade</option>
+								<option value =" Full Shade" {%if get_par.6 == ' Full Shade'%} selected {%endif%}> Full Shade</option>
+							</select>
+						<br>
+						<p class="pfilter">Water Demand</p>
+							<select name="waterdemand" class="custom-select">
+								<option value ="AllType" {%if get_par.2 == 'AllType'%} selected {%endif%}>All Type</option>
+								<option value =" Medium" {%if get_par.2 == ' Medium'%} selected {%endif%}>Medium</option>
+								<option value =" Low" {%if get_par.2 == ' Low'%} selected {%endif%}>Low</option>
+								<option value=" Very Low" {%if get_par.2 == ' Very Low'%} selected {%endif%}>Very Low</option>
 							</select>
 						<br>
 						<br>
@@ -283,10 +236,6 @@ animation commented
 								<li><a class="page-link" href = "javascript:void(0);" onClick="page_goto();">Go</a>
 								</li>
 							</ul>
-							<!--span class="pagination_foot" >
-									{{page_all}}plants, {{blogs.number}}page/{{pages.num_pages}}pages
-							</span-->
-
 						</div>
 					</div>
 			</div>

@@ -73,12 +73,10 @@
 
 	<div class="d-flex flex-row justify-content-around">
 		<div>
-			<h3 class="title3"> Plants In this Ecoregion </h3>
-			<!--h3 class="title3"> Plants In {{profile.name}} Area</h3-->
+			<h3 class="title3"> Plants In {{profile.ecoregion}}</h3>
 		</div>
 		<div>
-			<h3 class="title3"> State Parks In this Ecoregion </h3>
-			<!--h3 class="title3"> State Parks In {{profile.name}} Area</h3-->
+			<h3 class="title3"> State Parks In {{profile.ecoregion}}</h3>
 		</div>
 	</div>
 
@@ -153,8 +151,8 @@
 	<br>
 
 	<div style="text-align: center">
-			<button class="buttons" id="show_plants"   onclick="xlist(this,'plants','plantSet')">Show plants</button>
-			<button class="buttons" id="show_parks"  onclick="xlist(this,'parks','parkSet')">Show parks</button>
+			<button class="buttons btn btn-success" id="show_plants"   onclick="xlist(this,'plants','plantSet')">Show plants</button>
+			<button class="buttons btn btn-success" id="show_parks"  onclick="xlist(this,'parks','parkSet')">Show parks</button>
 		</div>
 	<br>
 	<br>

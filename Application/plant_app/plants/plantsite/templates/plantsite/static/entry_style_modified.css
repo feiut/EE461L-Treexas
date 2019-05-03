@@ -12,6 +12,8 @@ p {
 
 .green-theme{
   background-color: #57bc90;
+  opacity: 0.75;
+  filter: alpha(opacity=0.75);
 }
 .navbar{
   background-color: #A5A5Af;
