@@ -25,22 +25,6 @@ even though they actually reside in plantsite/templates/plantsite/<template_name
 
 #example of making duplicated code into it's own method/class
 
-
-def is_number(s):
-    try:
-        float(s)
-        return True
-    except ValueError:
-        return False
-
-
-def empty_check(item):
-    if len(item) is 0:
-        return "true"
-    else:
-        return "false"
-
-
 class Profile(ABC):
 
     @abstractmethod
@@ -142,7 +126,7 @@ class parser:
     def idListToSet(list):
         ids = set()
         for item in list:
-            if not item == '' and not item =='N/A' and is_number(item):
+            if not item == '' and not item =='N/A' and item.replace('.','',1).isdigit():
                 ids.add(item)
         return ids
 
@@ -550,14 +534,14 @@ def plant_profile_view(request):
     for eco in eco_list:
         eco.image =eco.image.strip()
         eco.image = re.sub('https', 'https:', str(eco.image))
-    set_check.append(empty_check(eco_list))
+    set_check.append("true" if len(eco_list)==0 else "false")
     park_list = profileBuild['leftCarousel']
 
     for park in park_list:
         park.image = park.image.strip()
         park.image = fix.http(park.image)
 
-    set_check.append(empty_check(park_list))
+    set_check.append("true" if len(park_list)==0 else "false")
     context_dict = {'profile': prof,'park_list':park_list,'eco_list':eco_list,'set_check':set_check, 'plant_id':number, 'describe':describe, 'plant_description':plant_description}
     return HttpResponse(template.render(context_dict,request))
 
@@ -586,8 +570,8 @@ def eco_profile_view(request):
     for park in park_list:
         park.image = fix.http(park.image)
 
-    set_check.append(empty_check(plants))
-    set_check.append(empty_check(park_list))
+    set_check.append("true" if len(plants)==0 else "false")
+    set_check.append("true" if len(park_list)==0 else "false")
     context_dict2 = {'profile': prof, 'plants':plants, 'park_list':park_list, 'set_check':set_check}
     context_dict = {}
     context_dict.update(context_dict1)
@@ -659,8 +643,8 @@ def park_profile_view(request):
         eco.image =eco.image.strip()
         eco.image = re.sub('https', 'https:', str(eco.image))
 
-    set_check.append(empty_check(plants))
-    set_check.append(empty_check(eco_list))
+    set_check.append("true" if len(plants)==0 else "false")
+    set_check.append("true" if len(eco_list)==0 else "false")
     context_dict = {'profile': prof, 'eco_list':eco_list,'set_check':set_check}
     context_dict.update(context_dict1)
     response = HttpResponse(template.render(context_dict, request))
