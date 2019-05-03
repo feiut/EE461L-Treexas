@@ -20,52 +20,7 @@
 
 	<link rel="stylesheet" href="{% static 'list_page_style.css' %}">
 
-	<script type="text/javascript" src="{% static 'list_page.js' %}"></script>
-	<script type="text/javascript">// Eco_List page
-	// When the user clicks on <div>, open the popup
-	function transpecosfunc() {
-		document.getElementById("map").src = "{% static "ecoregions_transpecos.png" %}";
-
-	}
-	function edwardsfunc() {
-		document.getElementById("map").src = "{% static "ecoregions_edwards.png" %}";
-	}
-	function crosstimbersfunc() {
-		document.getElementById("map").src = "{% static "ecoregions_crosstimbers.png" %}";
-
-	}
-	function southplainsfunc() {
-		document.getElementById("map").src = "{% static "ecoregions_southplains.png" %}";
-
-	}
-	function postoakfunc() {
-		document.getElementById("map").src = "{% static "ecoregions_postoak.png" %}";
-
-	}
-	function pineywoodsfunc() {
-		document.getElementById("map").src = "{% static "ecoregions_pineywoods.png" %}";
-
-	}
-	function blacklandprairiefunc() {
-		document.getElementById("map").src = "{% static "ecoregions_blackland.png" %}";
-
-	}
-	function coastfunc() {
-		document.getElementById("map").src = "{% static "ecoregions_marshes.png" %}";
-
-	}
-	function highplainsfunc() {
-		document.getElementById("map").src = "{% static "ecoregions_highplains.png" %}";
-
-	}
-	function rollingplainsfunc() {
-		document.getElementById("map").src = "{% static "ecoregions_rollingplains.png" %}";
-
-	}
-	function leave() {
-		document.getElementById("map").src = "{% static "ecoregions2.png" %}";
-	}
-</script>
+	
 <style type="text/css">#eco{
   background: url('{% static "green-leaves-flat.jpg"%}') center 30% no-repeat;
   background-size: 120% 150%;
@@ -147,24 +102,50 @@
 	</div>
 	</div>
 
+	<script type="text/javascript">// Eco_List page
+	// When the user clicks on <div>, open the popup
+	function transpecosfunc() {
+		document.getElementById("map").src = "{% static "ecoregions_transpecos.png" %}";
 
-	<!--
-	{% for eco in ecoregion_list %}
-	<div class="container">
-		<div class="Img">
-			<img src="{% static eco.img %}" class="imgentry">
-		</div>
-		<div class="Text">
-			<a href="{{eco.url}}">{{eco.name}}</a>
-		</div>
+	}
+	function edwardsfunc() {
+		document.getElementById("map").src = "{% static "ecoregions_edwards.png" %}";
+	}
+	function crosstimbersfunc() {
+		document.getElementById("map").src = "{% static "ecoregions_crosstimbers.png" %}";
 
-	</div>
-	{% endfor %}
-	-->
-	  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-	  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-	  <script src="../../assets/js/vendor/popper.min.js"></script>
-	  <script src="../../dist/js/bootstrap.min.js"></script>
+	}
+	function southplainsfunc() {
+		document.getElementById("map").src = "{% static "ecoregions_southplains.png" %}";
 
+	}
+	function postoakfunc() {
+		document.getElementById("map").src = "{% static "ecoregions_postoak.png" %}";
+
+	}
+	function pineywoodsfunc() {
+		document.getElementById("map").src = "{% static "ecoregions_pineywoods.png" %}";
+
+	}
+	function blacklandprairiefunc() {
+		document.getElementById("map").src = "{% static "ecoregions_blackland.png" %}";
+
+	}
+	function coastfunc() {
+		document.getElementById("map").src = "{% static "ecoregions_marshes.png" %}";
+
+	}
+	function highplainsfunc() {
+		document.getElementById("map").src = "{% static "ecoregions_highplains.png" %}";
+
+	}
+	function rollingplainsfunc() {
+		document.getElementById("map").src = "{% static "ecoregions_rollingplains.png" %}";
+
+	}
+	function leave() {
+		document.getElementById("map").src = "{% static "ecoregions2.png" %}";
+	}
+</script>
 </body>
 </html>

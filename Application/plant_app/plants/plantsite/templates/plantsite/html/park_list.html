@@ -22,15 +22,6 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" type='text/css'>
 
 	<link rel="stylesheet" href="{% static 'list_page_style.css' %}">
-	<script type="text/javascript">
-		function img_over(item){
-			item.style.borderColor = "#57BC90";
-		}
-		function img_out(item){
-			item.style.borderColor="#FFFFFF";
-		}
-
-	</script>
 
 
 </head>
@@ -143,19 +134,28 @@
 					<div id="footer">
 					</div>
 				</div>
-		<script type="text/javascript">
-			$(".pagination li a").each(function(){
-			if($(this).text()=="{{names.number}}"){
-					$(this).parent().addClass("active");
-			}
-			});
+	<script type="text/javascript">
+		$(".pagination li a").each(function(){
+		if($(this).text()=="{{names.number}}"){
+				$(this).parent().addClass("active");
+		}
+		});
 
-			function page_goto(){
-			var page = $("#page_goto input")[0].value;
-			window.location.href = '?page=' + page;
-			return false;
-			}
-		</script>
+		function page_goto(){
+		var page = $("#page_goto input")[0].value;
+		window.location.href = '?page=' + page;
+		return false;
+		}
+	</script>
+	<script type="text/javascript">
+		function img_over(item){
+			item.style.borderColor = "#57BC90";
+		}
+		function img_out(item){
+			item.style.borderColor="#FFFFFF";
+		}
+
+	</script>
 
 	</div>
 </body>
