@@ -15,7 +15,7 @@
   	<link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet'type='text/css'>
 
-	<link rel="stylesheet" href="{% static "entry_style_modified.css" %}">
+	<link rel="stylesheet" href='{% static "entry_style_modified.css" %}'>
 
 	<script type="text/javascript">
 		function img_over(item){
@@ -65,14 +65,6 @@
 				<div class="text-center">
 					<img class="img imgstyle-large" src="{{profile.image}}">
 				</div>
-				<!--
-				<p class="text-center">{{profile.description}}</p>
-				<p class="text-center">Address: {{profile.address}}</p>
-				<p class="text-center">Latitude: {{profile.latitude}}</p>
-				<p class="text-center">Longitude: {{profile.longitude}}</p>
-				<div class="text-center">
-				<a href="{{profile.url}}">Want to know more? Visit the website!</a>
-				</div>-->
 				<br>
 				<table class="profile_table">
 					<tr class="border-style">
@@ -116,7 +108,7 @@
 		        <!-- Wrapper for carousel items -->
 		        <div class="carousel-inner">
 		        	<div class="carousel-item active">
-		                <img class="img-medium-center" src="{% static "background-succulent.jpeg" %}">
+		                <img class="img-medium-center" src='{% static "background-succulent.jpeg" %}'>
 		               	<div class="carousel-caption d-non d-md-block green-theme">
 		        			<h6 class="words1 text-center">Plants</h3>
 		        		</div>
@@ -136,11 +128,9 @@
 		        <!-- Carousel controls -->
 		        <a class="carousel-control-prev grey-theme" href="#myCarousel" role="button"data-slide="prev">
 		                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    					<!--span class="sr-only" >Previous</span-->
 		        </a>
 		        <a class="carousel-control-next grey-theme" href="#myCarousel" role="button" data-slide="next">
 		                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    					<!--span class="sr-only" style="color:#57bc90">Next</span-->
 		        </a>
 		    </div>
 
@@ -148,7 +138,7 @@
 		        <!-- Wrapper for carousel items -->
 		        <div class="carousel-inner">
 		        	<div class="carousel-item active">
-		                <img class="img-medium-center" src="{% static "background-succulent.jpeg" %}">
+		                <img class="img-medium-center" src='{% static "background-succulent.jpeg" %}'>
 		               	<div class="carousel-caption d-non d-md-block green-theme">
 		        			<h6 class="words1 text-center">Ecoregion</h6>
 		        		</div>
@@ -170,11 +160,9 @@
 		        <!-- Carousel controls -->
 		        <a class="carousel-control-prev grey-theme" href="#myCarousel2" role="button"data-slide="prev">
 		                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    					<!--span class="sr-only" style="color:#57bc90">Previous</span-->
 		        </a>
 		        <a class="carousel-control-next grey-theme" href="#myCarousel2" role="button" data-slide="next">
 		                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    					<!--span class="sr-only" style="color:#57bc90">Next</span-->
 		        </a>
 		    </div>
 
@@ -194,7 +182,7 @@
 	<div id="plants" style="display: none" class="plant_list col" data-spy="scroll" id="plantlist">
 		<div class="d-flex flex-row flex-wrap">
 			{% for plant in names %}
-			<div style="display: inline-block" class="card col-sm-4 px-4 card-style flex-wrap" onmouseover="img_over(this)" onmouseout="img_out(this)">
+			<div class="card col-sm-4 px-4 card-style flex-wrap" onmouseover="img_over(this)" onmouseout="img_out(this)">
 				<a href="/plant_profile/?id={{plant.id}}">
 					<img style="max-width: 100%" class="card-img img-center"src="{{plant.image}}">
 				</a>
@@ -253,10 +241,10 @@
 
 
 
-	<div id="eco_region" style="display:none"class="plant_list col" data-spy="scroll" id="plantlist">
+	<div id="eco_region" style="display: none" class="plant_list col" data-spy="scroll" id="plantlist">
 			<div class="d-flex flex-row flex-wrap">
 				{% for eco in eco_list %}
-				<div style="display: inline-block" class="card col-sm-4 px-4 card-style flex-wrap" onmouseover="img_over(this)" onmouseout="img_out(this)">
+				<div  class="card col-sm-4 px-4 card-style flex-wrap" onmouseover="img_over(this)" onmouseout="img_out(this)">
 					<a href="/eco_profile/?id={{eco.id}}">
 						{% with ''|add:eco.image|add:'' as img_static %}
 							<img style="max-width: 100%" class="card-img-top img-center-wide" src="{% static img_static %}">
