@@ -14,15 +14,11 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
   <link rel="stylesheet" href="{% static 'main_page_style.css' %}">
 
-  <link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" type='text/css'>
-
-
-
-
 
 <style>
 @keyframes bg1 {
@@ -46,36 +42,7 @@
   }
 }
 
-
 </style>
-
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script type="text/javascript">
-  var count = 0;
-  var images = ["('{% static "background_mp2.jpg"%}')","('{% static "background_mp.jpg"%}')","('{% static "background_mp3.jpg"%}')","('{% static "background_mp6.jpg"%}')"];
-  var image = $(".bg2");
-
-  image.css("background-image","url"+images[count]);
-
-    $(document).ready(function(){
-      $(function(){
-          $('#spinner').fadeOut();
-      })
-      
-      setInterval(function(){
-        image.fadeOut(1000,function(){
-            image.css("background-image","url"+images[count++]);
-            image.fadeIn(1000);
-          });
-        if(count == images.length)
-        {
-          count=0;
-        }
-      },5000);
-    });
-
-
-  </script>
 
 
 </head>
@@ -87,7 +54,10 @@
   </div>
 
 
-
+  <img src="{% static "background_mp.jpg"%}" style="display: none">
+  <img src="{% static "background_mp2.jpg"%}" style="display: none">
+  <img src="{% static "background_mp3.jpg"%}" style="display: none">
+  <img src="{% static "background_mp6.jpg"%}" style="display: none">
 
 <div class="bg2" style="height:100%;">
   <nav class="navbar navbar-expand-sm navbar-custom navbar-light">
@@ -144,6 +114,30 @@
 
 
  </div>
+<!--   <script type="text/javascript">
+  var count = 0;
+  var images = ["('{% static "background_mp2.jpg"%}')","('{% static "background_mp.jpg"%}')","('{% static "background_mp3.jpg"%}')","('{% static "background_mp6.jpg"%}')"];
+  var image = $(".bg2");
 
+  image.css("background-image","url"+images[count]);
+
+    $(document).ready(function(){
+      $(function(){
+          $('#spinner').fadeOut();
+      })
+      
+      setInterval(function(){
+        image.fadeOut(1000,function(){
+            image.css("background-image","url"+images[count++]);
+            image.fadeIn(1000);
+          });
+        if(count == images.length)
+        {
+          count=0;
+        }
+      },5000);
+    });
+
+  </script> -->
 </body>
 </html>
