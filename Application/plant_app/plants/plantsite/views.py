@@ -46,7 +46,7 @@ class Profile(ABC):
     @abstractmethod
     def profileItem(self):
         pass
-    
+
     @abstractmethod
     def leftCarouselList(self):
         pass
@@ -95,7 +95,7 @@ class ecoProfile(Profile):
         return self.ecoProf
 
     def leftCarouselList(self):
-        plant_list = parser.stringArrayToList(self.ecoProf.plants) 
+        plant_list = parser.stringArrayToList(self.ecoProf.plants)
         plant_ids = parser.idListToSet(plant_list)
         return PlantCsv.objects.filter(id__in=plant_ids)
 
@@ -139,7 +139,7 @@ class parser:
         return parsedString.split(",")
 
     @staticmethod
-    def idListToSet(list): 
+    def idListToSet(list):
         ids = set()
         for item in list:
             if not item == '' and not item =='N/A' and is_number(item):
@@ -173,7 +173,11 @@ def filter_plants_with_parameters(value_1, value_2, value_3, value_4, value_5, v
     elif str(value_1) == "AllType":
         names = PlantCsv.objects.all()
     else:
-        names = PlantCsv.objects.filter(planttype__contains=str(value_1))
+        # names = PlantCsv.objects.filter(planttype__contains=value_1)
+        search_type = "planttype"
+        # arg = {'planttype__contains': value_1,}
+        arg = {'%s__contains' %search_type: value_1,}
+        names = PlantCsv.objects.filter(**arg)
     if not value_2:
         names = names.all()
     elif str(value_2) == "AllType":
@@ -340,7 +344,7 @@ class PlantListHelper(object):
 
     instance = None
     @staticmethod
-    def getInstance(self):
+    def getInstance():
         if PlantListHelper.instance == None:
             PlantListHelper.instance = PlantListHelper.__PlantListHelper()
         return PlantListHelper.instance
@@ -411,7 +415,7 @@ def main_page(request):
 
 def plants_each(request):
     template = loader.get_template('plantsite/html/plants_each.html')
-    
+
     number = request.GET.get('id')
     prof = PlantCsv.objects.get(id=number)
     context_dict = {'profile': prof}
@@ -483,7 +487,7 @@ def plant_type_list(request):
     new_dict = {'searched_plants':searched_plants}
     context_dict.update(new_dict)
     response = HttpResponse(template.render(context_dict,request))
-    
+
     plantlisthelper.set_cookies(response)
 
     return response
@@ -564,7 +568,7 @@ def plant_profile_view(request):
     prof.save()                                  #Every time you search for this plant, the searching times will be added by 1
     set_check = list() #This will store if a set is empty
     ''' gets parks'''
-    eco_list = profileBuild['rightCarousel'] 
+    eco_list = profileBuild['rightCarousel']
     for eco in eco_list:
         eco.image =eco.image.strip()
         eco.image = re.sub('https', 'https:', str(eco.image))
@@ -592,7 +596,7 @@ def eco_profile_view(request):
     profileBuild = profileOfEco.createProfilePageItems()
     prof = profileBuild['profile']
     prof.image = prof.image.strip() #remove leading whitespace ERICK
-    plants = profileBuild['leftCarousel']   
+    plants = profileBuild['leftCarousel']
     plants = fix_plant_defualt(plants)
     page = request.GET.get('page')
     if not page:
@@ -603,7 +607,7 @@ def eco_profile_view(request):
     park_list = profileBuild['rightCarousel']
     for park in park_list:
         park.image = fix.http(park.image)
-   
+
     set_check.append(empty_check(plants))
     set_check.append(empty_check(park_list))
     context_dict2 = {'profile': prof, 'plants':plants, 'park_list':park_list, 'set_check':set_check}
