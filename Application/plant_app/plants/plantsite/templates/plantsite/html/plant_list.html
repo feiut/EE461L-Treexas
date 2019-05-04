@@ -94,7 +94,7 @@
 			<!-- filters -->
 			<div class="d-inline col-2 pl-3" id="filters">
 
-				<form method="GET">
+				<form method="GET" name="filterForm">
 
 					<div class="input-group">
 						<!--button class="btn btn-success" type="submit">Filter!</button-->
@@ -107,7 +107,7 @@
 								<option value=" Groundcover" {%if get_par.1 == ' Groundcover'%} selected {%endif%}> Groundcover</option>
 								<option value=" Ornamental Grass" {%if get_par.1 == ' Ornamental Grass'%} selected {%endif%}>Ornamental Grass</option>
 							</select>
-						<br>						
+						<br>
 						<p class="pfilter">Plant Form</p>
 							<select name="plantform" class="custom-select">
 								<option value ="AllType" {%if get_par.3 == 'AllType'%} selected {%endif%}>All Type</option>
@@ -166,7 +166,7 @@
 					</div>
 					<br>
 						<!-- <button class="btn btn-success" type="submit">Filter!</button> -->
-				</form>
+		</form>
 			</div>
 			<!-- plant list and paginator-->
 			<div class="col-10">
@@ -196,7 +196,9 @@
 															{{names.previous_page_number}}
 													{% else %}
 															{{names.number}}
-													{% endif %}
+													{% endif %}&planttype={{get_par.1}}&waterdemand={{get_par.2}}
+														&plantform={{get_par.3}}&season={{get_par.4}}&native={{get_par.5}}
+														&lightreq={{get_par.6}}&edibility={{get_par.7}}&endangered={{get_par.8}}
 											" aria-label="Previous">
 													<span aria-hidden="true">&laquo;</span>
 											</a>
@@ -205,7 +207,9 @@
 										{% if page == '...' %}
 											<li class="page-item"><span class="page-link">...</span></li>
 										{% else %}
-											<li class="page-item"><a class="page-link" href="?page={{page}}">{{page}}</a></li>
+											<li class="page-item"><a class="page-link" href="?page={{page}}&planttype={{get_par.1}}&waterdemand={{get_par.2}}
+												&plantform={{get_par.3}}&season={{get_par.4}}&native={{get_par.5}}
+												&lightreq={{get_par.6}}&edibility={{get_par.7}}&endangered={{get_par.8}}">{{page}}</a></li>
 										{% endif %}
 									{% endfor %}
 									<li class="page-item">
@@ -214,7 +218,9 @@
 															{{names.next_page_number}}
 													{% else %}
 															{{names.number}}
-													{% endif %}
+													{% endif %}&planttype={{get_par.1}}&waterdemand={{get_par.2}}
+														&plantform={{get_par.3}}&season={{get_par.4}}&native={{get_par.5}}
+														&lightreq={{get_par.6}}&edibility={{get_par.7}}&endangered={{get_par.8}}
 											" aria-label="Next">
 													<span aria-hidden="true">&raquo;</span>
 											</a>
@@ -232,6 +238,7 @@
 					</div>
 			</div>
 
+
 		</div>
 		<div id="footer">
 		</div>
@@ -244,7 +251,9 @@
 		});
 		function page_goto(){
 		var page = $("#page_goto input")[0].value;
-		window.location.href = '?page=' + page;
+		window.location.href = '?page=' + page + '&planttype=' + "{{get_par.1}}" + '&waterdemand='
+		+ "{{get_par.2}}"+ '&plantform=' + "{{get_par.3}}" + '&season=' + "{{get_par.4}}"+ '&native=' + "{{get_par.5}}"
+		+ '&lightreq=' + "{{get_par.6}}" + '&edibility=' + "{{get_par.7}}"+ '&endangered=' + "{{get_par.8}}";
 		return false;
 		}
 
@@ -258,6 +267,8 @@
 					button.style.backgroundColor = "#A5A5AF";
 				}
 		}
+
+
 
 	</script>
 	<script type="text/javascript">

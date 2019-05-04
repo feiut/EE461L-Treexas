@@ -233,63 +233,34 @@ def get_all_parks():
 
 #singleton pattern example
 class PlantListHelper(object):
-    class __PlantListHelper:
+    class __PlantListHelper():
         def __init__(self):
-            self.planttype = None
-            self.waterdemand = None
-            self.plantform = None
-            self.season = None
-            self.native = None
-            self.lightreq = None
-            self.edibility = None
-            self.endangered = None
+            self.filter_type_list = ["planttype", "waterdemand", "plantform", "season", "nativeadapted", "lightreq", "edibility", "endangered"]
+            self.filter_value_list = ['', '', '', '', '', '', '', '']
+            for i in range(0, 8):
+                self.filter_value_list[i] = 'AllType'
+
         def get_plant_info(self,request):
-            if not request.GET.get('planttype'):
-                if '1' in request.COOKIES:
-                    self.planttype = request.COOKIES['1']
-                    self.waterdemand = request.COOKIES['2']
-                    self.plantform = request.COOKIES['3']
-                    self.season = request.COOKIES['4']
-                    self.native = request.COOKIES['5']
-                    self.lightreq = request.COOKIES['6']
-                    self.edibility = request.COOKIES['7']
-                    self.endangered = request.COOKIES['8']
+            for i in range (0, 8):
+                self.filter_value_list[i] = request.GET.get(self.filter_type_list[i])
+                if self.filter_value_list[i] == None:
+                    self.filter_value_list[i] = 'AllType'
+            return self.filter_value_list[0], self.filter_value_list[1], \
+                   self.filter_value_list[2], self.filter_value_list[3], self.filter_value_list[4], \
+                   self.filter_value_list[5], self.filter_value_list[6], self.filter_value_list[7]
 
-            else:
-                self.planttype = request.GET.get('planttype')
-                self.waterdemand = request.GET.get('waterdemand')
-                self.plantform = request.GET.get('plantform')
-                self.season = request.GET.get('season')
-                self.native = request.GET.get('native')
-                self.lightreq = request.GET.get('lightreq')
-                self.edibility = request.GET.get('edibility')
-                self.endangered = request.GET.get('endangered')
-
-            return self.planttype, self.waterdemand, \
-                   self.plantform, self.season, self.native, \
-                   self.lightreq, self.edibility, self.endangered
-        def set_cookies(self,response):
-            if self.planttype:
-                response.set_cookie('1', str(self.planttype))
-                response.set_cookie('2', str(self.waterdemand))
-                response.set_cookie('3', str(self.plantform))
-                response.set_cookie('4', str(self.season))
-                response.set_cookie('5', str(self.native))
-                response.set_cookie('6', str(self.lightreq))
-                response.set_cookie('7', str(self.edibility))
-                response.set_cookie('8', str(self.endangered))
 
         def get_par_and_names(self,request):
             textfield = request.GET.get('search')
 
             if textfield:
-                get_par = {'1': '', '2': '', '3': '', '4': '', '5': '', '6': '', '7': '', '8': ''}
+                get_par = {'1': 'AllType', '2': 'AllType', '3': 'AllType', '4': 'AllType', '5': 'AllType', '6': 'AllType', '7': 'AllType', '8': 'AllType'}
                 names = None
 
             elif not request.method == 'GET':
                 names = get_all_plants()
                 names = fix_plant_defualt(names)
-                get_par = {'1': '', '2': '', '3': '', '4': '', '5': '', '6': '', '7': '', '8': ''}
+                get_par = {'1': 'AllType', '2': 'AllType', '3': 'AllType', '4': 'AllType', '5': 'AllType', '6': 'AllType', '7': 'AllType', '8': 'AllType'}
 
             else:
                 planttype_field, water_demand_field, plant_form_field, \
@@ -312,7 +283,7 @@ class PlantListHelper(object):
     @staticmethod
     def getInstance():
         if PlantListHelper.instance == None:
-            PlantListHelper.instance = PlantListHelper.__PlantListHelper()
+            PlantListHelper.instance = PlantListHelper().__PlantListHelper()
         return PlantListHelper.instance
 
 #pages
@@ -454,8 +425,6 @@ def plant_type_list(request):
     context_dict.update(new_dict)
     response = HttpResponse(template.render(context_dict,request))
 
-    plantlisthelper.set_cookies(response)
-
     return response
 
 def paginator_processing(names, page, get_par, num_items):
@@ -555,9 +524,6 @@ def eco_profile_view(request):
     set_check = list()
     dbid = request.GET.get('id')
 
-    if not dbid:
-        if 'eco_id' in request.COOKIES:
-            dbid = request.COOKIES['eco_id']
     profileOfEco = ecoProfile(dbid)
     profileBuild = profileOfEco.createProfilePageItems()
     prof = profileBuild['profile']
@@ -581,8 +547,6 @@ def eco_profile_view(request):
     context_dict.update(context_dict1)
     context_dict.update(context_dict2)
     response = HttpResponse(template.render(context_dict, request))
-    if dbid:
-            response.set_cookie('eco_id', str(dbid))
     return response
 
 def park_list_view(request):
@@ -626,9 +590,6 @@ def park_profile_view(request):
     template = loader.get_template('plantsite/html/park_profile.html')
     set_check = list()
     dbid = request.GET.get('id')
-    if not dbid:
-        if 'park_id' in request.COOKIES:
-            dbid = request.COOKIES['park_id']
 
     #prof = get_park_with_dbid(str(dbid))
     #prof.url = re.sub('https', 'https:', str(prof.url))
@@ -652,8 +613,6 @@ def park_profile_view(request):
     context_dict = {'profile': prof, 'eco_list':eco_list,'set_check':set_check}
     context_dict.update(context_dict1)
     response = HttpResponse(template.render(context_dict, request))
-    if dbid:
-        response.set_cookie('park_id', str(dbid))
     return response
 
 #<img src="{{ MEDIA_URL }}{{ image.image.url }}" />
