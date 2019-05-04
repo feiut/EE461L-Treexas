@@ -5,7 +5,7 @@
 
 
 	<link rel="shortcut icon" type="image/png" href="{% static 'browser_icon.png' %}">
-	<link rel="stylesheet" href="{% static "about_style.css" %}">
+	<link rel="stylesheet" href='{% static "about_style.css" %}'>
 
 
 	<!-- jQuery library -->
@@ -24,7 +24,7 @@
   	<link href='http://fonts.googleapis.com/css?family=Archivo:bold' rel='stylesheet' type='text/css'>
   	<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
   	<link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="{% static 'list_page_style.css' %}">
+	<link rel="stylesheet" href='{% static "list_page_style.css" %}'>
 	<script type="text/javascript">
 		function img_over(item){
 			item.style.borderColor = "#57BC90";
@@ -342,46 +342,54 @@
 
 	<div id="statistics">
 	<h4 class="people" style="text-align: center">Statistics</h4>
+
+	<h2 class="total-data" >Total number of commits: {{total_c}}</h2>
 	<br>
+	<h2 class="total-data" >Total number of issues: {{total_i}}</h2>
 	<br>
-	<br>
-	<h2 class="name" >Total number of commits: {{total_c}}</h2>
-	<br>
-	<h2 class="name" >Total number of issues: {{total_i}}</h2>
-	<br>
-	<h2 class="name" >Total number of unit tests: 69</h2>
+	<h2 class="total-data" >Total number of unit tests: 69</h2>
 	<br>
 	</div>
 
 
 	<div id="sources">
 	<h4 class="people" style="text-align:center; margin-top: 20%"> Datasources </h4>
+
+	<a href='//www.txsmartscape.com'>  
+		 <h2 class="text-center link"> Texas Plant Source </h2>
+	</a>
+	<p class="text-center"> This datasource was scraped using the HTMLParser and BeautifulSoup Python packages. Information about each plant, such as botanical name, growing conditions, ecoregions and stateparks, were extracted from each plant<i></i></p>
+	
+	<a href='//www.tpwd.texas.gov'>  
+		 <h2 class="text-center link"> Texas State Park and Ecoregion Datasource </h2>
+		</a>
+	<p class="text-center"> This datasource was scraped using the HTMLParser and BeautifulSoup Python packages. Latitude and longitude information was scraped for the state parks. Descriptions and native plants were scraped for each of the texan ecoregions</p>
 	<br>
+	<a href='https://www.gbif.org'> 
+		<h2 class="text-center link">Global Biodiversity Information Facility </h2>
+	</a>
+	<p class="text-center">This datasource was used to obtain latitude and longitude information for plants using Selenium in python.</p>
 	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<a href='//www.txsmartscape.com' class="link" >   <h2 class="text-center"> Texas Plant Source </h2></a>
-	<p class="text-center" style="margin-bottom: 5%;font: 80%"> This datasource was scraped using the HTMLParser and BeautifulSoup Python packages. Information about each plant, such as botanical name, growing conditions, ecoregions and stateparks, were extracted from each plant<i></i></p>
-	<a href='//www.tpwd.texas.gov' class="link">   <h2 class="text-center"> Texas State Park and Ecoregion Datasource </h2></a>
-	<p class="text-center" style="margin-bottom: 5%;"> This datasource was scraped using the HTMLParser and BeautifulSoup Python packages. Latitude and longitude information was scraped for the state parks. Descriptions and native plants were scraped for each of the texan ecoregions</p>
-	<br>
-	<a href='https://www.gbif.org' class="link"> <h2 class="text-center">Global Biodiversity Information Facility </h2></a>
-	<p class="text-center" style="margin-bottom: 5%;">This datasource was used to obtain latitude and longitude information for plants using Selenium in python.</p>
-	<br>
-	<a href='http://hicksenvplantdatabase.com' class="link"> <h2 class="text-center">Texas Plant Information Database</h2></a>
-	<p class="text-center" style="margin-bottom: 5%;">This datasource was scraped using Selenium in python to obtain more plant information. It was also used to give each statepark and plant
+	<a href='http://hicksenvplantdatabase.com'>
+		 <h2 class="text-center link">Texas Plant Information Database</h2>
+	</a>
+	<p class="text-center">This datasource was scraped using Selenium in python to obtain more plant information. It was also used to give each statepark and plant
 a ecoregion if it applied also using Selenium.</p>
 
-	<a href='http://poisonousplants.ansci.cornell.edu/php/plants.php' class="link"> <h2 class="text-center">Poisonous Plants - Cornell University</h2></a>
-	<p class="text-center" style="margin-bottom: 5%;">This datasource was scraped using Selenium to obtain edible plant data</p>
+	<a href='http://poisonousplants.ansci.cornell.edu/php/plants.php'>
+		 <h2 class="text-center link">Poisonous Plants - Cornell University</h2>
+	</a>
+	<p class="text-center">This datasource was scraped using Selenium to obtain edible plant data</p>
 
-	<a href='https://garden.org/plants/search/text/' class="link"> <h2 class="text-center">National Gardening Association Plant Database</h2></a>
-	<p class="text-center" style="margin-bottom: 5%;">This datasource was scraped using Selenium to help refine existing plant data.</p>
+	<a href='https://garden.org/plants/search/text/'>
+		 <h2 class="text-center link">National Gardening Association Plant Database</h2>
+	</a>
+	<p class="text-center">This datasource was scraped using Selenium to help refine existing plant data.</p>
 
-	<a href=http://www.missouribotanicalgarden.org/plantfinder/plantfindersearch.aspx  class="link"> <h2 class="text-center">Missouri Botanical Garden</h2></a>
-	<p class="text-center" style="margin-bottom: 5%;">This datasource was scraped using Selenium to help refine existing plant data.</p>
+	<a href=http://www.missouribotanicalgarden.org/plantfinder/plantfindersearch.aspx> 
+		<h2 class="text-center link">Missouri Botanical Garden</h2>
+	</a>
+	<p class="text-center">This datasource was scraped using Selenium to help refine existing plant data.</p>
 	</div>
 
 	<h4 class="people" style="text-align:center; margin-top: 20%">Tools</h4>

@@ -1,7 +1,5 @@
 body{
-
 	margin: 10%;
-
 }
 
 h4{
@@ -52,10 +50,6 @@ img{
 
 
 #title{
-	/*color: white;
-	text-align: center;
-	font-size: 300%;
-	/*font-family: "Times New Roman", serif;*/
 	  font: 80px/1.2 'Fjalla One', sans-serif;
 	  font-weight:800;
 	  color: #57bc90;
@@ -135,7 +129,7 @@ img{
 	color: #238e23;
 	position: center;
 	left: 50%;
-	margin-top: 10%;
+	margin-top: 3%;
 }
 
 div i{
@@ -180,7 +174,7 @@ div i{
 	  font: 35px/1.2 'Fjalla One', sans-serif;
 	  font-weight:800;
 	  color: #238e23;
-	  margin-top: 5%;
+	  margin-top: 3%;
 }
 
 .tools{
