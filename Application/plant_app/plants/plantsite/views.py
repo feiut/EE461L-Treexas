@@ -287,67 +287,47 @@ class PlantListHelper(object):
         return PlantListHelper.instance
 
 #pages
+def request_and_response(request, context_dict, file):
+    template = loader.get_template('plantsite/html/%s' % file)
+    response = HttpResponse(template.render(context_dict,request))
+    return response
+
 def main_page(request):
     if request.method == 'GET':
         textfield =request.GET.get('search')
         search_type = request.GET.get('SearchType')
-        searched_plants = find_Top6_plants(PlantCsv)
-        searched_plants = fix_plant_defualt(searched_plants)
+        searched_plants = fix_plant_defualt(find_Top6_plants(PlantCsv))
+
         if str(search_type) == 'Plant':
             if not textfield:
-                template = loader.get_template('plantsite/html/mainPage.html')
-                response = HttpResponse(template.render({},request))
-                return response
+                return request_and_response(request, {}, 'mainPage.html')
             results = search_plants_with_string(textfield)
-
             if not results:
-                template = loader.get_template('plantsite/html/plant_list.html')
-                context_dict = {'searched_plants':searched_plants}
-                response = HttpResponse(template.render(context_dict,request))
-                return response
+                return request_and_response(request, {'searched_plants':searched_plants}, 'plant_list.html')
             else:
-                template = loader.get_template('plantsite/html/plant_list.html')
-                new_dict = {'searched_plants':searched_plants}
                 get_par = {'1':'', '2':'', '3':'', '4':'', '5':'', '6':'', '7':'', '8':''}
                 context_dict = paginator_processing(results, 1, get_par, 15)
-                context_dict.update(new_dict)
-                response = HttpResponse(template.render(context_dict,request))
-                return response
+                context_dict.update({'searched_plants':searched_plants})
+                return request_and_response(request, context_dict, 'plant_list.html')
 
         if str(search_type) == 'Park':
             if not textfield:
-                template = loader.get_template('plantsite/html/mainPage.html')
-                response = HttpResponse(template.render({},request))
-                return response
+                return request_and_response(request, {}, 'mainPage.html')
             results = search_park_with_string(textfield)
-
             if not results:
-                template = loader.get_template('plantsite/html/park_list.html')
-                response = HttpResponse(template.render({},request))
-                return response
+                return request_and_response(request, {}, 'park_list.html')
             else:
-                template = loader.get_template('plantsite/html/park_list.html')
-                context_dict = {"names":results}
-                response = HttpResponse(template.render(context_dict,request))
-                return response
+                return request_and_response(request, {"names":results}, 'park_list.html')
 
         if str(search_type) == 'Ecoregion':
             if not textfield:
-                template = loader.get_template('plantsite/html/mainPage.html')
-                response = HttpResponse(template.render({},request))
-                return response
+                return request_and_response(request, {}, 'mainPage.html')
+            return request_and_response(request, {}, 'eco_list.html')
 
-            template = loader.get_template('plantsite/html/eco_list.html')
-            response = HttpResponse(template.render({},request))
-            return response
-
-        template = loader.get_template('plantsite/html/mainPage.html')
-        response = HttpResponse(template.render({},request))
-        return response
+        return request_and_response(request, {}, 'mainPage.html')
 
     else:
-        template = loader.get_template('plantsite/html/mainPage.html')
-        return HttpResponse(template.render({}, request))
+        return request_and_response(request, {}, 'mainPage.html')
 
 
 def plants_each(request):
@@ -356,7 +336,6 @@ def plants_each(request):
     number = request.GET.get('id')
     prof = PlantCsv.objects.get(id=number)
     context_dict = {'profile': prof}
-    #return HttpResponse(template.render(context_dict, request))
     return HttpResponse(template.render(context_dict, request))
 
 def about_page(request):
