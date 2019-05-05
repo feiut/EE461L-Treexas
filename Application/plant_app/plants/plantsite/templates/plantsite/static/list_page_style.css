@@ -44,7 +44,12 @@ a {
 }
 
 #div_top5{
-  text-align: center
+  text-align: center;
+}
+
+#Top5_plants{
+  border: .5px solid;
+  color: #cccccc;
 }
 
 
