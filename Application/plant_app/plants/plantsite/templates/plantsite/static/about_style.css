@@ -3,14 +3,12 @@ body{
 }
 
 h4{
-	color: #000000;
 	font-family: Arial;
 	font-size: 260%;
 	margin: 16px;
 }
 
 p{
-	color: #000000;
 	font-family: Arial;
 	font-size: 200%;
 }
@@ -31,16 +29,17 @@ img{
 
 }
 
+
 .navbar-nav {
-	color: #EFEFEF;
-	font: 160% 'Merienda One', Helvetica, sans-serif;
+	color: #57BC90;
+	font: 160% 'Fjalla One', Helvetica, sans-serif;
 }
 
 .navbar-brand {
-  color: #EFEFEF;
+  color: #EFEFEF !important;
   padding-top: 0;
   padding-left: 10px;
-  font: 250% 'Merienda One', Helvetica, sans-serif;
+  font: 250% 'Fjalla One', Helvetica, sans-serif !important;
 }
 
 .navbar-nav > li > a:hover, .navbar-brand:hover, .navbar-default .navbar-nav > li > a:focus {
@@ -184,7 +183,6 @@ div i{
 
 
 #mainpage_link{
-	color: black;
 	margin-left: 50%;
 	font-size: 125%;
 	text-align: left;
