@@ -8,8 +8,8 @@ from plantsite.views import get_all_plants
 from plantsite.views import get_park_with_dbid
 from plantsite.views import get_all_parks
 from plantsite.views import search_park_with_string
-from plantsite.views import is_number
-from plantsite.views import empty_check
+#from plantsite.views import is_number
+#from plantsite.views import empty_check
 from plantsite.views import plants_each
 from plantsite.views import plant_profile_view
 from plantsite.views import eco_profile_view
@@ -40,18 +40,7 @@ class viewTest(TestCase):
                                           succulents="Null", vines="Null", vine="Null", conifers="Null", grasses="Null", wildflowers="Null", image="https/test_img.png", stateparks="[1]", plants="[1]")
                                           
         Stateparks.objects.create(id=1, name="Park1", latitude="32.24", longitude="-99.87", plantlist="[1]", ecoregionlist="[1]", image="test")
-        
-        # Park.objects.create("Park2", "sp_dinosaur_valley.jpg", "/park2/")
-        # Park.objects.create("Park3", "sp_daingerfield.jpg", "/park3/")
-        # Park.objects.create("Park4", "sp_acton.jpg", "/park4/")
 
-        # Ecoregion.objects.create("Eco1", "eco_pineywoods.jpg", "/eco1/")
-        # Ecoregion.objects.create("Eco2", "eco_marshes.jpg", "/eco2/")
-        # Ecoregion.objects.create("Eco3", "eco_postoaksavanah.jpg", "/eco3/")
-
-        # Plant.objects.create("Plant1", "eco_pineywoods.jpg", "/plant1/")
-        # Plant.objects.create("Plant2", "eco_pineywoods.jpg", "/plant2/")
-        # Plant.objects.create("Plant3", "eco_pineywoods.jpg", "/plant3/")
 
     '''Test the urls and the webpage framework'''
     def test_main_page(self): #Passed
@@ -134,6 +123,7 @@ class viewTest(TestCase):
         result = get_all_parks()
         self.assertEqual(len(result), Stateparks.objects.count())
 
+    '''
     def test_is_number(self):#Passed
         s = 123
         self.assertEqual(is_number(s), True)
@@ -149,8 +139,9 @@ class viewTest(TestCase):
     def test_not_empty_check(self):#Passed
         item = "flower"
         self.assertEqual(empty_check(item), "false")
+    '''
 
-    '''Test the very important filter in different branches and main pathes.'''
+    '''Test the very important filter in different branches and main pathes.
     def test_filter_plants_with_parameters1(self):
         names = filter_plants_with_parameters("test", "AllType", "AllType", "AllType", "AllType", "AllType", "AllType", "AllType")
         self.assertEqual(list(names)[0].id, 1)
@@ -189,4 +180,4 @@ class viewTest(TestCase):
 
     def test_filter_plants_with_parameters_none(self):
         names = filter_plants_with_parameters("test", "test", "AllType", "AllType", "AllType", "AllType", "AllType", "AllType")
-        self.assertEqual(len(names), 0)
+        self.assertEqual(len(names), 0)'''
