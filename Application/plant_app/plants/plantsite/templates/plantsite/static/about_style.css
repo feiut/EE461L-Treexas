@@ -35,6 +35,13 @@ img{
 	font: 160% 'Fjalla One', Helvetica, sans-serif;
 }
 
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:focus .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+        color: #EFEFEF !important;
+}
+
+
 .navbar-brand {
   color: #EFEFEF !important;
   padding-top: 0;
@@ -43,8 +50,8 @@ img{
 }
 
 .navbar-nav > li > a:hover, .navbar-brand:hover, .navbar-default .navbar-nav > li > a:focus {
-    background-color: #A9A9a9;
-    color: #EFEFEF;
+    background-color: #57bc90;
+    color: #000000 !important;;
 }
 
 
